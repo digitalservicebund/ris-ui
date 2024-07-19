@@ -11,15 +11,13 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "@primevue/themes": "^4.0.0",
-    "@storybook/theming": "^8.2.4",
-    "autoprefixer": "^10.4.19",
-    "primeicons": "^7.0.0",
     "primevue": "^4.0.0",
-    "tailwindcss-primeui": "^0.3.2",
     "vue": "^3.4.29"
   },
   "devDependencies": {
+    "@storybook/theming": "^8.2.4",
+    "@storybook/addons": "^7.6.17",
+    "autoprefixer": "^10.4.19",
     "@chromatic-com/storybook": "^1.6.1",
     "@digitalservice4germany/angie": "~1.1.1",
     "@digitalservice4germany/style-dictionary": "~2.0.0",
