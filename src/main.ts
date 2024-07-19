@@ -10,6 +10,7 @@ const app = createApp(App);
 app.use(PrimeVue, {
     theme:{
         preset: customPreset,
+        unstyled: true,
     }
 });
 
