@@ -1,11 +1,11 @@
 import { setup } from "@storybook/vue3";
 import PrimeVue from "primevue/config";
-import customPreset from "../src/components/customPreset";
+import customPresets from "../src/components/customPresets";
 import "../src/style.css";
 
 setup((app) => {
   app.use(PrimeVue, {
-    pt: customPreset,
+    pt: customPresets,
     unstyled: true,
   });
 });
