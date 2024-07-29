@@ -1,7 +1,8 @@
 import { createApp } from 'vue';
 import PrimeVue from 'primevue/config';
-import customPreset from './components/customPreset'
+import customPresets from './components/customPresets'
 import App from './App.vue';
+import 'primeicons/primeicons.css';
 
 import './style.css'
 
@@ -9,7 +10,8 @@ const app = createApp(App);
 
 app.use(PrimeVue, {
     theme:{
-        preset: customPreset,
+        preset: customPresets,
+        unstyled: true,
     }
 });
 
