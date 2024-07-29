@@ -18,9 +18,9 @@ export default {
 
             // Size adjustments
             props.label && props.size === 'large' ? 'py-[1.21875rem] px-24 text-[1.125rem] leading-[1.3888] min-h-64' : '',
-            !props.label && props.size === 'large' ? 'w-64 h-64' : '', // Large button without label
-            !props.label && props.size !== 'large' ? 'w-48 h-48' : '', // Small button without label
-            props.label && props.size !== 'large' ? 'py-[0.5625rem] px-16 text-base min-h-48' : '', // Regular size with label
+            !props.label && props.size === 'large' ? 'w-64 h-64' : '',
+            !props.label && props.size !== 'large' ? 'w-48 h-48' : '',
+            props.label && props.size !== 'large' ? 'py-[0.5625rem] px-16 text-base min-h-48' : '',
 
             props.severity === 'primary' && `
                 bg-blue-800 border border-2 border-transparent
