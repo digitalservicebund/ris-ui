@@ -42,8 +42,7 @@ export default {
             // Primary severity styles
             props.severity === 'primary' && `
                 bg-blue-800 border-transparent text-white
-                ${context.disabled ? 'bg-gray-400 cursor-not-allowed text-gray-600' : 'hover:bg-blue-700'}
-                active:bg-blue-500 active:text-blue-800
+                ${context.disabled ? 'bg-gray-400 cursor-not-allowed text-gray-600' : 'hover:bg-blue-700 active:bg-blue-500 active:text-blue-800'}
                 focus:outline-none focus:ring-blue-800 focus:ring-4 focus:ring-offset-4
             `,
 
