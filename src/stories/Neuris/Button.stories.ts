@@ -11,6 +11,7 @@ const meta: Meta<typeof Button> = {
         size: { control: 'select', options: ['small', 'large'] },
         icon: { control: 'select', options: [null, 'pi pi-check', 'pi pi-times', 'pi pi-exclamation-triangle'] },
         iconPos: { control: 'select', options: ['left', 'right'] },
+        disabled: { control: 'boolean' },
     },
 };
 
@@ -22,6 +23,7 @@ export const Primary: Story = {
         label: 'Button',
         size: 'small',
         severity: 'primary',
+        disabled: false,
     },
     render: (args) => ({
         components: { Button },
@@ -36,6 +38,7 @@ export const Primary: Story = {
               :severity="args.severity"
               :icon="args.icon"
               :iconPos="args.iconPos"
+              :disabled="args.disabled"
           />
           </div>
         `,
@@ -47,6 +50,7 @@ export const Secondary: Story = {
         label: 'Button',
         size: 'small',
         severity: 'secondary',
+        disabled: false,
     },
     render: (args) => ({
         components: { Button },
@@ -61,6 +65,7 @@ export const Secondary: Story = {
               :severity="args.severity"
               :icon="args.icon"
               :iconPos="args.iconPos"
+              :disabled="args.disabled"
           />
           </div>
         `,
@@ -72,6 +77,7 @@ export const Ghost: Story = {
         label: 'Button',
         size: 'small',
         severity: 'ghost',
+        disabled: false,
     },
     render: (args) => ({
         components: { Button },
@@ -86,6 +92,7 @@ export const Ghost: Story = {
               :severity="args.severity"
               :icon="args.icon"
               :iconPos="args.iconPos"
+              :disabled="args.disabled"
           />
           </div>
         `,
