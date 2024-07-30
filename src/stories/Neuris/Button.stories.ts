@@ -11,7 +11,6 @@ const meta: Meta<typeof Button> = {
         size: { control: 'select', options: ['small', 'large'] },
         icon: { control: 'select', options: [null, 'pi pi-check', 'pi pi-times', 'pi pi-exclamation-triangle'] },
         iconPos: { control: 'select', options: ['left', 'right'] },
-        state: { control: 'select', options: ['default', 'hover', 'pressed', 'focus', 'disabled'] },
     },
 };
 
@@ -23,7 +22,6 @@ export const Primary: Story = {
         label: 'Button',
         size: 'small',
         severity: 'primary',
-        state: 'default',
     },
     render: (args) => ({
         components: { Button },
@@ -47,8 +45,7 @@ export const Primary: Story = {
 export const Secondary: Story = {
     args: {
         label: 'Button',
-        size: 'large',
-        state: 'default',
+        size: 'small',
         severity: 'secondary',
     },
     render: (args) => ({
@@ -73,9 +70,8 @@ export const Secondary: Story = {
 export const Ghost: Story = {
     args: {
         label: 'Button',
-        size: 'large',
+        size: 'small',
         severity: 'ghost',
-        state: 'default',
     },
     render: (args) => ({
         components: { Button },
