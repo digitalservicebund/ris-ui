@@ -5,7 +5,6 @@ export default {
             'items-center',
             'justify-center',
             'font-bold',
-            'leading-[1.375]',
             'text-center',
             'max-w-full',
             'rounded-none',
@@ -14,18 +13,29 @@ export default {
             "border-2",
             !context.disabled && 'focus:outline-none focus:ring-4 focus:ring-offset-4',
 
-            // Icon position adjustments
-            instance.hasIcon && props.label ? (
+            // Default size settings
+            !props.size && 'py-8 px-16 text-base min-h-48',
+
+            // Icon position adjustments for Large size
+            instance.hasIcon && props.size === 'large' && props.label ? (
                 props.iconPos === 'left' ? 'pl-20 pr-24 gap-8' :
                     props.iconPos === 'right' ? 'pl-24 pr-20 gap-8' : ''
             ) : '',
+
+            // Icon position adjustments for Small size
+            instance.hasIcon && (!props.size || props.size === 'small') && props.label ? (
+                props.iconPos === 'left' ? 'pl-12 pr-16 gap-4' :
+                    props.iconPos === 'right' ? 'pl-16 pr-12 gap-4' : ''
+            ) : '',
+
+            // Adjustments for when there is an icon but no label
             instance.hasIcon && !props.label ? 'p-0 gap-0' : '',
 
             // Size adjustments
             props.size === 'large' ? (
-                props.label ? 'py-[1.21875rem] px-24 text-[1.125rem] leading-[1.3888] min-h-64' : 'w-64 h-64'
+                props.label ? 'py-20 px-24 text-[1.125rem] min-h-64' : 'w-64 h-64'
             ) : (
-                props.label ? 'py-[0.5625rem] px-16 text-base min-h-48' : 'w-48 h-48'
+                props.label ? 'py-8 px-16 text-base min-h-48' : 'w-48 h-48'
             ),
 
             // Primary severity styles
