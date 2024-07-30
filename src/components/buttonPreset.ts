@@ -7,6 +7,7 @@ export default {
             'font-bold',
             'text-center',
             'max-w-full',
+            'leading-24',
             'rounded-none',
             'box-border',
             'border',
