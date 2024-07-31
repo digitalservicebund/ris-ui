@@ -1,4 +1,5 @@
 import type { StorybookConfig } from "@storybook/vue3-vite";
+import Icons from 'unplugin-icons/vite';
 
 const config: StorybookConfig = {
   stories: [
@@ -6,7 +7,6 @@ const config: StorybookConfig = {
     "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)",
     "../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)"
   ],  addons: [
-    "@storybook/addon-onboarding",
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@chromatic-com/storybook",
@@ -16,6 +16,10 @@ const config: StorybookConfig = {
   framework: {
     name: "@storybook/vue3-vite",
     options: {},
+  },
+  async viteFinal(config) {
+    config.plugins.push(Icons({ autoInstall: true }));
+    return config;
   },
 };
 export default config;
