@@ -41,25 +41,17 @@ export default {
                 ),
 
                 // Primary severity styles
-                props.severity === 'primary' && `
-                bg-blue-800 border-transparent text-white
-                ${context.disabled ? 'bg-gray-400 cursor-not-allowed text-gray-600' : 'hover:bg-blue-700 active:bg-blue-500 active:text-blue-800'}
-                focus:outline-none focus:ring-blue-800 focus:ring-4 focus:ring-offset-4
-            `,
+                props.severity === 'primary' && !context.disabled && 'bg-blue-800 border-transparent text-white hover:bg-blue-700 active:bg-blue-500 active:text-blue-800 focus:outline-none focus:ring-blue-800 focus:ring-4 focus:ring-offset-4',
+                props.severity === 'primary' && context.disabled && 'bg-gray-400 cursor-not-allowed text-gray-600',
 
                 // Secondary severity styles
-                props.severity === 'secondary' && `
-                bg-white text-blue-800 border-solid border-blue-800
-                ${context.disabled ? 'bg-white cursor-not-allowed text-blue-800 text-opacity-50 border-blue-800 border-opacity-50' : 'hover:bg-gray-200 active:bg-white active:text-blue-800 active:border-transparent'}
-                focus:outline-none focus:ring-blue-800 focus:ring-4 focus:ring-offset-2 focus:bg-gray-200
-            `,
+                props.severity === 'secondary' && !context.disabled && 'bg-white text-blue-800 border-solid border-blue-800 hover:bg-gray-200 active:bg-white active:text-blue-800 active:border-transparent focus:outline-none focus:ring-blue-800 focus:ring-4 focus:ring-offset-2 focus:bg-gray-200',
+                props.severity === 'secondary' && context.disabled && 'bg-white cursor-not-allowed text-blue-800 text-opacity-50 border-blue-800 border-opacity-50',
 
                 // Ghost severity styles
-                props.severity === 'ghost' && `
-                bg-transparent text-blue-800 border-transparent
-                ${context.disabled ? 'cursor-not-allowed text-gray-800 text-opacity-50' : 'hover:bg-white hover:border-gray-500 hover:border-2 hover:border-solid active:bg-white active:border-transparent'}
-                focus:outline-none focus:ring-blue-800 focus:ring-4 focus:ring-offset-4 focus:bg-white focus:border-gray-500 focus:border-2 focus:border-solid
-            `,
+                props.severity === 'ghost' && !context.disabled && 'bg-transparent text-blue-800 border-transparent hover:bg-white hover:border-gray-500 hover:border-2 hover:border-solid active:bg-white active:border-transparent focus:outline-none focus:ring-blue-800 focus:ring-4 focus:ring-offset-4 focus:bg-white focus:border-gray-500 focus:border-2 focus:border-solid',
+                props.severity === 'ghost' && context.disabled && 'cursor-not-allowed text-gray-800 text-opacity-50 border-transparent',
+
                 // Icon ordering
                 instance.hasIcon && props.iconPos === 'left' ? 'flex-row' : '',
                 instance.hasIcon && props.iconPos === 'right' ? 'flex-row-reverse' : '',
