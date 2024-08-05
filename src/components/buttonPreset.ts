@@ -63,7 +63,7 @@ export default {
             if (!context.disabled) {
                 primarySeverityStyling = 'bg-blue-800 border-transparent text-white hover:bg-blue-700 active:bg-blue-500 active:text-blue-800 focus:outline-none focus:ring-blue-800 focus:ring-4 focus:ring-offset-4';
             } else {
-                primarySeverityStyling = 'bg-gray-400 cursor-not-allowed text-gray-600';
+                primarySeverityStyling = 'bg-gray-400 cursor-not-allowed text-gray-600 border-transparent';
             }
         }
 
