@@ -12,6 +12,7 @@ const meta: Meta<typeof InputText> = {
         value: { control: 'text', description: 'The value of the input' },
         size: { control: 'select', options: ['large', 'small'], description: 'The HEIGHT of the input' },
         disabled: { control: 'boolean', description: 'Disables the input' },
+        readOnly: { control: 'boolean', description: 'Read only input' },
     },
 };
 
@@ -22,6 +23,7 @@ export const Default: Story = {
     args: {
         value: 'Text',
         disabled: false,
+        readOnly: false,
     },
     render: (args) => ({
         components: { InputText },
@@ -35,6 +37,7 @@ export const Default: Story = {
               :value="args.value"
               aria-label="text input"
               :disabled="args.disabled"
+              :readonly="args.readOnly"
           />
           
         `,
@@ -46,7 +49,7 @@ export const PlaceholderShort: Story = {
         size: 'small',
         placeholder: 'Placeholder',
         disabled: false,
-
+        readOnly: false,
     },
     render: (args) => ({
         components: { InputText },
@@ -64,6 +67,7 @@ export const PlaceholderShort: Story = {
               :disabled="args.disabled"
               :placeholder="args.placeholder"
               class="max-w-128"
+              :readonly="args.readOnly"
           />
           </div>
         `,
@@ -75,7 +79,7 @@ export const PlaceholderMedium: Story = {
         size: 'small',
         placeholder: 'Placeholder',
         disabled: false,
-
+        readOnly: false,
     },
     render: (args) => ({
         components: { InputText },
@@ -94,6 +98,7 @@ export const PlaceholderMedium: Story = {
               :disabled="args.disabled"
               :placeholder="args.placeholder"
               class="max-w-424"
+              :readonly="args.readOnly"
           />
           </div>
         `,
@@ -105,6 +110,7 @@ export const PlaceholderLong: Story = {
         size: 'small',
         placeholder: 'Placeholder',
         disabled: false,
+        readOnly: false,
     },
     render: (args) => ({
         components: { InputText },
@@ -123,6 +129,7 @@ export const PlaceholderLong: Story = {
               :disabled="args.disabled"
               :placeholder="args.placeholder"
               class="max-w-576"
+              :readonly="args.readOnly"
           />
           </div>
         `,
@@ -134,6 +141,7 @@ export const LabelLeft: Story = {
         value: 'Text',
         disabled: false,
         size: 'large',
+        readOnly: false,
     },
     render: (args) => ({
         components: { InputText },
@@ -149,6 +157,7 @@ export const LabelLeft: Story = {
               :size="args.size"
               aria-label="text input"
               :disabled="args.disabled"
+              :readonly="args.readOnly"
           />
           </div>
         `,

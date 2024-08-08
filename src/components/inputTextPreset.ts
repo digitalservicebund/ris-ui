@@ -9,11 +9,21 @@ interface InputTextContext {
     disabled: boolean;
 }
 
+interface InputTextAttrs {
+    readonly: boolean;
+}
+
 export default {
-    root: ({ props, context }: { props: InputTextProps; context: InputTextContext }) => {
+    root: ({ props, context, attrs }: { props: InputTextProps; context: InputTextContext; attrs: InputTextAttrs }) => {
         let sizeStyling = 'h-64 px-24';
         let stateStyling = '';
         let errorStyling = '';
+        let readOnlyStyling = '';
+        const isReadOnly = attrs.readonly;
+
+        if (isReadOnly) {
+            readOnlyStyling = 'bg-blue-300 border-transparent cursor-not-allowed text-gray-600';
+        }
 
         if (props.size === 'small') {
             sizeStyling = 'h-48 px-16 py-11';
@@ -28,12 +38,11 @@ export default {
             errorStyling = 'text-gray-500';
         }
 
-        const focusStyling = `focus:border-blue-800 focus:ring-4 focus:ring-blue-800 focus:ring-offset-0 ${props.invalid ? 'focus:border-blue-800 focus:text-black' : ''}`;
+        const focusStyling = !isReadOnly ? `focus:border-blue-800 focus:ring-4 focus:ring-blue-800 focus:ring-offset-0 ${props.invalid ? 'focus:border-blue-800 focus:text-black' : ''}` : '';
 
-        const hoverStyling = !context.disabled ? 'hover:bg-blue-200' : '';
+        const hoverStyling = !context.disabled && !isReadOnly ? 'hover:bg-blue-200' : '';
 
-        const hoverFocusStyling = `focus:bg-white ${hoverStyling}`;
-
+        const hoverFocusStyling = !isReadOnly ? `focus:bg-white ${hoverStyling}` : '';
         return {
             class: [
                 'relative',
@@ -49,6 +58,7 @@ export default {
                 'w-full',
                 errorStyling,
                 hoverFocusStyling,
+                readOnlyStyling
             ],
         };
     },
