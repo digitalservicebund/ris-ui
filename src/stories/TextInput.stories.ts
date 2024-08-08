@@ -3,6 +3,8 @@ import { Meta, StoryObj } from '@storybook/vue3';
 import ErrorOutline from '~icons/ic/error-outline';
 import IconCheck from "~icons/ic/baseline-check";
 import Password from "primevue/password";
+import InputGroup from 'primevue/inputgroup';
+import InputGroupAddon from 'primevue/inputgroupaddon';
 
 const meta: Meta<typeof InputText> = {
     title: 'Text Input',
@@ -13,6 +15,7 @@ const meta: Meta<typeof InputText> = {
         size: { control: 'select', options: ['large', 'small'], description: 'The HEIGHT of the input' },
         disabled: { control: 'boolean', description: 'Disables the input' },
         readOnly: { control: 'boolean', description: 'Read only input' },
+        prefix: { control: 'text', description: 'Prefix text' },
     },
 };
 
@@ -303,6 +306,32 @@ export const InvalidPasswordWithHelper: Story = {
             Error message with helper text goes here
           </small>
           </div>
+        `,
+    }),
+};
+
+export const WithPrefix: Story = {
+    args: {
+        value: 'Text',
+        prefix: '@',
+        disabled: false,
+    },
+    render: (args) => ({
+        components: { InputText, InputGroup, InputGroupAddon, ErrorOutline },
+        setup() {
+            return { args };
+        },
+        template: `
+          <InputGroup>
+          <InputGroupAddon>
+            <span>{{args.prefix}} </span>
+          </InputGroupAddon>
+          <InputText
+              v-model="args.value"
+              :size="args.size"
+              placeholder="Username"
+          />
+          </InputGroup>
         `,
     }),
 };

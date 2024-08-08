@@ -1,3 +1,4 @@
+// InputTextPreset.ts
 interface InputTextProps {
     value?: string;
     size?: 'small' | 'large';
@@ -13,8 +14,12 @@ interface InputTextAttrs {
     readonly: boolean;
 }
 
+interface InputTextParent {
+    $name: string;
+}
+
 export default {
-    root: ({ props, context, attrs }: { props: InputTextProps; context: InputTextContext; attrs: InputTextAttrs }) => {
+    root: ({ props, context, attrs, parent }: { props: InputTextProps; context: InputTextContext; attrs: InputTextAttrs, parent:InputTextParent }) => {
         let sizeStyling = 'h-64 px-24';
         let stateStyling = '';
         let errorStyling = '';
@@ -38,11 +43,16 @@ export default {
             errorStyling = 'text-gray-500';
         }
 
-        const focusStyling = !isReadOnly ? `focus:border-blue-800 focus:ring-4 focus:ring-blue-800 focus:ring-offset-0 ${props.invalid ? 'focus:border-blue-800 focus:text-black' : ''}` : '';
+        const isPartOfInputGroup = parent.instance.$name === 'InputGroup';
 
-        const hoverStyling = !context.disabled && !isReadOnly ? 'hover:bg-blue-200' : '';
+        const focusStyling = !isReadOnly && !isPartOfInputGroup ? `focus:border-blue-800 focus:ring-4 focus:ring-blue-800 focus:ring-offset-0 ${props.invalid ? 'focus:border-blue-800 focus:text-black' : ''}` : '';
 
-        const hoverFocusStyling = !isReadOnly ? `focus:bg-white ${hoverStyling}` : '';
+        const hoverStyling = !context.disabled && !isReadOnly && !isPartOfInputGroup ? 'hover:bg-blue-200' : '';
+
+        const hoverFocusStyling = !isReadOnly && !isPartOfInputGroup ? `focus:bg-white ${hoverStyling}` : '';
+
+        const parentStyling = isPartOfInputGroup ? 'border-none' : '';
+
         return {
             class: [
                 'relative',
@@ -58,6 +68,7 @@ export default {
                 'w-full',
                 errorStyling,
                 hoverFocusStyling,
+                parentStyling,
                 readOnlyStyling
             ],
         };
