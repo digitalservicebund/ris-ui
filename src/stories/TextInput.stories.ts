@@ -1,6 +1,8 @@
 import InputText from "primevue/inputtext";
 import { Meta, StoryObj } from '@storybook/vue3';
 import ErrorOutline from '~icons/ic/error-outline';
+import IconCheck from "~icons/ic/baseline-check";
+import Password from "primevue/password";
 
 const meta: Meta<typeof InputText> = {
     title: 'Text Input',
@@ -10,11 +12,6 @@ const meta: Meta<typeof InputText> = {
         value: { control: 'text', description: 'The value of the input' },
         size: { control: 'select', options: ['large', 'small'], description: 'The HEIGHT of the input' },
         disabled: { control: 'boolean', description: 'Disables the input' },
-        readOnly: { control: 'boolean', description: 'Makes the input read-only' },
-        error: { control: 'boolean', description: 'Sets the error state' },
-        label: { control: 'select', options: ['none', 'top', 'left'], description: 'The position of the label' },
-        prefix: { control: 'text', description: 'The prefix text' },
-        suffix: { control: 'text', description: 'The suffix text' }
     },
 };
 
@@ -25,7 +22,6 @@ export const Default: Story = {
     args: {
         value: 'Text',
         disabled: false,
-        readOnly: false,
     },
     render: (args) => ({
         components: { InputText },
@@ -39,7 +35,6 @@ export const Default: Story = {
               :value="args.value"
               aria-label="text input"
               :disabled="args.disabled"
-              readonly
           />
           
         `,
@@ -51,7 +46,6 @@ export const PlaceholderShort: Story = {
         size: 'small',
         placeholder: 'Placeholder',
         disabled: false,
-        readOnly: false,
 
     },
     render: (args) => ({
@@ -68,10 +62,8 @@ export const PlaceholderShort: Story = {
               aria-label="text input"
               :size="args.size"
               :disabled="args.disabled"
-              :readonly="args.readOnly"
-                :placeholder="args.placeholder"
-                class="max-w-128"
-            
+              :placeholder="args.placeholder"
+              class="max-w-128"
           />
           </div>
         `,
@@ -83,7 +75,6 @@ export const PlaceholderMedium: Story = {
         size: 'small',
         placeholder: 'Placeholder',
         disabled: false,
-        readOnly: false,
 
     },
     render: (args) => ({
@@ -101,10 +92,8 @@ export const PlaceholderMedium: Story = {
               fluid
               :size="args.size"
               :disabled="args.disabled"
-              :readonly="args.readOnly"
-                :placeholder="args.placeholder"
+              :placeholder="args.placeholder"
               class="max-w-424"
-            
           />
           </div>
         `,
@@ -116,8 +105,6 @@ export const PlaceholderLong: Story = {
         size: 'small',
         placeholder: 'Placeholder',
         disabled: false,
-        readOnly: false,
-
     },
     render: (args) => ({
         components: { InputText },
@@ -134,10 +121,8 @@ export const PlaceholderLong: Story = {
               fluid
               :size="args.size"
               :disabled="args.disabled"
-              :readonly="args.readOnly"
               :placeholder="args.placeholder"
               class="max-w-576"
-            
           />
           </div>
         `,
@@ -148,7 +133,6 @@ export const LabelLeft: Story = {
     args: {
         value: 'Text',
         disabled: false,
-        readOnly: false,
         size: 'large',
     },
     render: (args) => ({
@@ -165,22 +149,20 @@ export const LabelLeft: Story = {
               :size="args.size"
               aria-label="text input"
               :disabled="args.disabled"
-              :readonly="args.readOnly"
           />
           </div>
         `,
     }),
 };
 
-export const SuccessFilled: Story = {
+export const SuccessWithHelper: Story = {
     args: {
         value: 'Text',
-        success: true,
         size: 'large',
         helperText: 'Enter your username to reset your password.'
     },
     render: (args) => ({
-        components: { InputText },
+        components: { InputText, IconCheck },
         setup() {
             return { args };
         },
@@ -191,10 +173,10 @@ export const SuccessFilled: Story = {
               id="label"
               :value="args.value"
               aria-describedby="helper-text"
-              :variant="args.success && 'filled'"
               :size="args.size"
           />
-          <small id="label-help" class="text-green-800 mt-4">
+          <small id="label-help" class="flex items-center text-green-800 mt-4">
+            <IconCheck/>
             Success message with helper text goes here
           </small>
           </div>
@@ -232,29 +214,85 @@ export const InvalidWithHelper: Story = {
     }),
 };
 
-export const WithPrefix: Story = {
+export const PasswordInput: Story = {
     args: {
-        value: 'Text',
-        size: 'large',
-        prefix: '@',
+        value: 'preloadedPassword',
+        disabled: false,
     },
     render: (args) => ({
-        components: { InputText },
+        components: { Password },
         setup() {
             return { args };
         },
         template: `
-          <div class="relative max-w-576">
-          <div class="absolute inset-y-0 left-0 flex items-center pl-3">
-            <span class="text-gray-600">{{ args.prefix }}</span>
-          </div>
-          <InputText
+          <Password
               id="label"
-              :value="args.value"
-              aria-label="text input"
+              v-model="args.value"
+              aria-label="password input"
+              :disabled="args.disabled"
+              :feedback="false"
               :size="args.size"
-              class="pl-10"
           />
+        `,
+    }),
+};
+
+export const SuccessPasswordWithHelper: Story = {
+    args: {
+        value: 'Text',
+        size: 'large',
+        helperText: 'Enter your username to reset your password.',
+    },
+    render: (args) => ({
+        components: { Password, IconCheck },
+        setup() {
+            return { args };
+        },
+        template: `
+          <div class="max-w-576">
+          <label for="label" class="mb-4" >Label</label>
+          <Password
+              id="label"
+              v-model="args.value"
+              aria-describedby="helper-text"
+              :size="args.size"
+              :feedback="false"
+          />
+          <small id="label-help" class="text-green-800 flex items-center mt-4">
+            <IconCheck/>
+            Success message with helper text goes here
+          </small>
+          </div>
+        `,
+    }),
+};
+
+export const InvalidPasswordWithHelper: Story = {
+    args: {
+        value: 'Text',
+        invalid: true,
+        size: 'large',
+    },
+    render: (args) => ({
+        components: { Password, ErrorOutline },
+        setup() {
+            return { args };
+        },
+        template: `
+          <div class="max-w-576">
+          <label for="label" class="mb-4" >Label</label>
+          <Password
+              id="label"
+              v-model="args.value"
+              aria-label="text input"
+              :invalid="args.invalid"
+              :feedback="false"
+              :size="args.size"
+          />
+          <small id="label-help" class="text-red-800 flex items-center gap-2 mt-4">
+            <ErrorOutline />
+            Error message with helper text goes here
+          </small>
           </div>
         `,
     }),
