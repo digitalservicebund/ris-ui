@@ -19,7 +19,7 @@ interface InputTextParent {
 }
 
 export default {
-    root: ({ props, context, attrs, parent }: { props: InputTextProps; context: InputTextContext; attrs: InputTextAttrs, parent:InputTextParent }) => {
+    root: ({ props, context, attrs, parent }: { props: InputTextProps; context: InputTextContext; attrs: InputTextAttrs, parent: InputTextParent }) => {
         let sizeStyling = 'h-64 px-24';
         let stateStyling = '';
         let errorStyling = '';
@@ -27,7 +27,7 @@ export default {
         const isReadOnly = attrs.readonly;
 
         if (isReadOnly) {
-            readOnlyStyling = 'bg-blue-300 border-transparent cursor-not-allowed text-gray-600';
+            readOnlyStyling = 'bg-blue-300 cursor-not-allowed text-gray-600';
         }
 
         if (props.size === 'small') {
@@ -39,28 +39,30 @@ export default {
         }
 
         if (props.invalid) {
-            stateStyling = 'border-red-800 bg-red-100';
+            stateStyling = 'outline-red-800 bg-red-100';
             errorStyling = 'text-gray-500';
         }
 
         const isPartOfInputGroup = parent.instance.$name === 'InputGroup';
 
-        const focusStyling = !isReadOnly && !isPartOfInputGroup ? `focus:border-blue-800 focus:ring-4 focus:ring-blue-800 focus:ring-offset-0 ${props.invalid ? 'focus:border-blue-800 focus:text-black' : ''}` : '';
+        const focusStyling = !isReadOnly && !isPartOfInputGroup
+            ? `focus:outline-none focus:outline-blue-800 focus:outline-4 ${props.invalid ? 'focus:text-black' : ''}`
+            : '';
 
         const hoverStyling = !context.disabled && !isReadOnly && !isPartOfInputGroup ? 'hover:bg-blue-200' : '';
 
         const hoverFocusStyling = !isReadOnly && !isPartOfInputGroup ? `focus:bg-white ${hoverStyling}` : '';
 
-        const parentStyling = isPartOfInputGroup ? 'border-none' : '';
+        const parentStyling = isPartOfInputGroup ? 'outline-none' : '';
 
         return {
             class: [
                 'relative',
                 'box-border',
-                'border',
-                'border-2',
-                'border-solid',
-                'border-blue-800',
+                'outline',
+                'outline-2',
+                'outline-solid',
+                'outline-blue-800',
                 'outline-none',
                 sizeStyling,
                 stateStyling,
