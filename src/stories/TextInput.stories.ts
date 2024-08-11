@@ -187,7 +187,7 @@ export const SuccessWithHelper: Story = {
               aria-describedby="helper-text"
               :size="args.size"
           />
-          <small id="label-help" class="flex items-center text-green-800 mt-4">
+          <small id="label-help" class="text-green-800">
             <IconCheck/>
             Success message with helper text goes here
           </small>
@@ -217,7 +217,7 @@ export const InvalidWithHelper: Story = {
               :invalid="args.invalid"
                 :size="args.size"
           />
-          <small id="label-help" class="text-red-800 flex items-center gap-2 mt-4">
+          <small id="label-help">
             <ErrorOutline />
             Error message with helper text goes here
           </small>

@@ -1,0 +1,7 @@
+input + small {
+    @apply flex items-center gap-2 mt-4;
+}
+
+input[aria-invalid="true"] + small {
+    @apply text-red-800;
+}

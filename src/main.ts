@@ -4,6 +4,8 @@ import customPresets from './components/customPresets'
 import App from './App.vue';
 
 import './style.css'
+import './global.css'
+
 
 const app = createApp(App);
 
