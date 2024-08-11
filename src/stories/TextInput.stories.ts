@@ -100,7 +100,7 @@ export const PlaceholderMedium: Story = {
               :size="args.size"
               :disabled="args.disabled"
               :placeholder="args.placeholder"
-              class="max-w-424"
+              class="w-input-width-md"
               :readonly="args.readOnly"
           />
           </div>
@@ -131,7 +131,7 @@ export const PlaceholderLong: Story = {
               :size="args.size"
               :disabled="args.disabled"
               :placeholder="args.placeholder"
-              class="max-w-576"
+              class="w-input-width-lg"
               :readonly="args.readOnly"
           />
           </div>
