@@ -44,25 +44,19 @@ export default {
         }
 
         const isPartOfInputGroup = parent.instance.$name === 'InputGroup';
-
         const focusStyling = !isReadOnly && !isPartOfInputGroup
             ? `focus:outline-none focus:outline-blue-800 focus:outline-4 ${props.invalid ? 'focus:text-black' : ''}`
             : '';
-
-        const hoverStyling = !context.disabled && !isReadOnly && !isPartOfInputGroup ? 'hover:bg-blue-200' : '';
-
+        const hoverStyling = !context.disabled && !isReadOnly ? 'hover:bg-blue-200' : '';
         const hoverFocusStyling = !isReadOnly && !isPartOfInputGroup ? `focus:bg-white ${hoverStyling}` : '';
-
         const parentStyling = isPartOfInputGroup ? 'outline-none' : '';
+        const outlineStyling = !isPartOfInputGroup ? 'outline outline-2 outline-solid outline-blue-800' : '';
 
         return {
             class: [
                 'relative',
                 'box-border',
-                'outline',
-                'outline-2',
-                'outline-solid',
-                'outline-blue-800',
+                outlineStyling,
                 'outline-none',
                 sizeStyling,
                 stateStyling,
@@ -70,6 +64,7 @@ export default {
                 'w-full',
                 errorStyling,
                 hoverFocusStyling,
+                hoverStyling,
                 parentStyling,
                 readOnlyStyling,
                 'mt-4'
