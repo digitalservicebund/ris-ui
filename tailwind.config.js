@@ -4,6 +4,12 @@ module.exports = {
   presets: [require("@digitalservice4germany/style-dictionary/tailwind")],
   plugins: [require("@digitalservice4germany/angie")],
   theme: {
-    extend: {},
+    extend: {
+      spacing: {
+        'input-width-md': "420px",
+        'input-width-lg': "576px"
+      },
+
+    },
   },
 };
