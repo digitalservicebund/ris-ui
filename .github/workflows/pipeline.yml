@@ -22,6 +22,7 @@ jobs:
   trivy-scan:
     runs-on: ubuntu-latest
     permissions:
+      contents: read
       security-events: write # upload-sarif
     steps:
       - name: Checkout code
