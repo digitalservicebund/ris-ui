@@ -36,6 +36,9 @@ jobs:
           output: "trivy-results.sarif"
           severity: "CRITICAL,HIGH"
 
+      - name: Verify SARIF file exists
+        run: ls -la trivy-results.sarif
+
       - name: Check trivy results
         run: |
           if grep -qE 'HIGH|CRITICAL' trivy-results.sarif; then
