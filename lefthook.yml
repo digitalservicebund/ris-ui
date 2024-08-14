@@ -1,0 +1,7 @@
+pre-commit:
+  parallel: true
+  commands:
+    secrets-audit:
+      run: |
+        talisman --githook pre-commit ||
+        (echo "Verify the content and fix it with: talisman --githook pre-commit --interactive"; exit 1)
