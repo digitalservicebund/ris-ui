@@ -1,0 +1,19 @@
+name: Pipeline
+
+on:
+  # Run on any branch receiving a push
+  push:
+  # Allow manual trigger of the workflow
+  workflow_dispatch:
+
+jobs:
+  # Talisman Secrets Check
+  talisman-check:
+    runs-on: ubuntu-latest
+    if: ${{ github.ref == 'refs/heads/main' }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Detect secrets in incoming commits with Talisman
+        uses: digitalservicebund/talisman-secrets-scan-action@9a4cb85589e29a62b4546eb566119753a5680aeb
