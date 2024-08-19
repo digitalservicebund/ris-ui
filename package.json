@@ -8,7 +8,9 @@
     "build": "vue-tsc -b && vite build",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build:storybook": "storybook build",
+    "prettier:check": "prettier --check .",
+    "prettier:fix": "prettier --write --ignore-unknown ."
   },
   "dependencies": {
     "primevue": "^4.0.0",
@@ -16,10 +18,9 @@
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.6.1",
-    "unplugin-icons": "^0.19.1",
-    "@iconify-json/ic": "^1.1.17",
     "@digitalservice4germany/angie": "~1.1.1",
     "@digitalservice4germany/style-dictionary": "~2.0.0",
+    "@iconify-json/ic": "^1.1.17",
     "@storybook/addon-essentials": "^8.2.4",
     "@storybook/addon-interactions": "^8.2.4",
     "@storybook/addon-links": "^8.2.4",
@@ -33,9 +34,12 @@
     "@storybook/vue3-vite": "^8.2.4",
     "@vitejs/plugin-vue": "^5.0.5",
     "autoprefixer": "^10.4.19",
+    "prettier": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.6",
     "storybook": "^8.2.4",
     "tailwindcss": "~3.4.3",
     "typescript": "^5.2.2",
+    "unplugin-icons": "^0.19.1",
     "vite": "^5.3.1",
     "vue-tsc": "^2.0.21"
   }
