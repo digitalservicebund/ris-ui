@@ -6,10 +6,9 @@ module.exports = {
   theme: {
     extend: {
       spacing: {
-        'input-width-md': "420px",
-        'input-width-lg': "576px"
+        "input-width-md": "420px",
+        "input-width-lg": "576px",
       },
-
     },
   },
 };

@@ -1,11 +1,11 @@
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import icons from 'unplugin-icons/vite';
+import { defineConfig } from "vite";
+import vue from "@vitejs/plugin-vue";
+import icons from "unplugin-icons/vite";
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-      vue(),
+    vue(),
     icons({
       autoInstall: true,
       scale: 1.3333, // ~24px at the current default font size of 18px
@@ -13,20 +13,20 @@ export default defineConfig({
     }),
   ],
   build: {
-    outDir: 'dist',
+    outDir: "dist",
     lib: {
-      entry: 'src/index.ts',
-      name: 'ris-ui',
-      fileName: (format) => `ris-ui.${format}.js`
+      entry: "src/index.ts",
+      name: "ris-ui",
+      fileName: (format) => `ris-ui.${format}.js`,
     },
     rollupOptions: {
-      external: ['vue', 'primevue'],
+      external: ["vue", "primevue"],
       output: {
         globals: {
-          vue: 'Vue',
-          primevue: 'PrimeVue'
-        }
-      }
-    }
-  }
-})
+          vue: "Vue",
+          primevue: "PrimeVue",
+        },
+      },
+    },
+  },
+});

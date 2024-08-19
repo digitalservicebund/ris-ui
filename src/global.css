@@ -5,15 +5,15 @@
 @tailwind utilities;
 
 @layer base {
-    body {
-        @apply bg-gray-100 font-font-family-sans font-normal;
-    }
+  body {
+    @apply bg-gray-100 font-font-family-sans font-normal;
+  }
 }
 
 input + small {
-    @apply flex items-center gap-2 mt-8;
+  @apply mt-8 flex items-center gap-2;
 }
 
 input[aria-invalid="true"] + small {
-    @apply text-red-800;
+  @apply text-red-800;
 }

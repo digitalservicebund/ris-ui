@@ -1,40 +1,43 @@
+import { Meta, StoryObj } from "@storybook/vue3";
+import InputGroup from "primevue/inputgroup";
+import InputGroupAddon from "primevue/inputgroupaddon";
 import InputText from "primevue/inputtext";
-import { Meta, StoryObj } from '@storybook/vue3';
-import ErrorOutline from '~icons/ic/error-outline';
-import IconCheck from "~icons/ic/baseline-check";
 import Password from "primevue/password";
-import InputGroup from 'primevue/inputgroup';
-import InputGroupAddon from 'primevue/inputgroupaddon';
+import IconCheck from "~icons/ic/baseline-check";
+import ErrorOutline from "~icons/ic/error-outline";
 
 const meta: Meta<typeof InputText> = {
-    title: 'Text Input',
-    component: InputText,
-    tags: ['autodocs'],
-    argTypes: {
-        value: { control: 'text', description: 'The value of the input' },
-        size: { control: 'select', options: ['large', 'small'], description: 'The HEIGHT of the input' },
-        disabled: { control: 'boolean', description: 'Disables the input' },
-        readOnly: { control: 'boolean', description: 'Read only input' },
-        prefix: { control: 'text', description: 'Prefix text' },
+  title: "Text Input",
+  component: InputText,
+  tags: ["autodocs"],
+  argTypes: {
+    value: { control: "text", description: "The value of the input" },
+    size: {
+      control: "select",
+      options: ["large", "small"],
+      description: "The HEIGHT of the input",
     },
+    disabled: { control: "boolean", description: "Disables the input" },
+    readOnly: { control: "boolean", description: "Read only input" },
+    prefix: { control: "text", description: "Prefix text" },
+  },
 };
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-    args: {
-        value: 'Text',
-        disabled: false,
-        readOnly: false,
+  args: {
+    value: "Text",
+    disabled: false,
+    readOnly: false,
+  },
+  render: (args) => ({
+    components: { InputText },
+    setup() {
+      return { args };
     },
-    render: (args) => ({
-        components: { InputText },
-        setup() {
-            return { args };
-        },
-        template: `
-          
+    template: `
           <InputText
               id="label"
               :value="args.value"
@@ -42,29 +45,29 @@ export const Default: Story = {
               :disabled="args.disabled"
               :readonly="args.readOnly"
           />
-          
+
         `,
-    }),
+  }),
 };
 
 export const PlaceholderShort: Story = {
-    args: {
-        size: 'small',
-        placeholder: 'Placeholder',
-        disabled: false,
-        readOnly: false,
+  args: {
+    size: "small",
+    placeholder: "Placeholder",
+    disabled: false,
+    readOnly: false,
+  },
+  render: (args) => ({
+    components: { InputText },
+    setup() {
+      return { args };
     },
-    render: (args) => ({
-        components: { InputText },
-        setup() {
-            return { args };
-        },
-        template: `
+    template: `
           <div class="flex flex-col gap-2 mt-10">
           <label for="label">Label</label>
-          <InputText 
-              id="label" 
-              :value=args.value 
+          <InputText
+              id="label"
+              :value=args.value
               aria-label="text input"
               :size="args.size"
               :disabled="args.disabled"
@@ -74,27 +77,27 @@ export const PlaceholderShort: Story = {
           />
           </div>
         `,
-    }),
+  }),
 };
 
 export const PlaceholderMedium: Story = {
-    args: {
-        size: 'small',
-        placeholder: 'Placeholder',
-        disabled: false,
-        readOnly: false,
+  args: {
+    size: "small",
+    placeholder: "Placeholder",
+    disabled: false,
+    readOnly: false,
+  },
+  render: (args) => ({
+    components: { InputText },
+    setup() {
+      return { args };
     },
-    render: (args) => ({
-        components: { InputText },
-        setup() {
-            return { args };
-        },
-        template: `
+    template: `
           <div class="flex flex-col gap-2 mt-10">
           <label for="label">Label</label>
-          <InputText 
-              id="label" 
-              :value=args.value 
+          <InputText
+              id="label"
+              :value=args.value
               aria-label="text input"
               fluid
               :size="args.size"
@@ -105,27 +108,27 @@ export const PlaceholderMedium: Story = {
           />
           </div>
         `,
-    }),
+  }),
 };
 
 export const PlaceholderLong: Story = {
-    args: {
-        size: 'small',
-        placeholder: 'Placeholder',
-        disabled: false,
-        readOnly: false,
+  args: {
+    size: "small",
+    placeholder: "Placeholder",
+    disabled: false,
+    readOnly: false,
+  },
+  render: (args) => ({
+    components: { InputText },
+    setup() {
+      return { args };
     },
-    render: (args) => ({
-        components: { InputText },
-        setup() {
-            return { args };
-        },
-        template: `
+    template: `
           <div class="flex flex-col gap-2 mt-10">
           <label for="label">Label</label>
-          <InputText 
-              id="label" 
-              :value=args.value 
+          <InputText
+              id="label"
+              :value=args.value
               aria-label="text input"
               fluid
               :size="args.size"
@@ -136,26 +139,26 @@ export const PlaceholderLong: Story = {
           />
           </div>
         `,
-    }),
+  }),
 };
 
 export const LabelLeft: Story = {
-    args: {
-        value: 'Text',
-        disabled: false,
-        size: 'large',
-        readOnly: false,
+  args: {
+    value: "Text",
+    disabled: false,
+    size: "large",
+    readOnly: false,
+  },
+  render: (args) => ({
+    components: { InputText },
+    setup() {
+      return { args };
     },
-    render: (args) => ({
-        components: { InputText },
-        setup() {
-            return { args };
-        },
-        template: `
+    template: `
           <div class="flex gap-10 mt-10 items-center">
           <label for="label">Label</label>
-          <InputText 
-              id="label" 
+          <InputText
+              id="label"
               :value=args.value
               :size="args.size"
               aria-label="text input"
@@ -164,21 +167,21 @@ export const LabelLeft: Story = {
           />
           </div>
         `,
-    }),
+  }),
 };
 
 export const SuccessWithHelper: Story = {
-    args: {
-        value: 'Text',
-        size: 'large',
-        helperText: 'Enter your username to reset your password.'
+  args: {
+    value: "Text",
+    size: "large",
+    helperText: "Enter your username to reset your password.",
+  },
+  render: (args) => ({
+    components: { InputText, IconCheck },
+    setup() {
+      return { args };
     },
-    render: (args) => ({
-        components: { InputText, IconCheck },
-        setup() {
-            return { args };
-        },
-        template: `
+    template: `
           <div class="max-w-576">
           <label for="label" class="mb-4" >Label</label>
           <InputText
@@ -193,21 +196,21 @@ export const SuccessWithHelper: Story = {
           </small>
           </div>
         `,
-    }),
+  }),
 };
 
 export const InvalidWithHelper: Story = {
-    args: {
-        value: 'Text',
-        invalid: true,
-        size: 'large',
+  args: {
+    value: "Text",
+    invalid: true,
+    size: "large",
+  },
+  render: (args) => ({
+    components: { InputText, ErrorOutline },
+    setup() {
+      return { args };
     },
-    render: (args) => ({
-        components: { InputText, ErrorOutline },
-        setup() {
-            return { args };
-        },
-        template: `
+    template: `
           <div class="max-w-576">
           <label for="label" class="mb-4" >Label</label>
           <InputText
@@ -223,20 +226,20 @@ export const InvalidWithHelper: Story = {
           </small>
           </div>
         `,
-    }),
+  }),
 };
 
 export const PasswordInput: Story = {
-    args: {
-        value: 'preloadedPassword',
-        disabled: false,
+  args: {
+    value: "preloadedPassword",
+    disabled: false,
+  },
+  render: (args) => ({
+    components: { Password },
+    setup() {
+      return { args };
     },
-    render: (args) => ({
-        components: { Password },
-        setup() {
-            return { args };
-        },
-        template: `
+    template: `
           <Password
               id="label"
               v-model="args.value"
@@ -246,21 +249,21 @@ export const PasswordInput: Story = {
               :size="args.size"
           />
         `,
-    }),
+  }),
 };
 
 export const SuccessPasswordWithHelper: Story = {
-    args: {
-        value: 'Text',
-        size: 'large',
-        helperText: 'Enter your username to reset your password.',
+  args: {
+    value: "Text",
+    size: "large",
+    helperText: "Enter your username to reset your password.",
+  },
+  render: (args) => ({
+    components: { Password, IconCheck },
+    setup() {
+      return { args };
     },
-    render: (args) => ({
-        components: { Password, IconCheck },
-        setup() {
-            return { args };
-        },
-        template: `
+    template: `
           <div class="max-w-576">
           <label for="label" class="mb-4" >Label</label>
           <Password
@@ -276,21 +279,21 @@ export const SuccessPasswordWithHelper: Story = {
           </small>
           </div>
         `,
-    }),
+  }),
 };
 
 export const InvalidPasswordWithHelper: Story = {
-    args: {
-        value: 'Text',
-        invalid: true,
-        size: 'large',
+  args: {
+    value: "Text",
+    invalid: true,
+    size: "large",
+  },
+  render: (args) => ({
+    components: { Password, ErrorOutline },
+    setup() {
+      return { args };
     },
-    render: (args) => ({
-        components: { Password, ErrorOutline },
-        setup() {
-            return { args };
-        },
-        template: `
+    template: `
           <div class="max-w-576">
           <label for="label" class="mb-4" >Label</label>
           <Password
@@ -307,21 +310,21 @@ export const InvalidPasswordWithHelper: Story = {
           </small>
           </div>
         `,
-    }),
+  }),
 };
 
 export const WithPrefix: Story = {
-    args: {
-        value: 'Text',
-        prefix: '@',
-        disabled: false,
+  args: {
+    value: "Text",
+    prefix: "@",
+    disabled: false,
+  },
+  render: (args) => ({
+    components: { InputText, InputGroup, InputGroupAddon, ErrorOutline },
+    setup() {
+      return { args };
     },
-    render: (args) => ({
-        components: { InputText, InputGroup, InputGroupAddon, ErrorOutline },
-        setup() {
-            return { args };
-        },
-        template: `
+    template: `
           <InputGroup>
           <InputGroupAddon>
             <span>{{args.prefix}} </span>
@@ -333,5 +336,5 @@ export const WithPrefix: Story = {
           />
           </InputGroup>
         `,
-    }),
+  }),
 };
