@@ -1,11 +1,31 @@
 {
   "name": "ris-ui",
-  "private": true,
   "version": "0.0.0",
+  "private": false,
+  "description": "Component library for NeuRIS",
+  "author": "TBD.",
+  "license": "GPL-3.0-only",
   "type": "module",
+  "repository": "https://github.com/digitalservicebund/ris-ui",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/primevue.js",
+      "types": "./dist/primevue/index.d.ts"
+    },
+    "./style.css": {
+      "import": "./dist/style.css"
+    },
+    "./tailwind": {
+      "import": "./dist/tailwind.js",
+      "types": "./dist/tailwind/index.d.ts"
+    }
+  },
   "scripts": {
     "storybook": "storybook dev -p 6006",
-    "build": "vue-tsc -b && vite build",
+    "build": "vite build; vue-tsc -p tsconfig.lib.json",
     "build:storybook": "storybook build",
     "prettier:check": "prettier --check .",
     "prettier:fix": "prettier --write --ignore-unknown ."

@@ -22,8 +22,10 @@ export default defineConfig({
 
   build: {
     lib: {
-      entry: "src/primevue/index.ts",
-      name: "ris-ui",
+      entry: {
+        primevue: "src/primevue/index.ts",
+        tailwind: "src/tailwind/index.ts",
+      },
       formats: ["es"],
     },
     rollupOptions: {

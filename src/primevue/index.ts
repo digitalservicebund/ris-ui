@@ -6,7 +6,7 @@ import inputGroupAddon from "./inputGroup/inputGroupAddon";
 import inputText from "./inputText/inputText";
 import password from "./password/password";
 
-export default {
+export const RisUi = {
   button,
   inputText,
   inputGroup,
