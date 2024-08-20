@@ -20,10 +20,10 @@ const inputText: InputTextPassThroughOptions = {
     const fluid = tw`w-full`;
 
     // Sizes
-    const small = tw`h-48 px-16 py-4`;
-    const large = tw`h-64 px-24 py-4`;
-    const smallInGroup = tw`h-[44px] p-0`; // 2px group border
-    const largeInGroup = tw`h-[60px] p-0`;
+    const small = tw`ris-body2-regular h-48 px-16 py-4`;
+    const large = tw`ris-body1-regular h-64 px-24 py-4`;
+    const smallInGroup = tw`ris-body2-regular h-[44px] p-0`; // 2px group border
+    const largeInGroup = tw`ris-body1-regular h-[60px] p-0`;
 
     return {
       class: {

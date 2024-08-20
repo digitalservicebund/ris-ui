@@ -1,5 +1,5 @@
 input + small {
-  @apply mt-2 flex items-center gap-4 text-gray-900;
+  @apply ris-label3-regular mt-2 flex items-center gap-4 text-gray-900;
 }
 
 input[aria-invalid="true"] + small {

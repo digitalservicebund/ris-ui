@@ -22,7 +22,7 @@ export default defineConfig({
 
   build: {
     lib: {
-      entry: "src/preset/index.ts",
+      entry: "src/primevue/index.ts",
       name: "ris-ui",
       formats: ["es"],
     },

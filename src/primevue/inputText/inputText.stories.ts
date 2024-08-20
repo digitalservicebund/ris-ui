@@ -46,7 +46,7 @@ export const WithLabelAndHint: StoryObj<typeof meta> = {
       return { args };
     },
     template: html`<div class="flex flex-col gap-2">
-      <label for="with-top-label">Label</label>
+      <label class="ris-label2-regular" for="with-top-label">Label</label>
       <InputText
         id="with-top-label"
         aria-describedby="with-top-label-hint"
@@ -64,7 +64,7 @@ export const WithHorizontalLabel: StoryObj<typeof meta> = {
       return { args };
     },
     template: html`<div class="flex items-center gap-16">
-      <label for="with-left-label">Label</label>
+      <label class="ris-label2-regular" for="with-left-label">Label</label>
       <InputText
         id="with-left-label"
         aria-describedby="with-left-label-hint"
@@ -113,7 +113,7 @@ export const Invalid: StoryObj<typeof meta> = {
       return { args };
     },
     template: html`<div class="flex flex-col gap-2">
-      <label for="invalid">Label</label>
+      <label class="ris-label2-regular" for="invalid">Label</label>
       <InputText id="invalid" aria-describedby="invalid-hint" v-bind="args" />
       <small id="invalid-hint">
         <ErrorOutline /> Error message with helper text goes here

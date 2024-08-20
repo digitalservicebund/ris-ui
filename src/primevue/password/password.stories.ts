@@ -28,8 +28,13 @@ export const Default: StoryObj<typeof meta> = {
       return { args };
     },
     template: html`<div class="flex w-320 flex-col gap-2">
-      <label>Passwort</label>
-      <Password :feedback="false" v-bind="args" v-model="args.value" />
+      <label for="password" class="ris-label2-regular">Passwort</label>
+      <Password
+        id="password"
+        :feedback="false"
+        v-bind="args"
+        v-model="args.value"
+      />
     </div>`,
   }),
 };
