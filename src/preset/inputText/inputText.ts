@@ -16,6 +16,9 @@ const inputText: InputTextPassThroughOptions = {
     const isInputGroup = parent.instance.$name === "InputGroup";
     const inputGroup = tw`bg-transparent placeholder:text-gray-900 focus:outline-none`;
 
+    // Integration for primevue/fluid
+    const fluid = tw`w-full`;
+
     // Sizes
     const small = tw`h-48 px-16 py-4`;
     const large = tw`h-64 px-24 py-4`;
@@ -26,6 +29,7 @@ const inputText: InputTextPassThroughOptions = {
       class: {
         [base]: !isInputGroup,
         [inputGroup]: isInputGroup,
+        [fluid]: !!props.fluid,
         [password]: true,
         [small]: (!props.size || props.size === "small") && !isInputGroup,
         [smallInGroup]: (!props.size || props.size === "small") && isInputGroup,

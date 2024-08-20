@@ -1,7 +1,6 @@
 import { html } from "@/lib/tags";
 import { Meta, StoryObj } from "@storybook/vue3";
-import InputGroup from "primevue/inputgroup";
-import InputGroupAddon from "primevue/inputgroupaddon";
+import Fluid from "primevue/fluid";
 import InputText from "primevue/inputtext";
 import ErrorOutline from "~icons/ic/error-outline";
 
@@ -119,5 +118,15 @@ export const Invalid: StoryObj<typeof meta> = {
         <ErrorOutline /> Error message with helper text goes here
       </small>
     </div>`,
+  }),
+};
+
+export const FluidProp: StoryObj<typeof meta> = {
+  render: (args) => ({
+    components: { InputText, Fluid },
+    setup() {
+      return { args };
+    },
+    template: html`<InputText v-bind="args" fluid />`,
   }),
 };
