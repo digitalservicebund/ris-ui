@@ -4,11 +4,16 @@
 
 ## Installation
 
-RUI UI is a theme for [Vue 3](https://vuejs.org) components from [PrimeVue 4](https://primevue.org). Both are required for RIS UI to work (you'll see a warning about missing peer dependencies if you're trying to use RIS UI without them). To get started, install:
+RUI UI contains two things:
+
+- a theme for [Vue 3](https://vuejs.org) components from [PrimeVue 4](https://primevue.org);
+- a preset and plugin for [Tailwind](https://tailwindcss.com) that sets some global styling and exposes the design tokens used by the theme, so you can build custom UI that looks consistent with the components.
+
+Vue and PrimeVue are required for RIS UI to work (you'll see a warning about missing peer dependencies if you're trying to use RIS UI without them). Tailwind is optional. To get started, install:
 
 ```sh
-# Vue and PrimeVue if you haven't installed them already
-npm install vue primevue
+# Vue and PrimeVue if you haven't installed them already. Tailwind is optional.
+npm install vue primevue tailwindcss
 
 # RIS UI
 npm install @digitalservice4germany/ris-ui
@@ -29,6 +34,20 @@ Import and apply the RIS UI theme and styling where you set up your application 
 +   unstyled: true,
 +   pt: RisUi,
   })
+```
+
+If you want, also install the Tailwind preset (for colors, spacings, etc.) and plugin (for typography classes, etc.):
+
+```diff
+  // tailwind.config.js
++ import { RisUiPreset, RisUiPlugin } from "@digitalservice4germany/ris-ui/tailwind";
+
+  export default {
++   presets: [RisUiPreset],
++   plugins: [RisUiPlugin],
+
+    // your other configuration
+  };
 ```
 
 ## Development
@@ -70,13 +89,14 @@ You can find more in [package.json](./package.json), but the above are the ones 
 
 In terms of files and folders, you'll find:
 
-| Folder        | Contents                       |
-| ------------- | ------------------------------ |
-| (root)        | General docs and configuration |
-| `.github/`    | GitHub Actions configuration   |
-| `.storybook/` | Storybook setup                |
-| `src/preset`  | The RIS UI preset              |
-| `src/lib`     | Internal tools and helpers     |
+| Folder         | Contents                                  |
+| -------------- | ----------------------------------------- |
+| (root)         | General docs and configuration            |
+| `.github/`     | GitHub Actions configuration              |
+| `.storybook/`  | Storybook setup                           |
+| `src/primevue` | The RIS UI preset for PrimeVue            |
+| `src/tailwind` | The RIS UI preset and plugin for Tailwind |
+| `src/lib`      | Internal tools and helpers                |
 
 ### Tailwind IntelliSense
 
