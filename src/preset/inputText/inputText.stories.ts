@@ -11,6 +11,7 @@ const meta: Meta<typeof InputText> = {
 
   args: {
     disabled: false,
+    fluid: false,
     placeholder: "Placeholder",
     readOnly: false,
     size: "small",
@@ -122,11 +123,15 @@ export const Invalid: StoryObj<typeof meta> = {
 };
 
 export const FluidProp: StoryObj<typeof meta> = {
+  args: {
+    fluid: true,
+  },
+
   render: (args) => ({
     components: { InputText, Fluid },
     setup() {
       return { args };
     },
-    template: html`<InputText v-bind="args" fluid />`,
+    template: html`<InputText v-bind="args" />`,
   }),
 };
