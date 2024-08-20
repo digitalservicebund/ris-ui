@@ -1,6 +1,6 @@
 # RIS UI
 
-**Component library for NeuRIS** | [Demo](https://digitalservicebund.github.io/ris-ui) | [PrimeVue Docs](https://primevue.org)
+**Component library for NeuRIS** | 👀 [Demo](https://digitalservicebund.github.io/ris-ui) | 🤖 [PrimeVue Docs](https://primevue.org)
 
 ## Installation
 
@@ -55,6 +55,50 @@ npm run storybook
 
 Check out [package.json](./package.json) for additional scripts.
 
+### Repository contents
+
+RIS UI uses the following tools:
+
+- [Storybook](https://storybook.js.org/), a playground for previewing components and styling
+- [Tailwind](https://tailwindcss.com/) for styling
+- [Vite](https://vitejs.dev/) as our dev server and bundler
+- [Unplugin Icons](https://github.com/unplugin/unplugin-icons) for providing SVG icons as components
+- [TypeScript](https://www.typescriptlang.org/)
+- [ESLint](https://eslint.org/) and [Prettier](https://prettier.io/) for code consistency
+
+You can find more in [package.json](./package.json), but the above are the ones you'll work with the most.
+
+In terms of files and folders, you'll find:
+
+| Folder        | Contents                       |
+| ------------- | ------------------------------ |
+| (root)        | General docs and configuration |
+| `.github/`    | GitHub Actions configuration   |
+| `.storybook/` | Storybook setup                |
+| `src/preset`  | The RIS UI preset              |
+| `src/lib`     | Internal tools and helpers     |
+
+### Tailwind IntelliSense
+
+If you're using VS Code with the [official Tailwind extension](https://tailwindcss.com/docs/editor-setup), you can get autocompletions and more by adding this to your VS Code settings:
+
+```jsonc
+{
+  // other settings
+  "tailwindCSS.experimental.classRegex": ["tw`([^`]*)`"],
+}
+```
+
+This will detect Tailwind CSS classes in template strings tagged with `tw` such as:
+
+```ts
+import { tw } from "@/lib/tags";
+
+const classes = tw`bg-blue-200 px-16`;
+```
+
+See [tags.ts](./src/lib/tags.ts) for more information.
+
 ### Committing
 
 Before making your first commit, you'll need some additional prerequisites installed. These help us with code consistency and quality:
@@ -70,19 +114,6 @@ lefthook install
 ```
 
 When you make a commit now, Lefthook will ensure your changes and commit message adhere to our coding guidelines.
-
-### Repository contents
-
-RIS UI uses the following tools:
-
-- [Storybook](https://storybook.js.org/), a playground for previewing components and styling
-- [Tailwind](https://tailwindcss.com/) for styling
-- [Vite](https://vitejs.dev/) as our dev server and bundler
-- [Unplugin Icons](https://github.com/unplugin/unplugin-icons) for providing SVG icons as components
-- [TypeScript](https://www.typescriptlang.org/)
-- [ESLint](https://eslint.org/) and [Prettier](https://prettier.io/) for code consistency
-
-You can find more in [package.json](./package.json), but the above are the ones you'll work with the most.
 
 ### Making a release
 

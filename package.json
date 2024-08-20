@@ -34,6 +34,7 @@
     "@storybook/vue3-vite": "^8.2.4",
     "@vitejs/plugin-vue": "^5.0.5",
     "autoprefixer": "^10.4.19",
+    "noop-tag": "^2.0.0",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.6",
     "storybook": "^8.2.4",
