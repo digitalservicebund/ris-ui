@@ -1,6 +1,7 @@
-import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
+import { fileURLToPath, URL } from "node:url";
 import icons from "unplugin-icons/vite";
+import { defineConfig } from "vite";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -12,21 +13,21 @@ export default defineConfig({
       compiler: "vue3",
     }),
   ],
+
+  resolve: {
+    alias: {
+      "@": fileURLToPath(new URL("./src", import.meta.url)),
+    },
+  },
+
   build: {
-    outDir: "dist",
     lib: {
-      entry: "src/index.ts",
+      entry: "src/preset/index.ts",
       name: "ris-ui",
-      fileName: (format) => `ris-ui.${format}.js`,
+      formats: ["es"],
     },
     rollupOptions: {
       external: ["vue", "primevue"],
-      output: {
-        globals: {
-          vue: "Vue",
-          primevue: "PrimeVue",
-        },
-      },
     },
   },
 });

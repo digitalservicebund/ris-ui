@@ -1,33 +1,7 @@
-interface ButtonProps {
-  label?: string;
-  size?: "small" | "large";
-  severity?: "primary" | "secondary" | "ghost";
-  iconPos?: "left" | "right";
-  disabled?: boolean;
-  iconSize?: number;
-}
+import { ButtonPassThroughOptions } from "primevue/button";
 
-interface ButtonContext {
-  slots: {
-    icon?: boolean;
-  };
-  disabled: boolean;
-}
-
-interface ButtonInstance {
-  hasIcon: boolean;
-}
-
-export default {
-  root: ({
-    props,
-    context,
-    instance,
-  }: {
-    props: ButtonProps;
-    context: ButtonContext;
-    instance: ButtonInstance;
-  }) => {
+const button: ButtonPassThroughOptions = {
+  root: ({ props, context, instance }) => {
     // Define variables for different parts of the styling logic
     let iconStyling;
     let sizeStyling;
@@ -139,10 +113,12 @@ export default {
       ],
     };
   },
-  label: ({ props }: { props: ButtonProps }) => ({
+  label: ({ props }) => ({
     class: [
       { underline: props.severity === "ghost" },
       { "sr-only": !props.label },
     ],
   }),
 };
+
+export default button;

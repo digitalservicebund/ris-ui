@@ -3,7 +3,6 @@ import Button from "primevue/button";
 import IconCheck from "~icons/ic/baseline-check";
 
 const meta: Meta<typeof Button> = {
-  title: "Buttons",
   component: Button,
   tags: ["autodocs"],
   argTypes: {

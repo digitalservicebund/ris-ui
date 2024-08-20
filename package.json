@@ -4,10 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc -b && vite build",
-    "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
+    "build": "vue-tsc -b && vite build",
     "build:storybook": "storybook build",
     "prettier:check": "prettier --check .",
     "prettier:fix": "prettier --write --ignore-unknown ."
