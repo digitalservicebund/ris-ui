@@ -4,3 +4,4 @@ storybook-static
 *storybook.log
 .vscode
 frontend-license-report.csv
+talisman_report

@@ -4,3 +4,6 @@ threshold: medium
 version: "1.0"
 scopeconfig:
   - scope: node
+fileignoreconfig:
+  - filename: lefthook.yml
+    checksum: ceb00460bb36a9b13ccbbc927598aa8757913d04d518f5092a9aa6926261cdc3
