@@ -139,7 +139,7 @@ When you make a commit now, Lefthook will ensure your changes and commit message
 
 - Code is formatted with Prettier
 - ESLint passes without warnings
-- The commit message follows the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification
+- The commit message follows the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification. If you're making changes to a component, please use the component name as the scope (multiple scopes are allowed).
 
 ### Making a release
 
