@@ -6,6 +6,20 @@ pre-commit:
         talisman --githook pre-commit ||
         (echo "Verify the content and fix it with: talisman --githook pre-commit --interactive"; exit 1)
 
+    check-format-frontend:
+      root: frontend/
+      run: npm run --silent prettier:fix {staged_files} && git add {staged_files}
+
+    lint-frontend:
+      root: frontend/
+      glob: "*.{ts,js,vue}"
+      run: npm run --silent eslint:fix {staged_files} && git add {staged_files}
+
+    typecheck-frontend:
+      root: frontend/
+      glob: "*.{ts,vue}"
+      run: npm run --silent typecheck && git add {staged_files}
+
 post-commit:
   commands:
     secrets-checksum-test:
@@ -50,3 +64,20 @@ pre-push:
           ${remote_reference:-0000000000000000000000000000000000000000} \
           ${remote_object_name:-0000000000000000000000000000000000000000} \
           | talisman --githook pre-push
+
+    check-pipeline-status:
+      only:
+        - ref: main
+      run: |
+        which gh 2>&1 >/dev/null || exit 0
+
+        conclusion="$(
+          gh run list --branch main --workflow pipeline.yml --json conclusion,status \
+          --jq '[.[] | select(.status=="completed")][0].conclusion' \
+        )"
+
+        if [[ "$conclusion" != "success" ]]; then
+          echo "The last completed pipeline run has failed!"
+          echo "If you intend to fix the pipeline use '--no-verify', BUT ONLY IF all other hooks are okay."
+          exit 1
+        fi
