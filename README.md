@@ -123,6 +123,8 @@ See [tags.ts](./src/lib/tags.ts) for more information.
 
 Before making your first commit, you'll need some additional prerequisites installed. These help us with code consistency and quality:
 
+- [GitHub CLI](https://cli.github.com/): Used for checking the pipeline status before pushing
+- [jq](https://jqlang.github.io/jq/): Used by our license check, which ensures all our dependencies use [allowed licenses](./allowed-licenses.json) only
 - [Lefthook](https://github.com/evilmartians/lefthook): Runs Git commit hooks
 - [Talisman](https://github.com/thoughtworks/talisman): Validates you're not accidentially committing secrets
 
