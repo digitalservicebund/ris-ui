@@ -34,6 +34,10 @@ post-commit:
 pre-push:
   parallel: true
   commands:
+    licenses-audit-frontend:
+      root: frontend/
+      run: npm run audit:licenses > /dev/null;
+
     secrets-audit:
       run: |
         local_reference=$(git rev-parse --symbolic-full-name HEAD)
