@@ -33,7 +33,7 @@
     "prettier:fix": "prettier --write --ignore-unknown .",
     "eslint:check": "eslint",
     "eslint:fix": "npm run eslint:check -- --fix",
-    "audit:licenses": "license-checker --production --excludePrivatePackages --onlyAllow \"$(. ./parse-allowed-licenses.sh)\" --csv --out ./frontend-license-report.csv",
+    "audit:licenses": "license-checker --production --excludePrivatePackages --excludePackages @digitalservicebund/ris-ui@$(cat package.json | jq -r '.version') --onlyAllow \"$(. ./parse-allowed-licenses.sh)\" --csv --out ./frontend-license-report.csv",
     "typecheck": "vue-tsc"
   },
   "dependencies": {
