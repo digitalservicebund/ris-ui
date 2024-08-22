@@ -16,7 +16,7 @@ Vue and PrimeVue are required for RIS UI to work (you'll see a warning about mis
 npm install vue primevue tailwindcss
 
 # RIS UI
-npm install @digitalservice4germany/ris-ui
+npm install @digitalservicebund/ris-ui
 ```
 
 ## Usage
@@ -27,8 +27,8 @@ Import and apply the RIS UI theme and styling where you set up your application 
   // main.ts
   import { createApp } from "vue";
   import PrimeVue from "primevue/config";
-+ import { RisUiTheme } from "@digitalservice4germany/ris-ui/primevue";
-+ import "@digitalservice4germany/ris-ui/style.css";
++ import { RisUiTheme } from "@digitalservicebund/ris-ui/primevue";
++ import "@digitalservicebund/ris-ui/primevue/style.css";
 
   const app = createApp().use(PrimeVue, {
 +   unstyled: true,
@@ -40,7 +40,7 @@ If you want, also install the Tailwind preset (for colors, spacings, etc.) and p
 
 ```diff
   // tailwind.config.js
-+ import { RisUiPreset, RisUiPlugin } from "@digitalservice4germany/ris-ui/tailwind";
++ import { RisUiPreset, RisUiPlugin } from "@digitalservicebund/ris-ui/tailwind";
 
   export default {
 +   presets: [RisUiPreset],
