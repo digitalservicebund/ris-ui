@@ -1,7 +1,8 @@
-node_modules
-dist
-storybook-static
 *storybook.log
+.idea
 .vscode
+dist
 frontend-license-report.csv
+node_modules
+storybook-static
 talisman_report
