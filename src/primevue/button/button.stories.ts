@@ -1,271 +1,129 @@
 import { Meta, StoryObj } from "@storybook/vue3";
-import Button from "primevue/button";
+import Btn from "primevue/button";
 import IconCheck from "~icons/ic/baseline-check";
+import { html } from "@/lib/tags.ts";
 
-const meta: Meta<typeof Button> = {
-  component: Button,
+// Imported as Btn because somehow formatting sometimes changes
+// "Button" to "button", breaking the stories
+const meta: Meta<typeof Btn> = {
+  component: Btn,
+
   tags: ["autodocs"],
+
+  args: {
+    disabled: false,
+    label: "Button",
+    loading: false,
+    severity: undefined,
+    size: undefined,
+    text: false,
+  },
+
   argTypes: {
-    label: { control: "text" },
     size: { control: "select", options: ["small", "large"] },
-    disabled: { control: "boolean" },
+    severity: { control: "select", options: ["primary", "secondary"] },
   },
 };
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+export const Default: Story = {
+  render: (args) => ({
+    components: { Btn },
+    setup() {
+      return { args };
+    },
+    template: html` <Btn v-bind="args" />`,
+  }),
+};
+
 export const Primary: Story = {
   args: {
-    label: "Button",
-    size: "small",
     severity: "primary",
-    disabled: false,
   },
   render: (args) => ({
-    components: { Button },
+    components: { Btn },
     setup() {
       return { args };
     },
-    template: `
-          <div class="mt-10">
-          <Button
-              :label="args.label"
-              :size="args.size"
-              :severity="args.severity"
-              :disabled="args.disabled"
-          />
-          </div>
-        `,
-  }),
-};
-
-export const PrimaryIconLeft: Story = {
-  args: {
-    label: "Button",
-    size: "small",
-    severity: "primary",
-    disabled: false,
-  },
-  render: (args) => ({
-    components: { Button, IconCheck },
-    setup() {
-      return { args };
-    },
-    template: `
-          <div class="mt-10">
-          <Button
-              :label="args.label"
-              :size="args.size"
-              :severity="args.severity"
-              :disabled="args.disabled"
-              iconPos="left"
-          >
-            <template #icon>
-              <IconCheck />
-            </template>
-          </Button>
-          </div>
-        `,
-  }),
-};
-
-export const PrimaryIconRight: Story = {
-  args: {
-    label: "Button",
-    size: "small",
-    severity: "primary",
-    disabled: false,
-  },
-  render: (args) => ({
-    components: { Button, IconCheck },
-    setup() {
-      return { args };
-    },
-    template: `
-          <div class="mt-10">
-          <Button
-              :label="args.label"
-              :size="args.size"
-              :severity="args.severity"
-              :disabled="args.disabled"
-              iconPos="right"
-          >
-            <template #icon>
-              <IconCheck />
-            </template>
-          </Button>
-          </div>
-        `,
+    template: html` <Btn v-bind="args" />`,
   }),
 };
 
 export const Secondary: Story = {
   args: {
-    label: "Button",
-    size: "small",
     severity: "secondary",
-    disabled: false,
   },
   render: (args) => ({
-    components: { Button },
+    components: { Btn },
     setup() {
       return { args };
     },
-    template: `
-          <div class="mt-10">
-          <Button
-              :label="args.label"
-              :size="args.size"
-              :severity="args.severity"
-              :disabled="args.disabled"
-          />
-          </div>
-        `,
+    template: html` <Btn v-bind="args" />`,
   }),
 };
 
-export const SecondaryIconLeft: Story = {
+export const Text: Story = {
   args: {
-    label: "Button",
-    size: "small",
-    severity: "secondary",
-    disabled: false,
+    text: true,
   },
   render: (args) => ({
-    components: { Button, IconCheck },
+    components: { Btn },
     setup() {
       return { args };
     },
-    template: `
-          <div class="mt-10">
-          <Button
-              :label="args.label"
-              :size="args.size"
-              :severity="args.severity"
-              iconPos="left"
-              :disabled="args.disabled"
-          >
-          <template #icon>
-            <IconCheck />
-          </template>
-          </Button>
-          </div>
-        `,
+    template: html` <Btn v-bind="args" />`,
   }),
 };
 
-export const SecondaryIconRight: Story = {
+export const WithIcon: Story = {
   args: {
-    label: "Button",
-    size: "small",
-    severity: "secondary",
-    disabled: false,
+    iconPos: undefined,
+  },
+  argTypes: {
+    iconPos: { type: "select", options: ["left", "right"] },
   },
   render: (args) => ({
-    components: { Button, IconCheck },
+    components: { Btn, IconCheck },
     setup() {
       return { args };
     },
-    template: `
-          <div class="mt-10">
-          <Button
-              :label="args.label"
-              :size="args.size"
-              :severity="args.severity"
-              iconPos="right"
-              :disabled="args.disabled"
-          >
-          <template #icon>
-            <IconCheck />
-          </template>
-          </Button>
-          </div>
-        `,
+    template: html` <Btn v-bind="args">
+      <template #icon>
+        <IconCheck />
+      </template>
+    </Btn>`,
   }),
 };
 
-export const Ghost: Story = {
+export const IconOnly: Story = {
   args: {
-    label: "Button",
-    size: "small",
-    severity: "ghost",
-    disabled: false,
+    "aria-label": "Button",
+    label: undefined,
   },
   render: (args) => ({
-    components: { Button },
+    components: { Btn, IconCheck },
     setup() {
       return { args };
     },
-    template: `
-          <div class="mt-10">
-          <Button
-              :label="args.label"
-              :size="args.size"
-              :severity="args.severity"
-              :disabled="args.disabled"
-          />
-          </div>
-        `,
+    template: html` <Btn v-bind="args">
+      <template #icon>
+        <IconCheck />
+      </template>
+    </Btn>`,
   }),
 };
 
-export const GhostIconLeft: Story = {
+export const Loading: Story = {
   args: {
-    label: "Button",
-    size: "small",
-    severity: "ghost",
-    disabled: false,
+    loading: true,
   },
   render: (args) => ({
-    components: { Button, IconCheck },
+    components: { Btn },
     setup() {
       return { args };
     },
-    template: `
-          <div class="mt-10">
-          <Button
-              :label="args.label"
-              :size="args.size"
-              :severity="args.severity"
-              iconPos="left"
-              :disabled="args.disabled"
-          >
-            <template #icon>
-              <IconCheck />
-            </template>
-          </Button>
-          </div>
-        `,
-  }),
-};
-
-export const GhostIconRight: Story = {
-  args: {
-    label: "Button",
-    size: "small",
-    severity: "ghost",
-    disabled: false,
-  },
-  render: (args) => ({
-    components: { Button, IconCheck },
-    setup() {
-      return { args };
-    },
-    template: `
-          <div class="mt-10">
-          <Button
-              :label="args.label"
-              :size="args.size"
-              :severity="args.severity"
-              iconPos="right"
-              :disabled="args.disabled"
-          >
-            <template #icon>
-              <IconCheck />
-            </template>
-          </Button>
-          </div>
-        `,
+    template: html` <Btn v-bind="args"></Btn>`,
   }),
 };

@@ -1,123 +1,78 @@
 import { ButtonPassThroughOptions } from "primevue/button";
+import { tw } from "@/lib/tags.ts";
 
 const button: ButtonPassThroughOptions = {
-  root: ({ props, context, instance }) => {
-    // Define variables for different parts of the styling logic
-    let iconStyling;
-    let sizeStyling;
-    let primarySeverityStyling;
-    let secondarySeverityStyling;
-    let ghostSeverityStyling;
-    let iconOrdering;
+  root: ({ props, instance }) => {
+    // Base
+    const base = tw`relative inline-flex max-w-full items-center justify-center gap-8 rounded-none text-center outline-4 outline-offset-4 outline-blue-800 focus:outline active:outline-none disabled:cursor-not-allowed disabled:outline-none`;
 
-    // Icon position adjustments for Large size
-    if (instance.hasIcon && props.size === "large" && props.label) {
-      if (props.iconPos === "left") {
-        iconStyling = "pl-20 pr-24 gap-8";
-      } else if (props.iconPos === "right") {
-        iconStyling = "pl-24 pr-20 gap-8";
+    // Severity
+    const severity = props.severity ?? "primary";
+
+    const primary = tw`bg-blue-800 text-white hover:bg-blue-700 active:bg-blue-500 active:text-blue-800 disabled:bg-gray-400 disabled:text-gray-600`;
+
+    const secondary = tw`border-2 border-blue-800 bg-white text-blue-800 hover:bg-gray-200 focus:bg-gray-200 active:border-white active:bg-white disabled:border-blue-500 disabled:text-blue-500 disabled:hover:bg-white`;
+
+    // Text
+    // This is the "Ghost" variant of the button
+    const primaryText = tw`border-2 border-transparent bg-transparent text-blue-800 underline hover:border-gray-500 hover:bg-white focus:border-gray-500 active:border-white active:bg-white disabled:bg-transparent disabled:text-gray-500`;
+
+    // Sizes
+    const size = props.size ?? "small";
+    let small = tw`ris-body2-bold h-48 py-4`;
+    let large = tw`ris-body1-bold h-64 py-4`;
+
+    // Icon position
+    const iconPos = props.iconPos ?? "left";
+
+    // Icon + label
+    if (instance.hasIcon && props.label) {
+      if (iconPos === "left") {
+        small = tw`${small} pl-8 pr-16`;
+        large = tw`${large} pl-20 pr-24`;
+      } else if (iconPos === "right") {
+        small = tw`${small} pl-16 pr-8`;
+        large = tw`${large} pl-24 pr-20`;
       }
     }
 
-    // Icon position adjustments for Small size
-    if (
-      instance.hasIcon &&
-      (!props.size || props.size === "small") &&
-      props.label
-    ) {
-      if (props.iconPos === "left") {
-        iconStyling = "pl-12 pr-16 gap-4";
-      } else if (props.iconPos === "right") {
-        iconStyling = "pl-16 pr-12 gap-4";
-      }
+    // Icon only
+    else if (instance.hasIcon && !props.label) {
+      small = tw`${small} w-48 px-4`;
+      large = tw`${large} w-64 px-4`;
     }
 
-    // Adjustments for when there is an icon but no label
-    if (instance.hasIcon && !props.label) {
-      iconStyling = "p-0 gap-0";
-    }
-
-    // Size adjustments
-    if (props.size === "large") {
-      sizeStyling = props.label
-        ? "py-20 px-24 text-[1.125rem] min-h-64"
-        : "w-64 h-64";
-    } else {
-      sizeStyling = props.label ? "py-8 px-16 text-base min-h-48" : "w-48 h-48";
-    }
-
-    // Primary severity styles
-    if (props.severity === "primary") {
-      if (!context.disabled) {
-        primarySeverityStyling =
-          "bg-blue-800 border-transparent text-white hover:bg-blue-700 active:bg-blue-500 active:text-blue-800 focus:outline-none focus:ring-blue-800 focus:ring-4 focus:ring-offset-4";
-      } else {
-        primarySeverityStyling =
-          "bg-gray-400 cursor-not-allowed text-gray-600 border-transparent";
-      }
-    }
-
-    // Secondary severity styles
-    if (props.severity === "secondary") {
-      if (!context.disabled) {
-        secondarySeverityStyling =
-          "bg-white text-blue-800 border-solid border-blue-800 hover:bg-gray-200 active:bg-white active:text-blue-800 active:border-transparent focus:outline-none focus:ring-blue-800 focus:ring-4 focus:ring-offset-2 focus:bg-gray-200";
-      } else {
-        secondarySeverityStyling =
-          "bg-white cursor-not-allowed text-blue-800 text-opacity-50 border-blue-800 border-opacity-50";
-      }
-    }
-
-    // Ghost severity styles
-    if (props.severity === "ghost") {
-      if (!context.disabled) {
-        ghostSeverityStyling =
-          "bg-transparent text-blue-800 border-transparent hover:bg-white hover:border-gray-500 hover:border-2 hover:border-solid active:bg-white active:border-transparent focus:outline-none focus:ring-blue-800 focus:ring-4 focus:ring-offset-4 focus:bg-white focus:border-gray-500 focus:border-2 focus:border-solid";
-      } else {
-        ghostSeverityStyling =
-          "cursor-not-allowed text-gray-800 text-opacity-50 border-transparent";
-      }
-    }
-
-    // Icon ordering
-    if (instance.hasIcon) {
-      if (props.iconPos === "left") {
-        iconOrdering = "flex-row";
-      } else if (props.iconPos === "right") {
-        iconOrdering = "flex-row-reverse";
-      }
+    // Label only
+    else {
+      small = tw`${small} px-16`;
+      large = tw`${large} px-24`;
     }
 
     return {
-      class: [
-        "inline-flex",
-        "items-center",
-        "justify-center",
-        "font-bold",
-        "text-center",
-        "max-w-full",
-        "leading-24",
-        "rounded-none",
-        "box-border",
-        "border",
-        "border-2",
-        !context.disabled &&
-          "focus:outline-none focus:ring-4 focus:ring-offset-4",
-        !props.size && "py-8 px-16 text-base min-h-48",
-        iconStyling,
-        sizeStyling,
-        primarySeverityStyling,
-        secondarySeverityStyling,
-        ghostSeverityStyling,
-        iconOrdering,
-      ],
+      class: {
+        [base]: true,
+        [small]: size === "small",
+        [large]: size === "large",
+        [primary]: !props.text && severity === "primary",
+        [secondary]: !props.text && severity === "secondary",
+        [primaryText]: props.text && severity === "primary",
+      },
     };
   },
+
   label: ({ props }) => ({
-    class: [
-      { underline: props.severity === "ghost" },
-      { "sr-only": !props.label },
-    ],
+    class: {
+      hidden: !props.label,
+      [tw`-order-1`]: props.iconPos === "right",
+    },
+  }),
+
+  loadingIcon: ({ props }) => ({
+    class: {
+      [tw`animate-spin`]: true,
+      [tw`h-24 w-24`]: props.size === "large",
+      [tw`h-[1.34em] w-[1.34em]`]: !props.size || props.size === "small",
+    },
   }),
 };
 
