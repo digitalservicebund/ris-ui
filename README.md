@@ -143,7 +143,14 @@ When you make a commit now, Lefthook will ensure your changes and commit message
 
 ### Making a release
 
-> 🚜 Under construction
+To release a new version, run the ["Release to npm"](https://github.com/digitalservicebund/ris-ui/actions/workflows/release.yml) action. This will:
+
+- Build the project
+- Publish the build to npm
+- Create a Git tag and GitHub release
+- Generate a changelog based on the commits since the last release
+
+Releases are created automatically by [semantic-release](https://github.com/semantic-release/semantic-release?tab=readme-ov-file). Please refer to their documentation to learn more about how version numbers are inferred and how changelogs are created. 
 
 ## Contributing
 
