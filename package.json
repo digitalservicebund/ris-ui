@@ -11,21 +11,23 @@
     "dist"
   ],
   "exports": {
-    ".": {
-      "import": "./dist/primevue.js",
+    "./primevue": {
+      "require": "./dist/primevue/index.cjs",
+      "import": "./dist/primevue/index.js",
       "types": "./dist/primevue/index.d.ts"
     },
-    "./style.css": {
+    "./primevue/style.css": {
       "import": "./dist/style.css"
     },
     "./tailwind": {
-      "import": "./dist/tailwind.js",
+      "require": "./dist/tailwind/index.cjs",
+      "import": "./dist/tailwind/index.js",
       "types": "./dist/tailwind/index.d.ts"
     }
   },
   "scripts": {
     "storybook": "storybook dev -p 6006",
-    "build": "vite build; vue-tsc -p tsconfig.lib.json",
+    "build": "vite build && vue-tsc --build tsconfig.lib.json --force",
     "build:storybook": "storybook build",
     "prettier:check": "prettier --check .",
     "prettier:fix": "prettier --write --ignore-unknown .",

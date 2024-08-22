@@ -23,10 +23,9 @@ export default defineConfig({
   build: {
     lib: {
       entry: {
-        primevue: "src/primevue/index.ts",
-        tailwind: "src/tailwind/index.ts",
+        "primevue/index": "src/primevue/index.ts",
+        "tailwind/index": "src/tailwind/index.ts",
       },
-      formats: ["es"],
     },
     rollupOptions: {
       external: ["vue", "primevue"],
