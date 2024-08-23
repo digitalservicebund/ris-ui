@@ -12,7 +12,7 @@ import tag from "noop-tag";
 export const html = tag;
 
 /**
- * Tagges template string for Tailwind classes. The tag itself doesn't do
+ * Tagged template string for Tailwind classes. The tag itself doesn't do
  * anything, but using it will allow your editor to provide Tailwind
  * Intellisense for template strings in scripts, as well as automatic class
  * sorting via Prettier.

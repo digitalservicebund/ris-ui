@@ -1,6 +1,6 @@
 # RIS UI
 
-**Component library for NeuRIS** | 👀 [Demo](https://digitalservicebund.github.io/ris-ui) | 🤖 [PrimeVue Docs](https://primevue.org)
+**Component library for NeuRIS** | 👀 [Demo](https://digitalservicebund.github.io/ris-ui) | 📦 [npm](https://www.npmjs.com/package/@digitalservicebund/ris-ui) | 🤖 [PrimeVue Docs](https://primevue.org)
 
 ## Installation
 
@@ -29,7 +29,7 @@ Import and apply the RIS UI theme, styling, and fonts where you set up your appl
   import PrimeVue from "primevue/config";
 + import { RisUiTheme } from "@digitalservicebund/ris-ui/primevue";
 + import "@digitalservicebund/ris-ui/primevue/style.css";
-+ import "@digitalservicebund/ris-ui/fonts.css"
++ import "@digitalservicebund/ris-ui/fonts.css";
 
   const app = createApp().use(PrimeVue, {
 +   unstyled: true,
@@ -145,6 +145,8 @@ When you make a commit now, Lefthook will ensure your changes and commit message
 - Code is formatted with Prettier
 - ESLint passes without warnings
 - The commit message follows the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification. If you're making changes to a component, please use the component name as the scope (multiple scopes are allowed).
+
+Keep in mind that your commit messages will be used for generating changelogs and inferring version numbers when making a release. If you made multiple changes, please consider squashing them to keep the history, as well as the changelogs, tidy and readable.
 
 ### Making a release
 
