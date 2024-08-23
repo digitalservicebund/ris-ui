@@ -1,0 +1,8 @@
+Fonts are provided by @digitalservicebund/angie. But we need to copy
+them here rather than bundling them with the rest of the CSS since
+Vite would otherwise base64-encode and inline them in the CSS. Because
+we don't need all those fonts, the CSS would be unnecessarily big and
+slow.
+
+Also see:
+https://github.com/vitejs/vite/issues/3295#issuecomment-1353409889

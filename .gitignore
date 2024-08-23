@@ -1,8 +1,12 @@
+*.tgz
 *storybook.log
 .idea
 .vscode
 dist
 frontend-license-report.csv
 node_modules
+public/fonts.css
+public/fonts/*.woff
+public/fonts/*.woff2
 storybook-static
 talisman_report

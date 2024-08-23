@@ -25,18 +25,24 @@
       "require": "./dist/tailwind/index.cjs",
       "import": "./dist/tailwind/index.js",
       "types": "./dist/tailwind/index.d.ts"
+    },
+    "./fonts.css": {
+      "import": "./dist/fonts.css"
     }
   },
   "scripts": {
     "storybook": "storybook dev -p 6006",
+    "prebuild": "npm run sync-fonts",
     "build": "vite build && vue-tsc --build tsconfig.lib.json --force",
+    "prebuild:storybook": "npm run sync-fonts",
     "build:storybook": "storybook build",
     "prettier:check": "prettier --check .",
     "prettier:fix": "prettier --write --ignore-unknown .",
     "eslint:check": "eslint",
     "eslint:fix": "npm run eslint:check -- --fix",
     "audit:licenses": "license-checker --production --excludePrivatePackages --excludePackages @digitalservicebund/ris-ui@$(cat package.json | jq -r '.version') --onlyAllow \"$(. ./parse-allowed-licenses.sh)\" --csv --out ./frontend-license-report.csv",
-    "typecheck": "vue-tsc"
+    "typecheck": "vue-tsc",
+    "sync-fonts": "rm ./public/fonts/*.woff ./public/fonts/*.woff2; cp ./node_modules/@digitalservice4germany/angie/fonts/* ./public/fonts/;  cp ./node_modules/@digitalservice4germany/angie/fonts.css ./public/"
   },
   "dependencies": {
     "primevue": "~4.0.0",

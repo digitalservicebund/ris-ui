@@ -21,7 +21,7 @@ npm install @digitalservicebund/ris-ui
 
 ## Usage
 
-Import and apply the RIS UI theme and styling where you set up your application (typically `main.ts`):
+Import and apply the RIS UI theme, styling, and fonts where you set up your application (typically `main.ts`):
 
 ```diff
   // main.ts
@@ -29,6 +29,7 @@ Import and apply the RIS UI theme and styling where you set up your application 
   import PrimeVue from "primevue/config";
 + import { RisUiTheme } from "@digitalservicebund/ris-ui/primevue";
 + import "@digitalservicebund/ris-ui/primevue/style.css";
++ import "@digitalservicebund/ris-ui/fonts.css"
 
   const app = createApp().use(PrimeVue, {
 +   unstyled: true,
@@ -52,7 +53,7 @@ If you want, also install the Tailwind preset (for colors, spacings, etc.) and p
 
 ## Development
 
-If you want to make changes to RIS UI, you'll need the current [Node.js LTS](https://nodejs.org/en/download/package-manager) as well as NPM installed on your machine.
+To make changes to RIS UI, you'll need the current [Node.js LTS](https://nodejs.org/en/download/package-manager) along with npm installed on your machine.
 
 To get started, first clone this repository:
 
@@ -64,6 +65,10 @@ Then install dependencies:
 
 ```sh
 npm install
+
+# This will populate the public/fonts folder. See public/fonts/.gitkeep
+# for more information.
+npm run sync-fonts
 ```
 
 You can now run a local preview to see any changes you make to the code:
