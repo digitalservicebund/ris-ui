@@ -44,7 +44,7 @@
     "typecheck": "vue-tsc",
     "sync-fonts": "rm ./public/fonts/*.woff ./public/fonts/*.woff2; cp ./node_modules/@digitalservice4germany/angie/fonts/* ./public/fonts/;  cp ./node_modules/@digitalservice4germany/angie/fonts.css ./public/"
   },
-  "dependencies": {
+  "peerDependencies": {
     "primevue": "^4.0.0",
     "vue": "^3.0.0"
   },
