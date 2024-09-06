@@ -11,17 +11,19 @@ import password from "./password/password";
 import progressSpinner from "./progressSpinner/progressSpinner";
 import radioButton from "./radioButton/radioButton";
 import textarea from "./textarea/textarea";
+import toast from "./toast/toast";
 
 export const RisUiTheme = {
   button,
   checkbox,
-  inputText,
+  fileUpload,
   inputGroup,
   inputGroupAddon,
+  inputText,
   message,
   password,
-  fileUpload,
   progressSpinner,
-  textarea,
   radioButton,
+  textarea,
+  toast,
 };
