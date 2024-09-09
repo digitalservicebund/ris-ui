@@ -1,7 +1,10 @@
-import { setup } from "@storybook/vue3";
+import { Preview, setup } from "@storybook/vue3";
 import PrimeVue from "primevue/config";
 import { RisUiTheme } from "../src/primevue";
 import "../public/fonts.css";
+import { initialize, mswLoader } from "msw-storybook-addon";
+
+initialize();
 
 setup((app) => {
   app.use(PrimeVue, {
@@ -9,3 +12,9 @@ setup((app) => {
     unstyled: true,
   });
 });
+
+const preview: Preview = {
+  loaders: [mswLoader],
+};
+
+export default preview;

@@ -17,6 +17,8 @@ const config: StorybookConfig = {
     options: {},
   },
 
+  staticDirs: ["../public"],
+
   async viteFinal(config) {
     if (!config.plugins) config.plugins = [];
     config.plugins.push(Icons({ autoInstall: true }));
