@@ -1,6 +1,7 @@
 import "./global.css";
 
 import button from "./button/button";
+import checkbox from "./checkbox/checkbox";
 import fileUpload from "./fileUpload/fileUpload";
 import inputGroup from "./inputGroup/inputGroup";
 import inputGroupAddon from "./inputGroup/inputGroupAddon";
@@ -10,6 +11,7 @@ import progressSpinner from "./progressSpinner/progressSpinner";
 
 export const RisUiTheme = {
   button,
+  checkbox,
   inputText,
   inputGroup,
   inputGroupAddon,
