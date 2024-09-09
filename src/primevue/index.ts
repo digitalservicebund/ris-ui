@@ -8,6 +8,7 @@ import inputGroupAddon from "./inputGroup/inputGroupAddon";
 import inputText from "./inputText/inputText";
 import password from "./password/password";
 import progressSpinner from "./progressSpinner/progressSpinner";
+import textarea from "./textarea/textarea";
 
 export const RisUiTheme = {
   button,
@@ -18,4 +19,5 @@ export const RisUiTheme = {
   password,
   fileUpload,
   progressSpinner,
+  textarea,
 };

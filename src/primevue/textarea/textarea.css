@@ -1,0 +1,7 @@
+textarea + small {
+  @apply ris-label3-regular mt-2 flex items-center gap-4 text-gray-900;
+}
+
+textarea[aria-invalid="true"] + small {
+  @apply text-red-900;
+}
