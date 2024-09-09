@@ -1,7 +1,9 @@
 /// <reference types="vite/client" />
+
 import { Preview, setup } from "@storybook/vue3";
 import { initialize, mswLoader } from "msw-storybook-addon";
 import PrimeVue from "primevue/config";
+import ConfirmationService from "primevue/confirmationservice";
 import ToastService from "primevue/toastservice";
 import "../public/fonts.css";
 import { RisUiTheme } from "../src/primevue";
@@ -20,6 +22,8 @@ setup((app) => {
     pt: RisUiTheme,
     unstyled: true,
   });
+
+  app.use(ConfirmationService);
 
   app.use(ToastService);
 });
