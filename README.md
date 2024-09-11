@@ -19,7 +19,7 @@ npm install vue primevue tailwindcss
 npm install @digitalservicebund/ris-ui
 ```
 
-## Usage
+### Vue setup
 
 Import and apply the RIS UI theme, styling, and fonts where you set up your application (typically `main.ts`):
 
@@ -36,6 +36,28 @@ Import and apply the RIS UI theme, styling, and fonts where you set up your appl
 +   pt: RisUiTheme,
   })
 ```
+
+### Nuxt setup
+
+If using Nuxt, skip the Vue setup above.
+
+Add the PrimeVue plugin and set the RIS UI theme, styling, and fonts to your `nuxt.config.ts`:
+
+```diff
+  import { RisUiTheme } from "@digitalservicebund/ris-ui/primevue";
+  export default defineNuxtConfig({
+    modules: [
++     "@primevue/nuxt-module",
+    ],
++   primevue: {
++     pt: RisUiTheme,
++     unstyled: true,
++   },
+  // your other configuration
+  })
+```
+
+## Tailwind usage
 
 If you want, also install the Tailwind preset (for colors, spacings, etc.) and plugin (for typography classes, etc.):
 
