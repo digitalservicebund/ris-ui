@@ -157,7 +157,7 @@ To release a new version, run the ["Release to npm"](https://github.com/digitals
 - Create a Git tag and GitHub release
 - Generate a changelog based on the commits since the last release
 
-Releases are created automatically by [semantic-release](https://github.com/semantic-release/semantic-release?tab=readme-ov-file). Please refer to their documentation to learn more about how version numbers are inferred and how changelogs are created. 
+Releases are created automatically by [semantic-release](https://github.com/semantic-release/semantic-release?tab=readme-ov-file). Please refer to their documentation to learn more about how version numbers are inferred and how changelogs are created.
 
 ## Contributing
 
