@@ -1,12 +1,12 @@
 import { Meta, StoryObj } from "@storybook/vue3";
-import Btn from "primevue/button";
+import PrimevueButton from "primevue/button";
 import IconCheck from "~icons/ic/baseline-check";
 import { html } from "@/lib/tags.ts";
 
-// Imported as Btn because somehow formatting sometimes changes
+// Imported as PrimevueButton because somehow formatting sometimes changes
 // "Button" to "button", breaking the stories
-const meta: Meta<typeof Btn> = {
-  component: Btn,
+const meta: Meta<typeof PrimevueButton> = {
+  component: PrimevueButton,
 
   tags: ["autodocs"],
 
@@ -30,11 +30,11 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   render: (args) => ({
-    components: { Btn },
+    components: { PrimevueButton },
     setup() {
       return { args };
     },
-    template: html` <Btn v-bind="args" />`,
+    template: html` <PrimevueButton v-bind="args" />`,
   }),
 };
 
@@ -43,11 +43,11 @@ export const Primary: Story = {
     severity: "primary",
   },
   render: (args) => ({
-    components: { Btn },
+    components: { PrimevueButton },
     setup() {
       return { args };
     },
-    template: html` <Btn v-bind="args" />`,
+    template: html` <PrimevueButton v-bind="args" />`,
   }),
 };
 
@@ -56,11 +56,11 @@ export const Secondary: Story = {
     severity: "secondary",
   },
   render: (args) => ({
-    components: { Btn },
+    components: { PrimevueButton },
     setup() {
       return { args };
     },
-    template: html` <Btn v-bind="args" />`,
+    template: html` <PrimevueButton v-bind="args" />`,
   }),
 };
 
@@ -69,11 +69,11 @@ export const Text: Story = {
     text: true,
   },
   render: (args) => ({
-    components: { Btn },
+    components: { PrimevueButton },
     setup() {
       return { args };
     },
-    template: html` <Btn v-bind="args" />`,
+    template: html` <PrimevueButton v-bind="args" />`,
   }),
 };
 
@@ -85,15 +85,15 @@ export const WithIcon: Story = {
     iconPos: { type: "select", options: ["left", "right"] },
   },
   render: (args) => ({
-    components: { Btn, IconCheck },
+    components: { PrimevueButton, IconCheck },
     setup() {
       return { args };
     },
-    template: html` <Btn v-bind="args">
+    template: html` <PrimevueButton v-bind="args">
       <template #icon>
         <IconCheck />
       </template>
-    </Btn>`,
+    </PrimevueButton>`,
   }),
 };
 
@@ -103,15 +103,15 @@ export const IconOnly: Story = {
     label: undefined,
   },
   render: (args) => ({
-    components: { Btn, IconCheck },
+    components: { PrimevueButton, IconCheck },
     setup() {
       return { args };
     },
-    template: html` <Btn v-bind="args">
+    template: html` <PrimevueButton v-bind="args">
       <template #icon>
         <IconCheck />
       </template>
-    </Btn>`,
+    </PrimevueButton>`,
   }),
 };
 
@@ -120,10 +120,10 @@ export const Loading: Story = {
     loading: true,
   },
   render: (args) => ({
-    components: { Btn },
+    components: { PrimevueButton },
     setup() {
       return { args };
     },
-    template: html` <Btn v-bind="args"></Btn>`,
+    template: html` <PrimevueButton v-bind="args"></PrimevueButton>`,
   }),
 };
