@@ -22,27 +22,13 @@ const button: ButtonPassThroughOptions = {
     let small = tw`ris-body2-bold h-48 py-4`;
     let large = tw`ris-body1-bold h-64 py-4`;
 
-    // Icon position
-    const iconPos = props.iconPos ?? "left";
-
-    // Icon + label
-    if (instance.hasIcon && props.label) {
-      if (iconPos === "left") {
-        small = tw`${small} pl-8 pr-16`;
-        large = tw`${large} pl-20 pr-24`;
-      } else if (iconPos === "right") {
-        small = tw`${small} pl-16 pr-8`;
-        large = tw`${large} pl-24 pr-20`;
-      }
-    }
-
     // Icon only
-    else if (instance.hasIcon && !props.label) {
+    if (instance.hasIcon && !props.label) {
       small = tw`${small} w-48 px-4`;
       large = tw`${large} w-64 px-4`;
     }
 
-    // Label only
+    // Label only or label + icon
     else {
       small = tw`${small} px-16`;
       large = tw`${large} px-24`;
