@@ -9,3 +9,5 @@ fileignoreconfig:
     checksum: ceb00460bb36a9b13ccbbc927598aa8757913d04d518f5092a9aa6926261cdc3
   - filename: public/mockServiceWorker.js
     checksum: 4ad535ab9521e492ed376b639958d5987e09280e3b8f77cdca109a0447e8c7d8
+  - filename: src/config/locale.ts
+    checksum: bce8adac9f7e05e5ed3d339f9b9a9d8bd2234a4663ddb1eafd110127cbbe4d9b

@@ -15,6 +15,8 @@ import radioButton from "./radioButton/radioButton";
 import textarea from "./textarea/textarea";
 import toast from "./toast/toast";
 
+import { deDE } from "@/config/locale";
+
 export const RisUiTheme = {
   button,
   checkbox,
@@ -30,4 +32,8 @@ export const RisUiTheme = {
   radioButton,
   textarea,
   toast,
+};
+
+export const RisUiLocale = {
+  deDE,
 };

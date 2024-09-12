@@ -7,6 +7,7 @@ import ConfirmationService from "primevue/confirmationservice";
 import ToastService from "primevue/toastservice";
 import "../public/fonts.css";
 import { RisUiTheme } from "../src/primevue";
+import { deDE } from "../src/config/locale";
 
 initialize({
   serviceWorker: {
@@ -21,6 +22,7 @@ setup((app) => {
   app.use(PrimeVue, {
     pt: RisUiTheme,
     unstyled: true,
+    locale: deDE,
   });
 
   app.use(ConfirmationService);

@@ -27,13 +27,14 @@ Import and apply the RIS UI theme, styling, and fonts where you set up your appl
   // main.ts
   import { createApp } from "vue";
   import PrimeVue from "primevue/config";
-+ import { RisUiTheme } from "@digitalservicebund/ris-ui/primevue";
++ import { RisUiTheme, RisUiLocale } from "@digitalservicebund/ris-ui/primevue";
 + import "@digitalservicebund/ris-ui/primevue/style.css";
 + import "@digitalservicebund/ris-ui/fonts.css";
 
   const app = createApp().use(PrimeVue, {
 +   unstyled: true,
 +   pt: RisUiTheme,
++   locale: RisUiLocale.deDE
   })
 ```
 
