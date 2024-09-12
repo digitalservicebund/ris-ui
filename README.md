@@ -47,7 +47,7 @@ Install the Nuxt PrimeVue module:
 npm install @primevue/nuxt-module
 ```
 
-Add the PrimeVue module, configure it, and load the CSS in `nuxt.config.ts`:
+Add the PrimeVue module and configure it in `nuxt.config.ts`:
 
 ```diff
   // nuxt.config.ts
@@ -59,11 +59,6 @@ Add the PrimeVue module, configure it, and load the CSS in `nuxt.config.ts`:
 +   primevue: {
 +      usePrimeVue: false, // configured in plugins/ris-ui.ts
 +   },
-    css: [
-      // any other CSS
-+     "@digitalservicebund/ris-ui/primevue/style.css",
-+     "@digitalservicebund/ris-ui/fonts.css",
-    ],
   })
 ```
 
@@ -81,6 +76,17 @@ export default defineNuxtPlugin((nuxtApp) => {
   });
 });
 ```
+
+Finally, add the styles (e.g. `assets/main.css`):
+
+```css
+@import "@digitalservicebund/ris-ui/primevue/style.css";
+@import "@digitalservicebund/ris-ui/fonts.css";
+
+/* Your other CSS */
+```
+
+If not using Tailwind, you may also add these styles directly to the `css` section of `nuxt.config.ts`.
 
 ## Tailwind usage
 
