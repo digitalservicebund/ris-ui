@@ -41,20 +41,45 @@ Import and apply the RIS UI theme, styling, and fonts where you set up your appl
 
 If using Nuxt, skip the Vue setup above.
 
-Add the PrimeVue plugin and set the RIS UI theme, styling, and fonts to your `nuxt.config.ts`:
+Install the Nuxt PrimeVue module:
+
+```sh
+npm install @primevue/nuxt-module
+```
+
+Add the PrimeVue module, configure it, and load the CSS in `nuxt.config.ts`:
 
 ```diff
-  import { RisUiTheme } from "@digitalservicebund/ris-ui/primevue";
+  // nuxt.config.ts
   export default defineNuxtConfig({
+    // your other configuration
     modules: [
 +     "@primevue/nuxt-module",
     ],
 +   primevue: {
-+     pt: RisUiTheme,
-+     unstyled: true,
++      usePrimeVue: false, // configured in plugins/ris-ui.ts
 +   },
-  // your other configuration
+    css: [
+      // any other CSS
++     "@digitalservicebund/ris-ui/primevue/style.css",
++     "@digitalservicebund/ris-ui/fonts.css",
+    ],
   })
+```
+
+Add a new Nuxt plugin to configure PrimeVue:
+
+```typescript
+// plugins/ris-ui.ts
+import { RisUiTheme } from "@digitalservicebund/ris-ui/primevue";
+import PrimeVue from "primevue/config";
+
+export default defineNuxtPlugin((nuxtApp) => {
+  nuxtApp.vueApp.use(PrimeVue, {
+    pt: RisUiTheme,
+    unstyled: true,
+  });
+});
 ```
 
 ## Tailwind usage
@@ -71,6 +96,25 @@ If you want, also install the Tailwind preset (for colors, spacings, etc.) and p
 
     // your other configuration
   };
+```
+
+To avoid issues with conflicting `@layer` directives, make sure to integrate the `postcss-import` module in your PostCSS configuration:
+
+See https://tailwindcss.com/docs/adding-custom-styles#using-multiple-css-files
+
+### Using Nuxt
+
+You may add the `postcss-import` module to your `nuxt.config.ts` file:
+
+```diff
+  // nuxt.config.ts
+  postcss: {
+    plugins: {
++     "postcss-import": {},
+      tailwindcss: {},
+      autoprefixer: {},
+    },
+  },
 ```
 
 ## Development
