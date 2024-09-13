@@ -20,7 +20,7 @@ const meta: Meta<typeof PrimevueButton> = {
   },
 
   argTypes: {
-    size: { control: "select", options: ["small", "large"] },
+    size: { control: "select", options: [undefined, "large"] },
     severity: { control: "select", options: ["primary", "secondary"] },
   },
 };

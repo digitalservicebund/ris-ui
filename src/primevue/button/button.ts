@@ -18,26 +18,26 @@ const button: ButtonPassThroughOptions = {
     const primaryText = tw`border-2 border-transparent bg-transparent text-blue-800 underline hover:border-gray-500 hover:bg-white focus:border-gray-500 active:border-white active:bg-white disabled:bg-transparent disabled:text-gray-500`;
 
     // Sizes
-    const size = props.size ?? "small";
-    let small = tw`ris-body2-bold h-48 py-4`;
+    const size = props.size ?? "normal";
+    let normal = tw`ris-body2-bold h-48 py-4`;
     let large = tw`ris-body1-bold h-64 py-4`;
 
     // Icon only
     if (instance.hasIcon && !props.label) {
-      small = tw`${small} w-48 px-4`;
+      normal = tw`${normal} w-48 px-4`;
       large = tw`${large} w-64 px-4`;
     }
 
     // Label only or label + icon
     else {
-      small = tw`${small} px-16`;
+      normal = tw`${normal} px-16`;
       large = tw`${large} px-24`;
     }
 
     return {
       class: {
         [base]: true,
-        [small]: size === "small",
+        [normal]: size === "normal",
         [large]: size === "large",
         [primary]: !props.text && severity === "primary",
         [secondary]: !props.text && severity === "secondary",
@@ -53,13 +53,20 @@ const button: ButtonPassThroughOptions = {
     },
   }),
 
-  loadingIcon: ({ props }) => ({
-    class: {
-      [tw`animate-spin`]: true,
-      [tw`h-24 w-24`]: props.size === "large",
-      [tw`h-[1.34em] w-[1.34em]`]: !props.size || props.size === "small",
-    },
-  }),
+  loadingIcon: ({ props }) => {
+    // Size
+    const size = props.size ?? "normal";
+    const normal = tw`h-[1.34em] w-[1.34em]`;
+    const large = tw`h-24 w-24`;
+
+    return {
+      class: {
+        [tw`animate-spin`]: true,
+        [normal]: size === "normal",
+        [large]: size === "large",
+      },
+    };
+  },
 };
 
 export default button;
