@@ -1,6 +1,6 @@
 import { html } from "@/lib/tags.ts";
 import { Meta, StoryObj } from "@storybook/vue3";
-import Btn from "primevue/button";
+import PrimevueButton from "primevue/button";
 import Toast from "primevue/toast";
 import { useToast } from "primevue/usetoast";
 
@@ -20,11 +20,11 @@ type Story = StoryObj<typeof meta>;
 
 export const Success: Story = {
   render: (args) => ({
-    components: { Toast, Btn },
+    components: { Toast, PrimevueButton },
     setup() {
       const toast = useToast();
 
-      const showSuccess = () => {
+      const showToast = () => {
         toast.add({
           severity: "success",
           summary: "Verkündung erfolgreich hochgeladen",
@@ -32,24 +32,22 @@ export const Success: Story = {
         });
       };
 
-      return { args, showSuccess };
+      return { args, showToast };
     },
     template: html`
-      <div class="card flex">
-        <Toast v-bind="args" />
-        <Btn label="Success" @click="showSuccess" />
-      </div>
+      <Toast v-bind="args" />
+      <PrimevueButton label="Success" @click="showToast()" />
     `,
   }),
 };
 
 export const Info: Story = {
   render: (args) => ({
-    components: { Toast, Btn },
+    components: { Toast, PrimevueButton },
     setup() {
       const toast = useToast();
 
-      const showInfo = () => {
+      const showToast = () => {
         toast.add({
           severity: "info",
           summary: "Info Message",
@@ -57,24 +55,22 @@ export const Info: Story = {
         });
       };
 
-      return { args, showInfo };
+      return { args, showToast };
     },
     template: html`
-      <div class="card flex">
-        <Toast v-bind="args" />
-        <Btn label="Info" @click="showInfo" />
-      </div>
+      <Toast v-bind="args" />
+      <PrimevueButton label="Info" @click="showToast()" />
     `,
   }),
 };
 
 export const WarningWithAutoClose: Story = {
   render: (args) => ({
-    components: { Toast, Btn },
+    components: { Toast, PrimevueButton },
     setup() {
       const toast = useToast();
 
-      const showWarn = () => {
+      const showToast = () => {
         toast.add({
           severity: "warn",
           summary: "This is a warning",
@@ -83,24 +79,22 @@ export const WarningWithAutoClose: Story = {
         });
       };
 
-      return { args, showWarn };
+      return { args, showToast };
     },
     template: html`
-      <div class="card flex">
-        <Toast v-bind="args" />
-        <Btn label="Warning" @click="showWarn" />
-      </div>
+      <Toast v-bind="args" />
+      <PrimevueButton label="Warning" @click="showToast()" />
     `,
   }),
 };
 
 export const Error: Story = {
   render: (args) => ({
-    components: { Toast, Btn },
+    components: { Toast, PrimevueButton },
     setup() {
       const toast = useToast();
 
-      const showError = () => {
+      const showToast = () => {
         toast.add({
           severity: "error",
           summary: "Error",
@@ -108,24 +102,22 @@ export const Error: Story = {
         });
       };
 
-      return { args, showError };
+      return { args, showToast };
     },
     template: html`
-      <div class="card flex">
-        <Toast v-bind="args" />
-        <Btn label="Error" @click="showError" />
-      </div>
+      <Toast v-bind="args" />
+      <PrimevueButton label="Error" @click="showToast()" />
     `,
   }),
 };
 
 export const MultipleToasts: Story = {
   render: (args) => ({
-    components: { Toast, Btn },
+    components: { Toast, PrimevueButton },
     setup() {
       const toast = useToast();
 
-      const showMultiple = () => {
+      const showToast = () => {
         toast.add({
           severity: "success",
           summary: "Verkündung erfolgreich hochgeladen",
@@ -148,24 +140,22 @@ export const MultipleToasts: Story = {
         });
       };
 
-      return { args, showMultiple };
+      return { args, showToast };
     },
     template: html`
-      <div class="card flex">
-        <Toast v-bind="args" />
-        <Btn label="Multiple Toasts" @click="showMultiple()" />
-      </div>
+      <Toast v-bind="args" />
+      <PrimevueButton label="Multiple toasts" @click="showToast()" />
     `,
   }),
 };
 
 export const NotClosableShortLived: Story = {
   render: (args) => ({
-    components: { Toast, Btn },
+    components: { Toast, PrimevueButton },
     setup() {
       const toast = useToast();
 
-      const showError = () => {
+      const showToast = () => {
         toast.add({
           severity: "error",
           summary: "Error",
@@ -175,13 +165,45 @@ export const NotClosableShortLived: Story = {
         });
       };
 
-      return { args, showError };
+      return { args, showToast };
     },
     template: html`
-      <div class="card flex">
-        <Toast v-bind="args" />
-        <Btn label="Error" @click="showError" />
-      </div>
+      <Toast v-bind="args" />
+      <PrimevueButton label="Error" @click="showToast()" />
+    `,
+  }),
+};
+
+export const WithTemplate: Story = {
+  render: (args) => ({
+    components: { Toast, PrimevueButton },
+    setup() {
+      const toast = useToast();
+
+      const showToast = () => {
+        toast.add({
+          severity: "info",
+          summary: "Info",
+          detail: "Message content",
+        });
+      };
+
+      return { args, showToast };
+    },
+    template: html`
+      <Toast v-bind="args">
+        <template #message="slot">
+          <div class="w-320">
+            <p class="ris-label1-bold">{{ slot.message.summary }}</p>
+            <p class="ris-label1-regular">{{ slot.message.detail }}</p>
+            <div class="mt-16 flex gap-8">
+              <PrimevueButton severity="secondary" label="Action 1" />
+              <PrimevueButton severity="primary" label="Action 2" />
+            </div>
+          </div>
+        </template>
+      </Toast>
+      <PrimevueButton label="Error" @click="showToast()" />
     `,
   }),
 };
