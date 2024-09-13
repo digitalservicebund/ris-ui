@@ -27,8 +27,8 @@ export const Success: Story = {
       const showToast = () => {
         toast.add({
           severity: "success",
-          summary: "Verkündung erfolgreich hochgeladen",
-          detail: "Sie können mit der Arbeit an der neuen Verkündung beginnen.",
+          summary: "Success message",
+          detail: "This is a success message.",
         });
       };
 
@@ -50,7 +50,7 @@ export const Info: Story = {
       const showToast = () => {
         toast.add({
           severity: "info",
-          summary: "Info Message",
+          summary: "Info message",
           detail: "This is an informational message.",
         });
       };
@@ -73,7 +73,7 @@ export const WarningWithAutoClose: Story = {
       const showToast = () => {
         toast.add({
           severity: "warn",
-          summary: "This is a warning",
+          summary: "Warning message",
           detail: "This is a warning message.",
           life: 3000,
         });
@@ -97,8 +97,8 @@ export const Error: Story = {
       const showToast = () => {
         toast.add({
           severity: "error",
-          summary: "Error",
-          detail: "An error occurred.",
+          summary: "Error message",
+          detail: "This is an error message.",
         });
       };
 
@@ -120,23 +120,23 @@ export const MultipleToasts: Story = {
       const showToast = () => {
         toast.add({
           severity: "success",
-          summary: "Verkündung erfolgreich hochgeladen",
-          detail: "Sie können mit der Arbeit an der neuen Verkündung beginnen.",
+          summary: "Success",
+          detail: "Something worked.",
         });
         toast.add({
           severity: "info",
           summary: "Info",
-          detail: "Message Content",
+          detail: "Some info",
         });
         toast.add({
           severity: "warn",
           summary: "Warn",
-          detail: "Message Content",
+          detail: "Something kind of worked.",
         });
         toast.add({
           severity: "error",
           summary: "Error",
-          detail: "Message Content",
+          detail: "Something didn't work.",
         });
       };
 
@@ -158,8 +158,8 @@ export const NotClosableShortLived: Story = {
       const showToast = () => {
         toast.add({
           severity: "error",
-          summary: "Error",
-          detail: "An error occurred.",
+          summary: "Error message",
+          detail: "This is an error message.",
           closable: false,
           life: 5000,
         });
@@ -183,8 +183,8 @@ export const WithTemplate: Story = {
       const showToast = () => {
         toast.add({
           severity: "info",
-          summary: "Info",
-          detail: "Message content",
+          summary: "Info message",
+          detail: "This is an informational message.",
         });
       };
 
@@ -194,8 +194,8 @@ export const WithTemplate: Story = {
       <Toast v-bind="args">
         <template #message="slot">
           <div class="w-320">
-            <p class="ris-label1-bold">{{ slot.message.summary }}</p>
-            <p class="ris-label1-regular">{{ slot.message.detail }}</p>
+            <p class="ris-body2-bold">{{ slot.message.summary }}</p>
+            <p class="ris-body2-regular">{{ slot.message.detail }}</p>
             <div class="mt-16 flex gap-8">
               <PrimevueButton severity="secondary" label="Action 1" />
               <PrimevueButton severity="primary" label="Action 2" />
@@ -203,7 +203,7 @@ export const WithTemplate: Story = {
           </div>
         </template>
       </Toast>
-      <PrimevueButton label="Error" @click="showToast()" />
+      <PrimevueButton label="With template" @click="showToast()" />
     `,
   }),
 };
