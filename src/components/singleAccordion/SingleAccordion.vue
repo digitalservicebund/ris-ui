@@ -16,7 +16,7 @@ const props = defineProps<{
   headerExpanded: string;
 }>();
 
-const activeModel = defineModel<boolean>();
+const activeModel = defineModel<boolean>({ default: false });
 
 const activePanel = computed({
   get: () => {
