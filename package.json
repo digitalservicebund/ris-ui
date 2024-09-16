@@ -28,6 +28,11 @@
     },
     "./fonts.css": {
       "import": "./dist/fonts.css"
+    },
+    "./components": {
+      "require": "./dist/components/index.cjs",
+      "import": "./dist/components/index.js",
+      "types": "./dist/components/index.d.ts"
     }
   },
   "scripts": {

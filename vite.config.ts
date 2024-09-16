@@ -26,10 +26,16 @@ export default defineConfig({
       entry: {
         "primevue/index": "src/primevue/index.ts",
         "tailwind/index": "src/tailwind/index.ts",
+        "components/index": "src/components/index.ts",
       },
     },
     rollupOptions: {
       external: ["vue", "primevue"],
+      output: {
+        globals: {
+          vue: "Vue",
+        },
+      },
     },
   },
   test: {
