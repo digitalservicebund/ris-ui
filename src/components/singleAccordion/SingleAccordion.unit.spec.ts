@@ -36,7 +36,7 @@ describe("Accordion.vue", () => {
       props: {
         headerCollapsed: "Show More",
         headerExpanded: "Show Less",
-        value: "0",
+        modelValue: true,
       },
       slots: {
         default: '<div class="slot-content">Slot Content</div>',
