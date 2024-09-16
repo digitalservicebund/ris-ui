@@ -42,7 +42,8 @@
     "eslint:fix": "npm run eslint:check -- --fix",
     "audit:licenses": "license-checker --production --excludePrivatePackages --excludePackages @digitalservicebund/ris-ui@$(cat package.json | jq -r '.version') --onlyAllow \"$(. ./parse-allowed-licenses.sh)\" --csv --out ./frontend-license-report.csv",
     "typecheck": "vue-tsc",
-    "sync-fonts": "rm ./public/fonts/*.woff ./public/fonts/*.woff2; cp ./node_modules/@digitalservice4germany/angie/fonts/* ./public/fonts/;  cp ./node_modules/@digitalservice4germany/angie/fonts.css ./public/"
+    "sync-fonts": "rm ./public/fonts/*.woff ./public/fonts/*.woff2; cp ./node_modules/@digitalservice4germany/angie/fonts/* ./public/fonts/;  cp ./node_modules/@digitalservice4germany/angie/fonts.css ./public/",
+    "test": "vitest run"
   },
   "peerDependencies": {
     "primevue": "^4.0.0",
@@ -55,6 +56,7 @@
     "@digitalservice4germany/style-dictionary": "~2.0.0",
     "@eslint/compat": "~1.1.1",
     "@eslint/js": "~9.9.0",
+    "@iconify-json/gravity-ui": "^1.2.1",
     "@iconify-json/ic": "~1.1.18",
     "@storybook/addon-essentials": "~8.2.9",
     "@storybook/addon-interactions": "~8.2.9",
@@ -67,10 +69,12 @@
     "@storybook/vue3": "~8.2.9",
     "@storybook/vue3-vite": "~8.2.9",
     "@vitejs/plugin-vue": "~5.1.2",
+    "@vue/test-utils": "^2.4.6",
     "autoprefixer": "~10.4.20",
     "eslint": "~9.9.0",
     "eslint-config-prettier": "~9.1.0",
     "globals": "~15.9.0",
+    "happy-dom": "^15.7.4",
     "license-checker": "~25.0.1",
     "msw": "^2.4.5",
     "msw-storybook-addon": "^2.0.3",
@@ -83,6 +87,7 @@
     "typescript-eslint": "~8.2.0",
     "unplugin-icons": "~0.19.2",
     "vite": "~5.4.1",
+    "vitest": "^2.1.1",
     "vue-tsc": "~2.0.29"
   },
   "msw": {
