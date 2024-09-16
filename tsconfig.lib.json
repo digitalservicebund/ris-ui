@@ -13,5 +13,5 @@
   },
 
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/components/**/*.vue"],
-  "exclude": ["src/**/*.stories.ts"]
+  "exclude": ["src/**/*.stories.ts", "src/**/*.spec.ts"]
 }
