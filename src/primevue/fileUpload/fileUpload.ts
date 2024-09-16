@@ -1,5 +1,4 @@
 import { tw } from "@/lib/tags.ts";
-import { usePrimeVue } from "primevue/config";
 import { FileUploadPassThroughOptions } from "primevue/fileupload";
 
 const fileUpload: FileUploadPassThroughOptions = {
@@ -16,17 +15,6 @@ const fileUpload: FileUploadPassThroughOptions = {
   input: () => ({
     class: "hidden",
   }),
-
-  hooks: {
-    onBeforeMount() {
-      const primevue = usePrimeVue();
-
-      if (primevue.config.locale) {
-        primevue.config.locale.choose = "Auswählen ...";
-        primevue.config.locale.noFileChosenMessage = "Keine Datei ausgewählt.";
-      }
-    },
-  },
 };
 
 export default fileUpload;

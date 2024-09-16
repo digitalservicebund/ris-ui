@@ -49,7 +49,7 @@ export const Default: Story = {
         </template>
       </ConfirmDialog>
 
-      <PrimevueButton @click="showConfirm()" label="Save" />
+      <PrimevueButton @click="showConfirm()" label="Show dialog" />
     `,
   }),
 };

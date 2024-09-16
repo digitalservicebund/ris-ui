@@ -19,7 +19,7 @@ npm install vue primevue tailwindcss
 npm install @digitalservicebund/ris-ui
 ```
 
-## Usage
+### Vue setup
 
 Import and apply the RIS UI theme, styling, and fonts where you set up your application (typically `main.ts`):
 
@@ -27,15 +27,69 @@ Import and apply the RIS UI theme, styling, and fonts where you set up your appl
   // main.ts
   import { createApp } from "vue";
   import PrimeVue from "primevue/config";
-+ import { RisUiTheme } from "@digitalservicebund/ris-ui/primevue";
++ import { RisUiTheme, RisUiLocale } from "@digitalservicebund/ris-ui/primevue";
 + import "@digitalservicebund/ris-ui/primevue/style.css";
 + import "@digitalservicebund/ris-ui/fonts.css";
 
   const app = createApp().use(PrimeVue, {
 +   unstyled: true,
 +   pt: RisUiTheme,
++   locale: RisUiLocale.deDE
   })
 ```
+
+### Nuxt setup
+
+If using Nuxt, skip the Vue setup above.
+
+Install the Nuxt PrimeVue module:
+
+```sh
+npm install @primevue/nuxt-module
+```
+
+Add the PrimeVue module and configure it in `nuxt.config.ts`:
+
+```diff
+  // nuxt.config.ts
+  export default defineNuxtConfig({
+    // your other configuration
+    modules: [
++     "@primevue/nuxt-module",
+    ],
++   primevue: {
++      usePrimeVue: false, // configured in plugins/ris-ui.ts
++   },
+  })
+```
+
+Add a new Nuxt plugin to configure PrimeVue:
+
+```typescript
+// plugins/ris-ui.ts
+import { RisUiTheme } from "@digitalservicebund/ris-ui/primevue";
+import PrimeVue from "primevue/config";
+
+export default defineNuxtPlugin((nuxtApp) => {
+  nuxtApp.vueApp.use(PrimeVue, {
+    pt: RisUiTheme,
+    unstyled: true,
+  });
+});
+```
+
+Finally, add the styles (e.g. `assets/main.css`):
+
+```css
+@import "@digitalservicebund/ris-ui/primevue/style.css";
+@import "@digitalservicebund/ris-ui/fonts.css";
+
+/* Your other CSS */
+```
+
+If not using Tailwind, you may also add these styles directly to the `css` section of `nuxt.config.ts`.
+
+## Tailwind usage
 
 If you want, also install the Tailwind preset (for colors, spacings, etc.) and plugin (for typography classes, etc.):
 
@@ -49,6 +103,25 @@ If you want, also install the Tailwind preset (for colors, spacings, etc.) and p
 
     // your other configuration
   };
+```
+
+To avoid issues with conflicting `@layer` directives, make sure to integrate the `postcss-import` module in your PostCSS configuration:
+
+See https://tailwindcss.com/docs/adding-custom-styles#using-multiple-css-files
+
+### Using Nuxt
+
+You may add the `postcss-import` module to your `nuxt.config.ts` file:
+
+```diff
+  // nuxt.config.ts
+  postcss: {
+    plugins: {
++     "postcss-import": {},
+      tailwindcss: {},
+      autoprefixer: {},
+    },
+  },
 ```
 
 ## Development
