@@ -9,8 +9,8 @@ const meta: Meta<typeof SingleAccordion> = {
   tags: ["autodocs"],
 
   args: {
-    headerCollapsed: "Click to expand",
-    headerExpanded: "Click to collapse",
+    headerCollapsed: "Show more",
+    headerExpanded: "Show less",
     default:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   },
