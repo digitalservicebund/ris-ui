@@ -20,6 +20,10 @@ const meta: Meta<typeof SingleAccordion> = {
     headerExpanded: { control: "text" },
     default: { control: "text" },
   },
+
+  parameters: {
+    msw: { onUnhandledRequest: "bypass" }, // ignore MSW requests for icons
+  },
 };
 
 export default meta;
