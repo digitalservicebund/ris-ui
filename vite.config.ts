@@ -1,3 +1,4 @@
+/// <reference types="vitest/config" />
 import vue from "@vitejs/plugin-vue";
 import { fileURLToPath, URL } from "node:url";
 import icons from "unplugin-icons/vite";
@@ -30,5 +31,9 @@ export default defineConfig({
     rollupOptions: {
       external: ["vue", "primevue"],
     },
+  },
+  test: {
+    globals: true,
+    environment: "happy-dom",
   },
 });
