@@ -19,7 +19,7 @@ describe("Accordion.vue", () => {
       },
     });
 
-    const header = wrapper.find(".flex.flex-row.space-x-8.py-24");
+    const header = wrapper.find(".p-accordionheader > div");
     await header.trigger("mouseover");
     expect(wrapper.findComponent(GravityUiCircleChevronDownFill).exists()).toBe(
       true,
@@ -44,7 +44,7 @@ describe("Accordion.vue", () => {
       },
     });
 
-    const header = wrapper.find(".flex.flex-row.space-x-8.py-24");
+    const header = wrapper.find(".p-accordionheader > div");
     await header.trigger("mouseover");
     expect(wrapper.findComponent(GravityUiCircleChevronUpFill).exists()).toBe(
       true,
@@ -70,7 +70,7 @@ describe("Accordion.vue", () => {
     expect(wrapper.text()).toContain("Collapsed Header");
 
     // Simulate opening the accordion
-    await wrapper.find(".flex.flex-row.space-x-8.py-24").trigger("click");
+    await wrapper.find(".p-accordionheader > div").trigger("click");
     await nextTick();
     // The v-model should be updated to true, and the header should change
 
@@ -80,7 +80,7 @@ describe("Accordion.vue", () => {
     expect(wrapper.text()).toContain("Expanded Header");
 
     // Simulate closing the accordion
-    await wrapper.find(".flex.flex-row").trigger("click");
+    await wrapper.find(".p-accordionheader > div").trigger("click");
     await nextTick();
 
     // The v-model should be updated back to false, and the header should change back
