@@ -7,17 +7,26 @@ import Accordion from "primevue/accordion";
 import AccordionPanel from "primevue/accordionpanel";
 import AccordionHeader from "primevue/accordionheader";
 import AccordionContent from "primevue/accordioncontent";
-import { ref } from "vue";
+import { computed, ref } from "vue";
 
 const isHovered = ref(false);
 
 const props = defineProps<{
   headerCollapsed: string;
   headerExpanded: string;
-  value?: string;
 }>();
 
-const activePanel = ref(props.value || "");
+const activeModel = defineModel<boolean>();
+
+const activePanel = computed({
+  get: () => {
+    return activeModel.value ? "0" : "";
+  },
+  set: (value) => {
+    activeModel.value = value === "0";
+  },
+});
+
 const accordionHeaderClasses = "flex flex-row space-x-8 py-24 items-center";
 </script>
 
