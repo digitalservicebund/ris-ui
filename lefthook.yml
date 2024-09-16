@@ -12,16 +12,13 @@ pre-commit:
         (echo "Verify the content and fix it with: talisman --githook pre-commit --interactive"; exit 1)
 
     check-format-frontend:
-      root: frontend/
       run: npm run --silent prettier:fix {staged_files} && git add {staged_files}
 
     lint-frontend:
-      root: frontend/
       glob: "*.{ts,js,vue}"
       run: npm run --silent eslint:fix {staged_files} && git add {staged_files}
 
     typecheck-frontend:
-      root: frontend/
       glob: "*.{ts,vue}"
       run: npm run --silent typecheck && git add {staged_files}
 
