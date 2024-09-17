@@ -3,7 +3,7 @@ import { CheckboxPassThroughOptions } from "primevue/checkbox";
 
 const checkbox: CheckboxPassThroughOptions = {
   root: {
-    class: tw`relative inline-block h-24 w-24 [&+label]:ris-label2-regular [&+label]:ml-8`,
+    class: tw`relative inline-block h-24 min-h-24 w-24 min-w-24 [&+label]:ris-label1-regular [&+label]:ml-8`,
   },
 
   input: {
@@ -12,6 +12,10 @@ const checkbox: CheckboxPassThroughOptions = {
 
   box: {
     class: tw`pointer-events-none absolute inset-0 flex items-center justify-center text-blue-800 peer-disabled:text-gray-600 peer-aria-[invalid]:text-red-800`,
+  },
+
+  icon: {
+    class: tw`h-12 w-12`,
   },
 };
 
