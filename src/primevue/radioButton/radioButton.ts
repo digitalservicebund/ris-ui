@@ -3,7 +3,7 @@ import { RadioButtonPassThroughOptions } from "primevue/radiobutton";
 
 const radioButton: RadioButtonPassThroughOptions = {
   root: {
-    class: tw`relative inline-block h-32 w-32 [&+label]:ris-label2-regular [&+label]:ml-8`,
+    class: tw`relative inline-block h-32 w-32 [&+label]:ris-label1-regular [&+label]:ml-8`,
   },
 
   input: {
