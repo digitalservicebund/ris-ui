@@ -14,7 +14,7 @@ const meta: Meta<typeof AutoComplete> = {
   tags: ["autodocs"],
 
   args: {
-    dropdown: false,
+    dropdown: true,
     dropdownMode: "current",
     ariaLabel: "",
     ariaLabelledby: "",
@@ -22,6 +22,7 @@ const meta: Meta<typeof AutoComplete> = {
     completeOnFocus: false,
     loading: false,
     invalid: false,
+    fluid: true,
     forceSelection: false,
     autoOptionFocus: false,
     selectOnFocus: false,
@@ -46,12 +47,15 @@ const meta: Meta<typeof AutoComplete> = {
           return new Promise((resolve) => {
             setTimeout(() => {
               const responseData = [...Array(10).keys()].map((index) => {
-                const label = q.split("-")[0] + "-" + index;
-                return {
+                const label = (q.split("-")[0] || "item") + "-" + index;
+                const item: AutoCompleteSuggestion = {
                   id: "/items/" + label,
                   label,
-                  optionDisabled: index % 5 === 0,
                 };
+                if (index % 4 < 2) {
+                  item.secondaryLabel = "Some items get a secondary label";
+                }
+                return item;
               });
               resolve(HttpResponse.json(responseData, { status: 200 }));
             }, 500);

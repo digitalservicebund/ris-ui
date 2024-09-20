@@ -99,9 +99,15 @@ const onUpdateInnerValue = (
     <template #option="slotProps: { option: AutoCompleteSuggestion }">
       <div
         :data-variant="isActiveOption(slotProps.option) && 'active'"
-        class="flex h-48 items-center gap-8 px-12 py-16 data-[variant=active]:border-l-4 data-[variant=active]:border-blue-800 data-[variant=active]:bg-blue-200"
+        class="flex min-h-48 flex-col justify-center gap-2 border-l-4 border-transparent px-12 py-10 data-[variant=active]:border-blue-800 data-[variant=active]:bg-blue-200"
       >
-        {{ slotProps.option.label }}
+        <div class="ris-label1-regular">{{ slotProps.option.label }}</div>
+        <div
+          v-if="slotProps.option.secondaryLabel"
+          class="ris-label2-regular text-gray-900"
+        >
+          {{ slotProps.option.secondaryLabel }}
+        </div>
       </div>
     </template>
   </AutoComplete>
