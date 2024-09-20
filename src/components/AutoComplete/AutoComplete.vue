@@ -86,16 +86,11 @@ const onUpdateInnerValue = (
     :fluid="props.fluid"
     option-label="label"
     data-key="value"
-    class="relative w-full"
-    input-class="w-full h-48 pl-20 pr-48 bg-white border-radius-0 shadow-[inset_0_0_0_2px] hover:shadow-[inset_0_0_0_4px] focus:shadow-[inset_0_0_0_4px] shadow-blue-800 hover:shadow-blue-800 focus:shadow-blue-800 outline-none border-none"
-    dropdown-class="absolute inset-y-0 right-20"
-    panel-class="bg-white shadow-md px-8 py-12 max-h-56 overflow-auto"
-    pt:option="hover:bg-blue-100 data-[p-focus=true]:bg-blue-200"
   >
     <template #loader>
       <ProgressSpinner
         unstyled
-        class="!absolute inset-y-0 right-20 my-auto mr-2"
+        class="!absolute inset-y-0 right-12 my-auto mr-2"
       />
     </template>
     <template #dropdownicon>
