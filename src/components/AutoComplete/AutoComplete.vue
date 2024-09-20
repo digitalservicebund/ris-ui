@@ -10,6 +10,12 @@ export interface AutoCompleteSuggestion {
   secondaryLabel?: string;
 }
 
+/*
+To keep TypeScript for the inner component's props, this wrapper component explicitly declares them
+even though they are only passed through.
+Ideally, they would be passed on using v-bind="mergeProps($attrs, props)" instead of being declared one-by-one,
+but using this approach broke the forwarding of emits.
+*/
 export type Props = Pick<
   AutoCompleteProps,
   | "dropdown"
@@ -34,7 +40,7 @@ export type Props = Pick<
   initialLabel?: string;
 };
 
-const props = defineProps<Props>(); // these props will have to be passed through to the wrapped component explicitly, the rest will be forwarded through $attrs
+const props = defineProps<Props>();
 const model = defineModel<string>();
 
 const isActiveOption = (option: AutoCompleteSuggestion) => {
@@ -44,6 +50,15 @@ const isActiveOption = (option: AutoCompleteSuggestion) => {
 defineOptions({
   inheritAttrs: false,
 });
+
+/*
+This wrapper component exposes its own v-model, which holds the ID of the currently selected item.
+This is different from the PrimeVue AutoComplete behavior, where the model either holds the prefix
+currently being typed by the user, or the selected object.
+The outer model is changed
+- in the @option-select emit, and
+- in @update:model-value emit, only if the typed input resets to "".
+ */
 
 const innerValue = ref(props.initialLabel ?? model.value);
 const onUpdateInnerValue = (
