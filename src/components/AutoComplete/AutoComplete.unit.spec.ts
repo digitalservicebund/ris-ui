@@ -2,9 +2,10 @@ import { describe, it, expect } from "vitest";
 import { mount, shallowMount } from "@vue/test-utils";
 
 import { nextTick } from "vue";
-import AutoComplete from "./AutoComplete.vue";
+import AutoComplete, { type Props } from "./AutoComplete.vue";
 import PrimeVue from "primevue/config";
 import ProgressSpinner from "primevue/progressspinner";
+import _ from "lodash";
 
 describe("AutoComplete", () => {
   it("renders correctly with default props", async () => {
@@ -58,21 +59,37 @@ describe("AutoComplete", () => {
   });
 
   it("passes props correctly", async () => {
+    const props: Required<Props> = {
+      suggestions: [{ id: "1", label: "Option 1" }],
+      fluid: false,
+      typeahead: false,
+      dropdownMode: "current",
+      ariaLabel: "ARIA label",
+      ariaLabelledby: "labelled by",
+      delay: 3.141,
+      completeOnFocus: true,
+      loading: true,
+      invalid: true,
+      disabled: true,
+      dropdown: true,
+      optionDisabled: "disabled",
+      scrollHeight: "h",
+      placeholder: "p",
+      forceSelection: true,
+      autoOptionFocus: true,
+      selectOnFocus: true,
+      initialLabel: "initial label",
+    };
     const wrapper = await mount(AutoComplete, {
-      props: {
-        emptySearchMessage: "TEST empty search message",
-        class: "test-class",
-      },
+      props,
       global: { plugins: [PrimeVue] },
     });
 
     const autoComplete = wrapper.findComponent(AutoComplete);
 
-    expect(wrapper.find('span[@role="status"]').text()).toBe(
-      "TEST empty search message",
-    );
-    const classList = [...autoComplete.element.classList];
-    expect(classList).includes("test-class");
+    // initalLabel gets special handling, being used to populate the internal modelValue if a certain item is already set
+    expect(autoComplete.props("modelValue")).toBe(props.initialLabel);
+    expect(autoComplete.props()).toMatchObject(_.omit(props, ["initialLabel"]));
   });
 
   it("renders the ProgressSpinner when loading", async () => {

@@ -84,6 +84,7 @@ const onUpdateInnerValue = (
     :autoOptionFocus="props.autoOptionFocus"
     :selectOnFocus="props.selectOnFocus"
     :fluid="props.fluid"
+    :optionDisabled="props.optionDisabled"
     option-label="label"
     data-key="value"
   >
