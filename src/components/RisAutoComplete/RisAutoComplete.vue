@@ -34,7 +34,6 @@ export type Props = Pick<
   | "forceSelection"
   | "autoOptionFocus"
   | "selectOnFocus"
-  | "fluid"
 > & {
   suggestions?: AutoCompleteSuggestion[];
   initialLabel?: string;
@@ -98,7 +97,7 @@ const onUpdateInnerValue = (
     :invalid="props.invalid"
     :autoOptionFocus="props.autoOptionFocus"
     :selectOnFocus="props.selectOnFocus"
-    :fluid="props.fluid"
+    :fluid="true"
     :optionDisabled="props.optionDisabled"
     option-label="label"
     data-key="value"

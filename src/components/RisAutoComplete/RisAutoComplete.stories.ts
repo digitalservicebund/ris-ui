@@ -1,15 +1,15 @@
 import { Meta, StoryObj } from "@storybook/vue3";
-import AutoComplete, {
+import RisAutoComplete, {
   AutoCompleteSuggestion,
   Props,
-} from "./AutoComplete.vue";
+} from "./RisAutoComplete.vue";
 import { html } from "@/lib/tags.ts";
 import { ref } from "vue";
 import { AutoCompleteCompleteEvent } from "primevue/autocomplete";
 import { http, HttpResponse } from "msw";
 
-const meta: Meta<typeof AutoComplete> = {
-  component: AutoComplete,
+const meta: Meta<typeof RisAutoComplete> = {
+  component: RisAutoComplete,
 
   tags: ["autodocs"],
 
@@ -22,7 +22,6 @@ const meta: Meta<typeof AutoComplete> = {
     completeOnFocus: false,
     loading: false,
     invalid: false,
-    fluid: true,
     forceSelection: false,
     autoOptionFocus: false,
     selectOnFocus: false,
@@ -85,11 +84,11 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   render: (args) => ({
-    components: { AutoComplete },
+    components: { RisAutoComplete },
     setup() {
       return commonSetup(args);
     },
-    template: html`<AutoComplete
+    template: html`<RisAutoComplete
         v-bind="args"
         v-model="value"
         :suggestions="suggestions"
@@ -106,11 +105,11 @@ export const PrePopulated: Story = {
     initialLabel: "Item 1",
   },
   render: (args) => ({
-    components: { AutoComplete },
+    components: { RisAutoComplete },
     setup() {
       return commonSetup(args);
     },
-    template: html`<AutoComplete
+    template: html`<RisAutoComplete
         :key="args.initialLabel"
         v-model="value"
         v-bind="args"
