@@ -1,3 +1,3 @@
-import SingleAccordion from "./SingleAccordion/SingleAccordion.vue";
+import RisSingleAccordion from "./SingleAccordion/RisSingleAccordion.vue";
 
-export { SingleAccordion };
+export { RisSingleAccordion };

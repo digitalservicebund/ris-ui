@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import GravityUiCircleChevronUpFill from "~icons/gravity-ui/circle-chevron-up-fill";
-import GravityUiCircleChevronUp from "~icons/gravity-ui/circle-chevron-up";
-import GravityUiCircleChevronDownFill from "~icons/gravity-ui/circle-chevron-down-fill";
-import GravityUiCircleChevronDown from "~icons/gravity-ui/circle-chevron-down";
+import MaterialSymbolsExpandCircleDownRounded from "~icons/material-symbols/expand-circle-down-rounded";
+import MaterialSymbolsExpandCircleDownOutlineRounded from "~icons/material-symbols/expand-circle-down-outline-rounded";
+import MaterialSymbolsExpandCircleUpRounded from "~icons/material-symbols/expand-circle-up-rounded";
+import MaterialSymbolsExpandCircleUpOutlineRounded from "~icons/material-symbols/expand-circle-up-outline-rounded";
 import Accordion from "primevue/accordion";
 import AccordionPanel from "primevue/accordionpanel";
 import AccordionHeader from "primevue/accordionheader";
@@ -46,8 +46,8 @@ const accordionHeaderClasses = "flex flex-row space-x-8 py-24 items-center";
           @mouseleave="isHovered = false"
         >
           <div class="flex flex-col gap-4">
-            <GravityUiCircleChevronUpFill v-if="isHovered" />
-            <GravityUiCircleChevronUp v-else />
+            <MaterialSymbolsExpandCircleUpRounded v-if="isHovered" />
+            <MaterialSymbolsExpandCircleUpOutlineRounded v-else />
           </div>
           <div class="flex flex-col gap-4">{{ props.headerExpanded }}</div>
         </div>
@@ -58,8 +58,8 @@ const accordionHeaderClasses = "flex flex-row space-x-8 py-24 items-center";
           @mouseleave="isHovered = false"
         >
           <div class="flex flex-col gap-4">
-            <GravityUiCircleChevronDownFill v-if="isHovered" />
-            <GravityUiCircleChevronDown v-else />
+            <MaterialSymbolsExpandCircleDownRounded v-if="isHovered" />
+            <MaterialSymbolsExpandCircleDownOutlineRounded v-else />
           </div>
           <div class="flex flex-col gap-4">{{ props.headerCollapsed }}</div>
         </div>
