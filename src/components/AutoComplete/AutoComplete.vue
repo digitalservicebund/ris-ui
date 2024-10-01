@@ -104,10 +104,7 @@ const onUpdateInnerValue = (
     data-key="value"
   >
     <template #loader>
-      <ProgressSpinner
-        unstyled
-        class="!absolute inset-y-0 right-12 my-auto mr-2"
-      />
+      <ProgressSpinner class="absolute inset-y-0 right-12 my-auto mr-2" />
     </template>
     <template #dropdownicon>
       <IconChevron />
