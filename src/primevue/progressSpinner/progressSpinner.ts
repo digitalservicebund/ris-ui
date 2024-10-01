@@ -3,7 +3,7 @@ import { tw } from "@/lib/tags.ts";
 
 const progressSpinner: ProgressSpinnerPassThroughOptions = {
   root: {
-    class: tw`relative mx-auto inline-block h-28 w-28 animate-spin`,
+    class: tw`mx-auto inline-block h-28 w-28 animate-spin`,
   },
 
   circle: {

@@ -1,12 +1,17 @@
 import { tw } from "@/lib/tags";
 import { InputTextPassThroughOptions } from "primevue/inputtext";
 import "./inputText.css";
+// Base
+export const base = tw`border-2 border-blue-800 bg-white outline-4 -outline-offset-4 outline-blue-800 placeholder:text-gray-900 read-only:cursor-not-allowed read-only:border-blue-300 read-only:bg-blue-300 hover:outline focus:outline disabled:border-blue-500 disabled:bg-white disabled:text-blue-500 disabled:outline-none aria-[invalid]:border-red-800 aria-[invalid]:bg-red-200 aria-[invalid]:outline-red-800 aria-[invalid]:disabled:outline-none`;
+
+// Sizes
+export const small = tw`ris-body2-regular h-48 px-16 py-4`;
+export const large = tw`ris-body1-regular h-64 px-24 py-4`;
+export const smallInGroup = tw`ris-body2-regular h-[44px] p-0`; // 2px group border
+export const largeInGroup = tw`ris-body1-regular h-[60px] p-0`;
 
 const inputText: InputTextPassThroughOptions = {
   root: ({ props, parent }) => {
-    // Base
-    const base = tw`border-2 border-blue-800 bg-white outline-4 -outline-offset-4 outline-blue-800 placeholder:text-gray-900 read-only:cursor-not-allowed read-only:border-blue-300 read-only:bg-blue-300 hover:outline focus:outline disabled:border-blue-500 disabled:bg-white disabled:text-blue-500 disabled:outline-none aria-[invalid]:border-red-800 aria-[invalid]:bg-red-200 aria-[invalid]:outline-red-800 aria-[invalid]:disabled:outline-none`;
-
     // Integration for primevue/password
     // This is styled here rather than in the password component because it
     // makes accessing the placeholder easier
@@ -18,12 +23,6 @@ const inputText: InputTextPassThroughOptions = {
 
     // Integration for primevue/fluid
     const fluid = tw`w-full`;
-
-    // Sizes
-    const small = tw`ris-body2-regular h-48 px-16 py-4`;
-    const large = tw`ris-body1-regular h-64 px-24 py-4`;
-    const smallInGroup = tw`ris-body2-regular h-[44px] p-0`; // 2px group border
-    const largeInGroup = tw`ris-body1-regular h-[60px] p-0`;
 
     return {
       class: {

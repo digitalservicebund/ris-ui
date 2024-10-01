@@ -12,6 +12,7 @@ import message from "./message/message";
 import password from "./password/password";
 import progressSpinner from "./progressSpinner/progressSpinner";
 import radioButton from "./radioButton/radioButton";
+import autocomplete from "./autocomplete/autocomplete";
 import textarea from "./textarea/textarea";
 import toast from "./toast/toast";
 
@@ -32,6 +33,7 @@ export const RisUiTheme = {
   radioButton,
   textarea,
   toast,
+  autocomplete,
 };
 
 export const RisUiLocale = {
