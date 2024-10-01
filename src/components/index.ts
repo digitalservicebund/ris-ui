@@ -1,4 +1,4 @@
-import RisSingleAccordion from "@/components/SingleAccordion/RisSingleAccordion.vue";
+import RisSingleAccordion from "./RisSingleAccordion";
 import RisAutoComplete from "./RisAutoComplete";
 
 export { RisSingleAccordion, RisAutoComplete };
