@@ -1,10 +1,10 @@
 import { mount } from "@vue/test-utils";
 import { expect, describe, it } from "vitest";
 import SingleAccordion from ".";
-import GravityUiCircleChevronDownFill from "~icons/gravity-ui/circle-chevron-down-fill";
-import GravityUiCircleChevronDown from "~icons/gravity-ui/circle-chevron-down";
-import GravityUiCircleChevronUpFill from "~icons/gravity-ui/circle-chevron-up-fill";
-import GravityUiCircleChevronUp from "~icons/gravity-ui/circle-chevron-up";
+import MaterialSymbolsExpandCircleDownRounded from "~icons/material-symbols/expand-circle-down-rounded";
+import MaterialSymbolsExpandCircleDownOutlineRounded from "~icons/material-symbols/expand-circle-down-outline-rounded";
+import MaterialSymbolsExpandCircleUpRounded from "~icons/material-symbols/expand-circle-up-rounded";
+import MaterialSymbolsExpandCircleUpOutlineRounded from "~icons/material-symbols/expand-circle-up-outline-rounded";
 import { nextTick, ref } from "vue";
 
 describe("Accordion.vue", () => {
@@ -21,13 +21,15 @@ describe("Accordion.vue", () => {
 
     const header = wrapper.find(".p-accordionheader > div");
     await header.trigger("mouseover");
-    expect(wrapper.findComponent(GravityUiCircleChevronDownFill).exists()).toBe(
-      true,
-    );
+    expect(
+      wrapper.findComponent(MaterialSymbolsExpandCircleDownRounded).exists(),
+    ).toBe(true);
     await header.trigger("mouseleave");
-    expect(wrapper.findComponent(GravityUiCircleChevronDown).exists()).toBe(
-      true,
-    );
+    expect(
+      wrapper
+        .findComponent(MaterialSymbolsExpandCircleDownOutlineRounded)
+        .exists(),
+    ).toBe(true);
     expect(header.text()).toContain("Show More");
     expect(wrapper.find(".slot-content").text()).toContain("Slot Content");
   });
@@ -46,11 +48,15 @@ describe("Accordion.vue", () => {
 
     const header = wrapper.find(".p-accordionheader > div");
     await header.trigger("mouseover");
-    expect(wrapper.findComponent(GravityUiCircleChevronUpFill).exists()).toBe(
-      true,
-    );
+    expect(
+      wrapper.findComponent(MaterialSymbolsExpandCircleUpRounded).exists(),
+    ).toBe(true);
     await header.trigger("mouseleave");
-    expect(wrapper.findComponent(GravityUiCircleChevronUp).exists()).toBe(true);
+    expect(
+      wrapper
+        .findComponent(MaterialSymbolsExpandCircleUpOutlineRounded)
+        .exists(),
+    ).toBe(true);
     expect(header.text()).toContain("Show Less");
   });
 

@@ -1,10 +1,10 @@
 import { Meta, StoryObj } from "@storybook/vue3";
-import SingleAccordion from ".";
+import RisSingleAccordion from ".";
 import { html } from "@/lib/tags.ts";
 import { ref } from "vue";
 
-const meta: Meta<typeof SingleAccordion> = {
-  component: SingleAccordion,
+const meta: Meta<typeof RisSingleAccordion> = {
+  component: RisSingleAccordion,
 
   tags: ["autodocs"],
 
@@ -31,13 +31,13 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   render: (args) => ({
-    components: { SingleAccordion },
+    components: { RisSingleAccordion },
     setup() {
       const active = ref(true);
       return { args, active };
     },
-    template: html`<SingleAccordion v-bind="args" v-model="active"
-      >{{args.default}}</SingleAccordion
+    template: html`<RisSingleAccordion v-bind="args" v-model="active"
+      >{{args.default}}</RisSingleAccordion
     >`,
   }),
 };
