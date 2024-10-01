@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from "@storybook/vue3";
 import PrimevueButton from "primevue/button";
-import IconCheck from "~icons/ic/baseline-check";
+import IconCheck from "~icons/material-symbols/check";
 import { html } from "@/lib/tags.ts";
 
 // Imported as PrimevueButton because somehow formatting sometimes changes

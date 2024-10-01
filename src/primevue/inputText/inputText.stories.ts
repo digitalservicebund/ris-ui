@@ -2,7 +2,7 @@ import { html } from "@/lib/tags";
 import { Meta, StoryObj } from "@storybook/vue3";
 import Fluid from "primevue/fluid";
 import InputText from "primevue/inputtext";
-import ErrorOutline from "~icons/ic/error-outline";
+import ErrorOutline from "~icons/material-symbols/error-outline";
 
 const meta: Meta<typeof InputText> = {
   component: InputText,

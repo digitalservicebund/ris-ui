@@ -3,7 +3,7 @@ import { Meta, StoryObj } from "@storybook/vue3";
 import PrimevueButton from "primevue/button";
 import ConfirmDialog from "primevue/confirmdialog";
 import { useConfirm } from "primevue/useconfirm";
-import IcBaselineErrorOutline from "~icons/ic/baseline-error-outline";
+import ErrorOutline from "~icons/material-symbols/error-outline";
 
 const meta: Meta<typeof ConfirmDialog> = {
   component: ConfirmDialog,
@@ -16,7 +16,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   render: (args) => ({
-    components: { ConfirmDialog, PrimevueButton, IcBaselineErrorOutline },
+    components: { ConfirmDialog, PrimevueButton, ErrorOutline },
     setup() {
       const confirm = useConfirm();
 
@@ -45,7 +45,7 @@ export const Default: Story = {
     template: html`
       <ConfirmDialog v-bind="args">
         <template #icon>
-          <IcBaselineErrorOutline class="text-red-800" />
+          <ErrorOutline class="text-red-800" />
         </template>
       </ConfirmDialog>
 

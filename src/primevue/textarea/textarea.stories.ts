@@ -1,7 +1,7 @@
 import { html } from "@/lib/tags";
 import { Meta, StoryObj } from "@storybook/vue3";
 import PrimevueTextarea from "primevue/textarea";
-import ErrorOutline from "~icons/ic/error-outline";
+import ErrorOutline from "~icons/material-symbols/error-outline";
 
 // Imported as Btn because somehow formatting sometimes changes
 // "PrimevueTextarea" to "PrimevueTextarea", breaking the stories
