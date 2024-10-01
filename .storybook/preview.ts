@@ -32,6 +32,13 @@ setup((app) => {
 
 const preview: Preview = {
   loaders: [mswLoader],
+  parameters: {
+    options: {
+      storySort: {
+        order: ["primevue", "components", "tailwind"],
+      },
+    },
+  },
 };
 
 export default preview;

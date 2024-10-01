@@ -1,3 +1,4 @@
+/// <reference types="vitest/config" />
 import vue from "@vitejs/plugin-vue";
 import { fileURLToPath, URL } from "node:url";
 import icons from "unplugin-icons/vite";
@@ -25,10 +26,20 @@ export default defineConfig({
       entry: {
         "primevue/index": "src/primevue/index.ts",
         "tailwind/index": "src/tailwind/index.ts",
+        "components/index": "src/components/index.ts",
       },
     },
     rollupOptions: {
       external: ["vue", "primevue"],
+      output: {
+        globals: {
+          vue: "Vue",
+        },
+      },
     },
+  },
+  test: {
+    globals: true,
+    environment: "happy-dom",
   },
 });
