@@ -23,7 +23,6 @@ const autocomplete: AutoCompletePassThroughOptions = {
           [small]: true,
           [fluid]: !!props.fluid,
         },
-        //   class: tw`border-radius-0 h-48 w-full border-none pl-20 pr-48`,
       };
     },
   },
