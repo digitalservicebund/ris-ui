@@ -1,0 +1,7 @@
+[aria-invalid="true"] {
+  @apply border-red-800 bg-red-100 outline-red-800;
+}
+
+[aria-invalid="true"] + small {
+  @apply ris-label3-regular mt-2 flex items-center gap-4 text-red-900;
+}
