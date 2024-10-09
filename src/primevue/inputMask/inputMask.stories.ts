@@ -109,21 +109,33 @@ export const Invalid: StoryObj<typeof meta> = {
 };
 
 export const StartWithEndDate: Story = {
-  render: (args) => ({
+  render: () => ({
     components: { InputMask },
     setup() {
       const startDate = ref("");
       const endDate = ref("");
-      return { args, startDate, endDate };
+      return { startDate, endDate };
     },
     template: html`
       <div class="flex items-center gap-4">
         <div class="flex flex-col">
-          <InputMask id="start-date" v-model="startDate" v-bind="args" />
+          <InputMask
+            id="start-date"
+            v-model="startDate"
+            v-bind="args"
+            placeholder="TT.MM.JJJJ"
+            mask="99.99.9999"
+          />
         </div>
         <span class="mx-2">–</span>
         <div class="flex flex-col">
-          <InputMask id="end-date" v-model="endDate" v-bind="args" />
+          <InputMask
+            id="end-date"
+            v-model="endDate"
+            v-bind="args"
+            placeholder="TT.MM.JJJJ"
+            mask="99.99.9999"
+          />
         </div>
       </div>
     `,
@@ -131,14 +143,14 @@ export const StartWithEndDate: Story = {
 };
 
 export const ThreeFields: StoryObj<typeof meta> = {
-  render: (args) => ({
+  render: () => ({
     components: { InputMask },
     setup() {
       const day = ref("");
       const month = ref("");
       const year = ref("");
 
-      return { args, day, month, year };
+      return { day, month, year };
     },
     template: html`
       <div class="flex flex-col gap-2">
