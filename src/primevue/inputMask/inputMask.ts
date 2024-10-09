@@ -1,8 +1,5 @@
 import { InputMaskPassThroughOptions } from "primevue/inputmask";
-import { tw } from "@/lib/tags.ts";
 import { base, small } from "../inputText/inputText";
-
-const fluid = tw`w-full`;
 
 const inputMask: InputMaskPassThroughOptions = {
   pcInputText: {
@@ -11,7 +8,7 @@ const inputMask: InputMaskPassThroughOptions = {
         class: {
           [base]: true,
           [small]: true,
-          [fluid]: !!props.fluid,
+          "w-full": !!props.fluid,
         },
       };
     },
