@@ -15,6 +15,7 @@ import radioButton from "./radioButton/radioButton";
 import autocomplete from "./autocomplete/autocomplete";
 import textarea from "./textarea/textarea";
 import toast from "./toast/toast";
+import select from "./select/select";
 
 import { deDE } from "@/config/locale";
 
@@ -34,6 +35,7 @@ export const RisUiTheme = {
   textarea,
   toast,
   autocomplete,
+  select,
 };
 
 export const RisUiLocale = {
