@@ -1,11 +1,11 @@
 import { html } from "@/lib/tags";
 import { Meta, StoryObj } from "@storybook/vue3";
-import Select from "primevue/select";
+import PrimevueSelect from "primevue/select";
 import { ref } from "vue";
 import ErrorOutline from "~icons/material-symbols/error-outline";
 
-const meta: Meta<typeof Select> = {
-  component: Select,
+const meta: Meta<typeof PrimevueSelect> = {
+  component: PrimevueSelect,
 
   tags: ["autodocs"],
 
@@ -20,7 +20,7 @@ export default meta;
 
 export const Default: StoryObj<typeof meta> = {
   render: (args) => ({
-    components: { Select },
+    components: { PrimevueSelect },
     setup() {
       const selectedOption = ref();
       const options = ref([
@@ -32,7 +32,7 @@ export const Default: StoryObj<typeof meta> = {
       ]);
       return { args, selectedOption, options };
     },
-    template: html` <select
+    template: html` <PrimevueSelect
       id="with-top-label"
       v-bind="args"
       v-model="selectedOption"
@@ -47,7 +47,7 @@ export const WithLabel: StoryObj<typeof meta> = {
     disabled: false,
   },
   render: (args) => ({
-    components: { Select },
+    components: { PrimevueSelect },
     setup() {
       const selectedOption = ref();
       const options = ref([
@@ -62,7 +62,7 @@ export const WithLabel: StoryObj<typeof meta> = {
     template: html` <label class="ris-label2-regular" for="with-top-label"
         >Label</label
       >
-      <select
+      <PrimevueSelect
         id="with-top-label"
         v-bind="args"
         v-model="selectedOption"
@@ -74,7 +74,7 @@ export const WithLabel: StoryObj<typeof meta> = {
 
 export const WithHorizontalLabel: StoryObj<typeof meta> = {
   render: (args) => ({
-    components: { Select },
+    components: { PrimevueSelect },
     setup() {
       const selectedOption = ref();
       const options = ref([
@@ -88,7 +88,7 @@ export const WithHorizontalLabel: StoryObj<typeof meta> = {
     },
     template: html`<div class="flex w-1/2 items-center gap-16">
       <label class="ris-label2-regular" for="with-left-label">Label</label>
-      <select
+      <PrimevueSelect
         id="with-left-label"
         v-bind="args"
         v-model="selectedOption"
@@ -105,7 +105,7 @@ export const InvalidWithHint: StoryObj<typeof meta> = {
     "aria-invalid": "true",
   },
   render: (args) => ({
-    components: { Select, ErrorOutline },
+    components: { PrimevueSelect, ErrorOutline },
     setup() {
       const selectedOption = ref();
       const options = ref([
@@ -119,7 +119,7 @@ export const InvalidWithHint: StoryObj<typeof meta> = {
     },
     template: html`
       <label class="ris-label2-regular" for="invalid">Dropdown</label>
-      <select
+      <PrimevueSelect
         id="invalid"
         aria-describedby="invalid-hint"
         v-bind="args"
