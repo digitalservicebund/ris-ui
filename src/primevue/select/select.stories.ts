@@ -94,8 +94,36 @@ export const WithHorizontalLabel: StoryObj<typeof meta> = {
         v-model="selectedOption"
         optionLabel="name"
         :options="options"
+        fluid
       />
     </div>`,
+  }),
+};
+
+export const Disabled: StoryObj<typeof meta> = {
+  args: {
+    disabled: true,
+  },
+  render: (args) => ({
+    components: { PrimevueSelect },
+    setup() {
+      const selectedOption = ref();
+      const options = ref([
+        { name: "Text 1", code: "AB" },
+        { name: "Text 2", code: "CD" },
+        { name: "Text 3", code: "EF" },
+        { name: "Text 4", code: "GH" },
+        { name: "Text 5", code: "IJ" },
+      ]);
+      return { args, selectedOption, options };
+    },
+    template: html` <PrimevueSelect
+      id="with-top-label"
+      v-bind="args"
+      v-model="selectedOption"
+      optionLabel="name"
+      :options="options"
+    />`,
   }),
 };
 
