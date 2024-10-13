@@ -130,7 +130,6 @@ export const Disabled: StoryObj<typeof meta> = {
 export const InvalidWithHint: StoryObj<typeof meta> = {
   args: {
     invalid: true,
-    "aria-invalid": "true",
   },
   render: (args) => ({
     components: { PrimevueSelect, ErrorOutline },
