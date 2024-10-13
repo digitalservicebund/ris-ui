@@ -16,6 +16,7 @@ import autocomplete from "./autocomplete/autocomplete";
 import textarea from "./textarea/textarea";
 import toast from "./toast/toast";
 import select from "./select/select";
+import inputMask from "./inputMask/inputMask";
 
 import { deDE } from "@/config/locale";
 
@@ -36,6 +37,7 @@ export const RisUiTheme = {
   toast,
   autocomplete,
   select,
+  inputMask,
 };
 
 export const RisUiLocale = {
