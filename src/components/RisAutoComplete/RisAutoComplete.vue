@@ -73,10 +73,14 @@ const onUpdateInnerValue = (
     model.value = undefined;
   }
 };
+
+const autoCompleteRef = ref<typeof AutoComplete | null>(null);
+defineExpose({ autoCompleteRef });
 </script>
 
 <template>
   <AutoComplete
+    ref="autoCompleteRef"
     v-bind="$attrs"
     :suggestions="props.suggestions"
     :model-value="innerValue"
