@@ -33,7 +33,6 @@ export const Default: StoryObj<typeof meta> = {
       return { args, selectedOption, options };
     },
     template: html` <PrimevueSelect
-      id="with-top-label"
       v-bind="args"
       v-model="selectedOption"
       optionLabel="name"
@@ -59,16 +58,16 @@ export const WithLabel: StoryObj<typeof meta> = {
       ]);
       return { args, selectedOption, options };
     },
-    template: html` <label class="ris-label2-regular" for="with-top-label"
-        >Label</label
-      >
+    template: html`<div class="flex flex-col gap-2">
+      <label class="ris-label2-regular" for="with-top-label">Label</label>
       <PrimevueSelect
         id="with-top-label"
         v-bind="args"
         v-model="selectedOption"
         optionLabel="name"
         :options="options"
-      />`,
+      />
+    </div>`,
   }),
 };
 
@@ -127,7 +126,7 @@ export const Disabled: StoryObj<typeof meta> = {
   }),
 };
 
-export const InvalidWithHint: StoryObj<typeof meta> = {
+export const Invalid: StoryObj<typeof meta> = {
   args: {
     invalid: true,
   },
@@ -144,8 +143,8 @@ export const InvalidWithHint: StoryObj<typeof meta> = {
       ]);
       return { args, selectedOption, options };
     },
-    template: html`
-      <label class="ris-label2-regular" for="invalid">Dropdown</label>
+    template: html` <div class="flex flex-col gap-2">
+      <label class="ris-label2-regular" for="invalid"> Dropdown </label>
       <PrimevueSelect
         id="invalid"
         aria-describedby="invalid-hint"
@@ -154,7 +153,7 @@ export const InvalidWithHint: StoryObj<typeof meta> = {
         optionLabel="name"
         :options="options"
       />
-      <small id="invalid-hint"> <ErrorOutline /> Invalid date </small>
-    `,
+      <small id="invalid-hint"><ErrorOutline />Invalid date</small>
+    </div>`,
   }),
 };

@@ -1,42 +1,69 @@
-import { SelectPassThroughOptions } from "primevue/select";
 import { tw } from "@/lib/tags.ts";
+import { SelectPassThroughOptions } from "primevue/select";
 import "./select.css";
 
-const outlineStyles = tw`border-blue-800 outline-4 -outline-offset-4 outline-blue-800`;
-
-const stateStyles = tw`hover:outline has-[span:focus]:outline has-[span[aria-expanded=true]]:outline`;
-
-const invalidStyles = tw`border-red-800 bg-red-200 outline-red-800`;
-
-const base = tw`ris-body2-regular flex min-h-48 items-center justify-between border-2 px-16 py-4 placeholder:text-gray-600 [&+label]:ml-8`;
-
 const select: SelectPassThroughOptions = {
-  root: ({ props }) => {
-    console.log(props);
+  root: ({ props, state }) => {
+    // Base
+    const base = tw`ris-body2-regular inline-flex h-48 items-center justify-between border-2 py-4 pl-16 pr-12 outline-4 -outline-offset-4 [&+label]:ml-8`;
+
+    // States
+    const normal = tw`cursor-pointer border-blue-800 outline-blue-800`;
+
+    const focused = tw`outline`;
+
+    const hover = tw`hover:outline`;
+
+    const disabled = tw`cursor-not-allowed border-blue-500 text-blue-500`;
+
+    const invalid = tw`border-red-800 bg-red-200 outline-red-800`;
+
+    // Integration for primevue/fluid
+    const fluid = tw`w-full`;
+
     return {
       class: {
         [base]: true,
-        "w-full": !!props.fluid,
-        [outlineStyles]: !props.disabled,
-        [stateStyles]: !props.disabled,
-        "border-blue-500 text-blue-500 outline-none cursor-not-allowed":
-          props.disabled,
-        [invalidStyles]: props.invalid,
+        [normal]: !props.disabled,
+        [focused]: state.focused && !props.disabled,
+        [hover]: !props.disabled,
+        [fluid]: !!props.fluid,
+        [disabled]: props.disabled,
+        [invalid]: props.invalid,
       },
+
       "aria-invalid": props.invalid ? "true" : null,
     };
   },
-  label: () => {
-    return {
-      class: tw`outline-none`,
-    };
+
+  dropdown: {
+    class: tw`pl-12`,
   },
+
   listContainer: {
     class: tw`overflow-auto shadow-md`,
   },
-  option: () => {
+
+  label: {
+    class: tw`outline-none`,
+  },
+
+  overlay: {
+    class: tw`bg-white`,
+  },
+
+  option: ({ context }) => {
+    // Base
+    const base = tw`ris-body2-regular relative h-full min-h-48 w-full cursor-pointer px-24 py-16 after:absolute after:-bottom-1 after:left-8 after:right-8 after:border-b after:border-gray-300 after:content-[''] last:after:border-b-0 hover:bg-gray-100`;
+
+    // States
+    const focused = tw`bg-gray-100`;
+
     return {
-      class: tw`ris-body2-regular relative h-full min-h-48 w-full bg-white px-24 py-16 after:absolute after:bottom-0 after:left-8 after:right-8 after:border-b after:border-gray-300 after:content-[''] last:after:border-b-0 hover:bg-gray-100 data-[p-focused=true]:bg-gray-100`,
+      class: {
+        [base]: true,
+        [focused]: context.focused,
+      },
     };
   },
 };
