@@ -1,0 +1,7 @@
+div + small {
+  @apply ris-label3-regular mt-4 flex items-center gap-4 text-gray-900;
+}
+
+div[aria-invalid="true"] + small {
+  @apply text-red-900;
+}
