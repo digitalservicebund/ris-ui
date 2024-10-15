@@ -77,7 +77,6 @@ describe("RisExpandableText", () => {
 
   test("does not render the expand/collapse button if the text is not truncated", async () => {
     // Need to mock these properties as JSDOM doesn't implement layout so they would always be 0
-    // Need to mock these properties as JSDOM doesn't implement layout so they would always be 0
     vi.spyOn(HTMLElement.prototype, "scrollHeight", "get").mockReturnValue(100);
     vi.spyOn(HTMLElement.prototype, "clientHeight", "get").mockReturnValue(100);
     render(RisExpandableText, { slots: { default: "Test" } });
