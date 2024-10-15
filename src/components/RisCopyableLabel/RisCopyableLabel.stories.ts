@@ -33,7 +33,7 @@ export const Default: StoryObj<typeof meta> = {
 
 export const CustomValue: StoryObj<typeof meta> = {
   args: {
-    text: 'Copy "test" to clipboard',
+    text: "Copy 'test' to clipboard",
     value: "test",
   },
 
