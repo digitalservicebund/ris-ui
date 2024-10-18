@@ -11,7 +11,7 @@ const breadcrumb: BreadcrumbPassThroughOptions = {
     };
   },
   item: () => {
-    const base = tw`flex-no-wrap my-2 flex items-center`;
+    const base = tw`flex-no-wrap ris-label1-regular my-2 flex items-center`;
     return {
       class: {
         [base]: true,
