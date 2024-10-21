@@ -5,7 +5,7 @@ import "./select.css";
 const select: SelectPassThroughOptions = {
   root: ({ props, state }) => {
     // Base
-    const base = tw`ris-body2-regular inline-flex h-48 items-center justify-between border-2 py-4 pl-16 pr-12 outline-4 -outline-offset-4 [&+label]:ml-8`;
+    const base = tw`ris-body2-regular inline-flex h-48 items-center justify-between border-2 bg-white py-4 pl-16 pr-12 outline-4 -outline-offset-4 [&+label]:ml-8`;
 
     // States
     const normal = tw`cursor-pointer border-blue-800 outline-blue-800`;
