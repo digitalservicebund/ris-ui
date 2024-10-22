@@ -42,14 +42,19 @@ export const Default: Story = {
               :to="item.route"
               custom
             >
-              <a :href="href" v-bind="props.action" @click="navigate">
-                <span v-if="item.type === 'home'">
+              <a
+                :href="href"
+                v-bind="props.action"
+                @click="navigate"
+                class="line-clamp-1"
+              >
+                <template v-if="item.type === 'home'">
                   <HomeOutlineIcon />
-                </span>
-                <span v-else> {{ item.label }} </span>
+                </template>
+                <template v-else> {{ item.label }} </template>
               </a>
             </router-link>
-            <span v-else>{{ item.label }}</span>
+            <span v-else class="line-clamp-1">{{ item.label }}</span>
           </template>
           <template #separator>
             <ChevronRightIcon />
