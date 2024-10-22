@@ -4,7 +4,7 @@ import "./tree.css";
 
 const tree: TreePassThroughOptions = {
   node: () => {
-    const focus = tw`focus-visible:outline-none focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-blue-800`; // Adding focus state with a red border
+    const focus = tw`focus-visible:outline-none focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-blue-800`;
     return {
       class: {
         [focus]: true,
@@ -12,19 +12,19 @@ const tree: TreePassThroughOptions = {
     };
   },
   nodeContent: ({ context }) => {
-    const base = tw`group ris-label2-bold flex w-full border-l-4 border-transparent py-10 pl-10 pr-20 text-blue-800 hover:bg-gray-100`;
+    const base = tw`group ris-label2-bold flex w-full gap-4 border-l-4 border-transparent py-10 pl-10 pr-20 text-blue-800 hover:bg-gray-100`;
     const pointer = tw`cursor-pointer select-none`;
-    const focusVisible = tw`focus-visible:outline-none focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-blue-800`; // Adding focus state with a red border
+    const focusVisible = tw`focus-visible:outline-none focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-blue-800`;
     const selected = tw`border-l-blue-800 bg-gray-100`;
-    const hoverActive = tw`hover:active:bg-blue-200`;
+    const hoverSelected = tw`hover:bg-blue-200`;
 
     return {
       class: {
         [base]: true,
-        [selected]: context.selected,
         [pointer]: true,
+        [selected]: context.selected,
+        [hoverSelected]: context.selected,
         [focusVisible]: true,
-        [hoverActive]: true,
       },
     };
   },
@@ -40,8 +40,8 @@ const tree: TreePassThroughOptions = {
     };
   },
   nodeChildren: () => {
-    const base = tw`m-0 ml-14 mt-1 w-full list-none p-0 outline-none`;
-    const focusVisible = tw`focus-visible:outline-none focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-blue-800`; // Adding focus state with a red border
+    const base = tw`m-0 ml-12 mt-1 list-none p-0 outline-none`;
+    const focusVisible = tw`focus-visible:outline-none focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-blue-800`;
     return {
       class: {
         [base]: true,

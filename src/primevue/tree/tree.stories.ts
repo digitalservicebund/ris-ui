@@ -93,6 +93,189 @@ export const Default: Story = {
                   },
                 ],
               },
+              {
+                key: "0-2",
+                label: "Child 3",
+                secondaryLabel: "Secondary Text",
+                children: [
+                  {
+                    key: "0-2-0",
+                    label: "Grandchild 5",
+                    secondaryLabel: "Secondary Text",
+                    route: "/grandchild-5",
+                    children: [
+                      {
+                        key: "0-2-0-0",
+                        label: "Great Grandchild 3",
+                        route: "/great-grandchild-3",
+                      },
+                      {
+                        key: "0-2-0-1",
+                        label: "Great Grandchild 4",
+                        route: "/great-grandchild-4",
+                      },
+                    ],
+                  },
+                  {
+                    key: "0-2-1",
+                    label: "Grandchild 6",
+                    secondaryLabel: "Secondary Text",
+                    route: "/grandchild-6",
+                    children: [
+                      {
+                        key: "0-2-1-0",
+                        label: "Great Grandchild 5",
+                        route: "/great-grandchild-5",
+                      },
+                      {
+                        key: "0-2-1-1",
+                        label: "Great Grandchild 6",
+                        route: "/great-grandchild-6",
+                      },
+                    ],
+                  },
+                  {
+                    key: "0-2-2",
+                    label: "Grandchild 7",
+                    secondaryLabel: "Secondary Text",
+                    route: "/grandchild-7",
+                    children: [
+                      {
+                        key: "0-2-2-0",
+                        label: "Great Grandchild 7",
+                        route: "/great-grandchild-7",
+                      },
+                      {
+                        key: "0-2-2-1",
+                        label: "Great Grandchild 8",
+                        route: "/great-grandchild-8",
+                      },
+                    ],
+                  },
+                ],
+              },
+              {
+                key: "0-3",
+                label: "Child 4",
+                secondaryLabel: "Secondary Text",
+                children: [
+                  {
+                    key: "0-3-0",
+                    label: "Grandchild 8",
+                    secondaryLabel: "Secondary Text",
+                    route: "/grandchild-8",
+                    children: [
+                      {
+                        key: "0-3-0-0",
+                        label: "Great Grandchild 9",
+                        route: "/great-grandchild-9",
+                      },
+                      {
+                        key: "0-3-0-1",
+                        label: "Great Grandchild 10",
+                        route: "/great-grandchild-10",
+                      },
+                    ],
+                  },
+                  {
+                    key: "0-3-1",
+                    label: "Grandchild 9",
+                    secondaryLabel: "Secondary Text",
+                    route: "/grandchild-9",
+                    children: [
+                      {
+                        key: "0-3-1-0",
+                        label: "Great Grandchild 11",
+                        route: "/great-grandchild-11",
+                      },
+                      {
+                        key: "0-3-1-1",
+                        label: "Great Grandchild 12",
+                        route: "/great-grandchild-12",
+                      },
+                    ],
+                  },
+                  {
+                    key: "0-3-2",
+                    label: "Grandchild 10",
+                    secondaryLabel: "Secondary Text",
+                    route: "/grandchild-10",
+                    children: [
+                      {
+                        key: "0-3-2-0",
+                        label: "Great Grandchild 13",
+                        route: "/great-grandchild-13",
+                      },
+                      {
+                        key: "0-3-2-1",
+                        label: "Great Grandchild 14",
+                        route: "/great-grandchild-14",
+                      },
+                    ],
+                  },
+                ],
+              },
+              {
+                key: "0-4",
+                label: "Child 5",
+                secondaryLabel: "Secondary Text",
+                children: [
+                  {
+                    key: "0-4-0",
+                    label: "Grandchild 11",
+                    secondaryLabel: "Secondary Text",
+                    route: "/grandchild-11",
+                    children: [
+                      {
+                        key: "0-4-0-0",
+                        label: "Great Grandchild 15",
+                        route: "/great-grandchild-15",
+                      },
+                      {
+                        key: "0-4-0-1",
+                        label: "Great Grandchild 16",
+                        route: "/great-grandchild-16",
+                      },
+                    ],
+                  },
+                  {
+                    key: "0-4-1",
+                    label: "Grandchild 12",
+                    secondaryLabel: "Secondary Text",
+                    route: "/grandchild-12",
+                    children: [
+                      {
+                        key: "0-4-1-0",
+                        label: "Great Grandchild 17",
+                        route: "/great-grandchild-17",
+                      },
+                      {
+                        key: "0-4-1-1",
+                        label: "Great Grandchild 18",
+                        route: "/great-grandchild-18",
+                      },
+                    ],
+                  },
+                  {
+                    key: "0-4-2",
+                    label: "Grandchild 13",
+                    secondaryLabel: "Secondary Text",
+                    route: "/grandchild-13",
+                    children: [
+                      {
+                        key: "0-4-2-0",
+                        label: "Great Grandchild 19",
+                        route: "/great-grandchild-19",
+                      },
+                      {
+                        key: "0-4-2-1",
+                        label: "Great Grandchild 20",
+                        route: "/great-grandchild-20",
+                      },
+                    ],
+                  },
+                ],
+              },
             ],
           },
         ];
