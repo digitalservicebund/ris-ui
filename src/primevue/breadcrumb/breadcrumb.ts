@@ -2,38 +2,17 @@ import { BreadcrumbPassThroughOptions } from "primevue/breadcrumb";
 import { tw } from "@/lib/tags.ts";
 
 const breadcrumb: BreadcrumbPassThroughOptions = {
-  list: () => {
-    const base = tw`m-0 flex list-none flex-wrap items-center p-0 leading-none`;
-    return {
-      class: {
-        [base]: true,
-      },
-    };
+  list: {
+    class: tw`m-0 flex list-none flex-wrap items-center p-0 leading-none`,
   },
-  item: () => {
-    const base = tw`flex-no-wrap ris-label1-regular my-2 flex items-center`;
-    return {
-      class: {
-        [base]: true,
-      },
-    };
+  item: {
+    class: tw`flex-no-wrap ris-label1-regular my-2 flex items-center`,
   },
-  itemLink: () => {
-    const states = tw`outline-4 outline-offset-4 outline-blue-800 focus:outline`;
-    return {
-      class: {
-        "underline ris-link1-bold cursor-pointer inline-flex items-center":
-          true,
-        [states]: true,
-      },
-    };
+  itemLink: {
+    class: tw`ris-link1-regular inline-flex cursor-pointer items-center leading-tight no-underline outline-4 outline-offset-4 outline-blue-800 hover:underline focus:outline`,
   },
-  separator: () => {
-    return {
-      class: {
-        "flex items-center text-gray-600 mx-2": true,
-      },
-    };
+  separator: {
+    class: tw`mx-2 flex items-center text-gray-600`,
   },
 };
 
