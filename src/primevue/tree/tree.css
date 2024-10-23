@@ -1,20 +1,3 @@
-span[data-pc-section="nodelabel"]:has(a + span) {
-  @apply gap-4;
-}
-
-span[data-pc-section="nodelabel"] a,
-span[data-pc-section="nodelabel"] span {
-  @apply w-full focus:outline-none;
-}
-
-span[data-pc-section="nodelabel"] :first-child {
-  @apply group-hover:underline;
-}
-
-span[data-pc-section="nodelabel"] span:last-child {
-  @apply group-hover:no-underline;
-}
-
 div[data-pc-section="nodecontent"]:has(
     + ul[data-pc-section="nodechildren"]
       li

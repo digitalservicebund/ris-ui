@@ -3,13 +3,8 @@ import { tw } from "@/lib/tags.ts";
 import "./tree.css";
 
 const tree: TreePassThroughOptions = {
-  node: () => {
-    const focus = tw`focus-visible:outline-none focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-blue-800`;
-    return {
-      class: {
-        [focus]: true,
-      },
-    };
+  node: {
+    class: tw`focus-visible:outline-none focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-blue-800`,
   },
   nodeContent: ({ context }) => {
     const base = tw`group ris-label2-bold flex w-full gap-4 border-l-4 border-transparent py-10 pl-10 pr-20 text-blue-800 hover:bg-gray-100`;
@@ -49,13 +44,8 @@ const tree: TreePassThroughOptions = {
       },
     };
   },
-  nodeLabel: () => {
-    const base = tw`group flex w-full flex-col items-start outline-none group-hover:text-black`;
-    return {
-      class: {
-        [base]: true,
-      },
-    };
+  nodeLabel: {
+    class: tw`group flex w-full flex-col items-start outline-none *:w-full *:outline-none group-hover:text-black [&>*:first-child]:group-hover:underline [&>*:last-child]:group-hover:no-underline`,
   },
 };
 
