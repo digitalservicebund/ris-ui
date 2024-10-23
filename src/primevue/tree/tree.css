@@ -16,9 +16,9 @@ span[data-pc-section="nodelabel"] span:last-child {
 }
 
 div[data-pc-section="nodecontent"]:has(
-    + ul[data-pc-section="nodechildren"],
-    li,
-    div[data-pc-section="nodecontent"][data-p-selected="true"]
+    + ul[data-pc-section="nodechildren"]
+      li
+      div[data-pc-section="nodecontent"][data-p-selected="true"]
   ) {
   @apply border-l-gray-600 text-black;
 }
