@@ -25,17 +25,17 @@ const tree: TreePassThroughOptions = {
   },
   nodeToggleButton: ({ context }) => {
     const base = tw`inline-flex h-24 w-24 justify-center border-0 bg-transparent outline-none hover:text-black group-hover:text-black`;
-    const invisible = tw`invisible`;
+    const hidden = tw`hidden`;
 
     return {
       class: {
         [base]: true,
-        [invisible]: context.leaf,
+        [hidden]: context.leaf,
       },
     };
   },
   nodeChildren: () => {
-    const base = tw`m-0 ml-12 mt-1 list-none p-0 outline-none`;
+    const base = tw`m-0 list-none border-l border-gray-600 p-0 pl-44 outline-none [&:not(ul)]:pl-0 [&>ul:first-of-type]:border-0`;
     const focusVisible = tw`focus-visible:outline-none focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-blue-800`;
     return {
       class: {
