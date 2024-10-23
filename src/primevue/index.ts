@@ -18,6 +18,7 @@ import toast from "./toast/toast";
 import select from "./select/select";
 import inputMask from "./inputMask/inputMask";
 import breadcrumb from "@/primevue/breadcrumb/breadcrumb";
+import tree from "./tree/tree";
 
 import { deDE } from "@/config/locale";
 
@@ -40,6 +41,7 @@ export const RisUiTheme = {
   select,
   inputMask,
   breadcrumb,
+  tree,
 };
 
 export const RisUiLocale = {
