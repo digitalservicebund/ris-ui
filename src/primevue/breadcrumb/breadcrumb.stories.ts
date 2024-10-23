@@ -4,24 +4,29 @@ import { html } from "@/lib/tags.ts";
 import { ref } from "vue";
 import { vueRouter } from "storybook-vue3-router";
 import HomeOutlineIcon from "~icons/material-symbols/home-outline";
+import HomeFilledIcon from "~icons/material-symbols/home";
 import ChevronRightIcon from "~icons/material-symbols/chevron-right";
 
 const meta: Meta<typeof Breadcrumb> = {
   component: Breadcrumb,
   tags: ["autodocs"],
-  args: {},
 };
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  render: (args) => ({
-    components: { Breadcrumb, HomeOutlineIcon, ChevronRightIcon },
+  render: () => ({
+    components: {
+      Breadcrumb,
+      HomeOutlineIcon,
+      ChevronRightIcon,
+      HomeFilledIcon,
+    },
     setup() {
       const items = ref([
         { label: "", type: "home", route: "/" },
-        { label: "Gesetze & Verordnungen", route: "/laws" },
+        { label: "Gesetze & VerordnungenGesetze", route: "/laws" },
         { label: "BGB Bürgerliches Gesetzbuch", route: "/bgb" },
         { label: "Buch 2", route: "/book-2" },
         { label: "Abschnitt 3" },
@@ -30,7 +35,9 @@ export const Default: Story = {
         { label: "§ 312e Verletzung von Informationspflichten über Kosten" },
       ]);
 
-      return { args, items };
+      const isHovered = ref(false);
+
+      return { items, isHovered };
     },
     template: html`
       <div class="card flex justify-center">
@@ -42,16 +49,21 @@ export const Default: Story = {
               :to="item.route"
               custom
             >
-              <a
-                :href="href"
-                v-bind="props.action"
-                @click="navigate"
-                class="line-clamp-1"
-              >
+              <a :href="href" v-bind="props.action" @click="navigate">
                 <template v-if="item.type === 'home'">
-                  <HomeOutlineIcon />
+                  <span
+                    @mouseenter="isHovered = true"
+                    @mouseleave="isHovered = false"
+                  >
+                    <template v-if="isHovered">
+                      <HomeFilledIcon />
+                    </template>
+                    <template v-else>
+                      <HomeOutlineIcon />
+                    </template>
+                  </span>
                 </template>
-                <template v-else> {{ item.label }} </template>
+                <span v-else class="line-clamp-1"> {{ item.label }} </span>
               </a>
             </router-link>
             <span v-else class="line-clamp-1">{{ item.label }}</span>
