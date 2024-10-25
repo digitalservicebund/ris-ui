@@ -49,11 +49,13 @@ const tree: TreePassThroughOptions = {
   nodeLabel: ({ context }) => {
     const base = tw`group flex w-full flex-col items-start outline-none *:w-full *:outline-none group-hover:text-black [&>*:first-child]:group-hover:underline [&>*:last-child]:group-hover:no-underline`;
     const selected = tw`text-black [&>*:last-child:is(span)]:text-gray-900`;
+    const hoverSelected = tw`[&>*:last-child]:group-hover:text-black`;
 
     return {
       class: {
         [base]: true,
         [selected]: context.selected,
+        [hoverSelected]: context.selected,
       },
     };
   },
