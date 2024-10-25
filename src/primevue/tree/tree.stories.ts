@@ -24,7 +24,7 @@ const meta: Meta<typeof Tree> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
+export const TableOfContents: Story = {
   render: (args) => ({
     components: { Tree, ChevronDownIcon, ChevronUpIcon, PrimevueButton },
     setup() {
@@ -86,7 +86,6 @@ export const Default: Story = {
               {
                 key: "0-1",
                 label: "Child 2",
-                secondaryLabel: "Secondary Text",
                 route: "/child-2",
                 children: [
                   {
@@ -297,7 +296,10 @@ export const Default: Story = {
             <span v-else class="w-full" @click="toggleNode(node)"
               >{{ node.label }}</span
             >
-            <span class="ris-label2-regular" @click="toggleNode(node)"
+            <span
+              v-if="node.secondaryLabel"
+              class="ris-label2-regular"
+              @click="toggleNode(node)"
               >{{ node.secondaryLabel }}</span
             >
           </template>

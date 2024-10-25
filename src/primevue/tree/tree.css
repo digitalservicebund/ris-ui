@@ -3,5 +3,5 @@ div[data-pc-section="nodecontent"]:has(
       li
       div[data-pc-section="nodecontent"][data-p-selected="true"]
   ) {
-  @apply border-l-gray-600 text-black;
+  @apply border-l-gray-600;
 }
