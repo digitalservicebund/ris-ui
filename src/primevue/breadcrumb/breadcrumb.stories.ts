@@ -56,10 +56,10 @@ export const Default: Story = {
                     @mouseleave="isHovered = false"
                   >
                     <template v-if="isHovered">
-                      <HomeFilledIcon />
+                      <HomeFilledIcon class="-ml-2" />
                     </template>
                     <template v-else>
-                      <HomeOutlineIcon />
+                      <HomeOutlineIcon class="-ml-2" />
                     </template>
                   </span>
                 </template>
