@@ -36,6 +36,7 @@ export const Default: StoryObj<typeof meta> = {
       v-bind="args"
       v-model="selectedOption"
       optionLabel="name"
+      optionValue="code"
       :options="options"
     />`,
   }),
@@ -65,6 +66,7 @@ export const WithLabel: StoryObj<typeof meta> = {
         v-bind="args"
         v-model="selectedOption"
         optionLabel="name"
+        optionValue="code"
         :options="options"
       />
     </div>`,
@@ -92,6 +94,7 @@ export const WithHorizontalLabel: StoryObj<typeof meta> = {
         v-bind="args"
         v-model="selectedOption"
         optionLabel="name"
+        optionValue="code"
         :options="options"
         fluid
       />
@@ -121,6 +124,7 @@ export const Disabled: StoryObj<typeof meta> = {
       v-bind="args"
       v-model="selectedOption"
       optionLabel="name"
+      optionValue="code"
       :options="options"
     />`,
   }),
@@ -151,6 +155,7 @@ export const Invalid: StoryObj<typeof meta> = {
         v-bind="args"
         v-model="selectedOption"
         optionLabel="name"
+        optionValue="code"
         :options="options"
       />
       <small id="invalid-hint"><ErrorOutline />Invalid date</small>
