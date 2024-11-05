@@ -4,14 +4,14 @@ import "./tree.css";
 
 const tree: TreePassThroughOptions = {
   node: {
-    class: tw`focus-visible:outline-none focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-blue-800 [&>ul:first-of-type]:border-l-0`,
+    class: tw`mb-24 last:mb-0 focus-visible:outline-none focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-blue-800 [&>ul:first-of-type]:border-l-0`,
   },
   nodeContent: ({ context }) => {
     const base = tw`group ris-label2-bold flex w-full border-l-4 border-transparent py-10 pl-10 pr-20 text-blue-800`;
     const pointer = tw`cursor-pointer select-none`;
     const focusVisible = tw`focus-visible:outline-none focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-blue-800`;
-    const selected = tw`border-l-blue-800 bg-gray-100 text-black`;
-    const hover = tw`hover:bg-gray-100`;
+    const selected = tw`border-l-blue-800 bg-blue-200 text-black`;
+    const hover = tw`hover:bg-blue-200`;
     const hoverSelected = tw`hover:bg-blue-300`;
 
     return {
