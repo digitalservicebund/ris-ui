@@ -3,5 +3,13 @@ div[data-pc-section="nodecontent"]:has(
       li
       div[data-pc-section="nodecontent"][data-p-selected="true"]
   ) {
-  @apply border-l-gray-600;
+  @apply border-l-gray-600 bg-gray-100;
+}
+
+div[data-pc-section="nodecontent"]:has(
+    + ul[data-pc-section="nodechildren"]
+      li
+      div[data-pc-section="nodecontent"][data-p-selected="true"]
+  ):hover {
+  @apply bg-blue-200;
 }
