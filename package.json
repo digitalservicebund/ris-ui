@@ -88,7 +88,6 @@
     "license-checker": "~25.0.1",
     "msw": "^2.4.5",
     "msw-storybook-addon": "^2.0.3",
-    "noop-tag": "~2.0.0",
     "prettier": "~3.3.3",
     "prettier-plugin-tailwindcss": "~0.6.6",
     "storybook": "~8.2.9",

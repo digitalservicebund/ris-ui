@@ -1,4 +1,5 @@
-import tag from "noop-tag";
+const tag = (strings: TemplateStringsArray, ...values: unknown[]) =>
+  String.raw({ raw: strings }, ...values);
 
 /**
  * Tagged template string for HTML. The tag itself doesn't do anything, but
