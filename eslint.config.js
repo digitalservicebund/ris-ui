@@ -8,6 +8,7 @@ import tseslint from "typescript-eslint";
 export default [
   // Files
   includeIgnoreFile(fileURLToPath(new URL(".gitignore", import.meta.url))),
+  { ignores: ["public/mockServiceWorker.js"] },
   { files: ["**/*.{js,ts}"] },
 
   // Language options

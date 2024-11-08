@@ -43,7 +43,7 @@
     "build:storybook": "storybook build",
     "prettier:check": "prettier --check .",
     "prettier:fix": "prettier --write --ignore-unknown .",
-    "eslint:check": "eslint",
+    "eslint:check": "eslint --max-warnings=0",
     "eslint:fix": "npm run eslint:check -- --fix",
     "audit:licenses": "license-checker --production --excludePrivatePackages --excludePackages @digitalservicebund/ris-ui@$(cat package.json | jq -r '.version') --onlyAllow \"$(. ./parse-allowed-licenses.sh)\" --csv --out ./frontend-license-report.csv",
     "typecheck": "vue-tsc",
