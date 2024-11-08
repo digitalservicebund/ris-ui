@@ -27,7 +27,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
       - name: Run Trivy vulnerability scanner in repo mode
         uses: aquasecurity/trivy-action@a20de5420d57c4102486cdd9578b45609c99d7eb
         env:
@@ -38,10 +37,8 @@ jobs:
           format: "sarif"
           output: "trivy-results.sarif"
           severity: "CRITICAL,HIGH"
-
       - name: Verify SARIF file exists
         run: ls -la trivy-results.sarif
-
       - name: Check trivy results
         run: |
           if grep -qE 'HIGH|CRITICAL' trivy-results.sarif; then
@@ -51,22 +48,57 @@ jobs:
             echo "No significant vulnerabilities found"
             exit 0
           fi
-
       - name: Upload Trivy scan results to GitHub Security tab
         if: ${{ always() && github.ref == 'refs/heads/main' }}
         uses: github/codeql-action/upload-sarif@v3
         with:
           sarif_file: "trivy-results.sarif"
 
+  # Formatting, code quality and types check
+  check-style:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: ./.node-version
+          cache: npm
+          cache-dependency-path: ./package-lock.json
+      - name: Cache
+        uses: actions/cache@v4
+        id: cache-npm
+        with:
+          path: /home/runner/.npm
+          key: npm-cache-${{ hashFiles('./package-lock.json') }}
+      - name: Install dependencies
+        run: npm ci
+      - name: Check formatting
+        run: npm run prettier:check
+      - name: Check code style
+        run: npm run eslint:check
+      - name: Check types
+        run: npm run typecheck
+
+  # Automated tests
   test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version-file: ./.node-version
+          cache: npm
+          cache-dependency-path: ./package-lock.json
+      - name: Cache
+        uses: actions/cache@v4
+        id: cache-npm
+        with:
+          path: /home/runner/.npm
+          key: npm-cache-${{ hashFiles('./package-lock.json') }}
       - name: Install dependencies
         run: npm ci
       - name: Run tests
@@ -78,6 +110,8 @@ jobs:
     needs:
       - talisman-check
       - trivy-scan
+      - check-style
+      - test
     permissions:
       contents: read
       pages: write
@@ -88,27 +122,29 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
-          node-version: "20"
-
+          node-version-file: ./.node-version
+          cache: npm
+          cache-dependency-path: ./package-lock.json
+      - name: Cache
+        uses: actions/cache@v4
+        id: cache-npm
+        with:
+          path: /home/runner/.npm
+          key: npm-cache-${{ hashFiles('./package-lock.json') }}
       - name: Install dependencies
         run: npm ci
-
       - name: Build Storybook
         run: npm run build:storybook
-
       - name: Setup Pages
         uses: actions/configure-pages@v2
-
       - name: Upload Storybook artifact
         uses: actions/upload-pages-artifact@v1
         with:
           path: ./storybook-static
-
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
