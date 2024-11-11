@@ -96,19 +96,30 @@ If not using Tailwind, you may also add these styles directly to the `css` secti
 
 ## With Tailwind
 
-If you want, also install the Tailwind preset (for colors, spacings, etc.) and plugin (for typography classes, etc.):
+If you’re using RIS UI with Tailwind, you need to add the RIS UI Tailwind preset (for colors, spacings, etc.) and plugin (for typography classes, etc.)
 
 ```diff
   // tailwind.config.js
 + import { RisUiPreset, RisUiPlugin } from "@digitalservicebund/ris-ui/tailwind";
 
   export default {
+  content: [
++    "./node_modules/@digitalservicebund/ris-ui/dist/**/*.{js,vue,ts}",
+  ],
+
 +   presets: [RisUiPreset],
 +   plugins: [RisUiPlugin],
 
     // your other configuration
   };
 ```
+
+##### Additional Configuration for Tailwind Projects
+
+- Avoid importing `@digitalservicebund/ris-ui/primevue/style.css` in `main.ts` to prevent duplicate styles.
+- Include the path to the RIS-UI files in the content array of your Tailwind config to ensure all necessary classes are generated.
+
+##### Important Note for Nuxt Projects
 
 To avoid issues with conflicting `@layer` directives, make sure to integrate the `postcss-import` module in your PostCSS configuration:
 
