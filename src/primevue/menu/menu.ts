@@ -6,10 +6,17 @@ const menu: MenuPassThroughOptions = {
     class: tw`ris-body2-regular bg-white shadow`,
   },
   list: {
-    class: tw``,
+    class: tw`focus-visible:outline-none`,
   },
-  item: {
-    class: tw`relative h-48 pl-16 pr-12 after:absolute after:-bottom-1 after:left-16 after:right-16 after:border-b after:border-gray-300 after:content-[''] last:after:border-b-0 hover:bg-gray-100`,
+  item: ({ context }) => {
+    const base = tw`relative h-48 pl-16 pr-12 after:absolute after:-bottom-1 after:left-16 after:right-16 after:border-b after:border-gray-300 after:content-[''] last:after:border-b-0 hover:bg-gray-100`;
+    const focused = tw`outline-none outline-4 outline-offset-4 outline-blue-800`;
+    return {
+      class: {
+        [base]: true,
+        [focused]: context.focused,
+      },
+    };
   },
   itemContent: {
     class: tw`flex h-full items-center py-4`,
