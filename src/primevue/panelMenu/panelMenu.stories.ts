@@ -12,31 +12,23 @@ const meta: Meta<typeof PanelMenu> = {
   argTypes: {},
 };
 
-type MenuItemWithCount = MenuItem & {
-  count?: string;
-  items?: MenuItemWithCount[] | undefined;
-};
-
-const items: MenuItemWithCount[] = [
+const items: MenuItem[] = [
   {
     label: "Alle Dokumentarten",
-    count: "1.024",
     key: "all",
   },
   {
     label: "Gesetze & Verordnungen",
-    count: "1.024",
     key: "N",
   },
   {
     label: "Gerichtsentscheidungen",
-    count: "1.024",
     key: "R",
     items: [
-      { label: "Alle Gerichtsentscheidungen", count: "1.024", key: "R-A" },
-      { label: "Urteil", count: "1.024", key: "R-U" },
-      { label: "Beschluss", count: "1.024", key: "R-B" },
-      { label: "Sonstige Entscheidungen", count: "1.024", key: "R-S" },
+      { label: "Alle Gerichtsentscheidungen", key: "R-A" },
+      { label: "Urteil", key: "R-U" },
+      { label: "Beschluss", key: "R-B" },
+      { label: "Sonstige Entscheidungen", key: "R-S" },
     ],
   },
 ];
