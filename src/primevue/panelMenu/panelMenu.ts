@@ -34,17 +34,15 @@ const panelMenu: PanelMenuPassThroughOptions = {
   panel: {
     class: tw`focus-visible:outline-none`,
   },
-  itemLink: {
-    class: tw`focus-visible:bg-black`,
-  },
   itemContent: ({ context }) => {
     const base = tw`group flex h-48 items-center border-l-4 border-transparent py-8 pl-10 pr-20`;
-    const focused = tw`outline-none outline-4 outline-offset-4 outline-blue-800`;
-
+    const focusVisible = tw`focus-visible:outline-none focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-blue-800`;
+    const likeHover = tw`bg-blue-200`;
     return {
       class: {
         [base]: true,
-        [focused]: context.focused,
+        [likeHover]: context.focused, // workaround for https://github.com/primefaces/primevue/issues/6836
+        [focusVisible]: true,
         [pointer]: true,
         [selected]: context.active,
         [hover]: !context.active,
