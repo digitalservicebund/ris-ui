@@ -4,10 +4,11 @@
 
 ## Installation
 
-RUI UI contains two things:
+RUI UI contains three things:
 
-- a theme for [Vue 3](https://vuejs.org) components from [PrimeVue 4](https://primevue.org);
-- a preset and plugin for [Tailwind](https://tailwindcss.com) that sets some global styling and exposes the design tokens used by the theme, so you can build custom UI that looks consistent with the components.
+- a [theme](./src/primevue/) for [Vue 3](https://vuejs.org) components from [PrimeVue 4](https://primevue.org);
+- [custom components](./src/components/);
+- a [preset and plugin](./src/tailwind/) for [Tailwind](https://tailwindcss.com) that sets some global styling and exposes the design tokens used by the theme, so you can build custom UI that looks consistent with the components.
 
 Vue and PrimeVue are required for RIS UI to work (you'll see a warning about missing peer dependencies if you're trying to use RIS UI without them). Tailwind is optional. To get started, install:
 
@@ -20,6 +21,10 @@ npm install @digitalservicebund/ris-ui
 ```
 
 ### Vue setup
+
+> [!NOTE]
+>
+> If you're using Nuxt, follow the instructions for [Nuxt](#nuxt-setup) below instead.
 
 Import and apply the RIS UI theme, styling, and fonts where you set up your application (typically `main.ts`):
 
@@ -89,7 +94,7 @@ Finally, add the styles (e.g. `assets/main.css`):
 
 If not using Tailwind, you may also add these styles directly to the `css` section of `nuxt.config.ts`.
 
-## Tailwind usage
+## With Tailwind
 
 If you want, also install the Tailwind preset (for colors, spacings, etc.) and plugin (for typography classes, etc.):
 
@@ -107,11 +112,9 @@ If you want, also install the Tailwind preset (for colors, spacings, etc.) and p
 
 To avoid issues with conflicting `@layer` directives, make sure to integrate the `postcss-import` module in your PostCSS configuration:
 
-See https://tailwindcss.com/docs/adding-custom-styles#using-multiple-css-files
+See [Adding custom styles - Tailwind CSS](https://tailwindcss.com/docs/adding-custom-styles#using-multiple-css-files).
 
-### Using Nuxt
-
-You may add the `postcss-import` module to your `nuxt.config.ts` file:
+If you're using Nuxt, you may add the `postcss-import` module to your `nuxt.config.ts` file:
 
 ```diff
   // nuxt.config.ts
@@ -162,19 +165,21 @@ RIS UI uses the following tools:
 - [Unplugin Icons](https://github.com/unplugin/unplugin-icons) for providing SVG icons as components
 - [TypeScript](https://www.typescriptlang.org/)
 - [ESLint](https://eslint.org/) and [Prettier](https://prettier.io/) for code consistency
+- [Vitest](https://vitest.dev) as our test runner
 
 You can find more in [package.json](./package.json), but the above are the ones you'll work with the most.
 
 In terms of files and folders, you'll find:
 
-| Folder         | Contents                                  |
-| -------------- | ----------------------------------------- |
-| (root)         | General docs and configuration            |
-| `.github/`     | GitHub Actions configuration              |
-| `.storybook/`  | Storybook setup                           |
-| `src/primevue` | The RIS UI preset for PrimeVue            |
-| `src/tailwind` | The RIS UI preset and plugin for Tailwind |
-| `src/lib`      | Internal tools and helpers                |
+| Folder           | Contents                                  |
+| ---------------- | ----------------------------------------- |
+| (root)           | General docs and configuration            |
+| `.github/`       | GitHub Actions configuration              |
+| `.storybook/`    | Storybook setup                           |
+| `src/components` | Custom Vue components                     |
+| `src/primevue`   | The RIS UI preset for PrimeVue            |
+| `src/tailwind`   | The RIS UI preset and plugin for Tailwind |
+| `src/lib`        | Internal tools and helpers                |
 
 ### Tailwind IntelliSense
 
