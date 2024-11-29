@@ -114,11 +114,7 @@ defineExpose({ autoCompleteRef });
       <ProgressSpinner class="absolute inset-y-0 right-8 my-auto mr-1" />
     </template>
     <template #dropdown="slotProps">
-      <RisGhostButton
-        v-if="innerValue"
-        aria-label="Entfernen"
-        @click="onClear"
-      >
+      <RisGhostButton v-if="innerValue" aria-label="Entfernen" @click="onClear">
         <IcOutlineClear />
       </RisGhostButton>
       <RisGhostButton @click="slotProps.toggleCallback">
