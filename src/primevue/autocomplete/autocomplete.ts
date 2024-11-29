@@ -1,26 +1,27 @@
 import { AutoCompletePassThroughOptions } from "primevue/autocomplete";
 import { tw } from "@/lib/tags.ts";
-import { base, small } from "../inputText/inputText";
 
 const fluid = tw`w-full`;
 
 const autocomplete: AutoCompletePassThroughOptions = {
   root: ({ props }) => {
-    const base = tw`relative`;
+    const base = tw`flex border-2 border-blue-800 bg-white outline-4 -outline-offset-4 outline-blue-800 placeholder:text-gray-800 focus-within:outline hover:outline disabled:border-blue-500 disabled:bg-white disabled:text-blue-500 disabled:outline-none`;
+    const small = tw`ris-body2-regular h-48 py-4 pl-16 pr-4`;
 
     return {
       class: {
         [base]: true,
+        [small]: true,
         [fluid]: !!props.fluid,
       },
     };
   },
   pcInput: {
     root: ({ props }) => {
+      const focus = tw`focus-visible:outline-none`;
       return {
         class: {
-          [base]: true,
-          [small]: true,
+          [focus]: true,
           [fluid]: !!props.fluid,
         },
       };

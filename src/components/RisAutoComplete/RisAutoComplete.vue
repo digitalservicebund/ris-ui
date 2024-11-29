@@ -1,6 +1,8 @@
 <script lang="ts" setup>
 import IconChevron from "~icons/mdi/chevron-down";
+import IcOutlineClear from "~icons/ic/outline-clear?height=16";
 import AutoComplete, { type AutoCompleteProps } from "primevue/autocomplete";
+import RisGhostButton from "@/components/RisGhostButton/RisGhostButton.vue";
 import ProgressSpinner from "primevue/progressspinner";
 import { ref } from "vue";
 
@@ -74,6 +76,8 @@ const onUpdateInnerValue = (
   }
 };
 
+const onClear = () => onUpdateInnerValue("");
+
 const autoCompleteRef = ref<typeof AutoComplete | null>(null);
 defineExpose({ autoCompleteRef });
 </script>
@@ -84,40 +88,51 @@ defineExpose({ autoCompleteRef });
     v-bind="$attrs"
     :suggestions="props.suggestions"
     :model-value="innerValue"
-    @update:model-value="onUpdateInnerValue"
-    @option-select="(e) => (model = e.value.id)"
     :dropdown="props.dropdown"
-    :dropdownMode="props.dropdownMode"
+    :dropdown-mode="props.dropdownMode"
     :disabled="props.disabled"
-    :forceSelection="props.forceSelection"
+    :force-selection="props.forceSelection"
     :placeholder="props.placeholder"
-    :ariaLabel="props.ariaLabel"
-    :ariaLabelledby="props.ariaLabelledby"
+    :aria-label="props.ariaLabel"
+    :aria-labelledby="props.ariaLabelledby"
     :delay="props.delay"
-    :completeOnFocus="props.completeOnFocus"
+    :complete-on-focus="props.completeOnFocus"
     :typeahead="props.typeahead"
-    :scrollHeight="props.scrollHeight"
+    :scroll-height="props.scrollHeight"
     :loading="props.loading"
     :invalid="props.invalid"
-    :autoOptionFocus="props.autoOptionFocus"
-    :selectOnFocus="props.selectOnFocus"
+    :auto-option-focus="props.autoOptionFocus"
+    :select-on-focus="props.selectOnFocus"
     :fluid="true"
-    :optionDisabled="props.optionDisabled"
+    :option-disabled="props.optionDisabled"
     option-label="label"
     data-key="value"
+    @update:model-value="onUpdateInnerValue"
+    @option-select="(e) => (model = e.value.id)"
   >
     <template #loader>
-      <ProgressSpinner class="absolute inset-y-0 right-12 my-auto mr-2" />
+      <ProgressSpinner class="absolute inset-y-0 right-8 my-auto mr-1" />
     </template>
-    <template #dropdownicon>
-      <IconChevron />
+    <template #dropdown="slotProps">
+      <RisGhostButton
+        v-if="innerValue"
+        aria-label="Entfernen"
+        @click="onClear"
+      >
+        <IcOutlineClear />
+      </RisGhostButton>
+      <RisGhostButton @click="slotProps.toggleCallback">
+        <IconChevron />
+      </RisGhostButton>
     </template>
     <template #option="slotProps: { option: AutoCompleteSuggestion }">
       <div
         :data-variant="isActiveOption(slotProps.option) && 'active'"
         class="flex min-h-48 flex-col justify-center gap-2 border-l-4 border-transparent px-12 py-10 data-[variant=active]:border-blue-800 data-[variant=active]:bg-blue-200"
       >
-        <div class="ris-label1-regular">{{ slotProps.option.label }}</div>
+        <div class="ris-label1-regular">
+          {{ slotProps.option.label }}
+        </div>
         <div
           v-if="slotProps.option.secondaryLabel"
           class="ris-label2-regular text-gray-900"
