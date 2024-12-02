@@ -61,6 +61,7 @@
     "@digitalservice4germany/style-dictionary": "~2.0.0",
     "@eslint/compat": "~1.2.2",
     "@eslint/js": "~9.14.0",
+    "@iconify-json/ic": "^1.2.1",
     "@iconify-json/material-symbols": "~1.2.6",
     "@iconify-json/mdi": "~1.2.1",
     "@iconify/vue": "~4.1.2",

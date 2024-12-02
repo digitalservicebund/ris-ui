@@ -17,6 +17,7 @@ const meta: Meta<typeof RisAutoComplete> = {
     dropdown: true,
     dropdownMode: "current",
     ariaLabel: "",
+    placeholder: "Type something",
     ariaLabelledby: "",
     delay: 300,
     completeOnFocus: false,
