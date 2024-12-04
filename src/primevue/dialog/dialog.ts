@@ -1,6 +1,5 @@
 import { tw } from "@/lib/tags";
 import { DialogPassThroughOptions } from "primevue/dialog";
-import "./dialog.css";
 
 const dialog: DialogPassThroughOptions = {
   root: () => {
@@ -36,7 +35,7 @@ const dialog: DialogPassThroughOptions = {
     // (for example) by the confirm dialog. If the svg is not the first child,
     // we assume that it is used in the context of some other layout and don't
     // apply extra styling.
-    class: tw`ris-dialog-content overflow-auto has-[svg:first-child]:flex has-[svg:first-child]:gap-8`,
+    class: tw`ris-dialog-content overflow-auto has-[svg:first-child]:flex has-[svg:first-child]:gap-8 [&>svg:first-child]:flex-none`,
   },
 
   footer: {
