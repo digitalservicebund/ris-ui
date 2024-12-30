@@ -85,7 +85,7 @@
     "jsdom": "~25.0.1",
     "license-checker": "~25.0.1",
     "lodash": "^4.17.21",
-    "msw": "~2.6.0",
+    "msw": "~2.7.0",
     "msw-storybook-addon": "~2.0.3",
     "prettier": "~3.4.1",
     "prettier-plugin-tailwindcss": "~0.6.8",
