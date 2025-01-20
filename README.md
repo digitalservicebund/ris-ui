@@ -10,10 +10,10 @@ RUI UI contains three things:
 - [custom components](./src/components/);
 - a [preset and plugin](./src/tailwind/) for [Tailwind](https://tailwindcss.com) that sets some global styling and exposes the design tokens used by the theme, so you can build custom UI that looks consistent with the components.
 
-Vue and PrimeVue are required for RIS UI to work (you'll see a warning about missing peer dependencies if you're trying to use RIS UI without them). Tailwind is optional. To get started, install:
+Vue, PrimeVue and Tailwind are required for RIS UI to work (you'll see a warning about missing peer dependencies if you're trying to use RIS UI without them). To get started, install:
 
 ```sh
-# Vue and PrimeVue if you haven't installed them already. Tailwind is optional.
+# Vue and PrimeVue if you haven't installed them already.
 npm install vue primevue tailwindcss
 
 # RIS UI
@@ -33,8 +33,8 @@ Import and apply the RIS UI theme, styling, and fonts where you set up your appl
   import { createApp } from "vue";
   import PrimeVue from "primevue/config";
 + import { RisUiTheme, RisUiLocale } from "@digitalservicebund/ris-ui/primevue";
-+ import "@digitalservicebund/ris-ui/primevue/style.css";
 + import "@digitalservicebund/ris-ui/fonts.css";
++ import "@digitalservicebund/ris-ui/primevue/style.css"
 
   const app = createApp().use(PrimeVue, {
 +   unstyled: true,
@@ -92,11 +92,10 @@ Finally, add the styles (e.g. `assets/main.css`):
 /* Your other CSS */
 ```
 
-If not using Tailwind, you may also add these styles directly to the `css` section of `nuxt.config.ts`.
+## Tailwind setup
 
-## With Tailwind
-
-If you’re using RIS UI with Tailwind, you need to add the RIS UI Tailwind preset (for colors, spacings, etc.) and plugin (for typography classes, etc.)
+- Add the RisUiPreset (for colors, spacings, etc.) and the RisUiPlugin (for typography classes, etc.)
+- Ensure the path to the RIS-UI files is included in the content array of your Tailwind config (e.g., `"./node_modules/@digitalservicebund/ris-ui/dist/**/*.{js,vue,ts}"`). This ensures all necessary classes from RIS UI are generated.
 
 ```diff
   // tailwind.config.js
@@ -114,12 +113,16 @@ If you’re using RIS UI with Tailwind, you need to add the RIS UI Tailwind pres
   };
 ```
 
-##### Additional Configuration for Tailwind Projects
+Ensure Tailwind is included in your main stylesheet (e.g., style.css):
 
-- Avoid importing `@digitalservicebund/ris-ui/primevue/style.css` in `main.ts` to prevent duplicate styles.
-- Include the path to the RIS-UI files in the content array of your Tailwind config to ensure all necessary classes are generated.
+```diff
+// style.css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
 
-##### Important Note for Nuxt Projects
+### Important Note for Nuxt Projects
 
 To avoid issues with conflicting `@layer` directives, make sure to integrate the `postcss-import` module in your PostCSS configuration:
 
