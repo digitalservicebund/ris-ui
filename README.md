@@ -127,6 +127,36 @@ If you're using Nuxt, you may add the `postcss-import` module to your `nuxt.conf
   },
 ```
 
+## Get started with a button
+
+To get you started, here's an example how to import a ris-ui button into your ui-component. The Storybook code snippet is hiding some essential parts from you. Here is an an example `StartPage.vue`:
+
+```bash
+<script lang="ts" setup>
+import { useRouter } from 'vue-router'
+import Button from 'primevue/button'
+import IconAdd from '~icons/material-symbols/add'
+
+const router = useRouter()
+</script>
+
+<template>
+  <Button
+    :disabled="false"
+    label="Neue Dokumentationseinheit"
+    :loading="false"
+    :text="false"
+    @click="router.push({ path: '/documentUnit/new' })"
+  >
+    <template #icon>
+      <IconAdd />
+    </template>
+  </Button>
+</template>
+```
+
+In addition to the installation steps, the icon is being provided by [unplugin-icons](https://www.npmjs.com/package/unplugin-icons) in conjunction with [@iconify-json/material-symbols](https://www.npmjs.com/package/@iconify-json/material-symbols).
+
 ## Development
 
 To make changes to RIS UI, you'll need the current [Node.js LTS](https://nodejs.org/en/download/package-manager) along with npm installed on your machine.
