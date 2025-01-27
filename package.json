@@ -65,7 +65,7 @@
     "@iconify-json/material-symbols": "~1.2.6",
     "@iconify-json/mdi": "~1.2.1",
     "@iconify/vue": "~4.3.0",
-    "@storybook/addon-essentials": "~8.4.2",
+    "@storybook/addon-essentials": "~8.5.1",
     "@storybook/blocks": "~8.4.2",
     "@storybook/manager-api": "~8.4.2",
     "@storybook/theming": "~8.4.2",
