@@ -14,25 +14,25 @@
   ],
   "exports": {
     "./primevue": {
-      "require": "./dist/primevue/index.cjs",
+      "types": "./dist/primevue/index.d.ts",
       "import": "./dist/primevue/index.js",
-      "types": "./dist/primevue/index.d.ts"
+      "require": "./dist/primevue/index.cjs"
     },
     "./primevue/style.css": {
       "import": "./dist/style.css"
     },
     "./tailwind": {
-      "require": "./dist/tailwind/index.cjs",
+      "types": "./dist/tailwind/index.d.ts",
       "import": "./dist/tailwind/index.js",
-      "types": "./dist/tailwind/index.d.ts"
+      "require": "./dist/tailwind/index.cjs"
     },
     "./fonts.css": {
       "import": "./dist/fonts.css"
     },
     "./components": {
-      "require": "./dist/components/index.cjs",
+      "types": "./dist/components/index.d.ts",
       "import": "./dist/components/index.js",
-      "types": "./dist/components/index.d.ts"
+      "require": "./dist/components/index.cjs"
     }
   },
   "scripts": {
@@ -47,7 +47,7 @@
     "eslint:fix": "npm run eslint:check -- --fix",
     "audit:licenses": "license-checker --production --excludePrivatePackages --excludePackages @digitalservicebund/ris-ui@$(cat package.json | jq -r '.version') --onlyAllow \"$(. ./parse-allowed-licenses.sh)\" --csv --out ./frontend-license-report.csv",
     "typecheck": "vue-tsc",
-    "sync-fonts": "rm ./public/fonts/*.woff ./public/fonts/*.woff2; cp ./node_modules/@digitalservice4germany/angie/fonts/* ./public/fonts/;  cp ./node_modules/@digitalservice4germany/angie/fonts.css ./public/",
+    "sync-fonts": "mkdir -p public/fonts && rm -f public/fonts/*.woff public/fonts/*.woff2; cp ./node_modules/@digitalservice4germany/angie/fonts/* public/fonts/; cp ./node_modules/@digitalservice4germany/angie/fonts.css public/fonts.css; sed -i '' 's|./fonts/|/fonts/|g' public/fonts.css",
     "test": "vitest run",
     "test:watch": "vitest watch"
   },
