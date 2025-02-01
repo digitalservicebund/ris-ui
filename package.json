@@ -21,6 +21,11 @@
     "./primevue/style.css": {
       "import": "./dist/style.css"
     },
+    "./tailwind": {
+      "require": "./dist/tailwind/index.cjs",
+      "import": "./dist/tailwind/index.js",
+      "types": "./dist/tailwind/index.d.ts"
+    },
     "./fonts.css": {
       "import": "./dist/fonts.css"
     },
