@@ -13,7 +13,7 @@ RUI UI contains three things:
 Vue, PrimeVue and Tailwind are required for RIS UI to work (you'll see a warning about missing peer dependencies if you're trying to use RIS UI without them). To get started, install:
 
 ```sh
-# Vue and PrimeVue if you haven't installed them already.
+# Vue, PrimeVue, and Tailwind if you haven't installed them already.
 npm install vue primevue tailwindcss
 
 # RIS UI
@@ -94,7 +94,7 @@ Finally, add the styles (e.g. `assets/main.css`):
 
 ## Tailwind setup
 
-- Add the RisUiPreset (for colors, spacings, etc.) and the RisUiPlugin (for typography classes, etc.)
+- Add the `RisUiPreset` (for colors, spacings, etc.) and the `RisUiPlugin` (for typography classes, etc.)
 - Ensure the path to the RIS-UI files is included in the content array of your Tailwind config (e.g., `"./node_modules/@digitalservicebund/ris-ui/dist/**/*.{js,vue,ts}"`). This ensures all necessary classes from RIS UI are generated.
 
 ```diff
@@ -104,6 +104,7 @@ Finally, add the styles (e.g. `assets/main.css`):
   export default {
   content: [
 +    "./node_modules/@digitalservicebund/ris-ui/dist/**/*.{js,vue,ts}",
+    // Other content sources
   ],
 
 +   presets: [RisUiPreset],
@@ -113,7 +114,7 @@ Finally, add the styles (e.g. `assets/main.css`):
   };
 ```
 
-Ensure Tailwind is included in your main stylesheet (e.g., style.css):
+Ensure Tailwind is included in your main stylesheet (e.g., `style.css`):
 
 ```diff
 // style.css
