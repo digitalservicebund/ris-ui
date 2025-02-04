@@ -1,11 +1,10 @@
 import { tw } from "@/lib/tags.ts";
 import { SelectPassThroughOptions } from "primevue/select";
-import "./select.css";
 
 const select: SelectPassThroughOptions = {
   root: ({ props, state }) => {
     // Base
-    const base = tw`ris-body2-regular inline-flex h-48 items-center justify-between border-2 bg-white py-4 pl-16 pr-12 outline-4 -outline-offset-4`;
+    const base = tw`ris-body2-regular inline-flex h-48 items-center justify-between border-2 bg-white py-4 pl-16 pr-12 outline-4 -outline-offset-4 [&+small]:ris-label3-regular [&+small]:mt-2 [&+small]:flex [&+small]:items-center [&+small]:gap-4 [&+small]:text-gray-900 [&[aria-invalid="true"]+small]:text-red-900`;
 
     // States
     const normal = tw`cursor-pointer border-blue-800 outline-blue-800`;

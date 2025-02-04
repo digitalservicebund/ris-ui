@@ -5,8 +5,10 @@ import { initialize, mswLoader } from "msw-storybook-addon";
 import PrimeVue from "primevue/config";
 import ConfirmationService from "primevue/confirmationservice";
 import ToastService from "primevue/toastservice";
-import { RisUiTheme } from "../src/primevue";
+import "../public/fonts.css";
 import { deDE } from "../src/config/locale";
+import { RisUiTheme } from "../src/primevue";
+import "./preview.css";
 
 initialize({
   serviceWorker: {
