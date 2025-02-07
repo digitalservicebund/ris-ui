@@ -47,7 +47,7 @@
     "eslint:fix": "npm run eslint:check -- --fix",
     "audit:licenses": "license-checker --production --excludePrivatePackages --excludePackages @digitalservicebund/ris-ui@$(cat package.json | jq -r '.version') --onlyAllow \"$(. ./parse-allowed-licenses.sh)\" --csv --out ./frontend-license-report.csv",
     "typecheck": "vue-tsc",
-    "sync-fonts": "mkdir -p public/fonts && rm -f public/fonts/*.woff public/fonts/*.woff2; cp ./node_modules/@digitalservice4germany/angie/fonts/* public/fonts/; cp ./node_modules/@digitalservice4germany/angie/fonts.css public/fonts.css; sed -i.bak 's|./fonts/|/fonts/|g' public/fonts.css && rm -f public/fonts.css.bak",
+    "sync-fonts": "mkdir -p public/fonts && rm -f public/fonts/*.woff public/fonts/*.woff2; cp ./node_modules/@digitalservice4germany/angie/fonts/* public/fonts/; cp ./node_modules/@digitalservice4germany/angie/fonts.css public/fonts.css; sed -i '' 's|./fonts/|/fonts/|g' public/fonts.css",
     "test": "vitest run",
     "test:watch": "vitest watch"
   },
