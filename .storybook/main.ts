@@ -15,10 +15,6 @@ const config: StorybookConfig = {
 
   async viteFinal(config) {
     if (!config.plugins) config.plugins = [];
-
-    // Dynamically set base path for Storybook
-    config.base = process.env.STORYBOOK_BASE_URL || "/";
-
     config.plugins.push(Icons({ autoInstall: true }));
     return config;
   },
