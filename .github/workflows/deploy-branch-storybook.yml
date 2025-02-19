@@ -2,6 +2,7 @@ name: Deploy Storybook for a Branch (Manual Trigger)
 
 on:
   workflow_dispatch:
+
 jobs:
   build-and-deploy-storybook:
     runs-on: ubuntu-latest
