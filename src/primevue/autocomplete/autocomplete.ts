@@ -5,8 +5,8 @@ const fluid = tw`w-full`;
 
 const autocomplete: AutoCompletePassThroughOptions = {
   root: ({ props }) => {
-    const base = tw`flex border-2 border-blue-800 bg-white outline-4 -outline-offset-4 outline-blue-800 placeholder:text-gray-800 focus-within:outline hover:outline disabled:border-blue-500 disabled:bg-white disabled:text-blue-500 disabled:outline-none`;
-    const small = tw`ris-body2-regular h-48 py-4 pl-16 pr-4`;
+    const base = tw`flex border-2 border-blue-800 bg-white placeholder:text-gray-800 focus-within:outline-4 focus-within:-outline-offset-4 focus-within:outline-blue-800 hover:outline disabled:border-blue-500 disabled:bg-white disabled:text-blue-500 disabled:outline-hidden`;
+    const small = tw`ris-body2-regular h-48 py-4 pr-4 pl-16`;
 
     return {
       class: {
@@ -18,7 +18,7 @@ const autocomplete: AutoCompletePassThroughOptions = {
   },
   pcInput: {
     root: ({ props }) => {
-      const focus = tw`focus-visible:outline-none`;
+      const focus = tw`focus-visible:outline-hidden`;
       return {
         class: {
           [focus]: true,
