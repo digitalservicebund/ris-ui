@@ -9,7 +9,7 @@ const menu: MenuPassThroughOptions = {
     class: tw`focus-visible:outline-none`,
   },
   item: ({ context }) => {
-    const base = tw`relative h-48 pl-16 pr-12 after:absolute after:-bottom-1 after:left-16 after:right-16 after:border-b after:border-gray-300 after:content-[''] last:after:border-b-0 hover:bg-gray-100`;
+    const base = tw`relative h-48 pr-12 pl-16 after:absolute after:right-16 after:-bottom-1 after:left-16 after:border-b after:border-gray-300 after:content-[''] last:after:border-b-0 hover:bg-gray-100`;
     const focused = tw`bg-gray-200 hover:bg-gray-200`;
     return {
       class: {

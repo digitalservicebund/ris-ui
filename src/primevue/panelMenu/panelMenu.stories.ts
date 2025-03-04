@@ -48,7 +48,7 @@ export const Default: StoryObj<typeof meta> = {
         id="menu"
         :model="items"
         v-model:expandedKeys="expandedKeys"
-        class="md:w-200 w-full"
+        class="w-full md:w-200"
         multiple
         ><template #submenuicon><i /></template
       ></PanelMenu>`,
