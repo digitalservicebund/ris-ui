@@ -16,7 +16,7 @@ const autocomplete: AutoCompletePassThroughOptions = {
       },
     };
   },
-  pcInput: {
+  pcInputText: {
     root: ({ props }) => {
       const focus = tw`focus-visible:outline-hidden`;
       return {

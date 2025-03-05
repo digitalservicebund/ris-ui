@@ -6,6 +6,7 @@ import { ref } from "vue";
 import ErrorOutline from "~icons/material-symbols/error-outline";
 
 const meta: Meta<typeof InputMask> = {
+  // @ts-expect-error Component type broken
   component: InputMask,
 
   tags: ["autodocs"],
@@ -15,7 +16,7 @@ const meta: Meta<typeof InputMask> = {
     fluid: false,
     placeholder: "TT.MM.JJJJ",
     mask: "99.99.9999",
-    readOnly: false,
+    readonly: false,
     invalid: false,
   },
 };

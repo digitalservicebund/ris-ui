@@ -5,6 +5,7 @@ import { MenuItem } from "primevue/menuitem";
 import { ref } from "vue";
 
 const meta: Meta<typeof PanelMenu> = {
+  // @ts-expect-error Component type broken
   component: PanelMenu,
   tags: ["autodocs"],
   args: {},

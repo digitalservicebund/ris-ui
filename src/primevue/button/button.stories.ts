@@ -6,6 +6,7 @@ import { html } from "@/lib/tags.ts";
 // Imported as PrimevueButton because somehow formatting sometimes changes
 // "Button" to "button", breaking the stories
 const meta: Meta<typeof PrimevueButton> = {
+  // @ts-expect-error Component type broken
   component: PrimevueButton,
 
   tags: ["autodocs"],
@@ -82,7 +83,7 @@ export const WithIcon: Story = {
     iconPos: undefined,
   },
   argTypes: {
-    iconPos: { type: "select", options: ["left", "right"] },
+    iconPos: { options: ["left", "right"] },
   },
   render: (args) => ({
     components: { PrimevueButton, IconCheck },

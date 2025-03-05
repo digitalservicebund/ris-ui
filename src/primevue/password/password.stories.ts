@@ -3,6 +3,7 @@ import { Meta, StoryObj } from "@storybook/vue3";
 import Password from "primevue/password";
 
 const meta: Meta<typeof Password> = {
+  // @ts-expect-error Component type broken
   component: Password,
 
   tags: ["autodocs"],
