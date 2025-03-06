@@ -5,6 +5,7 @@ import InputText from "primevue/inputtext";
 import ErrorOutline from "~icons/material-symbols/error-outline";
 
 const meta: Meta<typeof InputText> = {
+  // @ts-expect-error Component type broken
   component: InputText,
 
   tags: ["autodocs"],
@@ -13,7 +14,7 @@ const meta: Meta<typeof InputText> = {
     disabled: false,
     fluid: false,
     placeholder: "Placeholder",
-    readOnly: false,
+    readonly: false,
     size: "small",
     value: "Text",
     invalid: false,

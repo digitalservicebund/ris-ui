@@ -3,6 +3,7 @@ import ProgressSpinner from "primevue/progressspinner";
 import { html } from "@/lib/tags.ts";
 
 const meta: Meta<typeof ProgressSpinner> = {
+  // @ts-expect-error Component type broken
   component: ProgressSpinner,
 
   tags: ["autodocs"],

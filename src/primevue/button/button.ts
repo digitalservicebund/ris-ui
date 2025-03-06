@@ -4,7 +4,7 @@ import { tw } from "@/lib/tags.ts";
 const button: ButtonPassThroughOptions = {
   root: ({ props, instance }) => {
     // Base
-    const base = tw`relative inline-flex max-w-full items-center justify-center gap-8 rounded-none text-center outline-4 outline-offset-4 outline-blue-800 focus:outline active:outline-none disabled:cursor-not-allowed disabled:outline-none`;
+    const base = tw`relative inline-flex max-w-full cursor-pointer items-center justify-center gap-8 rounded-none text-center outline-hidden focus:outline-4 focus:outline-offset-4 focus:outline-blue-800 active:outline-hidden disabled:cursor-not-allowed disabled:outline-hidden`;
 
     // Severity
     const severity = props.severity ?? "primary";

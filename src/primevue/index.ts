@@ -1,5 +1,3 @@
-import "./global.css";
-
 import button from "./button/button";
 import checkbox from "./checkbox/checkbox";
 import confirmDialog from "./confirmDialog/confirmDialog";

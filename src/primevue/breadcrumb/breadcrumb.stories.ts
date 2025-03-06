@@ -8,6 +8,7 @@ import HomeFilledIcon from "~icons/material-symbols/home";
 import ChevronRightIcon from "~icons/material-symbols/chevron-right";
 
 const meta: Meta<typeof Breadcrumb> = {
+  // @ts-expect-error Component type broken
   component: Breadcrumb,
   tags: ["autodocs"],
 };

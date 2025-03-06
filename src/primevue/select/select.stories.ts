@@ -5,6 +5,7 @@ import { ref } from "vue";
 import ErrorOutline from "~icons/material-symbols/error-outline";
 
 const meta: Meta<typeof PrimevueSelect> = {
+  // @ts-expect-error Component type broken
   component: PrimevueSelect,
 
   tags: ["autodocs"],

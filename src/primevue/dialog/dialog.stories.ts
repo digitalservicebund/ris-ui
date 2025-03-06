@@ -5,6 +5,7 @@ import PrimevueDialog from "primevue/dialog";
 import { ref } from "vue";
 
 const meta: Meta<typeof PrimevueDialog> = {
+  // @ts-expect-error Component type broken
   component: PrimevueDialog,
 
   tags: ["autodocs"],

@@ -1,3 +1,5 @@
+@reference "tailwindcss";
+
 div[data-pc-section="nodecontent"]:has(
     + ul[data-pc-section="nodechildren"]
       li

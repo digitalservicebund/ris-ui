@@ -5,6 +5,7 @@ import Toast from "primevue/toast";
 import { useToast } from "primevue/usetoast";
 
 const meta: Meta<typeof Toast> = {
+  // @ts-expect-error Component type broken
   component: Toast,
 
   // No autodocs here on purpose because having multiple stories creating

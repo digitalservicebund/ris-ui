@@ -4,12 +4,12 @@ import "./tree.css";
 
 const tree: TreePassThroughOptions = {
   node: {
-    class: tw`mb-24 last:mb-0 focus-visible:outline-none focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-blue-800 [&>ul:first-of-type]:border-l-0`,
+    class: tw`mb-24 last:mb-0 focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-blue-800 focus-visible:outline-none [&>ul:first-of-type]:border-l-0`,
   },
   nodeContent: ({ context }) => {
-    const base = tw`group ris-label2-bold flex w-full border-l-4 border-transparent py-10 pl-10 pr-20 text-blue-800`;
+    const base = tw`group ris-label2-bold flex w-full border-l-4 border-transparent py-10 pr-20 pl-10 text-blue-800`;
     const pointer = tw`cursor-pointer select-none`;
-    const focusVisible = tw`focus-visible:outline-none focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-blue-800`;
+    const focusVisible = tw`focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-blue-800 focus-visible:outline-none`;
     const selected = tw`border-l-blue-800 bg-blue-200 text-black`;
     const hover = tw`hover:bg-blue-200`;
     const hoverSelected = tw`hover:bg-blue-300`;
@@ -26,19 +26,19 @@ const tree: TreePassThroughOptions = {
     };
   },
   nodeToggleButton: ({ context }) => {
-    const base = tw`inline-flex h-20 w-20 justify-center border-0 bg-transparent text-gray-900 outline-none hover:text-black group-hover:text-black`;
-    const hidden = tw`hidden`;
+    const base = tw`h-20 w-20 justify-center border-0 bg-transparent text-gray-900 outline-none group-hover:text-black hover:text-black`;
+    const visibility = context.leaf ? tw`hidden` : tw`inline-flex`;
 
     return {
       class: {
         [base]: true,
-        [hidden]: context.leaf,
+        [visibility]: context.leaf,
       },
     };
   },
   nodeChildren: () => {
     const base = tw`m-0 list-none border-l border-gray-600 p-0 pl-36 outline-none [&:not(ul)]:pl-0 [&>ul:first-of-type]:border-0`;
-    const focusVisible = tw`focus-visible:outline-none focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-blue-800`;
+    const focusVisible = tw`focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-blue-800 focus-visible:outline-none`;
     return {
       class: {
         [base]: true,

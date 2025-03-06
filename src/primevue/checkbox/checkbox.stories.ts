@@ -4,6 +4,7 @@ import Checkbox from "primevue/checkbox";
 import { ref } from "vue";
 
 const meta: Meta<typeof Checkbox> = {
+  // @ts-expect-error Component type broken
   component: Checkbox,
 
   tags: ["autodocs"],

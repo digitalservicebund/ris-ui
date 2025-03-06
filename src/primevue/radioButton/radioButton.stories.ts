@@ -4,6 +4,7 @@ import RadioButton from "primevue/radiobutton";
 import { ref } from "vue";
 
 const meta: Meta<typeof RadioButton> = {
+  // @ts-expect-error Component type broken
   component: RadioButton,
 
   tags: ["autodocs"],

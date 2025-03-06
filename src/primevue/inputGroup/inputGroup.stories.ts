@@ -5,6 +5,7 @@ import InputGroupAddon from "primevue/inputgroupaddon";
 import InputText from "primevue/inputtext";
 
 const meta: Meta<typeof InputText> = {
+  // @ts-expect-error Component type broken
   component: InputGroup,
 
   tags: ["autodocs"],
@@ -12,7 +13,7 @@ const meta: Meta<typeof InputText> = {
   args: {
     disabled: false,
     placeholder: "Placeholder",
-    readOnly: false,
+    readonly: false,
     size: "small",
     value: "Text",
     invalid: false,

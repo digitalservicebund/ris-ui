@@ -25,7 +25,7 @@ const dialog: DialogPassThroughOptions = {
 
   pcCloseButton: {
     root: {
-      class: tw`flex h-24 w-24 items-center justify-center p-4 text-blue-800 outline-2 outline-gray-500 hover:outline focus:outline active:outline-none`,
+      class: tw`flex h-24 w-24 items-center justify-center p-4 text-blue-800 outline-hidden hover:outline hover:outline-2 hover:outline-gray-500 focus:outline focus:outline-2 focus:outline-gray-500 active:outline-hidden`,
     },
   },
 

@@ -6,6 +6,7 @@ import ErrorOutline from "~icons/material-symbols/error-outline";
 // Imported as Btn because somehow formatting sometimes changes
 // "PrimevueTextarea" to "PrimevueTextarea", breaking the stories
 const meta: Meta<typeof PrimevueTextarea> = {
+  // @ts-expect-error Component type broken
   component: PrimevueTextarea,
 
   tags: ["autodocs"],

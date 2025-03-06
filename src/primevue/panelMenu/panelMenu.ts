@@ -12,7 +12,7 @@ const panelMenu: PanelMenuPassThroughOptions = {
   },
 
   header: ({ context }) => {
-    const base = tw`group flex h-64 items-center border-l-4 border-transparent py-8 pl-10 pr-20`;
+    const base = tw`group flex h-64 items-center border-l-4 border-transparent py-8 pr-20 pl-10`;
     return {
       class: {
         [base]: true,
@@ -24,7 +24,7 @@ const panelMenu: PanelMenuPassThroughOptions = {
     };
   },
   content: {
-    class: tw`ml-28 mt-8`,
+    class: tw`mt-8 ml-28`,
   },
   rootList: {
     class: tw`focus-visible:outline-none`,
@@ -35,7 +35,7 @@ const panelMenu: PanelMenuPassThroughOptions = {
   itemContent: ({ context }) => {
     // Unlike header, itemContent does not get a focus-visible pseudo-class. Instead, the focused context property must be used.
     // See https://github.com/primefaces/primevue/issues/6836
-    const base = tw`group flex h-48 items-center border-l-4 border-transparent py-8 pl-10 pr-20`;
+    const base = tw`group flex h-48 items-center border-l-4 border-transparent py-8 pr-20 pl-10`;
     const activeAndFocused = tw`bg-blue-300`;
     const inactiveAndFocused = tw`bg-blue-200`;
     return {

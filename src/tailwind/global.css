@@ -1,0 +1,301 @@
+@theme {
+  --color-black: #0b0c0c;
+  --color-white: #fff;
+  --color-inherit: inherit;
+  --color-current: currentColor;
+  --color-transparent: transparent;
+
+  /* Blues */
+  --color-blue-100: #f2f6f8;
+  --color-blue-200: #ecf1f4;
+  --color-blue-300: #dce8ef;
+  --color-blue-400: #ccdbe4;
+  --color-blue-500: #b3c9d6;
+  --color-blue-600: #6693ad;
+  --color-blue-700: #336f91;
+  --color-blue-800: #004b76;
+  --color-blue-900: #003350;
+
+  /* Grays */
+  --color-gray-100: #f6f7f8;
+  --color-gray-200: #eff2f4;
+  --color-gray-300: #edeef0;
+  --color-gray-400: #dcdee1;
+  --color-gray-500: #cacdd2;
+  --color-gray-600: #b8bdc3;
+  --color-gray-700: #a6acb5;
+  --color-gray-800: #717a88;
+  --color-gray-900: #4e596a;
+
+  /* Greens */
+  --color-green-100: #e8f7f0;
+  --color-green-200: #ccebdd;
+  --color-green-300: #b0d8c6;
+  --color-green-400: #97ccb4;
+  --color-green-500: #65b491;
+  --color-green-600: #349d6e;
+  --color-green-700: #01854a;
+  --color-green-800: #006538;
+  --color-green-900: #003e22;
+
+  /* Oranges */
+  --color-orange-100: #fef7e8;
+  --color-orange-200: #fae5bb;
+  --color-orange-300: #f9d791;
+  --color-orange-400: #f8c967;
+  --color-orange-500: #f7bb3d;
+  --color-orange-600: #e9aa26;
+  --color-orange-700: #d79815;
+  --color-orange-800: #c18509;
+  --color-orange-900: #ad7500;
+
+  /* Reds */
+  --color-red-100: #fcf2f5;
+  --color-red-200: #f9e5ec;
+  --color-red-300: #f2ccd8;
+  --color-red-400: #ecb3c5;
+  --color-red-500: #e699b1;
+  --color-red-600: #d9668b;
+  --color-red-700: #c61a50;
+  --color-red-800: #b0243f;
+  --color-red-900: #8e001b;
+
+  /* Yellows */
+  --color-yellow-100: #fefcef;
+  --color-yellow-200: #fff9d2;
+  --color-yellow-300: #f9ec9e;
+  --color-yellow-400: #f7e67d;
+  --color-yellow-500: #f5e05d;
+  --color-yellow-600: #f2dc5d;
+  --color-yellow-700: #e5ce5c;
+  --color-yellow-800: #dac23c;
+  --color-yellow-900: #c3a91e;
+
+  /* Spacing */
+  --spacing-0: 0rem;
+  --spacing-1: 0.0625rem;
+  --spacing-2: 0.125rem;
+  --spacing-4: 0.25rem;
+  --spacing-6: 0.375rem;
+  --spacing-8: 0.5rem;
+  --spacing-10: 0.625rem;
+  --spacing-12: 0.75rem;
+  --spacing-14: 0.875rem;
+  --spacing-16: 1rem;
+  --spacing-20: 1.25rem;
+  --spacing-24: 1.5rem;
+  --spacing-28: 1.75rem;
+  --spacing-32: 2rem;
+  --spacing-36: 2.25rem;
+  --spacing-40: 2.5rem;
+  --spacing-44: 2.75rem;
+  --spacing-48: 3rem;
+  --spacing-56: 3.5rem;
+  --spacing-64: 4rem;
+  --spacing-80: 5rem;
+  --spacing-96: 6rem;
+  --spacing-112: 7rem;
+  --spacing-128: 8rem;
+  --spacing-144: 9rem;
+  --spacing-160: 10rem;
+  --spacing-176: 11rem;
+  --spacing-192: 12rem;
+  --spacing-208: 13rem;
+  --spacing-224: 14rem;
+  --spacing-240: 15rem;
+  --spacing-288: 18rem;
+  --spacing-320: 20rem;
+  --spacing-384: 24rem;
+
+  /* Font Families */
+  --font-sans: BundesSansWeb, Calibri, Verdana, Arial, Helvetica, sans-serif;
+  --font-serif: BundesSerifWeb, Georgia, "Times New Roman", serif;
+  --font-condensed: BundesSansCondWeb, Arial Narrow, Arial, sans-serif;
+}
+
+/* Base styles */
+:root {
+  --ris-icon-warn: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M12 5.99L19.53 19H4.47zM12 2L1 21h22z'/%3E%3Cpath fill='%23000' d='M13 16h-2v2h2zm0-6h-2v5h2z'/%3E%3C/svg%3E");
+  --ris-icon-error: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%238E001B' d='M12 5.99L19.53 19H4.47zM12 2L1 21h22z'/%3E%3Cpath fill='%238E001B' d='M13 16h-2v2h2zm0-6h-2v5h2z'/%3E%3C/svg%3E");
+  --ris-icon-info: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 24 24'%3E%3Cpath fill='%23004B76' d='M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8'/%3E%3C/svg%3E");
+  --ris-icon-success: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 24 24'%3E%3Cpath fill='%23005E34' d='M9 16.17L4.83 12l-1.42 1.41L9 19L21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+}
+
+body {
+  color: var(--color-black);
+  font-family: var(--font-sans);
+}
+
+::placeholder {
+  font-family: var(--font-sans);
+  font-style: normal;
+}
+
+/* Utilities */
+@utility ris-title-regular {
+  font-size: 64px;
+  font-weight: normal;
+  line-height: 1.1875;
+}
+
+@utility ris-heading1-regular {
+  font-size: 48px;
+  font-weight: normal;
+  line-height: 1.2;
+}
+
+@utility ris-heading1-bold {
+  font-size: 48px;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+@utility ris-heading2-regular {
+  font-size: 32px;
+  font-weight: normal;
+  line-height: 1.1875;
+}
+
+@utility ris-heading2-bold {
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 1.1875;
+}
+
+@utility ris-heading3-regular {
+  font-size: 26px;
+  font-weight: normal;
+  line-height: 1.23;
+}
+
+@utility ris-heading3-bold {
+  font-size: 26px;
+  font-weight: bold;
+  line-height: 1.23;
+}
+
+@utility ris-subhead-regular {
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 1.5;
+}
+
+@utility ris-body1-regular {
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 1.5;
+}
+
+@utility ris-body1-bold {
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+@utility ris-body2-regular {
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.5;
+}
+
+@utility ris-body2-bold {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+@utility ris-body3-regular {
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.5;
+}
+
+@utility ris-body3-bold {
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+@utility ris-label1-regular {
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 1.25;
+}
+
+@utility ris-label1-bold {
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.25;
+}
+
+@utility ris-label2-regular {
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.25;
+}
+
+@utility ris-label2-bold {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.25;
+}
+
+@utility ris-label3-regular {
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.25;
+}
+
+@utility ris-label3-bold {
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.25;
+}
+
+@utility ris-link1-regular {
+  color: var(--color-blue-800);
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 1.5;
+  text-decoration: underline;
+}
+
+@utility ris-link1-bold {
+  color: var(--color-blue-800);
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.5;
+  text-decoration: underline;
+}
+
+@utility ris-link2-regular {
+  color: var(--color-blue-800);
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.5;
+  text-decoration: underline;
+}
+
+@utility ris-link2-bold {
+  color: var(--color-blue-800);
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.5;
+  text-decoration: underline;
+}
+
+@utility ris-link3-regular {
+  color: var(--color-blue-800);
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.5;
+  text-decoration: underline;
+}
+
+@utility ris-link3-bold {
+  color: var(--color-blue-800);
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.5;
+  text-decoration: underline;
+}

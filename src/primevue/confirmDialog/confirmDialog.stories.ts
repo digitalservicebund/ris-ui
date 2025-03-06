@@ -6,6 +6,7 @@ import { useConfirm } from "primevue/useconfirm";
 import ErrorOutline from "~icons/material-symbols/error-outline";
 
 const meta: Meta<typeof ConfirmDialog> = {
+  // @ts-expect-error Component type broken
   component: ConfirmDialog,
 
   tags: ["autodocs"],
