@@ -5,7 +5,7 @@ const fluid = tw`w-full`;
 
 const autocomplete: AutoCompletePassThroughOptions = {
   root: ({ props }) => {
-    const base = tw`flex border-2 border-blue-800 bg-white placeholder:text-gray-800 focus-within:outline-4 focus-within:-outline-offset-4 focus-within:outline-blue-800 hover:outline disabled:border-blue-500 disabled:bg-white disabled:text-blue-500 disabled:outline-hidden`;
+    const base = tw`flex border-2 border-blue-800 bg-white placeholder:text-gray-800 focus-within:outline-4 focus-within:-outline-offset-4 focus-within:outline-blue-800 hover:outline hover:outline-4 hover:-outline-offset-4 hover:outline-blue-800 disabled:border-blue-500 disabled:bg-white disabled:text-blue-500 disabled:outline-hidden`;
     const small = tw`ris-body2-regular h-48 py-4 pr-4 pl-16`;
 
     return {
@@ -35,7 +35,7 @@ const autocomplete: AutoCompletePassThroughOptions = {
     class: tw`hover:bg-blue-100 data-[p-focus=true]:bg-blue-200`,
   },
   overlay: {
-    class: tw`max-h-56 min-w-288 overflow-auto bg-white px-8 py-12 shadow-md`,
+    class: tw`min-w-288 overflow-auto bg-white px-8 py-12 shadow-md`,
   },
 };
 

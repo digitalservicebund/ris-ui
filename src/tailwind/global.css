@@ -38,6 +38,7 @@
   --color-green-800: #006538;
   --color-green-900: #003e22;
 
+  /* Oranges */
   --color-orange-100: #fef7e8;
   --color-orange-200: #fae5bb;
   --color-orange-300: #f9d791;
@@ -48,6 +49,7 @@
   --color-orange-800: #c18509;
   --color-orange-900: #ad7500;
 
+  /* Reds */
   --color-red-100: #fcf2f5;
   --color-red-200: #f9e5ec;
   --color-red-300: #f2ccd8;
@@ -58,6 +60,7 @@
   --color-red-800: #b0243f;
   --color-red-900: #8e001b;
 
+  /* Yellows */
   --color-yellow-100: #fefcef;
   --color-yellow-200: #fff9d2;
   --color-yellow-300: #f9ec9e;
@@ -128,6 +131,7 @@ body {
   font-style: normal;
 }
 
+/* Utilities */
 @utility ris-title-regular {
   font-size: 64px;
   font-weight: normal;

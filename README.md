@@ -8,7 +8,7 @@ RIS UI contains three things:
 
 - a [theme](./src/primevue/) for [Vue 3](https://vuejs.org) components from [PrimeVue 4](https://primevue.org);
 - [custom components](./src/components/);
-- a [global stylesheet](./src/tailwind/global.css) for [Tailwind](https://tailwindcss.com) that includes design tokens, typography, and global component styles, ensuring consistency across custom UI and PrimeVue components.
+- a [configuration](./src/tailwind/global.css) file for [Tailwind](https://tailwindcss.com) that includes design tokens, typography, and global component styles, ensuring consistency across custom UI and PrimeVue components.
 
 Vue, PrimeVue and Tailwind are required for RIS UI to work (you'll see a warning about missing peer dependencies if you're trying to use RIS UI without them). To get started, install:
 
@@ -27,7 +27,10 @@ npm install @digitalservicebund/ris-ui
 > If you're using Nuxt, follow the instructions for [Nuxt](#nuxt-setup) below instead.
 
 Import and apply the RIS UI theme, styling, and fonts where you set up your application (typically `main.ts`):
-As of Tailwind V4. The style is now integrated through the global CSS file, simplifying the setup.
+
+> [!TIP]
+>
+> As of Tailwind V4. The style is now integrated through the global CSS file, simplifying the setup.
 
 ```diff
   // main.ts
@@ -106,15 +109,13 @@ With Tailwind CSS v4, the setup has transitioned to a CSS-based configuration, e
 /* 2. Source the RIS UI components for Tailwind class generation */
 @source "../node_modules/@digitalservicebund/ris-ui/dist/**/*.{js,vue,ts}";
 
-/* 3. Optional: Add your custom CSS or theme variables */
-@layer base {
-  body {
-    @apply bg-gray-100; /* Example: Set default background color */
-  }
+/* 3. Optional: Add your custom CSS*/
+body {
+  background-color: #f3f4f6; /* Example: Set default background color */
 }
 
+/* 4. Optional: Define custom theme variables */
 @theme {
-  /* Custom theme variables */
   --highlight-default-default: #d6f7fe;
   --highlight-default-hover: #94e8fe;
   --highlight-default-selected: #94e8fe;
