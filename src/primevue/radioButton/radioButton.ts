@@ -3,11 +3,11 @@ import { RadioButtonPassThroughOptions } from "primevue/radiobutton";
 
 const radioButton: RadioButtonPassThroughOptions = {
   root: {
-    class: tw`relative inline-block h-32 w-32 [&+label]:ris-label1-regular [&+label]:ml-8`,
+    class: tw`[&+label]:ris-label1-regular relative inline-block h-32 w-32 [&+label]:ml-8`,
   },
 
   input: {
-    class: tw`peer h-full w-full cursor-pointer appearance-none rounded-full border-2 border-blue-800 bg-white outline-4 -outline-offset-4 outline-blue-800 hover:outline focus:outline active:outline-none disabled:cursor-not-allowed disabled:border-gray-600 disabled:outline-none aria-[invalid]:border-red-800 aria-[invalid]:outline-red-800 aria-[invalid]:active:outline-none aria-[invalid]:disabled:outline-none`,
+    class: tw`peer h-full w-full cursor-pointer appearance-none rounded-full border-2 border-blue-800 bg-white hover:outline hover:outline-4 hover:-outline-offset-4 hover:outline-blue-800 focus:outline focus:outline-4 focus:-outline-offset-4 focus:outline-blue-800 active:outline-hidden disabled:cursor-not-allowed disabled:border-gray-600 aria-[invalid]:border-red-800 aria-[invalid]:outline-red-800 aria-[invalid]:active:outline-hidden aria-[invalid]:disabled:outline-hidden`,
   },
 
   box: {

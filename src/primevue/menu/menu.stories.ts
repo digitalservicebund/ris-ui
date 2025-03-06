@@ -9,6 +9,7 @@ import MdiTrayDownload from "~icons/mdi/tray-download";
 import { useTemplateRef } from "vue";
 
 const meta: Meta<typeof PrimevueMenu> = {
+  // @ts-expect-error Component type broken
   component: PrimevueMenu,
   tags: ["autodocs"],
   args: {
@@ -60,6 +61,7 @@ export const Popup: StoryObj<typeof meta> = {
       const menuRef = useTemplateRef<typeof PrimevueMenu>("menu");
 
       const toggle = (event: Event) => {
+        // @ts-expect-error Component type broken
         menuRef.value?.toggle(event);
       };
       return { args, toggle, getIcon };

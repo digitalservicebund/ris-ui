@@ -6,6 +6,7 @@ import FileUpload from "primevue/fileupload";
 import { ref } from "vue";
 
 const meta: Meta<typeof FileUpload> = {
+  // @ts-expect-error Component type broken
   component: FileUpload,
 
   tags: ["autodocs"],
