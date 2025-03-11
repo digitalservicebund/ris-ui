@@ -19,15 +19,12 @@
       "require": "./dist/primevue/index.cjs"
     },
     "./style.css": {
-      "import": "./dist/style.css"
-    },
-    "./tailwind": {
-      "types": "./dist/tailwind/index.d.ts",
-      "import": "./dist/tailwind/index.js",
-      "require": "./dist/tailwind/index.cjs"
+      "import": "./dist/style.css",
+      "require": "./dist/style.css"
     },
     "./fonts.css": {
-      "import": "./dist/fonts.css"
+      "import": "./dist/fonts.css",
+      "require": "./dist/style.css"
     },
     "./components": {
       "types": "./dist/components/index.d.ts",
