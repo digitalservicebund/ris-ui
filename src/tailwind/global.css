@@ -1,4 +1,10 @@
 @theme {
+  /* Resets */
+  --color-*: initial;
+  --spacing-*: initial;
+  --font-*: initial;
+
+  /* Base colors */
   --color-black: #0b0c0c;
   --color-white: #fff;
   --color-inherit: inherit;
