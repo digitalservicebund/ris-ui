@@ -89,7 +89,7 @@ export default defineNuxtPlugin((nuxtApp) => {
 Finally, add the styles (e.g. `assets/main.css`):
 
 ```css
-@import "@digitalservicebund/ris-ui/primevue/style.css";
+@import "@digitalservicebund/ris-ui/style.css";
 @import "@digitalservicebund/ris-ui/fonts.css";
 
 /* Your other CSS */
@@ -104,7 +104,7 @@ With Tailwind CSS v4, the setup has transitioned to a CSS-based configuration, e
 
 /* 1. Import Tailwind and RIS UI styles */
 @import "tailwindcss";
-@import "@digitalservicebund/ris-ui/primevue/style.css";
+@import "@digitalservicebund/ris-ui/style.css";
 
 /* 2. Source the RIS UI components for Tailwind class generation */
 @source "../node_modules/@digitalservicebund/ris-ui/dist/**/*.{js,vue,ts}";

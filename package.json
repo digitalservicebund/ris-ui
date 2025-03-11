@@ -18,7 +18,7 @@
       "import": "./dist/primevue/index.js",
       "require": "./dist/primevue/index.cjs"
     },
-    "./primevue/style.css": {
+    "./style.css": {
       "import": "./dist/style.css"
     },
     "./tailwind": {
