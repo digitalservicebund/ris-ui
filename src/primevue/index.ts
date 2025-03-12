@@ -19,6 +19,7 @@ import inputMask from "./inputMask/inputMask";
 import breadcrumb from "@/primevue/breadcrumb/breadcrumb";
 import panelmenu from "./panelMenu/panelMenu";
 import tree from "./tree/tree";
+import splitter from "./splitter/splitter";
 
 import { deDE } from "@/config/locale";
 
@@ -44,6 +45,7 @@ export const RisUiTheme = {
   breadcrumb,
   tree,
   panelmenu,
+  splitter,
 };
 
 export const RisUiLocale = {
