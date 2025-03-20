@@ -63,9 +63,9 @@ export const WithLabel: StoryObj<typeof meta> = {
     template: html`<div class="flex flex-col gap-2">
       <label class="ris-label2-regular" for="with-top-label">Label</label>
       <PrimevueSelect
-        id="with-top-label"
         v-bind="args"
         v-model="selectedOption"
+        labelId="with-top-label"
         optionLabel="name"
         optionValue="code"
         :options="options"
@@ -91,9 +91,9 @@ export const WithHorizontalLabel: StoryObj<typeof meta> = {
     template: html`<div class="flex w-1/2 items-center gap-16">
       <label class="ris-label2-regular" for="with-left-label">Label</label>
       <PrimevueSelect
-        id="with-left-label"
         v-bind="args"
         v-model="selectedOption"
+        labelId="with-left-label"
         optionLabel="name"
         optionValue="code"
         :options="options"
@@ -121,9 +121,9 @@ export const Disabled: StoryObj<typeof meta> = {
       return { args, selectedOption, options };
     },
     template: html` <PrimevueSelect
-      id="with-top-label"
       v-bind="args"
       v-model="selectedOption"
+      labelId="with-top-label"
       optionLabel="name"
       optionValue="code"
       :options="options"
