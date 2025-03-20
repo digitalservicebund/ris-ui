@@ -9,9 +9,9 @@ const select: SelectPassThroughOptions = {
     // States
     const normal = tw`cursor-pointer border-blue-800`;
 
-    const focused = tw`has-[:focus]:outline has-[:focus]:outline-4 has-[:focus]:-outline-offset-4 has-[:focus]:outline-blue-800`;
+    const focused = tw`has-[:focus]:outline-4 has-[:focus]:-outline-offset-4 has-[:focus]:outline-blue-800`;
 
-    const hover = tw`hover:outline hover:outline-4 hover:-outline-offset-4 hover:outline-blue-800`;
+    const hover = tw`hover:outline-4 hover:-outline-offset-4 hover:outline-blue-800`;
 
     const disabled = tw`cursor-not-allowed border-blue-500 text-blue-500 disabled:outline-hidden`;
 
