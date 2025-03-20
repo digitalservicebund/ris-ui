@@ -106,11 +106,13 @@ export const WithIcon: Story = {
     setup() {
       return { args };
     },
-    template: html` <PrimevueButton v-bind="args">
-      <template #icon>
-        <IconCheck />
-      </template>
-    </PrimevueButton>`,
+    template: html`
+      <PrimevueButton v-bind="args">
+        <template #icon="slotProps">
+          <IconCheck :class="slotProps.class" />
+        </template>
+      </PrimevueButton>
+    `,
   }),
 };
 

@@ -56,7 +56,12 @@ const button: ButtonPassThroughOptions = {
   label: ({ props }) => ({
     class: {
       hidden: !props.label,
-      [tw`-order-1`]: props.iconPos === "right",
+    },
+  }),
+
+  icon: ({ props }) => ({
+    class: {
+      "order-last": props.iconPos == "right",
     },
   }),
 
