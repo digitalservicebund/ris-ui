@@ -2,8 +2,16 @@ import { tw } from "@/lib/tags";
 import { CheckboxPassThroughOptions } from "primevue/checkbox";
 
 const checkbox: CheckboxPassThroughOptions = {
-  root: {
-    class: tw`[&+label]:ris-label1-regular relative inline-block h-24 min-h-24 w-24 min-w-24 [&+label]:ml-8`,
+  root: ({ props }) => {
+    // Base
+    const base = tw`[&+label]:ris-label1-regular relative inline-block h-24 min-h-24 w-24 min-w-24 [&+label]:ml-8`;
+
+    return {
+      class: {
+        [base]: true,
+        [tw`h-32 min-h-32 w-32 min-w-32`]: props.size === "large",
+      },
+    };
   },
 
   input: {
