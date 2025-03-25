@@ -266,6 +266,8 @@
   font-weight: normal;
   line-height: 1.5;
   text-decoration: underline;
+  text-underline-offset: 3px;
+  @apply hover:decoration-3;
   @apply focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-800;
 }
 
@@ -275,6 +277,8 @@
   font-weight: bold;
   line-height: 1.5;
   text-decoration: underline;
+  text-underline-offset: 3px;
+  @apply hover:decoration-3;
   @apply focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-800;
 }
 
@@ -284,6 +288,8 @@
   font-weight: normal;
   line-height: 1.5;
   text-decoration: underline;
+  text-underline-offset: 2px;
+  @apply hover:decoration-2;
   @apply focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-800;
 }
 
@@ -293,6 +299,8 @@
   font-weight: bold;
   line-height: 1.5;
   text-decoration: underline;
+  text-underline-offset: 2px;
+  @apply hover:decoration-2;
   @apply focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-800;
 }
 
@@ -302,6 +310,8 @@
   font-weight: normal;
   line-height: 1.5;
   text-decoration: underline;
+  text-underline-offset: 2px;
+  @apply hover:decoration-2;
   @apply focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-800;
 }
 
@@ -311,5 +321,7 @@
   font-weight: bold;
   line-height: 1.5;
   text-decoration: underline;
+  text-underline-offset: 2px;
+  @apply hover:decoration-2;
   @apply focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-800;
 }
