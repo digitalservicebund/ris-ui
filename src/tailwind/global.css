@@ -266,6 +266,7 @@
   font-weight: normal;
   line-height: 1.5;
   text-decoration: underline;
+  @apply focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-800;
 }
 
 @utility ris-link1-bold {
@@ -274,6 +275,7 @@
   font-weight: bold;
   line-height: 1.5;
   text-decoration: underline;
+  @apply focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-800;
 }
 
 @utility ris-link2-regular {
@@ -282,6 +284,7 @@
   font-weight: normal;
   line-height: 1.5;
   text-decoration: underline;
+  @apply focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-800;
 }
 
 @utility ris-link2-bold {
@@ -290,6 +293,7 @@
   font-weight: bold;
   line-height: 1.5;
   text-decoration: underline;
+  @apply focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-800;
 }
 
 @utility ris-link3-regular {
@@ -298,6 +302,7 @@
   font-weight: normal;
   line-height: 1.5;
   text-decoration: underline;
+  @apply focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-800;
 }
 
 @utility ris-link3-bold {
@@ -306,4 +311,5 @@
   font-weight: bold;
   line-height: 1.5;
   text-decoration: underline;
+  @apply focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-800;
 }
