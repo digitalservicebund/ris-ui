@@ -37,7 +37,7 @@ watchEffect(() => {
 
     <button
       v-if="canExpand"
-      class="ris-link1-regular"
+      class="ris-link1-regular cursor-pointer focus:outline-4 focus:outline-offset-4 focus:outline-blue-800 active:outline-hidden"
       :aria-controls="textId"
       :aria-expanded="expanded"
       @click="expanded = !expanded"
