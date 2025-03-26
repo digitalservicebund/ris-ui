@@ -267,8 +267,6 @@
   line-height: 1.5;
   text-decoration: underline;
   text-underline-offset: 3px;
-  @apply hover:decoration-3;
-  @apply focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-800;
 }
 
 @utility ris-link1-bold {
@@ -278,8 +276,6 @@
   line-height: 1.5;
   text-decoration: underline;
   text-underline-offset: 3px;
-  @apply hover:decoration-3;
-  @apply focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-800;
 }
 
 @utility ris-link2-regular {
@@ -289,8 +285,6 @@
   line-height: 1.5;
   text-decoration: underline;
   text-underline-offset: 2px;
-  @apply hover:decoration-2;
-  @apply focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-800;
 }
 
 @utility ris-link2-bold {
@@ -300,8 +294,6 @@
   line-height: 1.5;
   text-decoration: underline;
   text-underline-offset: 2px;
-  @apply hover:decoration-2;
-  @apply focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-800;
 }
 
 @utility ris-link3-regular {
@@ -311,8 +303,6 @@
   line-height: 1.5;
   text-decoration: underline;
   text-underline-offset: 2px;
-  @apply hover:decoration-2;
-  @apply focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-800;
 }
 
 @utility ris-link3-bold {
@@ -322,6 +312,28 @@
   line-height: 1.5;
   text-decoration: underline;
   text-underline-offset: 2px;
-  @apply hover:decoration-2;
-  @apply focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-800;
+}
+
+/* Utility pseudo-classes */
+
+.ris-link1-regular:hover,
+.ris-link1-bold:hover {
+  text-decoration-thickness: 3px;
+}
+
+.ris-link2-regular:hover,
+.ris-link2-bold:hover,
+.ris-link3-regular:hover,
+.ris-link3-bold:hover {
+  text-decoration-thickness: 2px;
+}
+
+.ris-link1-regular:focus-visible,
+.ris-link1-bold:focus-visible,
+.ris-link2-regular:focus-visible,
+.ris-link2-bold:focus-visible,
+.ris-link3-regular:focus-visible,
+.ris-link3-bold:focus-visible {
+  outline: var(--color-blue-800) solid 2px;
+  outline-offset: 4px;
 }
