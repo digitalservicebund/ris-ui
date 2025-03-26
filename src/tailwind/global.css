@@ -316,6 +316,11 @@
 
 /* Utility pseudo-classes */
 
+/*
+  These styles might be written more concisely using @apply directives.
+  However, using @apply inside @utility statements silently breaks class name generation
+  as of Tailwind v4.0.17.
+ */
 .ris-link1-regular:hover,
 .ris-link1-bold:hover {
   text-decoration-thickness: 3px;
