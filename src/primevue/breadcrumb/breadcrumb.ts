@@ -9,7 +9,7 @@ const breadcrumb: BreadcrumbPassThroughOptions = {
     class: tw`flex-no-wrap ris-label1-regular my-2 flex items-center break-all`,
   },
   itemLink: {
-    class: tw`inline-flex cursor-pointer items-center text-blue-800 outline-hidden hover:underline focus:outline focus:outline-4 focus:outline-offset-4 focus:outline-blue-800`,
+    class: tw`inline-flex cursor-pointer items-center text-blue-800 hover:underline focus:outline focus:outline-4 focus:outline-offset-4 focus:outline-blue-800`,
   },
   separator: {
     class: tw`mx-6 flex items-center text-gray-600`,
