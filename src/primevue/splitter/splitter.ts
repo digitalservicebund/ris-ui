@@ -8,7 +8,8 @@ const splitter: SplitterPassThroughOptions = {
 
   gutter: ({ props }) => ({
     class: {
-      [tw`flex shrink-0 items-center justify-center bg-gray-400`]: true,
+      [tw`flex shrink-0 items-center justify-center bg-gray-400 hover:bg-blue-700`]:
+        true,
       [tw`h-full w-[3px] cursor-col-resize`]: props.layout === "horizontal",
       [tw`h-[3px] w-full cursor-row-resize`]: props.layout === "vertical",
     },
@@ -16,10 +17,10 @@ const splitter: SplitterPassThroughOptions = {
 
   gutterHandle: ({ props }) => ({
     class: {
-      [tw`z-20 h-full w-full hover:bg-blue-700 focus:bg-blue-800 focus:outline-none`]:
+      [tw`z-20 rounded bg-transparent outline-offset-2 outline-blue-800 focus:outline-2`]:
         true,
-      [tw`h-full w-[3px] cursor-col-resize`]: props.layout === "horizontal",
-      [tw`h-[3px] w-full cursor-row-resize`]: props.layout === "vertical",
+      [tw`h-11/12 w-[3px] cursor-col-resize`]: props.layout === "horizontal",
+      [tw`h-[3px] w-11/12 cursor-row-resize`]: props.layout === "vertical",
     },
   }),
 };
