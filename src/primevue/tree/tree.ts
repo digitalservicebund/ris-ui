@@ -4,12 +4,12 @@ import "./tree.css";
 
 const tree: TreePassThroughOptions = {
   node: {
-    class: tw`mb-24 last:mb-0 focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-blue-800 focus-visible:outline-none [&>ul:first-of-type]:border-l-0`,
+    class: tw`mb-24 last:mb-0 focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-blue-800 [&>ul:first-of-type]:border-l-0`,
   },
   nodeContent: ({ context }) => {
     const base = tw`group ris-label2-bold flex w-full border-l-4 border-transparent py-10 pr-20 pl-10 text-blue-800`;
     const pointer = tw`cursor-pointer select-none`;
-    const focusVisible = tw`focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-blue-800 focus-visible:outline-none`;
+    const focusVisible = tw`focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-blue-800`;
     const selected = tw`border-l-blue-800 bg-blue-200 text-black`;
     const hover = tw`hover:bg-blue-200`;
     const hoverSelected = tw`hover:bg-blue-300`;
@@ -26,7 +26,7 @@ const tree: TreePassThroughOptions = {
     };
   },
   nodeToggleButton: ({ context }) => {
-    const base = tw`h-20 w-20 justify-center border-0 bg-transparent text-gray-900 outline-none group-hover:text-black hover:text-black`;
+    const base = tw`h-20 w-20 justify-center border-0 bg-transparent text-gray-900 group-hover:text-black hover:text-black`;
     const visibility = context.leaf ? tw`hidden` : tw`inline-flex`;
 
     return {
@@ -37,8 +37,8 @@ const tree: TreePassThroughOptions = {
     };
   },
   nodeChildren: () => {
-    const base = tw`m-0 list-none border-l border-gray-600 p-0 pl-36 outline-none [&:not(ul)]:pl-0 [&>ul:first-of-type]:border-0`;
-    const focusVisible = tw`focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-blue-800 focus-visible:outline-none`;
+    const base = tw`m-0 list-none border-l border-gray-600 p-0 pl-36 [&:not(ul)]:pl-0 [&>ul:first-of-type]:border-0`;
+    const focusVisible = tw`focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-blue-800`;
     return {
       class: {
         [base]: true,
