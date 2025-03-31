@@ -5,11 +5,23 @@ const splitter: SplitterPassThroughOptions = {
   root: {
     class: tw`rounded-none border-0 bg-transparent`,
   },
+
   gutter: ({ props }) => ({
-    class: tw`flex w-4 shrink-0 items-center justify-center bg-gray-400 transition-all duration-200 ${props.layout === "horizontal" ? " h-full cursor-col-resize" : "h-4 w-full cursor-row-resize"} `,
+    class: {
+      [tw`flex shrink-0 items-center justify-center bg-gray-400 hover:bg-blue-700`]:
+        true,
+      [tw`h-full w-[3px] cursor-col-resize`]: props.layout === "horizontal",
+      [tw`h-[3px] w-full cursor-row-resize`]: props.layout === "vertical",
+    },
   }),
+
   gutterHandle: ({ props }) => ({
-    class: tw`active:outline-hidden, z-20 rounded-full transition-all duration-200 focus:outline focus:outline-2 focus:outline-blue-800 ${props.layout === "horizontal" ? "h-full w-4" : "w-full h-4"} `,
+    class: {
+      [tw`z-20 rounded bg-transparent outline-offset-2 outline-blue-800 focus:outline-2`]:
+        true,
+      [tw`h-11/12 w-[3px] cursor-col-resize`]: props.layout === "horizontal",
+      [tw`h-[3px] w-11/12 cursor-row-resize`]: props.layout === "vertical",
+    },
   }),
 };
 

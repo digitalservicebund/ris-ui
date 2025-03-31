@@ -13,6 +13,11 @@ const meta: Meta<typeof Checkbox> = {
     disabled: false,
     invalid: false,
     indeterminate: false,
+    size: undefined,
+  },
+
+  argTypes: {
+    size: { control: "select", options: [undefined, "large"] },
   },
 };
 
@@ -27,6 +32,22 @@ export const Default: Story = {
       return { args, checked };
     },
     template: html`<Checkbox binary v-bind="args" v-model="checked" />`,
+  }),
+};
+
+export const Large: Story = {
+  render: (args) => ({
+    components: { Checkbox },
+    setup() {
+      const checked = ref(true);
+      return { args, checked };
+    },
+    template: html`<Checkbox
+      binary
+      v-bind="args"
+      size="large"
+      v-model="checked"
+    />`,
   }),
 };
 

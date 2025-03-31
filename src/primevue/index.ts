@@ -20,6 +20,7 @@ import breadcrumb from "@/primevue/breadcrumb/breadcrumb";
 import panelmenu from "./panelMenu/panelMenu";
 import tree from "./tree/tree";
 import splitter from "./splitter/splitter";
+import dataTable from "./dataTable/dataTable";
 
 import { deDE } from "@/config/locale";
 
@@ -46,6 +47,7 @@ export const RisUiTheme = {
   tree,
   panelmenu,
   splitter,
+  dataTable,
 };
 
 export const RisUiLocale = {
