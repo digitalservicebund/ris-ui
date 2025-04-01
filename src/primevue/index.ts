@@ -21,6 +21,7 @@ import panelmenu from "./panelMenu/panelMenu";
 import tree from "./tree/tree";
 import splitter from "./splitter/splitter";
 import dataTable from "./dataTable/dataTable";
+import { tab, tabPanel, tabList } from "./tabs/tabs";
 
 import { deDE } from "@/config/locale";
 
@@ -48,6 +49,9 @@ export const RisUiTheme = {
   panelmenu,
   splitter,
   dataTable,
+  tab,
+  tabPanel,
+  tabList,
 };
 
 export const RisUiLocale = {
