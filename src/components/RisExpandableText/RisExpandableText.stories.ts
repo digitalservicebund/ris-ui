@@ -9,6 +9,7 @@ const meta: Meta<typeof RisExpandableText> = {
 
   args: {
     length: 3,
+    tolerance: 3,
   },
 };
 
@@ -29,6 +30,24 @@ export const Default: StoryObj<typeof meta> = {
         velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
         occaecat cupidatat non proident, sunt in culpa qui officia deserunt
         mollit anim id est laborum.
+      </RisExpandableText>
+    </div>`,
+  }),
+};
+
+export const WithMixedContent: StoryObj<typeof meta> = {
+  render: (args) => ({
+    components: { RisExpandableText },
+    setup() {
+      return { args };
+    },
+    template: html`<div class="max-w-320">
+      <RisExpandableText v-bind="args">
+        <div>
+          <h1 class="text-4xl">
+            This heading should neatly fit into three lines <sup>*</sup>
+          </h1>
+        </div>
       </RisExpandableText>
     </div>`,
   }),
