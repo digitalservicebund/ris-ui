@@ -2,12 +2,16 @@ name: Deploy Storybook for a Branch (Manual Trigger)
 
 on:
   workflow_dispatch:
+    inputs:
+      branch:
+        description: "Branch to deploy"
+        required: true
 
 jobs:
   build-and-deploy-storybook:
     runs-on: ubuntu-latest
     concurrency:
-      group: "pages-branch"
+      group: "pages"
       cancel-in-progress: true
     permissions:
       contents: read
@@ -17,7 +21,7 @@ jobs:
       - name: Checkout selected branch
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.head_ref }}
+          ref: ${{ github.event.inputs.branch }}
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -39,10 +43,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./storybook-static
-          name: storybook-${{ github.head_ref }}
 
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-        with:
-          artifact_name: storybook-${{ github.head_ref }}
