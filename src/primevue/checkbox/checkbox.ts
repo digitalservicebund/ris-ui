@@ -15,7 +15,7 @@ const checkbox: CheckboxPassThroughOptions = {
   },
 
   input: {
-    class: tw`peer h-full w-full cursor-pointer appearance-none border-2 border-blue-800 bg-white outline-hidden hover:outline hover:outline-4 hover:-outline-offset-4 hover:outline-blue-800 focus:outline focus:outline-4 focus:-outline-offset-4 focus:outline-blue-800 active:outline-hidden disabled:cursor-not-allowed disabled:border-gray-600 disabled:outline-hidden aria-[invalid]:border-red-800 aria-[invalid]:outline-red-800 aria-[invalid]:active:outline-none aria-[invalid]:disabled:outline-none`,
+    class: tw`peer h-full w-full cursor-pointer appearance-none border-2 border-blue-800 bg-white hover:outline hover:outline-4 hover:-outline-offset-4 hover:outline-blue-800 focus:outline focus:outline-4 focus:-outline-offset-4 focus:outline-blue-800 active:outline-hidden disabled:cursor-not-allowed disabled:border-gray-600 disabled:outline-hidden aria-[invalid]:border-red-800 aria-[invalid]:outline-red-800 aria-[invalid]:active:outline-none aria-[invalid]:disabled:outline-none`,
   },
 
   box: {
