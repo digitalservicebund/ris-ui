@@ -1,10 +1,7 @@
-import { Meta, StoryObj } from "@storybook/vue3";
-import DataTable from "primevue/datatable";
-import Column from "primevue/column";
-import { ref } from "vue";
-import ChevronRightIcon from "~icons/mdi/chevron-right";
-import ChevronDownIcon from "~icons/mdi/chevron-down";
 import { html } from "@/lib/tags.ts";
+import { Meta, StoryObj } from "@storybook/vue3";
+import Column from "primevue/column";
+import DataTable from "primevue/datatable";
 
 const meta: Meta<typeof DataTable> = {
   // @ts-expect-error Component type broken
@@ -96,7 +93,6 @@ const sampleProducts = [
 export const Default: Story = {
   args: {
     value: sampleProducts,
-    tableStyle: "min-width: 50rem",
   },
   render: (args) => ({
     components: { DataTable, Column },
@@ -110,62 +106,6 @@ export const Default: Story = {
           <Column field="name" header="Name"></Column>
           <Column field="category" header="Category"></Column>
           <Column field="quantity" header="Quantity"></Column>
-        </DataTable>
-      </div>
-    `,
-  }),
-};
-
-export const Expansion: Story = {
-  args: {
-    value: sampleProducts,
-    showHeaders: false,
-  },
-  render: (args) => ({
-    components: { DataTable, Column, ChevronRightIcon, ChevronDownIcon },
-    setup() {
-      type Product = {
-        id: string;
-        code: string;
-        name: string;
-        category: string;
-        quantity: number;
-      };
-
-      const expandedRows = ref<Product[]>([]);
-
-      return {
-        args,
-        expandedRows,
-      };
-    },
-    template: html`
-      <div class="w-[60%]">
-        <DataTable
-          v-bind="args"
-          v-model:expandedRows="expandedRows"
-          dataKey="code"
-          rowHover
-        >
-          <Column :expander="true">
-            <template #rowtoggleicon="{ rowExpanded }">
-              <ChevronRightIcon v-if="!rowExpanded" />
-              <ChevronDownIcon v-else />
-            </template>
-          </Column>
-
-          <!-- Main row shows only name -->
-          <Column field="name" />
-
-          <!-- Expansion area with side-by-side info -->
-          <template #expansion="{ data }">
-            <div class="flex w-full gap-4 px-32 py-8">
-              <span>{{ data.code }}</span>
-              <span>{{ data.name }}</span>
-              <span>{{ data.quantity }}</span>
-              <span>{{ data.category }}</span>
-            </div>
-          </template>
         </DataTable>
       </div>
     `,
