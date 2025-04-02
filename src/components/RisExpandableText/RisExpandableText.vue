@@ -1,12 +1,18 @@
 <script setup lang="ts">
 import { ref, useTemplateRef, watchEffect, useId } from "vue";
 
-const { length = 3 } = defineProps<{
+const { length = 3, tolerance = 3 } = defineProps<{
   /**
    * Specifies the maximum number of visible lines.
    * @default 3
    */
   length?: number;
+  /**
+   * Specifies a pixels threshold under which overflowing content would be
+   * ignored.
+   * @default 3
+   */
+  tolerance?: number;
 }>();
 
 const expanded = defineModel<boolean>("expanded", { default: false });
@@ -20,7 +26,8 @@ const textId = useId();
 watchEffect(() => {
   if (textContent.value instanceof HTMLDivElement) {
     canExpand.value =
-      textContent.value.scrollHeight > textContent.value.clientHeight;
+      textContent.value.scrollHeight - tolerance >
+      textContent.value.clientHeight;
   }
 });
 </script>
