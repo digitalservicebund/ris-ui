@@ -188,6 +188,12 @@
   line-height: 1.5;
 }
 
+@utility ris-subhead-bold {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
 @utility ris-body1-regular {
   font-size: 18px;
   font-weight: normal;
