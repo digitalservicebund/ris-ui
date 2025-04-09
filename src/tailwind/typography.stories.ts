@@ -41,7 +41,8 @@ export const Heading3: StoryObj<typeof meta> = {
 export const Subhead: StoryObj<typeof meta> = {
   render: () => ({
     setup() {},
-    template: html`<div class="ris-subhead-regular">Subhead</div>`,
+    template: html`<div class="ris-subhead-regular">Subhead</div>
+      <div class="ris-subhead-bold">Subhead</div>`,
   }),
 };
 
