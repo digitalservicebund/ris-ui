@@ -14,6 +14,16 @@ const meta: Meta<typeof PrimevueSelect> = {
     placeholder: "Dropdown",
     disabled: false,
     invalid: false,
+    appendTo: "body",
+  },
+  argTypes: {
+    appendTo: {
+      options: ["self", "body"],
+      control: {
+        type: "select",
+        labels: ["self", "body"],
+      },
+    },
   },
 };
 

@@ -4,7 +4,7 @@ import { SelectPassThroughOptions } from "primevue/select";
 const select: SelectPassThroughOptions = {
   root: ({ props, state }) => {
     // Base
-    const base = tw`ris-body2-regular [&+small]:ris-label3-regular inline-flex h-48 items-center justify-between border-2 bg-white py-4 pr-12 pl-16 [&+small]:mt-2 [&+small]:flex [&+small]:items-center [&+small]:gap-4 [&+small]:text-gray-900 [&[aria-invalid="true"]+small]:text-red-900`;
+    const base = tw`ris-body2-regular [&+small]:ris-label3-regular relative inline-flex h-48 items-center justify-between border-2 bg-white py-4 pr-12 pl-16 [&+small]:mt-2 [&+small]:flex [&+small]:items-center [&+small]:gap-4 [&+small]:text-gray-900 [&[aria-invalid="true"]+small]:text-red-900`;
 
     // States
     const normal = tw`cursor-pointer border-blue-800`;
