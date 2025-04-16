@@ -35,7 +35,7 @@ const autocomplete: AutoCompletePassThroughOptions = {
     class: tw`hover:bg-blue-100 data-[p-focus=true]:bg-blue-200`,
   },
   overlay: {
-    class: tw`min-w-288 overflow-auto bg-white px-8 py-12 shadow-md`,
+    class: tw`overflow-auto bg-white px-8 py-12 shadow-md`,
   },
 };
 
