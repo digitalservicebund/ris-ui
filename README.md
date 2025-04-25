@@ -13,24 +13,20 @@ RIS UI contains three things:
 Vue, PrimeVue and Tailwind are required for RIS UI to work (you'll see a warning about missing peer dependencies if you're trying to use RIS UI without them). To get started, install:
 
 ```sh
-# Vue, PrimeVue, and Tailwind if you haven't installed them already.
+# Vue, PrimeVue, and Tailwind if you haven't installed them already
 npm install vue primevue tailwindcss
 
 # RIS UI
 npm install @digitalservicebund/ris-ui
 ```
 
-### Vue setup
+### Vue (SPA with Vite, Vue CLI or similar)
 
 > [!NOTE]
 >
 > If you're using Nuxt, follow the instructions for [Nuxt](#nuxt-setup) below instead.
 
-Import and apply the RIS UI theme, styling, and fonts where you set up your application (typically `main.ts`):
-
-> [!TIP]
->
-> As of Tailwind V4. The style is now integrated through the global CSS file, simplifying the setup.
+Import and apply the RIS UI theme and fonts where you set up your application (typically `main.ts`):
 
 ```diff
   // main.ts
@@ -44,6 +40,19 @@ Import and apply the RIS UI theme, styling, and fonts where you set up your appl
 +   pt: RisUiTheme,
 +   locale: RisUiLocale.deDE
   })
+```
+
+Then, extend your Tailwind configuration for RIS UI:
+
+```diff
+  /* import Tailwind and RIS UI styles */
+  @import "tailwindcss";
++ @import "@digitalservicebund/ris-ui/style.css";
+
++ /* source the RIS UI components for Tailwind class generation */
++ @source "../node_modules/@digitalservicebund/ris-ui/dist/**/*.{js,vue,ts}";
+
+  /* other config and styles */
 ```
 
 ### Nuxt setup
@@ -95,36 +104,7 @@ Finally, add the styles (e.g. `assets/main.css`):
 /* Your other CSS */
 ```
 
-## Tailwind CSS Configuration
-
-With Tailwind CSS v4, the setup has transitioned to a CSS-based configuration, eliminating the need for a separate tailwind.config.js file. All configuration is now handled directly in your main stylesheet (e.g., style.css).
-
-```diff
-/* style.css */
-
-/* 1. Import Tailwind and RIS UI styles */
-@import "tailwindcss";
-@import "@digitalservicebund/ris-ui/style.css";
-
-/* 2. Source the RIS UI components for Tailwind class generation */
-@source "../node_modules/@digitalservicebund/ris-ui/dist/**/*.{js,vue,ts}";
-
-/* 3. Optional: Add your custom CSS*/
-body {
-  background-color: #f3f4f6; /* Example: Set default background color */
-}
-
-/* 4. Optional: Define custom theme variables */
-@theme {
-  --highlight-default-default: #d6f7fe;
-  --highlight-default-hover: #94e8fe;
-  --highlight-default-selected: #94e8fe;
-
-  /* Add additional variables as needed */
-}
-```
-
-### Important Note for Nuxt Projects
+### Important note for nuxt projects
 
 To avoid issues with conflicting `@layer` directives, make sure to integrate the `postcss-import` module in your PostCSS configuration:
 
@@ -143,25 +123,25 @@ If you're using Nuxt, you may add the `postcss-import` module to your `nuxt.conf
   },
 ```
 
-## Get started with a button
+## Getting started
 
-To get you started, here's an example how to import a ris-ui button into your ui-component. The Storybook code snippet is hiding some essential parts from you. Here is an an example `StartPage.vue`:
+To get you started, here's an example how to use a RIS UI button in your ui component. The Storybook code snippet is hiding some essential parts from you. Here is an an example `StartPage.vue`:
 
-```bash
+```vue
 <script lang="ts" setup>
-import { useRouter } from 'vue-router'
-import Button from 'primevue/button'
-import IconAdd from '~icons/material-symbols/add'
+import { useRouter } from "vue-router";
+import Button from "primevue/button";
+import IconAdd from "~icons/material-symbols/add";
 
-const router = useRouter()
+const router = useRouter();
 </script>
 
 <template>
   <Button
     :disabled="false"
-    label="Neue Dokumentationseinheit"
     :loading="false"
     :text="false"
+    label="Neue Dokumentationseinheit"
     @click="router.push({ path: '/documentUnit/new' })"
   >
     <template #icon>
@@ -234,7 +214,8 @@ If you're using VS Code with the [official Tailwind extension](https://tailwindc
 ```jsonc
 {
   // other settings
-  "tailwindCSS.experimental.classRegex": ["tw`([^`]*)`"],
+  "tailwindCSS.classFunctions": ["tw"],
+  "tailwindCSS.experimental.configFile": "./src/tailwind/global.css",
 }
 ```
 
@@ -246,7 +227,7 @@ import { tw } from "@/lib/tags";
 const classes = tw`bg-blue-200 px-16`;
 ```
 
-See [tags.ts](./src/lib/tags.ts) for more information.
+See [tags.ts](./src/lib/tags.ts) for more information. A similar configuration should work for other IDEs, too.
 
 ### Committing
 
@@ -281,7 +262,11 @@ To release a new version, run the ["Release to npm"](https://github.com/digitals
 - Create a Git tag and GitHub release
 - Generate a changelog based on the commits since the last release
 
-Releases are created automatically by [semantic-release](https://github.com/semantic-release/semantic-release?tab=readme-ov-file). Please refer to their documentation to learn more about how version numbers are inferred and how changelogs are created.
+Releases are created automatically by [semantic-release](https://github.com/semantic-release/semantic-release?tab=readme-ov-file). Please refer to their documentation to learn more about how version numbers are inferred and how changelogs are created. In short:
+
+- If the commits since the last release only include `fix` type commits, a patch release will be created.
+- If at least one `feat` type commit exists, a minor release will be created.
+- [Breaking changes](https://www.conventionalcommits.org/en/v1.0.0/#commit-message-with-description-and-breaking-change-footer) cause a new major release.
 
 ## Contributing
 
