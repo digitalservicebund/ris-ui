@@ -104,7 +104,7 @@ Finally, add the styles (e.g. `assets/main.css`):
 /* Your other CSS */
 ```
 
-### Important note for nuxt projects
+### Important note for Nuxt projects
 
 To avoid issues with conflicting `@layer` directives, make sure to integrate the `postcss-import` module in your PostCSS configuration:
 
