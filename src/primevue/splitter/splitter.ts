@@ -2,9 +2,12 @@ import { SplitterPassThroughOptions } from "primevue/splitter";
 import { tw } from "@/lib/tags.ts";
 
 const splitter: SplitterPassThroughOptions = {
-  root: {
-    class: tw`rounded-none border-0 bg-transparent`,
-  },
+  root: ({ props }) => ({
+    class: {
+      [tw`flex flex-nowrap rounded-none border-0 bg-transparent`]: true,
+      [tw`flex-col`]: props.layout === "vertical",
+    },
+  }),
 
   gutter: ({ props }) => ({
     class: {
