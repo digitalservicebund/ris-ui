@@ -4,22 +4,31 @@ import ChevronLeft from "~icons/mdi/chevron-left";
 import ChevronRight from "~icons/mdi/chevron-right";
 
 const props = withDefaults(
-  defineProps<PaginatorProps & {
-    prevButtonLabel?: string;
-    nextButtonLabel?: string;
-  }>(),
+  defineProps<
+    PaginatorProps & {
+      prevButtonLabel?: string;
+      nextButtonLabel?: string;
+    }
+  >(),
   {
-    prevButtonLabel: 'Zurück',
-    nextButtonLabel: 'Weiter',
-  }
+    prevButtonLabel: "Zurück",
+    nextButtonLabel: "Weiter",
+  },
 );
 
+/**
+ * PageState represents the state of the paginator
+ *  page: The current page index (0-based)
+ *  first: Index of the first record on the current page
+ *  rows: Number of rows per page
+ *  pageCount: Total number of pages
+ */
 const emit = defineEmits<{
-  (e: 'page', value: PageState): void;
+  (e: "page", value: PageState): void;
 }>();
 
 function handlePageChange(event: PageState) {
-  emit('page', event);
+  emit("page", event);
 }
 </script>
 
@@ -31,8 +40,10 @@ function handlePageChange(event: PageState) {
     :total-records="props.totalRecords"
     @page="handlePageChange"
   >
-    <template #container="{page, pageCount, prevPageCallback, nextPageCallback}">
-      <div class="flex items-center w-full py-1 px-2 justify-between">
+    <template
+      #container="{ page, pageCount, prevPageCallback, nextPageCallback }"
+    >
+      <div class="flex w-full items-center justify-between px-2 py-1">
         <Button
           :label="prevButtonLabel"
           severity="secondary"
@@ -42,9 +53,7 @@ function handlePageChange(event: PageState) {
             <ChevronLeft />
           </template>
         </Button>
-        <div class="text-bold">
-          Seite {{ page + 1 }} von {{ pageCount }}
-        </div>
+        <div class="text-bold">Seite {{ page + 1 }} von {{ pageCount }}</div>
         <Button
           :label="nextButtonLabel"
           severity="secondary"
