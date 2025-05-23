@@ -2,6 +2,9 @@ import { ToastPassThroughOptions } from "primevue/toast";
 import { tw } from "@/lib/tags.ts";
 
 const toast: ToastPassThroughOptions = {
+  root: {
+    class: tw`max-w-lg`,
+  },
   message: ({ props }) => {
     // Base
     const base = tw`mb-8 flex w-full flex-row items-center gap-8 border-l-4 p-16`;
