@@ -37,7 +37,7 @@ describe("RisPaginator", () => {
     ).not.toBeInTheDocument();
   });
 
-  it("renders customed button labels and pagination", async () => {
+  it("renders customized button labels and pagination", async () => {
     render(RisPaginator, {
       props: {
         prevButtonLabel: "Previous",
