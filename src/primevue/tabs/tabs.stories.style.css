@@ -1,0 +1,6 @@
+.custom-tabs {
+  --p-tabs-tablist-border-color: var(--color-blue-800);
+  --p-tabs-tab-border-color: transparent;
+  --p-tabs-tab-active-background: var(--color-blue-300);
+  --p-tabs-tabpanel-background: var(--color-blue-300);
+}
