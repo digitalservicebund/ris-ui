@@ -14,7 +14,9 @@ describe("RisPaginator", () => {
       },
     });
 
-    expect(screen.queryByRole("button", { name: "Zurück" })).not.toBeInTheDocument();
+    expect(
+      screen.queryByRole("button", { name: "Zurück" }),
+    ).not.toBeInTheDocument();
     expect(screen.getByText("Seite 1")).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Weiter" })).toBeInTheDocument();
   });
@@ -28,12 +30,11 @@ describe("RisPaginator", () => {
       },
     });
 
-    screen.debug()
-
     expect(screen.getByRole("button", { name: "Zurück" })).toBeInTheDocument();
     expect(screen.getByText("Seite 10")).toBeInTheDocument();
-    expect(screen.queryByRole("button", { name: "Weiter" })).not.toBeInTheDocument();
-
+    expect(
+      screen.queryByRole("button", { name: "Weiter" }),
+    ).not.toBeInTheDocument();
   });
 
   it("renders customed button labels and pagination", async () => {
@@ -47,7 +48,9 @@ describe("RisPaginator", () => {
       },
     });
 
-    expect(screen.getByRole("button", { name: "Previous" })).toBeInTheDocument();
+    expect(
+      screen.getByRole("button", { name: "Previous" }),
+    ).toBeInTheDocument();
     expect(screen.getByText("Seite 2")).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Next" })).toBeInTheDocument();
   });
