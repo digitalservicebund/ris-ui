@@ -45,18 +45,24 @@ function handlePageChange(event: PageState) {
     >
       <div class="flex w-full items-center justify-between px-2 py-1">
         <Button
+          :class="{ 'invisible': page === 0 }"
+          :aria-hidden="page === 0 ? 'true' : undefined"
+          :tabindex="page === 0 ? -1 : undefined"
           :label="prevButtonLabel"
-          severity="secondary"
+          text
           @click="prevPageCallback"
         >
           <template #icon>
             <ChevronLeft />
           </template>
         </Button>
-        <div class="text-bold">Seite {{ page + 1 }} von {{ pageCount }}</div>
+        <div><span class="font-bold">Seite {{ page + 1 }}</span> von {{ pageCount }}</div>
         <Button
+          :class="{ 'invisible': page + 1 === pageCount }"
+          :aria-hidden="page + 1 === pageCount ? 'true' : undefined"
+          :tabindex="page + 1 === pageCount ? -1 : undefined"
           :label="nextButtonLabel"
-          severity="secondary"
+          text
           @click="nextPageCallback"
         >
           <template #icon>

@@ -5,11 +5,35 @@ import userEvent from "@testing-library/user-event";
 import { PageState } from "primevue";
 
 describe("RisPaginator", () => {
-  it("renders correctly with default props", async () => {
-    render(RisPaginator);
+  it("hides the previous button when on first page", async () => {
+    render(RisPaginator, {
+      props: {
+        first: 0,
+        rows: 10,
+        totalRecords: 100,
+      },
+    });
+
+    expect(screen.queryByRole("button", { name: "Zurück" })).not.toBeInTheDocument();
+    expect(screen.getByText("Seite 1")).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Weiter" })).toBeInTheDocument();
+  });
+
+  it("hides the next button when on last page", async () => {
+    render(RisPaginator, {
+      props: {
+        first: 90,
+        rows: 10,
+        totalRecords: 100,
+      },
+    });
+
+    screen.debug()
 
     expect(screen.getByRole("button", { name: "Zurück" })).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: "Weiter" })).toBeInTheDocument();
+    expect(screen.getByText("Seite 10")).toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: "Weiter" })).not.toBeInTheDocument();
+
   });
 
   it("renders customed button labels and pagination", async () => {
@@ -17,17 +41,15 @@ describe("RisPaginator", () => {
       props: {
         prevButtonLabel: "Previous",
         nextButtonLabel: "Next",
-        first: 0,
+        first: 10,
         rows: 10,
         totalRecords: 100,
       },
     });
 
-    expect(
-      screen.getByRole("button", { name: "Previous" }),
-    ).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Previous" })).toBeInTheDocument();
+    expect(screen.getByText("Seite 2")).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Next" })).toBeInTheDocument();
-    expect(screen.getByText("Seite 1 von 10")).toBeInTheDocument();
   });
 
   it("emits an updated PageState on page change", async () => {
