@@ -137,6 +137,14 @@
     font-family: var(--font-sans);
     font-style: normal;
   }
+
+  /* 
+  This is the workaround for this issue in the dataTable: 
+  https://github.com/primefaces/primevue/issues/5105 
+  */
+  tr[data-p-selected="true"] {
+    background-color: var(--color-blue-300);
+  }
 }
 
 /* Utilities */

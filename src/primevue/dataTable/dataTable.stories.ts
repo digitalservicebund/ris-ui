@@ -139,9 +139,6 @@ export const Selectable: Story = {
           <Column field="category" header="Category"></Column>
           <Column field="quantity" header="Quantity"></Column>
         </DataTable>
-        <div class="mt-4">
-          Selected: {{ selectedProducts.map(p => p.id).join(', ') }}
-        </div>
       </div>
     `,
   }),

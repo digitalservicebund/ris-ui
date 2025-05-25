@@ -24,8 +24,8 @@ const dataTable: DataTablePassThroughOptions = {
 
   bodyRow: {
     class: tw`hover:bg-blue-100`,
-    // Todo: the selected row is registered correctly, but 'p-highlight' is not attached to the row and thus does not get the visual update
-    // https://github.com/primefaces/primevue/issues/5105
+    // The selected row is registered correctly, but this styling is not attached correctly:
+    // https://github.com/primefaces/primevue/issues/7759
     style: ({ context }: { context: DataTableContext }) => ({
       backgroundColor: context.selected ? "var(--color-blue-300)" : undefined,
     }),
