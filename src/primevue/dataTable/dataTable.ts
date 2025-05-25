@@ -6,7 +6,7 @@ import { tw } from "@/lib/tags";
 
 const dataTable: DataTablePassThroughOptions = {
   tableContainer: {
-    class: tw`relative`,
+    class: tw`relative overflow-visible`,
   },
   table: {
     class: tw`w-full border-none text-left`,
