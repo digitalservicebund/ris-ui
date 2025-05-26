@@ -14,7 +14,7 @@ const dataTable: DataTablePassThroughOptions = {
 
   thead: {
     style: {
-      boxShadow: "inset 0 -1px #DCE8EF",
+      borderBottom: "1px solid var(--color-blue-300)",
     },
   },
 
