@@ -40,6 +40,17 @@ const dataTable: DataTablePassThroughOptions = {
     bodyCell: {
       class: tw`ris-body1-regular h-56 px-16 py-12`,
     },
+
+    pcRowCheckbox: {
+      root: {
+        class: tw`flex h-24 w-24 items-center justify-center`,
+      },
+    },
+    pcHeaderCheckbox: {
+      root: {
+        class: tw`flex h-24 w-24 items-center justify-center`,
+      },
+    },
   },
 
   mask: {
