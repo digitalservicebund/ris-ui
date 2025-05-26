@@ -153,7 +153,7 @@ export const Loading: Story = {
       return { args };
     },
     template: html`
-      <div class="card">
+      <div style="margin-top: -10px;">
         <DataTable v-bind="args" loading>
           <Column field="code" header="Code"></Column>
           <Column field="name" header="Name"></Column>

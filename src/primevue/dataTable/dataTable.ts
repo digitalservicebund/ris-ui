@@ -38,23 +38,12 @@ const dataTable: DataTablePassThroughOptions = {
     },
 
     bodyCell: {
-      class: tw`ris-body1-regular h-56 px-16 py-12`,
-    },
-
-    pcRowCheckbox: {
-      root: {
-        class: tw`flex h-24 w-24 items-center justify-center`,
-      },
-    },
-    pcHeaderCheckbox: {
-      root: {
-        class: tw`flex h-24 w-24 items-center justify-center`,
-      },
+      class: tw`ris-body1-regular h-56 px-16 py-12 has-[input[type=checkbox]]:flex has-[input[type=checkbox]]:items-center`,
     },
   },
 
   mask: {
-    class: tw`text-primary-500 justify-content absolute inset-0 z-10 mt-48 flex justify-center py-96`,
+    class: tw`text-primary-500 justify-content absolute inset-0 z-10 mt-56 flex justify-center py-96`,
   },
 
   loadingIcon: {
@@ -62,7 +51,7 @@ const dataTable: DataTablePassThroughOptions = {
   },
 
   emptyMessageCell: {
-    class: tw`py-96 text-center`,
+    class: tw`py-96 text-center text-gray-900`,
   },
 };
 
