@@ -34,7 +34,7 @@ const dataTable: DataTablePassThroughOptions = {
   // height for td works like min-height: Table cells will grow when the content does not fit.
   column: {
     headerCell: {
-      class: tw`ris-label2-bold h-56 px-14 py-12`,
+      class: tw`ris-label2-bold h-56 px-16 py-12 has-[input[type=checkbox]]:flex has-[input[type=checkbox]]:items-center`,
     },
 
     bodyCell: {
