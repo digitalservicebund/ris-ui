@@ -83,7 +83,7 @@ export const CustomStyle: StoryObj<typeof meta> = {
     template: html`
       <Tabs value="0" class="custom-tabs">
         <TabList>
-          <Tab value="0">Custom stlye</Tab>
+          <Tab value="0">Custom style</Tab>
           <Tab value="1">Duis aute</Tab>
           <Tab value="2">Nam liber</Tab>
         </TabList>

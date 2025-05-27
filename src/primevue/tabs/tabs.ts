@@ -4,8 +4,7 @@ import type { TabPanelPassThroughOptions } from "primevue/tabpanel";
 import type { TabListPassThroughOptions } from "primevue/tablist";
 
 export const tab: TabPassThroughOptions = {
-  root: ({ context, ...other }) => {
-    console.log(context, other);
+  root: ({ context }) => {
     const base = tw`ris-body2-bold h-64 border-b-4 border-b-transparent py-4 pr-24 pl-20 outline-0 -outline-offset-4 outline-blue-800 focus-visible:outline-4`;
     const active = tw`z-10 bg-[var(--p-tabs-tab-active-background,white)] text-black shadow-[-1px_-1px_0_0_var(--p-tabs-tab-border-color,var(--color-gray-600)),1px_-1px_0_0_var(--p-tabs-tab-border-color,var(--color-gray-600))]`;
     const inactive = tw`cursor-pointer text-blue-800 hover:border-b-blue-800`;
