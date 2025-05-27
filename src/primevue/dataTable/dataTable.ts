@@ -5,8 +5,12 @@ import {
 import { tw } from "@/lib/tags";
 
 const dataTable: DataTablePassThroughOptions = {
+  root: {
+    class: tw`relative`,
+  },
+
   tableContainer: {
-    class: tw`relative overflow-visible`,
+    class: tw`overflow-visible`,
   },
   table: {
     class: tw`w-full border-none text-left`,
