@@ -4,7 +4,7 @@ import { CheckboxPassThroughOptions } from "primevue/checkbox";
 const checkbox: CheckboxPassThroughOptions = {
   root: ({ props }) => {
     // Base
-    const base = tw`[&+label]:ris-label1-regular relative inline-block h-24 min-h-24 w-24 min-w-24 [&+label]:ml-8`;
+    const base = tw`[&+label]:ris-label1-regular justify-content relative flex h-24 min-h-24 w-24 min-w-24 items-center [&+label]:ml-8`;
 
     return {
       class: {
