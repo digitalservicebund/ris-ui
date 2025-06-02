@@ -3,6 +3,7 @@ import {
   DataTableContext,
 } from "primevue/datatable";
 import { tw } from "@/lib/tags";
+import checkbox from "../checkbox/checkbox";
 
 const dataTable: DataTablePassThroughOptions = {
   root: {
@@ -38,11 +39,25 @@ const dataTable: DataTablePassThroughOptions = {
   // height for td works like min-height: Table cells will grow when the content does not fit.
   column: {
     headerCell: {
-      class: tw`ris-label2-bold h-56 px-16 py-12 has-[input[type=checkbox]]:flex has-[input[type=checkbox]]:items-center`,
+      class: tw`ris-label2-bold h-56 px-16 py-12`,
     },
 
     bodyCell: {
-      class: tw`ris-body1-regular h-56 px-16 py-12 has-[input[type=checkbox]]:flex has-[input[type=checkbox]]:items-center`,
+      class: tw`ris-body1-regular h-56 px-16 py-12`,
+    },
+
+    pcHeaderCheckbox: {
+      ...checkbox,
+      root: {
+        class: tw`relative block h-24 w-24`,
+      },
+    },
+
+    pcRowCheckbox: {
+      ...checkbox,
+      root: {
+        class: tw`relative block h-24 w-24`,
+      },
     },
   },
 
