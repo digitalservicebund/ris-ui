@@ -3,6 +3,7 @@ import {
   DataTableContext,
 } from "primevue/datatable";
 import { tw } from "@/lib/tags";
+import checkbox from "../checkbox/checkbox";
 
 const dataTable: DataTablePassThroughOptions = {
   root: {
@@ -43,6 +44,20 @@ const dataTable: DataTablePassThroughOptions = {
 
     bodyCell: {
       class: tw`ris-body1-regular h-56 px-16 py-12`,
+    },
+
+    pcHeaderCheckbox: {
+      ...checkbox,
+      root: {
+        class: tw`relative block h-24 w-24`,
+      },
+    },
+
+    pcRowCheckbox: {
+      ...checkbox,
+      root: {
+        class: tw`relative block h-24 w-24`,
+      },
     },
   },
 
