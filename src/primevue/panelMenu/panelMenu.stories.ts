@@ -43,7 +43,7 @@ export const Default: StoryObj<typeof meta> = {
       const expandedKeys = ref({ R: true, "R-A": true });
       return { args, items, expandedKeys };
     },
-    template: html`<label for="menu" class="ris-label2-regular mb-16 block"
+    template: html`<label for="menu" class="ris-label1-regular mb-16 block"
         >Dokumentarten</label
       ><PanelMenu
         id="menu"
