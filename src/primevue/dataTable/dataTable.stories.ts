@@ -187,3 +187,25 @@ export const Empty: Story = {
     `,
   }),
 };
+
+export const Scrollable: Story = {
+  args: {
+    value: sampleProducts,
+  },
+  render: (args) => ({
+    components: { DataTable, Column },
+    setup() {
+      return { args };
+    },
+    template: html`
+      <div class="card">
+        <DataTable v-bind="args" scrollable scroll-height="150px">
+          <Column field="code" header="Code"></Column>
+          <Column field="name" header="Name"></Column>
+          <Column field="category" header="Category"></Column>
+          <Column field="quantity" header="Quantity"></Column>
+        </DataTable>
+      </div>
+    `,
+  }),
+};
