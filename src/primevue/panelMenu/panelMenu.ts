@@ -2,8 +2,8 @@ import { tw } from "@/lib/tags";
 import { PanelMenuPassThroughOptions } from "primevue/panelmenu";
 
 const pointer = tw`cursor-pointer`;
-const selected = tw`ris-label2-bold border-l-blue-800 bg-blue-200 text-black hover:bg-blue-300 focus-visible:bg-blue-300`;
-const notSelected = tw`hover:bg-blue-200 focus-visible:bg-blue-200`;
+const selected = tw`ris-label1-bold border-l-blue-800 bg-blue-200 text-black hover:bg-blue-300 focus-visible:bg-blue-300`;
+const notSelected = tw`ris-label1-regular hover:bg-blue-200 focus-visible:bg-blue-200`;
 
 const focusVisible = tw`focus-visible:outline-none`;
 const panelMenu: PanelMenuPassThroughOptions = {
