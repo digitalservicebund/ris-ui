@@ -18,9 +18,7 @@ const dataTable: DataTablePassThroughOptions = {
   },
 
   thead: {
-    style: {
-      borderBottom: "1px solid var(--color-blue-300)",
-    },
+    class: tw`sticky top-0 bg-white shadow-[0_1px_0_var(--color-blue-300)]`,
   },
 
   tbody: {
