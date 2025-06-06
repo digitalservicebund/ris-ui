@@ -1,5 +1,5 @@
 import { html } from "@/lib/tags.ts";
-import { Meta, StoryObj } from "@storybook/vue3";
+import { Meta, StoryObj } from "@storybook/vue3-vite";
 import Column from "primevue/column";
 import DataTable from "primevue/datatable";
 import { ref } from "vue";

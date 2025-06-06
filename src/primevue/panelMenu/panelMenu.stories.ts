@@ -1,5 +1,5 @@
 import { html } from "@/lib/tags";
-import { Meta, StoryObj } from "@storybook/vue3";
+import { Meta, StoryObj } from "@storybook/vue3-vite";
 import PanelMenu from "primevue/panelmenu";
 import { MenuItem } from "primevue/menuitem";
 import { ref } from "vue";

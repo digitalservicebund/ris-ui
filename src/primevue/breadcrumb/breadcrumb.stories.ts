@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/vue3";
+import { Meta, StoryObj } from "@storybook/vue3-vite";
 import Breadcrumb from "primevue/breadcrumb";
 import { html } from "@/lib/tags.ts";
 import { ref } from "vue";

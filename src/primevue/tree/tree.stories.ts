@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/vue3";
+import { Meta, StoryObj } from "@storybook/vue3-vite";
 import Tree from "primevue/tree";
 import { html } from "@/lib/tags.ts";
 import { ref, onMounted } from "vue";

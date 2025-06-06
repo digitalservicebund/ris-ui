@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/vue3";
+import { Meta, StoryObj } from "@storybook/vue3-vite";
 import { html } from "@/lib/tags.ts";
 import RisChipsInput from "./RisChipsInput.vue";
 import { ref } from "vue";
@@ -18,7 +18,6 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  name: "Default",
   args: {
     modelValue: ["banane", "apple"],
   },

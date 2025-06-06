@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/vue3";
+import { Meta, StoryObj } from "@storybook/vue3-vite";
 import PrimevueButton from "primevue/button";
 import IconCheck from "~icons/material-symbols/check";
 import { html } from "@/lib/tags.ts";

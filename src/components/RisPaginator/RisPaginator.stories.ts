@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/vue3";
+import { Meta, StoryObj } from "@storybook/vue3-vite";
 import RisPaginator from "./RisPaginator.vue";
 import { html } from "@/lib/tags.ts";
 
