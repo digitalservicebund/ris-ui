@@ -54,13 +54,16 @@ const conditionalClasses = computed(() => ({
   <div
     class="shadow-blue flex min-h-48 w-full cursor-text flex-row flex-wrap gap-8 bg-white p-8 shadow-blue-800"
     :class="conditionalClasses"
+    :aria-label="ariaLabel"
+    role="group"
     @click="focusNewChipInput"
   >
     <ul class="contents">
       <li
         v-for="(chip, i) in model"
         :key="i"
-        class="ris-body2-regular flex items-center rounded-full bg-blue-300 py-6 pl-12 outline-none"
+        class="ris-body2-regular flex items-center rounded-full bg-blue-300 py-6 pr-4 pl-16 outline-none"
+        :aria-label="`${model[i]}`"
       >
         <ChipInput
           v-if="editingChipIndex === i"
@@ -71,7 +74,7 @@ const conditionalClasses = computed(() => ({
         />
         <button
           v-else
-          aria-label="Chip editieren"
+          aria-label="Eintrag bearbeiten"
           class="cursor-pointer group-focus:bg-blue-900 group-focus:text-white"
           type="button"
           @dblclick="toggleChipEditMode(i)"
@@ -82,7 +85,7 @@ const conditionalClasses = computed(() => ({
           </span>
         </button>
         <button
-          aria-label="Löschen"
+          aria-label="Eintrag löschen"
           class="mx-6 flex h-full cursor-pointer items-center rounded-r-full group-focus:bg-blue-900 group-focus:text-white"
           type="button"
           @click="onDeleteChip(i)"
@@ -97,7 +100,7 @@ const conditionalClasses = computed(() => ({
       ref="newChipInputRef"
       v-model="newChipText"
       :mask="mask"
-      aria-label="Chip text eingeben"
+      aria-label="Eintrag hinzufügen"
       :placeholder="placeholder"
       @complete="onAddChip(newChipText)"
     />

@@ -13,10 +13,12 @@ describe("RisChipsInput", () => {
       global: { plugins: [PrimeVue] },
     });
 
-    expect(screen.getByText("banane")).toBeInTheDocument();
-    expect(screen.getByText("apple")).toBeInTheDocument();
     expect(
-      screen.getByRole("textbox", { name: "Chip text eingeben" }),
+      screen.getByRole("listitem", { name: "banane" }),
+    ).toBeInTheDocument();
+    expect(screen.getByRole("listitem", { name: "apple" })).toBeInTheDocument();
+    expect(
+      screen.getByRole("textbox", { name: "Eintrag hinzufügen" }),
     ).toBeInTheDocument();
   });
 
@@ -47,7 +49,9 @@ describe("RisChipsInput", () => {
       global: { plugins: [PrimeVue] },
     });
 
-    const deleteButton = screen.getByRole("button", { name: "Löschen" });
+    const deleteButton = screen.getByRole("button", {
+      name: "Eintrag löschen",
+    });
     await user.click(deleteButton);
 
     expect(emitted()["update:modelValue"][0]).toEqual([[]]);
@@ -65,7 +69,9 @@ describe("RisChipsInput", () => {
 
     expect(screen.queryByDisplayValue("apple")).not.toBeInTheDocument();
 
-    const editButton = screen.getByRole("button", { name: "Chip editieren" });
+    const editButton = screen.getByRole("button", {
+      name: "Eintrag bearbeiten",
+    });
     await user.dblClick(editButton);
 
     expect(screen.getByDisplayValue("apple")).toBeInTheDocument();
@@ -81,7 +87,9 @@ describe("RisChipsInput", () => {
       global: { plugins: [PrimeVue] },
     });
 
-    const editButton = screen.getByRole("button", { name: "Chip editieren" });
+    const editButton = screen.getByRole("button", {
+      name: "Eintrag bearbeiten",
+    });
     await user.dblClick(editButton);
     const input = screen.getByRole("textbox");
     await user.clear(input);
@@ -101,14 +109,16 @@ describe("RisChipsInput", () => {
     });
 
     expect(
-      screen.getByRole("textbox", { name: "Chip text eingeben" }),
+      screen.getByRole("textbox", { name: "Eintrag hinzufügen" }),
     ).toBeInTheDocument();
 
-    const editButton = screen.getByRole("button", { name: "Chip editieren" });
+    const editButton = screen.getByRole("button", {
+      name: "Eintrag bearbeiten",
+    });
     await user.dblClick(editButton);
 
     expect(
-      screen.queryByRole("textbox", { name: "Chip text eingeben" }),
+      screen.queryByRole("textbox", { name: "Eintrag hinzufügen" }),
     ).not.toBeInTheDocument();
   });
 });
