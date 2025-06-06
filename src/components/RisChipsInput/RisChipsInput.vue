@@ -52,7 +52,7 @@ const conditionalClasses = computed(() => ({
 
 <template>
   <div
-    class="shadow-blue flex min-h-48 w-full cursor-text flex-row flex-wrap gap-8 bg-white p-8 shadow-blue-800"
+    class="ris-body2-regular shadow-blue flex min-h-48 w-full cursor-text flex-row flex-wrap gap-8 bg-white px-16 py-8"
     :class="conditionalClasses"
     :aria-label="ariaLabel"
     role="group"
@@ -62,7 +62,7 @@ const conditionalClasses = computed(() => ({
       <li
         v-for="(chip, i) in model"
         :key="i"
-        class="ris-body2-regular flex items-center rounded-full bg-blue-300 py-6 pr-4 pl-16 outline-none"
+        class="flex items-center rounded-full bg-blue-300 py-6 pr-4 pl-16 outline-none"
         :aria-label="`${model[i]}`"
       >
         <ChipInput
