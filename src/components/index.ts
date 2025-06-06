@@ -3,6 +3,7 @@ import RisAutoComplete from "./RisAutoComplete";
 import RisCopyableLabel from "./RisCopyableLabel";
 import RisExpandableText from "./RisExpandableText";
 import RisPaginator from "./RisPaginator";
+import RisChipsInput from "./RisChipsInput";
 
 export {
   RisSingleAccordion,
@@ -10,4 +11,5 @@ export {
   RisExpandableText,
   RisCopyableLabel,
   RisPaginator,
+  RisChipsInput,
 };
