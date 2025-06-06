@@ -1,5 +1,5 @@
 import { html } from "@/lib/tags";
-import { Meta, StoryObj } from "@storybook/vue3";
+import { Meta, StoryObj } from "@storybook/vue3-vite";
 import PrimevueSelect from "primevue/select";
 import { ref } from "vue";
 import ErrorOutline from "~icons/material-symbols/error-outline";

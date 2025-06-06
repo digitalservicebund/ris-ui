@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/vue3";
+import { Meta, StoryObj } from "@storybook/vue3-vite";
 import InputMask from "primevue/inputmask";
 import { html } from "@/lib/tags";
 import Fluid from "primevue/fluid";

@@ -1,5 +1,5 @@
 import { html } from "@/lib/tags.ts";
-import { Meta, StoryObj } from "@storybook/vue3";
+import { Meta, StoryObj } from "@storybook/vue3-vite";
 import { http, HttpResponse } from "msw";
 import Btn from "primevue/button";
 import FileUpload from "primevue/fileupload";

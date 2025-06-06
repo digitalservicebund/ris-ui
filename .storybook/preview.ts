@@ -1,6 +1,6 @@
 /// <reference types="vite/client" />
 
-import { Preview, setup } from "@storybook/vue3";
+import { Preview, setup } from "@storybook/vue3-vite";
 import { initialize, mswLoader } from "msw-storybook-addon";
 import PrimeVue from "primevue/config";
 import ConfirmationService from "primevue/confirmationservice";

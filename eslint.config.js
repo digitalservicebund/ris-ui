@@ -1,10 +1,11 @@
 import { includeIgnoreFile } from "@eslint/compat";
 import pluginJs from "@eslint/js";
 import eslintConfigPrettier from "eslint-config-prettier";
+import storybook from "eslint-plugin-storybook";
+import pluginVue from "eslint-plugin-vue";
 import globals from "globals";
 import { fileURLToPath, URL } from "node:url";
 import tseslint from "typescript-eslint";
-import pluginVue from "eslint-plugin-vue";
 
 export default [
   // Files
@@ -27,4 +28,5 @@ export default [
   ...tseslint.configs.recommended,
   ...pluginVue.configs["flat/recommended"],
   eslintConfigPrettier,
+  ...storybook.configs["flat/recommended"],
 ];
