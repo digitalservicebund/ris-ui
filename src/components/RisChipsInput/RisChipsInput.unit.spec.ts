@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/vue";
+import { fireEvent, render, screen } from "@testing-library/vue";
 import { describe, it, expect } from "vitest";
 import PrimeVue from "primevue/config";
 import RisChipsInput from "./RisChipsInput.vue";
@@ -32,11 +32,15 @@ describe("RisChipsInput", () => {
       global: { plugins: [PrimeVue] },
     });
 
-    const input = screen.getByRole("textbox");
-    await user.type(input, "New Chip{enter}");
+    await user.type(
+      screen.getByRole("textbox", { name: "Eintrag hinzufügen" }),
+      "New Chip{enter}",
+    );
 
     expect(emitted()["update:modelValue"][0]).toEqual([["New Chip"]]);
-    expect(input).toHaveValue("");
+    expect(
+      screen.getByRole("textbox", { name: "Eintrag hinzufügen" }),
+    ).toHaveValue("");
   });
 
   it("deletes a chip", async () => {
@@ -120,5 +124,26 @@ describe("RisChipsInput", () => {
     expect(
       screen.queryByRole("textbox", { name: "Eintrag hinzufügen" }),
     ).not.toBeInTheDocument();
+  });
+
+  it("focus the rerendered new chip input after a chip has been added (with mask)", async () => {
+    render(RisChipsInput, {
+      props: {
+        modelValue: [],
+        mask: "99.99.9999",
+      },
+      global: { plugins: [PrimeVue] },
+    });
+
+    const input = screen.getByRole("textbox", { name: "Eintrag hinzufügen" });
+    // Dispatching raw DOM events because user.type() throws an error in InputMask
+    await fireEvent.update(input, "01.01.1970");
+    await fireEvent.blur(input);
+
+    const rerenderedInput = screen.getByRole("textbox", {
+      name: "Eintrag hinzufügen",
+    });
+    expect(document.activeElement).toBe(rerenderedInput);
+    expect(rerenderedInput).toHaveValue("");
   });
 });

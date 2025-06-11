@@ -16,16 +16,21 @@ const newChipInputRef = ref<HTMLInputElement | null>(null);
 
 const editingChipIndex = ref<number | null>(null);
 const newChipText = ref<string>("");
+// Reactive key for the new chip input
+const newChipInputKey = ref<number>(0);
 
 function toggleChipEditMode(chipIndex: number) {
   editingChipIndex.value = chipIndex;
 }
 
-function onAddChip(value: string) {
-  if (!value) return;
+function onAddChip() {
+  if (!newChipText.value) return;
 
-  model.value = [...model.value, value.trim()];
+  model.value = [...model.value, newChipText.value.trim()];
   newChipText.value = "";
+  // Increment the key to force re-render
+  newChipInputKey.value += 1;
+  focusNewChipInput();
 }
 
 function onComplete() {
@@ -97,12 +102,14 @@ const conditionalClasses = computed(() => ({
     </ul>
     <ChipInput
       v-if="editingChipIndex === null"
+      :key="newChipInputKey"
       ref="newChipInputRef"
       v-model="newChipText"
       :mask="mask"
-      aria-label="Eintrag hinzufügen"
       :placeholder="placeholder"
-      @complete="onAddChip(newChipText)"
+      :should-focus-on-mount="newChipInputKey > 0"
+      aria-label="Eintrag hinzufügen"
+      @complete="onAddChip"
     />
   </div>
 </template>
