@@ -60,6 +60,7 @@ const conditionalClasses = computed(() => ({
     class="ris-body2-regular shadow-blue flex min-h-48 w-full cursor-text flex-row flex-wrap gap-8 bg-white px-16 py-8"
     :class="conditionalClasses"
     :aria-label="ariaLabel"
+    :aria-invalid="hasError"
     role="group"
     @click="focusNewChipInput"
   >
