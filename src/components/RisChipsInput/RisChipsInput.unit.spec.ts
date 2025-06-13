@@ -32,11 +32,15 @@ describe("RisChipsInput", () => {
       global: { plugins: [PrimeVue] },
     });
 
-    const input = screen.getByRole("textbox");
-    await user.type(input, "New Chip{enter}");
+    await user.type(
+      screen.getByRole("textbox", { name: "Eintrag hinzufügen" }),
+      "New Chip{enter}",
+    );
 
     expect(emitted()["update:modelValue"][0]).toEqual([["New Chip"]]);
-    expect(input).toHaveValue("");
+    expect(
+      screen.getByRole("textbox", { name: "Eintrag hinzufügen" }),
+    ).toHaveValue("");
   });
 
   it("deletes a chip", async () => {
@@ -120,5 +124,37 @@ describe("RisChipsInput", () => {
     expect(
       screen.queryByRole("textbox", { name: "Eintrag hinzufügen" }),
     ).not.toBeInTheDocument();
+  });
+
+  it("focus the rerendered new chip input after a chip has been added", async () => {
+    const user = userEvent.setup();
+
+    render(RisChipsInput, {
+      props: {
+        modelValue: [],
+      },
+      global: { plugins: [PrimeVue] },
+    });
+
+    const input = screen.getByRole("textbox", { name: "Eintrag hinzufügen" });
+    await user.type(input, "apple{enter}");
+
+    const rerenderedInput = screen.getByRole("textbox", {
+      name: "Eintrag hinzufügen",
+    });
+    expect(document.activeElement).toBe(rerenderedInput);
+    expect(rerenderedInput).toHaveValue("");
+  });
+
+  it("group has aria invalid set to true when hasError prop is provided", async () => {
+    render(RisChipsInput, {
+      props: {
+        modelValue: [],
+        hasError: true,
+      },
+      global: { plugins: [PrimeVue] },
+    });
+
+    expect(screen.getByRole("group")).toHaveAttribute("aria-invalid", "true");
   });
 });
