@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, useTemplateRef, watchEffect, useId } from "vue";
+import { ref, useId, useTemplateRef, watchEffect } from "vue";
 
 const { length = 3, tolerance = 3 } = defineProps<{
   /**
@@ -19,15 +19,21 @@ const expanded = defineModel<boolean>("expanded", { default: false });
 
 const canExpand = ref(false);
 
-const textContent = useTemplateRef("textContent");
+// Note that the variable name must be different than the ref name, otherwise
+// the compiled version of this component will trigger a warning in development
+// mode of the applications using RIS UI. While this doesn't break anything, it
+// adds a lot of noise to the console and test output.
+//
+// See https://github.com/vuejs/core/issues/12852
+const textContentRef = useTemplateRef("textContent");
 
 const textId = useId();
 
 watchEffect(() => {
-  if (textContent.value instanceof HTMLDivElement) {
+  if (textContentRef.value instanceof HTMLDivElement) {
     canExpand.value =
-      textContent.value.scrollHeight - tolerance >
-      textContent.value.clientHeight;
+      textContentRef.value.scrollHeight - tolerance >
+      textContentRef.value.clientHeight;
   }
 });
 </script>
