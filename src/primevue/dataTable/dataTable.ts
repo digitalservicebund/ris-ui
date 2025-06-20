@@ -26,7 +26,7 @@ const dataTable: DataTablePassThroughOptions = {
   },
 
   bodyRow: {
-    class: tw`hover:bg-blue-100`,
+    class: tw`hover:bg-blue-100 focus:outline-4 focus:-outline-offset-5 focus:outline-blue-800 focus:not-focus-visible:outline-none focus-visible:outline-4 focus-visible:-outline-offset-5 focus-visible:outline-blue-800`,
     // The selected row is registered correctly, but this styling is not attached correctly:
     // https://github.com/primefaces/primevue/issues/7759
     style: ({ context }: { context: DataTableContext }) => ({

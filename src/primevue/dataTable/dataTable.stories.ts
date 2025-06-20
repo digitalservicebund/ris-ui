@@ -113,7 +113,36 @@ export const Default: Story = {
   }),
 };
 
-export const Selectable: Story = {
+export const SingleSelectable: Story = {
+  args: {
+    value: sampleProducts,
+  },
+  render: (args) => ({
+    components: { DataTable, Column },
+    setup() {
+      const selectedProducts = ref([]);
+      return { args, selectedProducts };
+    },
+    template: html`
+      <div class="card">
+        <DataTable
+          class="p-32"
+          v-bind="args"
+          v-model:selection="selectedProducts"
+          dataKey="id"
+          selectionMode="single"
+        >
+          <Column field="code" header="Code"></Column>
+          <Column field="name" header="Name"></Column>
+          <Column field="category" header="Category"></Column>
+          <Column field="quantity" header="Quantity"></Column>
+        </DataTable>
+      </div>
+    `,
+  }),
+};
+
+export const MultiSelectable: Story = {
   args: {
     value: sampleProducts,
   },
