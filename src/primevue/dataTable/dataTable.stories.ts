@@ -155,6 +155,35 @@ export const MultiSelectable: Story = {
     template: html`
       <div class="card">
         <DataTable
+          class="p-32"
+          v-bind="args"
+          v-model:selection="selectedProducts"
+          dataKey="id"
+          selectionMode="multiple"
+        >
+          <Column field="code" header="Code"></Column>
+          <Column field="name" header="Name"></Column>
+          <Column field="category" header="Category"></Column>
+          <Column field="quantity" header="Quantity"></Column>
+        </DataTable>
+      </div>
+    `,
+  }),
+};
+
+export const MultiSelectableCheckbox: Story = {
+  args: {
+    value: sampleProducts,
+  },
+  render: (args) => ({
+    components: { DataTable, Column },
+    setup() {
+      const selectedProducts = ref([]);
+      return { args, selectedProducts };
+    },
+    template: html`
+      <div class="card">
+        <DataTable
           v-bind="args"
           v-model:selection="selectedProducts"
           dataKey="id"
