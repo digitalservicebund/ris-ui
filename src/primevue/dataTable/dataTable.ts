@@ -25,14 +25,15 @@ const dataTable: DataTablePassThroughOptions = {
     class: tw`divide-y divide-blue-300`,
   },
 
-  bodyRow: {
-    class: tw`hover:bg-blue-100 focus:outline-4 focus:-outline-offset-5 focus:outline-blue-800 focus:not-focus-visible:outline-none focus-visible:outline-4 focus-visible:-outline-offset-5 focus-visible:outline-blue-800`,
-    // The selected row is registered correctly, but this styling is not attached correctly:
-    // https://github.com/primefaces/primevue/issues/7759
-    style: ({ context }: { context: DataTableContext }) => ({
-      backgroundColor: context.selected ? "var(--color-blue-300)" : undefined,
-    }),
-  },
+  bodyRow: ({ context }: { context: DataTableContext }) => ({
+    class: [
+      tw`focus:outline-4 focus:-outline-offset-5 focus:outline-blue-800 focus:not-focus-visible:outline-none focus-visible:outline-4 focus-visible:-outline-offset-5 focus-visible:outline-blue-800`,
+      {
+        "bg-blue-300": context.selected,
+        "hover:bg-blue-100": !context.selected,
+      },
+    ],
+  }),
 
   // height for td works like min-height: Table cells will grow when the content does not fit.
   column: {
