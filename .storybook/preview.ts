@@ -9,6 +9,7 @@ import "../public/fonts.css";
 import { deDE } from "../src/config/locale";
 import { RisUiTheme } from "../src/primevue";
 import "./preview.css";
+import Tooltip from "primevue/tooltip";
 
 initialize({
   serviceWorker: {
@@ -29,6 +30,8 @@ setup((app) => {
   app.use(ConfirmationService);
 
   app.use(ToastService);
+
+  app.directive("tooltip", Tooltip);
 });
 
 const preview: Preview = {

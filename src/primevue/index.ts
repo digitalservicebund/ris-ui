@@ -22,6 +22,7 @@ import tree from "./tree/tree";
 import splitter from "./splitter/splitter";
 import dataTable from "./dataTable/dataTable";
 import { tab, tabPanel, tabList } from "./tabs/tabs";
+import tooltip from "./tooltip/tooltip";
 
 import { deDE } from "@/config/locale";
 
@@ -52,6 +53,9 @@ export const RisUiTheme = {
   tab,
   tabPanel,
   tabList,
+  directives: {
+    tooltip,
+  },
 };
 
 export const RisUiLocale = {
