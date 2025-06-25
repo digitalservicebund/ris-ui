@@ -3,6 +3,8 @@ import { tw } from "@/lib/tags.ts";
 
 const tooltip: TooltipDirectivePassThroughOptions = {
   arrow: ({ context }) => {
+    // build a triangle by defining a zero-pixel element with two transparent
+    // borders on the sides and one solid border in the middle
     const base = tw`absolute h-0 w-0 border-[7px] border-solid`;
     const top = tw`-mr-[7px] border-b-0 border-t-gray-900 border-r-transparent border-l-transparent`;
     const right = tw`-mt-[7px] border-l-0 border-t-transparent border-r-gray-900 border-b-transparent`;
@@ -22,7 +24,9 @@ const tooltip: TooltipDirectivePassThroughOptions = {
       },
     };
   },
-  text: { class: tw`m-[7px] rounded-sm bg-gray-900 px-8 py-4 text-white` },
+  text: {
+    class: tw`ris-label3-regular m-[7px] rounded-sm bg-gray-900 px-8 py-4 text-center whitespace-pre-line text-white`,
+  },
   root: {
     class: tw`absolute`,
   },
