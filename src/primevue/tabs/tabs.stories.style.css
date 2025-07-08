@@ -1,9 +1,9 @@
 .tab-styles {
-   /* Active Tab */
-  --p-tabview-nav-item-active-bg: var(--color-blue-200); 
-  --p-tabview-nav-item-active-text: var(--color-black); 
+  /* Active Tab */
+  --p-tabview-nav-item-active-bg: var(--color-blue-200);
+  --p-tabview-nav-item-active-text: var(--color-black);
 
   /* Inactive Tab */
-  --p-tabview-nav-item-inactive-bg: var(--color-blue-100); 
+  --p-tabview-nav-item-inactive-bg: var(--color-blue-100);
   --p-tabview-nav-item-inactive-text: var(--color-gray-900);
 }
