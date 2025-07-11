@@ -81,7 +81,7 @@
     "lodash": "~4.17.21",
     "msw": "~2.10.2",
     "msw-storybook-addon": "^2.0.5",
-    "prettier": "~3.5.3",
+    "prettier": "~3.6.2",
     "prettier-plugin-tailwindcss": "~0.6.11",
     "storybook": "~9.0.5",
     "storybook-vue3-router": "~5.0.0",
