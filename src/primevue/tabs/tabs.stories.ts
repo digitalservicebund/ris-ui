@@ -66,30 +66,22 @@ export const Default: StoryObj<typeof meta> = {
   }),
 };
 
-Default.parameters = {
-  docs: {
-    source: {
-      type: "code",
-    },
-  },
-};
-
-export const CustomStyle: StoryObj<typeof meta> = {
+export const Styled: StoryObj<typeof meta> = {
   render: (args) => ({
     components: { Tabs, TabList, Tab, TabPanels, TabPanel },
     setup() {
       return { args };
     },
     template: html`
-      <Tabs value="0" class="custom-tabs">
+      <Tabs value="0" class="tab-styles">
         <TabList>
           <Tab value="0">Custom style</Tab>
           <Tab value="1">Duis aute</Tab>
           <Tab value="2">Nam liber</Tab>
         </TabList>
-        <TabPanels>
+        <TabPanels class="bg-blue-200 ">
           <TabPanel value="0">
-            <p class="m-0">
+            <p >
               Use supported PrimeVue design tokens to customize the appearance.
               See <pre class="inline">tabs.stores.style.css</pre> for sample usage.
             </p>
@@ -107,12 +99,4 @@ export const CustomStyle: StoryObj<typeof meta> = {
         </TabPanels>
       </Tabs>`,
   }),
-};
-
-CustomStyle.parameters = {
-  docs: {
-    source: {
-      type: "code",
-    },
-  },
 };
