@@ -2,19 +2,14 @@ import { tw } from "@/lib/tags.ts";
 import { FileUploadPassThroughOptions } from "primevue/fileupload";
 
 const fileUpload: FileUploadPassThroughOptions = {
-  root: () => {
-    const base = tw`flex flex-col items-center gap-10`;
-
-    return {
-      class: {
-        [base]: true,
-      },
-    };
+  basicContent: {
+    // @ts-expect-error types appear to be wrong here
+    class: tw`flex flex-col items-center gap-10`,
   },
 
-  input: () => ({
-    class: "hidden",
-  }),
+  input: {
+    class: tw`hidden`,
+  },
 };
 
 export default fileUpload;
