@@ -63,7 +63,7 @@
     "@iconify-json/mdi": "~1.2.3",
     "@iconify/vue": "~5.0.0",
     "@storybook/addon-docs": "~9.0.18",
-    "@storybook/vue3-vite": "~9.0.18",
+    "@storybook/vue3-vite": "~9.1.0",
     "@tailwindcss/postcss": "~4.1.11",
     "@testing-library/jest-dom": "~6.6.3",
     "@testing-library/user-event": "~14.6.1",
