@@ -7,13 +7,17 @@ const autocomplete: AutoCompletePassThroughOptions = {
   root: ({ props }) => {
     const base = tw`flex border-2 border-blue-800 bg-white placeholder:text-gray-800 focus-within:outline-4 focus-within:-outline-offset-4 focus-within:outline-blue-800 hover:outline hover:outline-4 hover:-outline-offset-4 hover:outline-blue-800 disabled:border-blue-500 disabled:bg-white disabled:text-blue-500 disabled:outline-hidden`;
     const small = tw`ris-body2-regular h-48 py-4 pr-4 pl-16`;
+    const invalid = tw`aria-[invalid]:border-red-800 aria-[invalid]:bg-red-200 aria-[invalid]:outline-red-800 aria-[invalid]:disabled:outline-hidden`;
 
     return {
       class: {
         [base]: true,
         [small]: true,
         [fluid]: !!props.fluid,
+        [invalid]: props.invalid,
       },
+
+      "aria-invalid": props.invalid ? "true" : null,
     };
   },
   pcInputText: {

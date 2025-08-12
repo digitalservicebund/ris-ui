@@ -120,3 +120,25 @@ export const PrePopulated: Story = {
       <div v-if="value">Selected ID: {{value}}</div>`,
   }),
 };
+
+export const Invalid: Story = {
+  args: {
+    modelValue: "/items/item-1",
+    initialLabel: "Item 1",
+    invalid: true,
+  },
+  render: (args) => ({
+    components: { RisAutoComplete },
+    setup() {
+      return commonSetup(args);
+    },
+    template: html` <RisAutoComplete
+        :key="args.initialLabel"
+        v-model="value"
+        v-bind="args"
+        :suggestions="suggestions"
+        @complete="search"
+      />
+      <div v-if="value">Selected ID: {{value}}</div>`,
+  }),
+};
