@@ -22,7 +22,7 @@ const dataTable: DataTablePassThroughOptions = {
   },
 
   tbody: {
-    class: tw`divide-y divide-blue-300`,
+    class: tw`divide-y divide-blue-300 border-b border-blue-300`,
   },
 
   bodyRow: ({ context }: { context: DataTableContext }) => ({
