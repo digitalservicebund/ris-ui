@@ -77,6 +77,7 @@ describe("AutoComplete", () => {
       forceSelection: true,
       autoOptionFocus: true,
       selectOnFocus: true,
+      focusOnHover: true,
       initialLabel: "initial label",
     };
     const wrapper = await mount(AutoComplete, {

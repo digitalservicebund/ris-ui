@@ -36,6 +36,7 @@ export type Props = Pick<
   | "forceSelection"
   | "autoOptionFocus"
   | "selectOnFocus"
+  | "focusOnHover"
 > & {
   suggestions?: AutoCompleteSuggestion[];
   initialLabel?: string;
@@ -103,10 +104,12 @@ defineExpose({ autoCompleteRef });
     :invalid="props.invalid"
     :auto-option-focus="props.autoOptionFocus"
     :select-on-focus="props.selectOnFocus"
+    :focus-on-hover="props.focusOnHover"
     :fluid="true"
     :option-disabled="props.optionDisabled"
     option-label="label"
     data-key="value"
+    append-to="self"
     @update:model-value="onUpdateInnerValue"
     @option-select="(e) => (model = e.value.id)"
   >
@@ -124,7 +127,7 @@ defineExpose({ autoCompleteRef });
     <template #option="slotProps: { option: AutoCompleteSuggestion }">
       <div
         :data-variant="isActiveOption(slotProps.option) && 'active'"
-        class="flex min-h-48 flex-col justify-center gap-2 border-l-4 border-transparent px-12 py-10 data-[variant=active]:border-blue-800 data-[variant=active]:bg-blue-200"
+        class="flex min-h-48 flex-col justify-center gap-2 border-l-4 border-transparent px-12 py-10 data-[variant=active]:-ml-4 data-[variant=active]:border-blue-800 data-[variant=active]:bg-blue-200"
       >
         <div class="ris-label1-regular">
           {{ slotProps.option.label }}

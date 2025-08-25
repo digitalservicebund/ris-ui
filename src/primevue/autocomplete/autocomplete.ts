@@ -33,13 +33,13 @@ const autocomplete: AutoCompletePassThroughOptions = {
   },
   dropdown: { class: tw`absolute inset-y-0 right-16` },
   option: {
-    class: tw`hover:bg-blue-100 data-[p-focus=true]:bg-blue-200`,
+    class: tw`cursor-pointer border-l-4 border-transparent hover:bg-blue-100 data-[p-focused=true]:border-blue-800 data-[p-focused=true]:bg-blue-200`,
   },
   optionGroup: {
-    class: tw`hover:bg-blue-100 data-[p-focus=true]:bg-blue-200`,
+    class: tw`hover:bg-blue-100 data-[p-focused=true]:bg-blue-200`,
   },
   overlay: {
-    class: tw`w-full overflow-auto bg-white px-8 py-12 shadow-md`,
+    class: tw`mt-12 w-full overflow-auto bg-white px-8 py-12 shadow-md`,
   },
 };
 

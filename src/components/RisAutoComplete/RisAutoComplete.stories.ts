@@ -89,13 +89,17 @@ export const Default: Story = {
     setup() {
       return commonSetup(args);
     },
-    template: html`<RisAutoComplete
-        v-bind="args"
-        v-model="value"
-        :suggestions="suggestions"
-        @complete="search"
-      />
-      <div v-if="value">Selected ID: {{value}}</div>`,
+    template: html`
+      <div class="min-h-[300px]">
+        <RisAutoComplete
+          v-bind="args"
+          v-model="value"
+          :suggestions="suggestions"
+          @complete="search"
+        />
+        <div v-if="value">Selected ID: {{value}}</div>
+      </div>
+    `,
   }),
 };
 
@@ -110,14 +114,17 @@ export const PrePopulated: Story = {
     setup() {
       return commonSetup(args);
     },
-    template: html`<RisAutoComplete
-        :key="args.initialLabel"
-        v-model="value"
-        v-bind="args"
-        :suggestions="suggestions"
-        @complete="search"
-      />
-      <div v-if="value">Selected ID: {{value}}</div>`,
+    template: html`
+      <div class="min-h-[300px]">
+        <RisAutoComplete
+          v-model="value"
+          v-bind="args"
+          :suggestions="suggestions"
+          @complete="search"
+        />
+        <div v-if="value">Selected ID: {{value}}</div>
+      </div>
+    `,
   }),
 };
 
@@ -132,13 +139,16 @@ export const Invalid: Story = {
     setup() {
       return commonSetup(args);
     },
-    template: html` <RisAutoComplete
-        :key="args.initialLabel"
-        v-model="value"
-        v-bind="args"
-        :suggestions="suggestions"
-        @complete="search"
-      />
-      <div v-if="value">Selected ID: {{value}}</div>`,
+    template: html`
+      <div class="min-h-[300px]">
+        <RisAutoComplete
+          v-model="value"
+          v-bind="args"
+          :suggestions="suggestions"
+          @complete="search"
+        />
+        <div v-if="value">Selected ID: {{value}}</div>
+      </div>
+    `,
   }),
 };
