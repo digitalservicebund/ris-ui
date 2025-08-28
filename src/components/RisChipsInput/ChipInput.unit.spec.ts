@@ -100,4 +100,23 @@ describe("ChipInput", () => {
     expect(input).not.toBe(document.activeElement);
     wrapper.unmount();
   });
+
+  it("should show the enter key icon when input is focused", async () => {
+    const wrapper = mount(ChipInput, {
+      props: {
+        modelValue: "",
+        shouldFocusOnMount: false,
+      },
+      global: {
+        plugins: [PrimeVue],
+      },
+    });
+
+    expect(wrapper.find("svg").exists()).toBe(false);
+
+    // when
+    await wrapper.find("input").trigger("focus");
+    // then
+    expect(wrapper.find("svg").exists()).toBe(true);
+  });
 });
