@@ -11,8 +11,8 @@ const props = defineProps<{
   shouldFocusOnMount?: boolean;
 }>();
 
-defineEmits<{
-  complete: void;
+const emit = defineEmits<{
+  complete: [void];
 }>();
 
 const model = defineModel<string>({ required: true });
@@ -20,12 +20,22 @@ const model = defineModel<string>({ required: true });
 const inputId = useId();
 
 const inputRef = ref<{ $el: HTMLElement } | null>(null);
+const isInputFocused = ref(false);
 
 function focusNativeInput() {
   const nativeInput = inputRef.value?.$el;
   if (nativeInput) {
     nativeInput.focus();
   }
+}
+
+function onBlur() {
+  isInputFocused.value = false;
+  emit("complete");
+}
+
+function onFocus() {
+  isInputFocused.value = true;
 }
 
 onMounted(() => {
@@ -61,7 +71,8 @@ defineExpose({
           },
         },
       }"
-      @blur="$emit('complete')"
+      @focus="onFocus"
+      @blur="onBlur"
       @keydown.enter.stop.prevent="$emit('complete')"
     />
     <InputText
@@ -78,10 +89,11 @@ defineExpose({
         },
       }"
       :placeholder="placeholder"
-      @blur="$emit('complete')"
+      @focus="onFocus"
+      @blur="onBlur"
       @keydown.enter.stop.prevent="$emit('complete')"
     />
-    <span class="ml-6 text-gray-900">
+    <span v-if="isInputFocused" class="ml-6 text-gray-900">
       <IconSubdirectoryArrowLeft height="16px" width="16px" />
     </span>
   </span>
