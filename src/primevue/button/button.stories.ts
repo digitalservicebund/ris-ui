@@ -18,6 +18,7 @@ const meta: Meta<typeof PrimevueButton> = {
     severity: undefined,
     size: undefined,
     text: false,
+    rounded: false,
   },
 
   argTypes: {
