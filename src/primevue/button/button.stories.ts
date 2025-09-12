@@ -25,7 +25,7 @@ const meta: Meta<typeof PrimevueButton> = {
     size: { control: "select", options: ["small", "normal", "large"] },
     severity: {
       control: "select",
-      options: ["primary", "secondary", "danger"],
+      options: ["primary", "secondary", "danger", "info"],
     },
   },
 };
@@ -145,5 +145,25 @@ export const Loading: Story = {
       return { args };
     },
     template: html` <PrimevueButton v-bind="args"></PrimevueButton>`,
+  }),
+};
+
+export const Pill: Story = {
+  args: {
+    size: "small",
+    rounded: true,
+    outlined: true,
+    severity: "info",
+  },
+  render: (args) => ({
+    components: { PrimevueButton, IconCheck },
+    setup() {
+      return { args };
+    },
+    template: html` <PrimevueButton v-bind="args">
+      <template #icon>
+        <IconCheck />
+      </template>
+    </PrimevueButton>`,
   }),
 };

@@ -18,6 +18,8 @@ const button: ButtonPassThroughOptions = {
 
     const danger = tw`border-2 border-red-800 bg-white text-red-800 hover:bg-gray-200 focus:bg-gray-200 focus:outline-red-800 active:border-white active:bg-white disabled:border-red-500 disabled:text-red-500 disabled:hover:bg-white`;
 
+    const info = tw`border border-blue-500 bg-white font-normal text-blue-800 hover:bg-gray-200 focus:bg-gray-200 active:border-white active:bg-white disabled:border-blue-500 disabled:text-blue-500 disabled:hover:bg-white`;
+
     // Text
     // This is the "Ghost" variant of the button
     const primaryText = tw`border-2 border-transparent bg-transparent text-blue-800 underline hover:border-gray-500 hover:bg-white focus:border-gray-500 active:border-white active:bg-white disabled:bg-transparent disabled:text-gray-500`;
@@ -52,6 +54,7 @@ const button: ButtonPassThroughOptions = {
         [primary]: !props.text && severity === "primary",
         [secondary]: !props.text && severity === "secondary",
         [danger]: !props.text && severity === "danger",
+        [info]: !props.text && severity === "info",
         [primaryText]: props.text && severity === "primary",
       },
     };
