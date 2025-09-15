@@ -3,15 +3,41 @@ import RisPaginator from "./RisPaginator.vue";
 import { render, screen } from "@testing-library/vue";
 import userEvent from "@testing-library/user-event";
 import { PageState } from "primevue";
+import { defineComponent, h } from "vue";
+
+const ButtonStub = defineComponent({
+  name: "ButtonStub",
+  props: {
+    label: { type: String, default: "" },
+    text: { type: Boolean, default: false },
+  },
+  emits: ["click"],
+  setup(props, { emit }) {
+    return () =>
+      h("button", {
+        "aria-label": props.label || undefined,
+        onClick: (e: Event) => emit("click", e),
+      });
+  },
+});
+
+function renderWithStubs(props: Record<string, unknown>) {
+  return render(RisPaginator, {
+    props,
+    global: {
+      stubs: {
+        Button: ButtonStub,
+      },
+    },
+  });
+}
 
 describe("RisPaginator", () => {
   it("hides the previous button when on first page", async () => {
-    render(RisPaginator, {
-      props: {
-        first: 0,
-        rows: 10,
-        totalRecords: 100,
-      },
+    renderWithStubs({
+      first: 0,
+      rows: 10,
+      totalRecords: 100,
     });
 
     expect(
@@ -22,12 +48,10 @@ describe("RisPaginator", () => {
   });
 
   it("hides the next button when on last page", async () => {
-    render(RisPaginator, {
-      props: {
-        first: 90,
-        rows: 10,
-        totalRecords: 100,
-      },
+    renderWithStubs({
+      first: 90,
+      rows: 10,
+      totalRecords: 100,
     });
 
     expect(screen.getByRole("button", { name: "Zurück" })).toBeInTheDocument();
@@ -38,14 +62,12 @@ describe("RisPaginator", () => {
   });
 
   it("renders customized button labels and pagination", async () => {
-    render(RisPaginator, {
-      props: {
-        prevButtonLabel: "Previous",
-        nextButtonLabel: "Next",
-        first: 10,
-        rows: 10,
-        totalRecords: 100,
-      },
+    renderWithStubs({
+      prevButtonLabel: "Previous",
+      nextButtonLabel: "Next",
+      first: 10,
+      rows: 10,
+      totalRecords: 100,
     });
 
     expect(
@@ -57,12 +79,10 @@ describe("RisPaginator", () => {
 
   it("emits an updated PageState on page change", async () => {
     const user = userEvent.setup();
-    const { emitted } = render(RisPaginator, {
-      props: {
-        first: 0,
-        rows: 10,
-        totalRecords: 100,
-      },
+    const { emitted } = renderWithStubs({
+      first: 0,
+      rows: 10,
+      totalRecords: 100,
     });
 
     await user.click(screen.getByRole("button", { name: "Weiter" }));
