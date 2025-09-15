@@ -1,8 +1,12 @@
 import { html } from "@/lib/tags";
 import { Meta, StoryObj } from "@storybook/vue3-vite";
-import InputGroup from "primevue/inputgroup";
-import InputGroupAddon from "primevue/inputgroupaddon";
-import InputText from "primevue/inputtext";
+import {
+  InputGroup,
+  InputGroupAddon,
+  InputText,
+  Button as PrimevueButton,
+} from "primevue";
+import IcBaselineSearch from "~icons/ic/baseline-search";
 
 const meta: Meta<typeof InputText> = {
   // @ts-expect-error Component type broken
@@ -29,6 +33,35 @@ const meta: Meta<typeof InputText> = {
 
 export default meta;
 
+export const WithButton: StoryObj<typeof meta> = {
+  render: (args) => ({
+    components: {
+      IcBaselineSearch,
+      InputGroup,
+      InputGroupAddon,
+      InputText,
+      PrimevueButton,
+    },
+    setup() {
+      return { args };
+    },
+    template: html`<InputGroup>
+      <InputText v-bind="args" />
+      <InputGroupAddon>
+        <PrimevueButton
+          aria-label="Suchen"
+          :size="args.size === 'large' ? 'large' : undefined"
+          :disabled="args.disabled || args.readonly"
+        >
+          <template #icon>
+            <IcBaselineSearch />
+          </template>
+        </PrimevueButton>
+      </InputGroupAddon>
+    </InputGroup>`,
+  }),
+};
+
 export const Left: StoryObj<typeof meta> = {
   render: (args) => ({
     components: { InputGroup, InputGroupAddon, InputText },
@@ -36,7 +69,11 @@ export const Left: StoryObj<typeof meta> = {
       return { args };
     },
     template: html`<InputGroup>
-      <InputGroupAddon>€</InputGroupAddon>
+      <InputGroupAddon
+        class="flex items-center border-y-2 border-l-2 border-blue-800 bg-gray-100 px-16 py-4"
+      >
+        Left addon
+      </InputGroupAddon>
       <InputText v-bind="args" />
     </InputGroup>`,
   }),
@@ -50,7 +87,11 @@ export const Right: StoryObj<typeof meta> = {
     },
     template: html`<InputGroup>
       <InputText v-bind="args" />
-      <InputGroupAddon>€</InputGroupAddon>
+      <InputGroupAddon
+        class="flex items-center border-y-2 border-r-2 border-blue-800 bg-gray-100 px-16 py-4"
+      >
+        Right addon
+      </InputGroupAddon>
     </InputGroup>`,
   }),
 };
