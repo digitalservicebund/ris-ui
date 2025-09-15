@@ -4,7 +4,6 @@ import confirmDialog from "./confirmDialog/confirmDialog";
 import dialog from "./dialog/dialog";
 import fileUpload from "./fileUpload/fileUpload";
 import inputGroup from "./inputGroup/inputGroup";
-import inputGroupAddon from "./inputGroup/inputGroupAddon";
 import inputText from "./inputText/inputText";
 import menu from "./menu/menu";
 import message from "./message/message";
@@ -33,7 +32,6 @@ export const RisUiTheme = {
   dialog,
   fileUpload,
   inputGroup,
-  inputGroupAddon,
   inputText,
   menu,
   message,
