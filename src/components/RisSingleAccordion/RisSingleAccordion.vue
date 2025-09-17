@@ -28,7 +28,7 @@ const activePanel = computed({
   },
 });
 
-const accordionHeaderClasses = tw`ris-label2-bold flex flex-row items-center gap-8 text-blue-800`;
+const accordionHeaderClasses = tw`ris-label2-bold flex cursor-pointer flex-row items-center gap-8 text-blue-800`;
 </script>
 
 <template>
