@@ -120,7 +120,11 @@ defineExpose({ autoCompleteRef });
       <RisGhostButton v-if="innerValue" aria-label="Entfernen" @click="onClear">
         <IcOutlineClear />
       </RisGhostButton>
-      <RisGhostButton @click="slotProps.toggleCallback">
+      <RisGhostButton
+        aria-label="Vorschläge anzeigen"
+        aria-haspopup="listbox"
+        @click="slotProps.toggleCallback"
+      >
         <IconChevron />
       </RisGhostButton>
     </template>
