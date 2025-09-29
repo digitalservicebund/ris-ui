@@ -37,6 +37,7 @@ export type Props = Pick<
   | "autoOptionFocus"
   | "selectOnFocus"
   | "focusOnHover"
+  | "appendTo"
 > & {
   suggestions?: AutoCompleteSuggestion[];
   initialLabel?: string;
@@ -105,11 +106,11 @@ defineExpose({ autoCompleteRef });
     :auto-option-focus="props.autoOptionFocus"
     :select-on-focus="props.selectOnFocus"
     :focus-on-hover="props.focusOnHover"
+    :append-to="props.appendTo"
     :fluid="true"
     :option-disabled="props.optionDisabled"
     option-label="label"
     data-key="value"
-    append-to="self"
     @update:model-value="onUpdateInnerValue"
     @option-select="(e) => (model = e.value.id)"
   >

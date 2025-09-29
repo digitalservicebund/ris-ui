@@ -27,6 +27,7 @@ const meta: Meta<typeof RisAutoComplete> = {
     autoOptionFocus: false,
     selectOnFocus: false,
     typeahead: true,
+    appendTo: undefined,
   },
 
   argTypes: {
@@ -34,6 +35,11 @@ const meta: Meta<typeof RisAutoComplete> = {
     dropdownMode: {
       control: "select",
       options: ["blank", "current", undefined],
+    },
+    appendTo: {
+      control: "select",
+      options: [undefined, "body"],
+      description: "Element to append the overlay to, e.g., 'body'.",
     },
   },
 
@@ -149,6 +155,37 @@ export const Invalid: Story = {
         />
         <div v-if="value">Selected ID: {{value}}</div>
       </div>
+    `,
+  }),
+};
+
+export const AppendedToBody: Story = {
+  args: {
+    appendTo: "body",
+    placeholder: "Dropdown appears outside",
+  },
+  render: (args) => ({
+    components: { RisAutoComplete },
+    setup() {
+      return commonSetup(args);
+    },
+    template: html`
+      <div
+        style="height: 100px; padding: 20px; background: #f0f0f0; overflow: auto;"
+      >
+        This box has overflow: auto, which would normally clip the dropdown.
+        <br />
+        Scroll the box and then open the dropdown below.
+        <div style="height: 100px;"></div>
+        <RisAutoComplete
+          v-bind="args"
+          v-model="value"
+          :suggestions="suggestions"
+          @complete="search"
+        />
+      </div>
+      <div v-if="value">Selected ID: {{value}}</div>
+      <div style="height: 300px;">Space below the component.</div>
     `,
   }),
 };
