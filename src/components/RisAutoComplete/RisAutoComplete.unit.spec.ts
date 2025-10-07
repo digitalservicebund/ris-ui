@@ -34,7 +34,7 @@ describe("AutoComplete", () => {
   });
 
   it("identifies the correct options as active", async () => {
-    const wrapper = await mount(AutoComplete, {
+    const wrapper = mount(AutoComplete, {
       props: {
         modelValue: "2",
         suggestions: [
@@ -78,9 +78,10 @@ describe("AutoComplete", () => {
       autoOptionFocus: true,
       selectOnFocus: true,
       focusOnHover: true,
+      appendTo: "body",
       initialLabel: "initial label",
     };
-    const wrapper = await mount(AutoComplete, {
+    const wrapper = mount(AutoComplete, {
       props,
       global: { plugins: [PrimeVue] },
     });
