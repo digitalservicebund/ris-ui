@@ -1,5 +1,6 @@
 import button from "./button/button";
 import checkbox from "./checkbox/checkbox";
+import chip from "./chip/chip";
 import confirmDialog from "./confirmDialog/confirmDialog";
 import dialog from "./dialog/dialog";
 import fileUpload from "./fileUpload/fileUpload";
@@ -14,6 +15,7 @@ import autocomplete from "./autocomplete/autocomplete";
 import textarea from "./textarea/textarea";
 import toast from "./toast/toast";
 import select from "./select/select";
+import multiselect from "./multiSelect/multiSelect";
 import inputMask from "./inputMask/inputMask";
 import breadcrumb from "@/primevue/breadcrumb/breadcrumb";
 import panelmenu from "./panelMenu/panelMenu";
@@ -28,6 +30,7 @@ import { deDE } from "@/config/locale";
 export const RisUiTheme = {
   button,
   checkbox,
+  chip,
   confirmDialog,
   dialog,
   fileUpload,
@@ -42,6 +45,7 @@ export const RisUiTheme = {
   toast,
   autocomplete,
   select,
+  multiselect,
   inputMask,
   breadcrumb,
   tree,
