@@ -31,6 +31,6 @@ export const Removable: Story = {
       const checked = ref(true);
       return { args, checked };
     },
-    template: html`<Chip label="Chip" removable/>`,
+    template: html`<Chip label="Chip" removable />`,
   }),
 };

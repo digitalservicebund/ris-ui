@@ -48,7 +48,6 @@ export const Default: StoryObj<typeof meta> = {
       optionLabel="name"
       optionValue="code"
       :options="options"
-      
     />`,
   }),
 };
@@ -171,7 +170,6 @@ export const Disabled: StoryObj<typeof meta> = {
     </div>`,
   }),
 };
-
 
 export const Invalid: StoryObj<typeof meta> = {
   args: {

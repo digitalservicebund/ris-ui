@@ -40,7 +40,7 @@ const multiSelect: MultiSelectPassThroughOptions = {
   },
 
   dropdownIcon: {
-    class: tw`absolute right-8 top-16`,
+    class: tw`absolute top-16 right-8`,
   },
 
   listContainer: {
@@ -56,20 +56,19 @@ const multiSelect: MultiSelectPassThroughOptions = {
   },
 
   optionLabel: {
-      class: tw`pl-12`,
+    class: tw`pl-12`,
   },
 
   header: {
     class: tw`hidden`,
   },
 
-
   option: ({ context }) => {
     // Base
-    const base = tw`ris-body2-regular relative h-full min-h-48 w-full cursor-pointer px-24 py-16 after:absolute after:right-8 after:-bottom-1 after:left-8 after:border-b after:border-gray-300 after:content-[''] last:after:border-b-0 hover:bg-gray-100`;
+    const base = tw`ris-body2-regular box-border flex min-h-48 w-full cursor-pointer border-l-4 border-transparent py-16 pr-24 pl-20 after:absolute after:right-8 after:-bottom-1 after:left-8 after:border-b after:border-gray-300 after:content-[''] last:after:border-b-0 hover:bg-gray-100`;
 
     // States
-    const focused = tw`bg-gray-100 border-l4 border-solid border-l-blue-800`;
+    const focused = tw`border-l-4 border-solid border-l-blue-800 bg-gray-100`;
 
     return {
       class: {
