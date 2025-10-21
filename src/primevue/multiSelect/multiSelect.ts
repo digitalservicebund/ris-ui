@@ -4,7 +4,7 @@ import { MultiSelectPassThroughOptions } from "primevue/multiselect";
 const multiSelect: MultiSelectPassThroughOptions = {
   root: ({ props, state }) => {
     // Base
-    const base = tw`ris-body2-regular [&+small]:ris-label3-regular relative inline-flex min-h-48 items-center justify-start border-2 bg-white py-4 pr-12 pl-12 [&+small]:mt-2 [&+small]:flex [&+small]:items-center [&+small]:gap-4 [&+small]:text-gray-900 [&[aria-invalid="true"]+small]:text-red-900`;
+    const base = tw`ris-body2-regular [&+small]:ris-label3-regular relative inline-flex min-h-48 items-center justify-start border-2 bg-white py-2 pr-12 pl-12 [&+small]:mt-2 [&+small]:flex [&+small]:items-center [&+small]:gap-4 [&+small]:text-gray-900 [&[aria-invalid="true"]+small]:text-red-900`;
 
     // States
     const normal = tw`cursor-pointer border-blue-800`;
