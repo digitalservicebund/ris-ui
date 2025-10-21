@@ -65,7 +65,7 @@ const multiSelect: MultiSelectPassThroughOptions = {
 
   option: ({ context }) => {
     // Base
-    const base = tw`ris-body2-regular box-border flex min-h-48 w-full cursor-pointer border-l-4 border-transparent py-16 pr-24 pl-20 after:absolute after:right-8 after:-bottom-1 after:left-8 after:border-b after:border-gray-300 after:content-[''] last:after:border-b-0 hover:bg-gray-100`;
+    const base = tw`ris-body2-regular relative flex h-full min-h-48 w-full cursor-pointer border-l-4 border-transparent py-16 pr-24 pl-20 after:absolute after:right-8 after:-bottom-1 after:left-8 after:border-b after:border-gray-300 after:content-[''] last:after:border-b-0 hover:bg-gray-100`;
 
     // States
     const focused = tw`border-l-4 border-solid border-l-blue-800 bg-gray-100`;
