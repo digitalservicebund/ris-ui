@@ -68,7 +68,7 @@ const conditionalClasses = computed(() => ({
       <li
         v-for="(chip, i) in model"
         :key="i"
-        class="flex items-center rounded-full bg-blue-300 py-6 pr-4 pl-16 outline-none"
+        class="flex items-center rounded-full bg-blue-300 py-4 pr-4 pl-16 outline-none"
         :aria-label="`${model[i]}`"
       >
         <ChipInput
