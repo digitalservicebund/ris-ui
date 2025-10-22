@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { computed, ref } from "vue";
+import { computed, ref, useId } from "vue";
 import IconCancel from "~icons/ic/baseline-cancel";
 import ChipInput from "./ChipInput.vue";
 
@@ -8,6 +8,7 @@ const props = defineProps<{
   hasError?: boolean;
   mask?: string;
   placeholder?: string;
+  inputId?: string;
 }>();
 
 const model = defineModel<string[]>({ required: true });
@@ -53,6 +54,12 @@ function focusNewChipInput() {
 const conditionalClasses = computed(() => ({
   "!shadow-red-800 !bg-red-200": props.hasError,
 }));
+
+const newChipId = computed(() => props.inputId || useId());
+
+const chipItemId = computed(() =>
+  props.inputId ? `${props.inputId}-${useId()}` : useId(),
+);
 </script>
 
 <template>
@@ -73,6 +80,7 @@ const conditionalClasses = computed(() => ({
       >
         <ChipInput
           v-if="editingChipIndex === i"
+          :id="chipItemId"
           v-model="model[i]"
           :mask="mask"
           should-focus-on-mount
@@ -103,6 +111,7 @@ const conditionalClasses = computed(() => ({
     </ul>
     <ChipInput
       v-if="editingChipIndex === null"
+      :id="newChipId"
       :key="newChipInputKey"
       ref="newChipInputRef"
       v-model="newChipText"

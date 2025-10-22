@@ -11,6 +11,7 @@ describe("ChipInput", () => {
       props: {
         modelValue: "",
         mask: "99-9999",
+        id: "testInputId",
       },
       global: { plugins: [PrimeVue] },
     });
@@ -24,6 +25,7 @@ describe("ChipInput", () => {
     render(ChipInput, {
       props: {
         modelValue: "",
+        id: "testInputId",
       },
       global: { plugins: [PrimeVue] },
     });
@@ -38,6 +40,7 @@ describe("ChipInput", () => {
     const { emitted } = render(ChipInput, {
       props: {
         modelValue: "",
+        id: "testInputId",
       },
       global: { plugins: [PrimeVue] },
     });
@@ -55,6 +58,7 @@ describe("ChipInput", () => {
     const { emitted } = render(ChipInput, {
       props: {
         modelValue: "",
+        id: "testInputId",
       },
       global: { plugins: [PrimeVue] },
     });
@@ -72,6 +76,7 @@ describe("ChipInput", () => {
       props: {
         modelValue: "",
         shouldFocusOnMount: true,
+        id: "testInputId",
       },
       global: {
         plugins: [PrimeVue],
@@ -89,6 +94,7 @@ describe("ChipInput", () => {
       props: {
         modelValue: "",
         shouldFocusOnMount: false,
+        id: "testInputId",
       },
       global: {
         plugins: [PrimeVue],
@@ -106,6 +112,7 @@ describe("ChipInput", () => {
       props: {
         modelValue: "",
         shouldFocusOnMount: false,
+        id: "testInputId",
       },
       global: {
         plugins: [PrimeVue],

@@ -47,3 +47,24 @@ export const WithMask: Story = {
     template: html` <RisChipsInput v-bind="args" v-model="value" /> `,
   }),
 };
+
+export const WrappedWithLabel: Story = {
+  name: "Wrapped with label",
+  args: {
+    modelValue: ["banane", "apple"],
+    inputId: "fruits",
+  },
+  render: (args) => ({
+    components: { RisChipsInput },
+    setup() {
+      const value = ref(args.modelValue);
+      return { args, value };
+    },
+    template: html`
+      <div>
+        <label for="fruits">Favorite Fruits</label>
+        <RisChipsInput v-bind="args" v-model="value" />
+      </div>
+    `,
+  }),
+};
