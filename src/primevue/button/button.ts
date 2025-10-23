@@ -39,7 +39,7 @@ const button: ButtonPassThroughOptions = {
 
     // Label only or label + icon
     else {
-      small = tw`${small} px-16`;
+      small = tw`${small} px-12`;
       normal = tw`${normal} px-16`;
       large = tw`${large} px-24`;
     }
