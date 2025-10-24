@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { onMounted, ref, useId } from "vue";
+import { onMounted, ref } from "vue";
 import { InputMask, InputText } from "primevue";
 import IconSubdirectoryArrowLeft from "~icons/ic/baseline-subdirectory-arrow-left";
 
@@ -9,6 +9,7 @@ const props = defineProps<{
   hasError?: boolean;
   mask?: string;
   shouldFocusOnMount?: boolean;
+  id: string;
 }>();
 
 const emit = defineEmits<{
@@ -16,8 +17,6 @@ const emit = defineEmits<{
 }>();
 
 const model = defineModel<string>({ required: true });
-
-const inputId = useId();
 
 const inputRef = ref<{ $el: HTMLElement } | null>(null);
 const isInputFocused = ref(false);
@@ -51,15 +50,15 @@ defineExpose({
 
 <template>
   <span class="flex items-center justify-start">
-    <span :id="`enter-note-for-${inputId}`" class="sr-only">
+    <span :id="`enter-note-for-${id}`" class="sr-only">
       Enter drücken, um die Eingabe zu bestätigen
     </span>
     <InputMask
       v-if="mask"
-      :id="inputId"
+      :id="id"
       ref="inputRef"
       v-model="model"
-      :aria-describedby="`enter-note-for-${inputId}`"
+      :aria-describedby="`enter-note-for-${id}`"
       :aria-label="ariaLabel"
       :mask="mask"
       :placeholder="placeholder"
@@ -77,10 +76,10 @@ defineExpose({
     />
     <InputText
       v-else
-      :id="inputId"
+      :id="id"
       ref="inputRef"
       v-model="model"
-      :aria-describedby="`enter-note-for-${inputId}`"
+      :aria-describedby="`enter-note-for-${id}`"
       :aria-label="ariaLabel"
       :pt="{
         root: {

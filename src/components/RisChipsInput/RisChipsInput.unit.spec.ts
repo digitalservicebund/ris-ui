@@ -9,6 +9,7 @@ describe("RisChipsInput", () => {
     render(RisChipsInput, {
       props: {
         modelValue: ["banane", "apple"],
+        inputId: "custom-id",
       },
       global: { plugins: [PrimeVue] },
     });
@@ -17,9 +18,9 @@ describe("RisChipsInput", () => {
       screen.getByRole("listitem", { name: "banane" }),
     ).toBeInTheDocument();
     expect(screen.getByRole("listitem", { name: "apple" })).toBeInTheDocument();
-    expect(
-      screen.getByRole("textbox", { name: "Eintrag hinzufügen" }),
-    ).toBeInTheDocument();
+    const input = screen.getByRole("textbox", { name: "Eintrag hinzufügen" });
+    expect(input).toBeInTheDocument();
+    expect(input).toHaveAttribute("id", "custom-id");
   });
 
   it("adds a new chip", async () => {
@@ -156,5 +157,43 @@ describe("RisChipsInput", () => {
     });
 
     expect(screen.getByRole("group")).toHaveAttribute("aria-invalid", "true");
+  });
+
+  it("auto-generates a unique id when inputId is not provided", () => {
+    render(RisChipsInput, {
+      props: {
+        modelValue: [],
+      },
+      global: { plugins: [PrimeVue] },
+    });
+
+    const input = screen.getByRole("textbox", { name: "Eintrag hinzufügen" });
+
+    // expect a generated ID — we don’t know the exact string,
+    // but we can assert that it *exists* and is not empty
+    const idValue = input.getAttribute("id");
+    expect(idValue).toBeTruthy();
+    expect(idValue?.length).toBeGreaterThan(0);
+  });
+
+  it("applies unique IDs for the editable chip input", async () => {
+    const user = userEvent.setup();
+
+    render(RisChipsInput, {
+      props: {
+        modelValue: ["apple"],
+        inputId: "custom-id",
+      },
+      global: { plugins: [PrimeVue] },
+    });
+
+    await user.dblClick(
+      screen.getByRole("button", { name: "Eintrag bearbeiten" }),
+    );
+
+    const editInput = screen.getByDisplayValue("apple");
+    const id = editInput.getAttribute("id");
+
+    expect(id).toMatch(/^custom-id-/);
   });
 });
