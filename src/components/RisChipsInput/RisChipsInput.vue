@@ -55,11 +55,14 @@ const conditionalClasses = computed(() => ({
   "!shadow-red-800 !bg-red-200": props.hasError,
 }));
 
-const newChipId = computed(() => props.inputId || useId());
+const generatedId = useId();
 
-const chipItemId = computed(() =>
-  props.inputId ? `${props.inputId}-${useId()}` : useId(),
-);
+const newChipId = computed(() => props.inputId || generatedId);
+
+function getChipItemId(index: number) {
+  const baseId = props.inputId ?? generatedId;
+  return `${baseId}-chip-${index}`;
+}
 </script>
 
 <template>
@@ -80,7 +83,7 @@ const chipItemId = computed(() =>
       >
         <ChipInput
           v-if="editingChipIndex === i"
-          :id="chipItemId"
+          :id="getChipItemId(i)"
           v-model="model[i]"
           :mask="mask"
           should-focus-on-mount
