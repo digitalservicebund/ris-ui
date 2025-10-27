@@ -173,3 +173,29 @@ export const Invalid: StoryObj<typeof meta> = {
     </div>`,
   }),
 };
+
+export const Clearable: StoryObj<typeof meta> = {
+  render: (args) => ({
+    components: { PrimevueSelect },
+    setup() {
+      const selectedOption = ref();
+      const options = ref([
+        { name: "Text 1", code: "AB" },
+        { name: "Text 2", code: "CD" },
+        { name: "Text 3", code: "EF" },
+        { name: "Text 4", code: "GH" },
+        { name: "Text 5", code: "IJ" },
+      ]);
+      return { args, selectedOption, options };
+    },
+    template: html`<PrimevueSelect
+      v-bind="args"
+      v-model="selectedOption"
+      optionLabel="name"
+      optionValue="code"
+      show-clear
+      :options="options"
+      fluid
+    />`,
+  }),
+};

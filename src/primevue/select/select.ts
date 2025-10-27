@@ -44,7 +44,7 @@ const select: SelectPassThroughOptions = {
   },
 
   label: {
-    class: tw`line-clamp-1 outline-none`,
+    class: tw`line-clamp-1 flex-grow outline-none`,
   },
 
   overlay: {
