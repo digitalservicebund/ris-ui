@@ -1,5 +1,6 @@
 /// <reference types="vitest/config" />
 import vue from "@vitejs/plugin-vue";
+import { playwright } from "@vitest/browser-playwright";
 import { fileURLToPath, URL } from "node:url";
 import icons from "unplugin-icons/vite";
 import { defineConfig } from "vite";
@@ -42,8 +43,40 @@ export default defineConfig({
   },
 
   test: {
-    setupFiles: ["src/vitest-setup.ts"],
-    globals: true,
-    environment: "jsdom",
+    projects: [
+      {
+        extends: true,
+        test: {
+          name: "unit",
+          include: ["src/**/*.unit.spec.ts"],
+          setupFiles: ["src/vitest-unit-setup.ts"],
+          globals: true,
+          environment: "jsdom",
+        },
+      },
+      {
+        extends: true,
+        test: {
+          name: "browser",
+          include: ["src/**/*.browser.spec.ts"],
+          setupFiles: ["src/vitest-browser-setup.ts"],
+          globals: true,
+          browser: {
+            enabled: true,
+            provider: playwright(),
+            instances: [{ browser: "chromium" }],
+            expect: {
+              toMatchScreenshot: {
+                comparatorName: "pixelmatch",
+                comparatorOptions: {
+                  threshold: 0.2,
+                  allowedMismatchedPixelRatio: 0.01,
+                },
+              },
+            },
+          },
+        },
+      },
+    ],
   },
 });
