@@ -8,6 +8,7 @@ fileignoreconfig:
   - filename: lefthook.yml
     checksum: ceb00460bb36a9b13ccbbc927598aa8757913d04d518f5092a9aa6926261cdc3
   - filename: public/mockServiceWorker.js
-    checksum: 55df2e4f81c35b619331e38637be4be842f2adbf92105516678850f12f6eab51
+    allowed_patterns:
+      - INTEGRITY_CHECKSUM\ =\ \'[a-z0-9]{32}\'
   - filename: src/config/locale.ts
     checksum: bce8adac9f7e05e5ed3d339f9b9a9d8bd2234a4663ddb1eafd110127cbbe4d9b
