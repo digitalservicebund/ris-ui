@@ -4,6 +4,7 @@ import RisCopyableLabel from "./RisCopyableLabel";
 import RisExpandableText from "./RisExpandableText";
 import RisPaginator from "./RisPaginator";
 import RisChipsInput from "./RisChipsInput";
+import RisAutoCompleteMultiple from "./RisAutoCompleteMultiple";
 
 export {
   RisSingleAccordion,
@@ -12,4 +13,5 @@ export {
   RisCopyableLabel,
   RisPaginator,
   RisChipsInput,
+  RisAutoCompleteMultiple,
 };
