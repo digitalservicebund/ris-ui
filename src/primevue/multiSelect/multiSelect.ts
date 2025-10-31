@@ -51,6 +51,10 @@ const multiSelect: MultiSelectPassThroughOptions = {
     class: tw`flex flex-row`,
   },
 
+  label: {
+    class: tw`flex flex-row flex-wrap gap-y-8 py-4`,
+  },
+
   overlay: {
     class: tw`bg-white`,
   },
