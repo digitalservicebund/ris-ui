@@ -21,6 +21,7 @@ const meta: Meta<typeof RisAutoCompleteMultiple> = {
     loading: false,
     invalid: false,
     disabled: false,
+    disableDropdownTabNavigation: false,
   },
 
   parameters: {

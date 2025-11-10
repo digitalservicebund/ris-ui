@@ -4,6 +4,7 @@ import { ref } from "vue";
 import { describe, expect, it } from "vitest";
 import RisAutoCompleteMultiple from "./RisAutoCompleteMultiple.vue";
 import { PrimeVue } from "@primevue/core";
+import RisGhostButton from "../RisGhostButton/RisGhostButton.vue";
 
 const suggestions = [
   { id: "1", label: "Mars", secondaryLabel: "The red planet" },
@@ -31,6 +32,25 @@ describe("RisAutoCompleteMultiple", () => {
     expect(autoComplete.props("disabled")).toBe(true);
     expect(autoComplete.props("loading")).toBe(true);
     expect(autoComplete.props("invalid")).toBe(true);
+    const button = wrapper.findComponent(RisGhostButton);
+    expect(button.exists()).toBe(true);
+    expect(button.attributes("tabindex")).toBe("0");
+  });
+
+  it("renders dropdown button with tabindex=-1 when disableDropdownTabNavigation is true", () => {
+    const wrapper = mount(RisAutoCompleteMultiple, {
+      props: {
+        suggestions,
+        disableDropdownTabNavigation: true,
+      },
+      global: {
+        plugins: [PrimeVue],
+      },
+    });
+
+    const button = wrapper.findComponent(RisGhostButton);
+    expect(button.exists()).toBe(true);
+    expect(button.attributes("tabindex")).toBe("-1");
   });
 
   it("binds v-model correctly", async () => {

@@ -2,6 +2,8 @@
 import AutoComplete, { type AutoCompleteProps } from "primevue/autocomplete";
 import ProgressSpinner from "primevue/progressspinner";
 import { ref } from "vue";
+import RisGhostButton from "@/components/RisGhostButton/RisGhostButton.vue";
+import IconChevron from "~icons/mdi/chevron-down";
 
 export interface AutoCompleteMultipleSuggestion {
   id: string;
@@ -19,6 +21,7 @@ export type RisAutoCompleteMultipleProps = Pick<
   | "disabled"
 > & {
   suggestions: AutoCompleteMultipleSuggestion[];
+  disableDropdownTabNavigation?: boolean;
 };
 
 const props = defineProps<RisAutoCompleteMultipleProps>();
@@ -45,6 +48,16 @@ defineExpose({ autoCompleteRef });
   >
     <template #loader>
       <ProgressSpinner class="absolute inset-y-0 right-8 my-auto mr-1" />
+    </template>
+    <template #dropdown="slotProps">
+      <RisGhostButton
+        aria-label="Vorschläge anzeigen"
+        aria-haspopup="listbox"
+        :tabindex="props.disableDropdownTabNavigation ? -1 : 0"
+        @click="slotProps.toggleCallback"
+      >
+        <IconChevron />
+      </RisGhostButton>
     </template>
     <template #option="slotProps: { option: AutoCompleteMultipleSuggestion }">
       <div
