@@ -27,8 +27,6 @@ const activePanel = computed({
     activeModel.value = value === "0";
   },
 });
-
-const accordionHeaderClasses = tw`ris-label2-bold flex cursor-pointer flex-row items-center gap-8 text-blue-800`;
 </script>
 
 <template>
@@ -36,32 +34,28 @@ const accordionHeaderClasses = tw`ris-label2-bold flex cursor-pointer flex-row i
     v-model:value="activePanel"
     expand-icon="hidden"
     collapse-icon="hidden"
-    class="p"
   >
     <AccordionPanel value="0">
-      <AccordionHeader>
-        <div
-          v-if="activePanel === '0'"
-          :class="accordionHeaderClasses"
-          @mouseover="isHovered = true"
-          @mouseleave="isHovered = false"
-        >
+      <AccordionHeader
+        :pt="{
+          root: tw`ris-label2-bold flex cursor-pointer flex-row items-center gap-8 text-blue-800 outline-blue-800 focus-visible:outline-2 mb-6 outline-offset-2`,
+        }"
+        @mouseover="isHovered = true"
+        @mouseleave="isHovered = false"
+      >
+        <template v-if="activePanel === '0'">
           <MaterialSymbolsExpandCircleUpRounded v-if="isHovered" />
           <MaterialSymbolsExpandCircleUpOutlineRounded v-else />
           <div>{{ props.headerExpanded }}</div>
-        </div>
+        </template>
 
-        <div
-          v-else
-          :class="accordionHeaderClasses"
-          @mouseover="isHovered = true"
-          @mouseleave="isHovered = false"
-        >
+        <template v-else>
           <MaterialSymbolsExpandCircleDownRounded v-if="isHovered" />
           <MaterialSymbolsExpandCircleDownOutlineRounded v-else />
           <div>{{ props.headerCollapsed }}</div>
-        </div>
+        </template>
       </AccordionHeader>
+
       <AccordionContent>
         <slot />
       </AccordionContent>

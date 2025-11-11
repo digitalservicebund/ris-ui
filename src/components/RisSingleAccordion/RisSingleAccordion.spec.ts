@@ -19,7 +19,7 @@ describe("Accordion.vue", () => {
       },
     });
 
-    const header = wrapper.find(".p-accordionheader > div");
+    const header = wrapper.find(".p-accordionheader");
     await header.trigger("mouseover");
     expect(
       wrapper.findComponent(MaterialSymbolsExpandCircleDownRounded).exists(),
@@ -46,7 +46,7 @@ describe("Accordion.vue", () => {
       },
     });
 
-    const header = wrapper.find(".p-accordionheader > div");
+    const header = wrapper.find(".p-accordionheader");
     await header.trigger("mouseover");
     expect(
       wrapper.findComponent(MaterialSymbolsExpandCircleUpRounded).exists(),
@@ -76,7 +76,7 @@ describe("Accordion.vue", () => {
     expect(wrapper.text()).toContain("Collapsed Header");
 
     // Simulate opening the accordion
-    await wrapper.find(".p-accordionheader > div").trigger("click");
+    await wrapper.find(".p-accordionheader").trigger("click");
     await nextTick();
     // The v-model should be updated to true, and the header should change
 
@@ -86,7 +86,7 @@ describe("Accordion.vue", () => {
     expect(wrapper.text()).toContain("Expanded Header");
 
     // Simulate closing the accordion
-    await wrapper.find(".p-accordionheader > div").trigger("click");
+    await wrapper.find(".p-accordionheader").trigger("click");
     await nextTick();
 
     // The v-model should be updated back to false, and the header should change back
