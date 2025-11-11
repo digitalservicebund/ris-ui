@@ -29,6 +29,7 @@ export default defineConfig({
         "components/index": "src/components/index.ts",
       },
       cssFileName: "style",
+      formats: ["es"],
     },
     rollupOptions: {
       external: ["vue", "primevue"],
