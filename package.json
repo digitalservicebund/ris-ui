@@ -9,6 +9,18 @@
     "type": "git",
     "url": "git+https://github.com/digitalservicebund/ris-ui.git"
   },
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": "~24.11.0",
+      "onFail": "error"
+    },
+    "packageManager": {
+      "name": "npm",
+      "version": "~11.6.0",
+      "onFail": "error"
+    }
+  },
   "files": [
     "dist"
   ],
