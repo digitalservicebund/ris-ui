@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.ref == 'refs/heads/main' }}
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0
       - name: Detect secrets in incoming commits with Talisman
@@ -26,7 +26,7 @@ jobs:
       security-events: write # upload-sarif
     steps:
       - name: Checkout code
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: Run Trivy vulnerability scanner in repo mode
         uses: aquasecurity/trivy-action@b6643a29fecd7f34b3597bc6acb0a98b03d33ff8
         env:
@@ -59,7 +59,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: Setup Node
         uses: actions/setup-node@v6
         with:
@@ -86,7 +86,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: Setup Node
         uses: actions/setup-node@v6
         with:
@@ -122,7 +122,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: Setup Node
         uses: actions/setup-node@v6
         with:
