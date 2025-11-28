@@ -44,10 +44,8 @@
   },
   "scripts": {
     "storybook": "storybook dev -p 6006",
-    "prebuild": "npm run sync-fonts",
-    "build": "vite build && vue-tsc --build tsconfig.lib.json --force",
-    "prebuild:storybook": "npm run sync-fonts",
-    "build:storybook": "storybook build",
+    "build": "npm run sync-fonts && vite build && vue-tsc --build tsconfig.lib.json --force",
+    "build:storybook": "npm run sync-fonts && storybook build",
     "prettier:check": "prettier --check .",
     "prettier:fix": "prettier --write --ignore-unknown .",
     "eslint:check": "eslint --max-warnings=0 --no-warn-ignored",
