@@ -143,6 +143,26 @@
   }
 }
 
+@layer components {
+  /* Fix for TipTap (ProseMirror) List Indentation */
+  .ProseMirror ol {
+    list-style-type: decimal;
+    padding-left: 1.5rem; /* Equivalent to tailwind 'pl-6' */
+  }
+
+  .ProseMirror ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+  }
+
+  /* Add spacing for nested lists */
+  .ProseMirror li > ol,
+  .ProseMirror li > ul {
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+  }
+}
+
 /* Utilities */
 @utility ris-title-regular {
   font-size: 64px;
