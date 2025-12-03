@@ -29,7 +29,7 @@ const message: MessagePassThroughOptions = {
 
     const iconName = iconNames[severity];
 
-    const iconBg = tw`bg-[length:20px] bg-[16px_18px] bg-no-repeat pl-44`;
+    const iconBg = tw`bg-size-[20px] bg-position-[16px_18px] bg-no-repeat pl-44`;
 
     return {
       class: {
@@ -56,7 +56,7 @@ const message: MessagePassThroughOptions = {
 
   closeButton: ({ props }) => {
     // Base
-    const base = tw`mt-4 inline-flex h-20 w-20 flex-none items-center justify-center rounded-sm p-2 leading-none`;
+    const base = tw`mt-4 inline-flex h-20 w-20 flex-none items-center justify-center p-2 leading-none outline-offset-4 outline-blue-800 focus-visible:outline-4`;
 
     // Severity
     const severity = props.severity ?? "info";
