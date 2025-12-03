@@ -4,7 +4,7 @@ import { tw } from "@/lib/tags.ts";
 const button: ButtonPassThroughOptions = {
   root: ({ props, instance }) => {
     // Base
-    const base = tw`relative inline-flex max-w-full cursor-pointer items-center justify-center gap-8 text-center focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-blue-800 focus-visible:not-focus-visible:outline-none focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-blue-800 active:outline-none disabled:cursor-not-allowed disabled:outline-hidden`;
+    const base = tw`relative inline-flex max-w-full cursor-pointer items-center justify-center gap-8 text-center focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-blue-800 focus-visible:not-focus-visible:outline-none active:outline-none disabled:cursor-not-allowed disabled:outline-hidden`;
 
     // Rounded
     const rounded = tw`rounded-full`;

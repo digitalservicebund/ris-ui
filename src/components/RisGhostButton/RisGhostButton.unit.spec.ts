@@ -5,7 +5,9 @@ import RisGhostButton from "./RisGhostButton.vue";
 describe("RisGhostButton", () => {
   test("renders", () => {
     render(RisGhostButton, { slots: { default: "Click me" } });
-    expect(screen.getByRole("button", { name: "Click me" })).toBeInTheDocument();
+    expect(
+      screen.getByRole("button", { name: "Click me" }),
+    ).toBeInTheDocument();
   });
 
   test("applies focus styles when forceFocus is true", () => {

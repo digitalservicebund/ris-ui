@@ -62,7 +62,7 @@ const autocomplete: AutoCompletePassThroughOptions = {
   },
 
   option: {
-    class: tw`cursor-pointer border-l-4 border-transparent hover:bg-blue-200 hover:border-blue-600 data-[p-focused=true]:border-blue-600 data-[p-focused=true]:bg-blue-200`,
+    class: tw`cursor-pointer border-l-4 border-transparent hover:border-blue-600 hover:bg-blue-200 data-[p-focused=true]:border-blue-600 data-[p-focused=true]:bg-blue-200`,
   },
 
   optionGroup: {
