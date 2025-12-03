@@ -1,14 +1,12 @@
 import { mount } from "@vue/test-utils";
 import { expect, describe, it } from "vitest";
 import SingleAccordion from ".";
-import MaterialSymbolsExpandCircleDownRounded from "~icons/material-symbols/expand-circle-down-rounded";
 import MaterialSymbolsExpandCircleDownOutlineRounded from "~icons/material-symbols/expand-circle-down-outline-rounded";
-import MaterialSymbolsExpandCircleUpRounded from "~icons/material-symbols/expand-circle-up-rounded";
 import MaterialSymbolsExpandCircleUpOutlineRounded from "~icons/material-symbols/expand-circle-up-outline-rounded";
 import { nextTick, ref } from "vue";
 
 describe("Accordion.vue", () => {
-  it("changes icon from normal to filled on hover", async () => {
+  it("changes icon and header when collapsed", async () => {
     const wrapper = mount(SingleAccordion, {
       props: {
         headerCollapsed: "Show More",
@@ -20,11 +18,7 @@ describe("Accordion.vue", () => {
     });
 
     const header = wrapper.find(".p-accordionheader");
-    await header.trigger("mouseover");
-    expect(
-      wrapper.findComponent(MaterialSymbolsExpandCircleDownRounded).exists(),
-    ).toBe(true);
-    await header.trigger("mouseleave");
+
     expect(
       wrapper
         .findComponent(MaterialSymbolsExpandCircleDownOutlineRounded)
@@ -47,11 +41,7 @@ describe("Accordion.vue", () => {
     });
 
     const header = wrapper.find(".p-accordionheader");
-    await header.trigger("mouseover");
-    expect(
-      wrapper.findComponent(MaterialSymbolsExpandCircleUpRounded).exists(),
-    ).toBe(true);
-    await header.trigger("mouseleave");
+
     expect(
       wrapper
         .findComponent(MaterialSymbolsExpandCircleUpOutlineRounded)

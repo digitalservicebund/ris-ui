@@ -4,13 +4,9 @@ import Accordion from "primevue/accordion";
 import AccordionContent from "primevue/accordioncontent";
 import AccordionHeader from "primevue/accordionheader";
 import AccordionPanel from "primevue/accordionpanel";
-import { computed, ref } from "vue";
+import { computed } from "vue";
 import MaterialSymbolsExpandCircleDownOutlineRounded from "~icons/material-symbols/expand-circle-down-outline-rounded";
-import MaterialSymbolsExpandCircleDownRounded from "~icons/material-symbols/expand-circle-down-rounded";
 import MaterialSymbolsExpandCircleUpOutlineRounded from "~icons/material-symbols/expand-circle-up-outline-rounded";
-import MaterialSymbolsExpandCircleUpRounded from "~icons/material-symbols/expand-circle-up-rounded";
-
-const isHovered = ref(false);
 
 const props = defineProps<{
   headerCollapsed: string;
@@ -40,18 +36,14 @@ const activePanel = computed({
         :pt="{
           root: tw`ris-label2-bold flex cursor-pointer flex-row items-center gap-8 text-blue-800 outline-blue-800 focus-visible:outline-4 mb-6 outline-offset-4`,
         }"
-        @mouseover="isHovered = true"
-        @mouseleave="isHovered = false"
       >
         <template v-if="activePanel === '0'">
-          <MaterialSymbolsExpandCircleUpRounded v-if="isHovered" />
-          <MaterialSymbolsExpandCircleUpOutlineRounded v-else />
+          <MaterialSymbolsExpandCircleUpOutlineRounded />
           <div>{{ props.headerExpanded }}</div>
         </template>
 
         <template v-else>
-          <MaterialSymbolsExpandCircleDownRounded v-if="isHovered" />
-          <MaterialSymbolsExpandCircleDownOutlineRounded v-else />
+          <MaterialSymbolsExpandCircleDownOutlineRounded />
           <div>{{ props.headerCollapsed }}</div>
         </template>
       </AccordionHeader>
