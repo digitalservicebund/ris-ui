@@ -45,7 +45,7 @@ function handlePageChange(event: PageState) {
     >
       <div class="flex w-full items-center justify-between px-2 py-1">
         <Button
-          :class="{ invisible: page === 0 }"
+          :class="{ 'pointer-events-none opacity-0': page === 0 }"
           :aria-hidden="page === 0 ? 'true' : undefined"
           :tabindex="page === 0 ? -1 : undefined"
           :label="prevButtonLabel"
@@ -61,7 +61,7 @@ function handlePageChange(event: PageState) {
           {{ pageCount }}
         </div>
         <Button
-          :class="{ invisible: page + 1 === pageCount }"
+          :class="{ 'pointer-events-none opacity-0': page + 1 === pageCount }"
           :aria-hidden="page + 1 === pageCount ? 'true' : undefined"
           :tabindex="page + 1 === pageCount ? -1 : undefined"
           :label="nextButtonLabel"
