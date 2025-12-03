@@ -27,7 +27,7 @@ const dataTable: DataTablePassThroughOptions = {
 
   bodyRow: ({ context }: { context: DataTableContext }) => ({
     class: [
-      tw`focus:outline-4 focus:-outline-offset-4 focus:outline-blue-800 focus:not-focus-visible:outline-none focus-visible:outline-4 focus-visible:-outline-offset-4 focus-visible:outline-blue-800`,
+      tw`-outline-offset-4 outline-blue-800 focus-visible:outline-4`,
       {
         "bg-blue-300": context.selected,
         "hover:bg-blue-100": !context.selected,
