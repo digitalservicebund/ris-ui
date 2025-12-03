@@ -3,14 +3,18 @@ import { MenuPassThroughOptions } from "primevue/menu";
 
 const menu: MenuPassThroughOptions = {
   root: {
-    class: tw`ris-body2-regular bg-white shadow`,
+    class: tw`ris-body2-regular border border-gray-600 bg-white shadow`,
   },
+
   list: {
     class: tw`focus-visible:outline-none`,
   },
+
   item: ({ context }) => {
-    const base = tw`relative h-48 pr-12 pl-16 after:absolute after:right-16 after:-bottom-1 after:left-16 after:border-b after:border-gray-300 after:content-[''] last:after:border-b-0 hover:bg-gray-100`;
-    const focused = tw`bg-gray-200 hover:bg-gray-200`;
+    const base = tw`relative h-48 border-l-4 border-l-transparent pr-12 pl-16 after:absolute after:right-16 after:-bottom-1 after:left-12 after:border-b after:border-gray-300 after:content-[''] last:after:border-b-0 hover:border-l-blue-400 hover:bg-blue-100`;
+
+    const focused = tw`bg-blue-200 -outline-offset-4 outline-blue-800 not-hover:outline-4 hover:bg-blue-200`;
+
     return {
       class: {
         [base]: true,
