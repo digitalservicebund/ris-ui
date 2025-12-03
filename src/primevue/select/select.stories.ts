@@ -15,6 +15,7 @@ const meta: Meta<typeof PrimevueSelect> = {
     disabled: false,
     invalid: false,
     appendTo: "body",
+    checkmark: true,
   },
   argTypes: {
     appendTo: {

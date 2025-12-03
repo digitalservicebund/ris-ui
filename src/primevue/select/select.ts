@@ -66,19 +66,31 @@ const select: SelectPassThroughOptions = {
     class: tw`bg-white`,
   },
 
-  option: ({ context }) => {
+  option: ({ context, props }) => {
     // Base
     const base = tw`ris-body2-regular relative h-full min-h-48 w-full cursor-pointer px-16 py-12 after:absolute after:right-8 after:-bottom-1 after:left-8 after:border-b after:border-gray-300 after:content-[''] last:after:border-b-0 hover:bg-gray-100`;
 
     // States
     const focused = tw`bg-gray-100`;
 
+    // Checkmark
+    const withCheckmark = tw`flex items-center gap-16`;
+
     return {
       class: {
         [base]: true,
         [focused]: context.focused,
+        [withCheckmark]: props.checkmark,
       },
     };
+  },
+
+  optionCheckIcon: {
+    class: tw`order-1 text-blue-800`,
+  },
+
+  optionBlankIcon: {
+    class: tw`order-1`,
   },
 };
 
