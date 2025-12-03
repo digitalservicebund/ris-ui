@@ -9,7 +9,7 @@ const multiSelect: MultiSelectPassThroughOptions = {
     // States
     const normal = tw`cursor-pointer border-blue-800`;
 
-    const focused = tw`has-[:focus]:outline-4 has-[:focus]:-outline-offset-4 has-[:focus]:outline-blue-800`;
+    const focused = tw`has-focus-visible:outline-4 has-focus-visible:-outline-offset-4 has-focus-visible:outline-blue-800`;
 
     const hover = tw`hover:outline-4 hover:-outline-offset-4 hover:outline-blue-800`;
 
