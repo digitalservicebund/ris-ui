@@ -67,7 +67,7 @@ export const Popup: StoryObj<typeof meta> = {
       return { args, toggle, getIcon };
     },
     template: html`<div>
-      <PrimevueButton label="Aktionen" text @click="toggle">
+      <PrimevueButton label="Aktionen" @click="toggle" severity="secondary">
         <template #icon> <MdiDotsVertical /> </template></PrimevueButton
       ><PrimevueMenu :popup="true" v-bind="args" ref="menu"
         ><template #itemicon="{item}"
