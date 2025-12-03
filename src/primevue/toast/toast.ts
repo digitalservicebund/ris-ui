@@ -56,7 +56,7 @@ const toast: ToastPassThroughOptions = {
   },
 
   messageText: {
-    class: tw`flex-grow text-black`,
+    class: tw`grow text-black`,
   },
 
   summary: {
@@ -69,7 +69,7 @@ const toast: ToastPassThroughOptions = {
 
   closeButton: ({ props }) => {
     // Base
-    const base = tw`rounded-sm p-2`;
+    const base = tw`p-2 outline-offset-4 outline-blue-800 focus-visible:outline-4`;
 
     // Severity
     const severity = props.message?.severity ?? "info";
