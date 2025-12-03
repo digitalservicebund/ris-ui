@@ -46,7 +46,7 @@ export const WithButton: StoryObj<typeof meta> = {
       return { args };
     },
     template: html`<InputGroup>
-      <InputText v-bind="args" />
+      <InputText v-bind="args" type="search" />
       <InputGroupAddon>
         <PrimevueButton
           aria-label="Suchen"
