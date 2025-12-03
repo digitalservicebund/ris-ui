@@ -27,7 +27,7 @@ export const Default: Story = {
     setup() {
       const items = ref([
         { label: "", type: "home", route: "/" },
-        { label: "Gesetze & VerordnungenGesetze", route: "/laws" },
+        { label: "Gesetze & Verordnungen", route: "/laws" },
         { label: "BGB Bürgerliches Gesetzbuch", route: "/bgb" },
         { label: "Buch 2", route: "/book-2" },
         { label: "Abschnitt 3" },
