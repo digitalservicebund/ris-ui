@@ -4,12 +4,12 @@ import { SelectPassThroughOptions } from "primevue/select";
 const select: SelectPassThroughOptions = {
   root: ({ props, state }) => {
     // Base
-    const base = tw`ris-body2-regular [&+small]:ris-label3-regular relative inline-flex h-48 items-center justify-between border-2 bg-white py-4 pr-12 pl-16 [&+small]:mt-2 [&+small]:flex [&+small]:items-center [&+small]:gap-4 [&+small]:text-gray-900 [&[aria-invalid="true"]+small]:text-red-900`;
+    const base = tw`group ris-body2-regular [&+small]:ris-label3-regular relative inline-flex h-48 items-center justify-between border-2 bg-white py-4 pr-6 pl-16 [&+small]:mt-2 [&+small]:flex [&+small]:items-center [&+small]:gap-4 [&+small]:text-gray-900 [&[aria-invalid="true"]+small]:text-red-900`;
 
     // States
     const normal = tw`cursor-pointer border-blue-800`;
 
-    const focused = tw`has-[:focus]:outline-4 has-[:focus]:-outline-offset-4 has-[:focus]:outline-blue-800`;
+    const focused = tw`outline-4 -outline-offset-4 outline-blue-800`;
 
     const hover = tw`hover:outline-4 hover:-outline-offset-4 hover:outline-blue-800`;
 
@@ -24,7 +24,7 @@ const select: SelectPassThroughOptions = {
       class: {
         [base]: true,
         [normal]: !props.disabled,
-        [focused]: state.focused && !props.disabled,
+        [focused]: (state.focused || state.overlayVisible) && !props.disabled,
         [hover]: !props.disabled,
         [fluid]: !!props.fluid,
         [disabled]: props.disabled,
@@ -35,8 +35,23 @@ const select: SelectPassThroughOptions = {
     };
   },
 
-  dropdown: {
-    class: tw`pl-12`,
+  dropdown: ({ state, props }) => {
+    const base = tw`ml-8 p-10`;
+
+    const normal = tw`text-blue-800 group-hover:bg-blue-200`;
+
+    const focused = tw`bg-blue-800 text-white`;
+
+    const disabled = tw`text-blue-500`;
+
+    return {
+      class: {
+        [base]: true,
+        [normal]: !(state.focused || state.overlayVisible || props.disabled),
+        [focused]: (state.focused || state.overlayVisible) && !props.disabled,
+        [disabled]: props.disabled,
+      },
+    };
   },
 
   listContainer: {
@@ -44,7 +59,7 @@ const select: SelectPassThroughOptions = {
   },
 
   label: {
-    class: tw`line-clamp-1 flex-grow outline-none`,
+    class: tw`line-clamp-1 grow outline-none`,
   },
 
   overlay: {
@@ -53,7 +68,7 @@ const select: SelectPassThroughOptions = {
 
   option: ({ context }) => {
     // Base
-    const base = tw`ris-body2-regular relative h-full min-h-48 w-full cursor-pointer px-24 py-16 after:absolute after:right-8 after:-bottom-1 after:left-8 after:border-b after:border-gray-300 after:content-[''] last:after:border-b-0 hover:bg-gray-100`;
+    const base = tw`ris-body2-regular relative h-full min-h-48 w-full cursor-pointer px-16 py-12 after:absolute after:right-8 after:-bottom-1 after:left-8 after:border-b after:border-gray-300 after:content-[''] last:after:border-b-0 hover:bg-gray-100`;
 
     // States
     const focused = tw`bg-gray-100`;
