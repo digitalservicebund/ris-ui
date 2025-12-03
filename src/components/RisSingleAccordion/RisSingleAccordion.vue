@@ -38,7 +38,7 @@ const activePanel = computed({
     <AccordionPanel value="0">
       <AccordionHeader
         :pt="{
-          root: tw`ris-label2-bold flex cursor-pointer flex-row items-center gap-8 text-blue-800 outline-blue-800 focus-visible:outline-2 mb-6 outline-offset-2`,
+          root: tw`ris-label2-bold flex cursor-pointer flex-row items-center gap-8 text-blue-800 outline-blue-800 focus-visible:outline-4 mb-6 outline-offset-4`,
         }"
         @mouseover="isHovered = true"
         @mouseleave="isHovered = false"
