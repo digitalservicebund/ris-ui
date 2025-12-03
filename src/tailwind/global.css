@@ -350,6 +350,6 @@
 .ris-link2-bold:focus-visible,
 .ris-link3-regular:focus-visible,
 .ris-link3-bold:focus-visible {
-  outline: var(--color-blue-800) solid 2px;
+  outline: var(--color-blue-800) solid 4px;
   outline-offset: 4px;
 }
