@@ -82,6 +82,8 @@ const onClear = () => onUpdateInnerValue("");
 
 const autoCompleteRef = ref<typeof AutoComplete | null>(null);
 defineExpose({ autoCompleteRef });
+
+const dropdownButtonFocus = ref(false);
 </script>
 
 <template>
@@ -113,6 +115,8 @@ defineExpose({ autoCompleteRef });
     data-key="value"
     @update:model-value="onUpdateInnerValue"
     @option-select="(e) => (model = e.value.id)"
+    @show="dropdownButtonFocus = true"
+    @hide="dropdownButtonFocus = false"
   >
     <template #loader>
       <ProgressSpinner class="absolute inset-y-0 right-8 my-auto mr-1" />
@@ -121,9 +125,11 @@ defineExpose({ autoCompleteRef });
       <RisGhostButton v-if="innerValue" aria-label="Entfernen" @click="onClear">
         <IcOutlineClear />
       </RisGhostButton>
+
       <RisGhostButton
         aria-label="Vorschläge anzeigen"
         aria-haspopup="listbox"
+        :force-focus="dropdownButtonFocus"
         @click="slotProps.toggleCallback"
       >
         <IconChevron />
