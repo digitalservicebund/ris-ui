@@ -4,7 +4,7 @@ import { tw } from "@/lib/tags.ts";
 const button: ButtonPassThroughOptions = {
   root: ({ props, instance }) => {
     // Base
-    const base = tw`relative inline-flex max-w-full cursor-pointer items-center justify-center gap-8 text-center focus:outline-4 focus:outline-offset-4 focus:outline-blue-800 focus:not-focus-visible:outline-none focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-blue-800 active:outline-none disabled:cursor-not-allowed disabled:outline-hidden`;
+    const base = tw`relative inline-flex max-w-full cursor-pointer items-center justify-center gap-8 text-center focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-blue-800 focus-visible:not-focus-visible:outline-none focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-blue-800 active:outline-none disabled:cursor-not-allowed disabled:outline-hidden`;
 
     // Rounded
     const rounded = tw`rounded-full`;
@@ -14,15 +14,15 @@ const button: ButtonPassThroughOptions = {
 
     const primary = tw`bg-blue-800 text-white hover:bg-blue-700 active:bg-blue-500 active:text-blue-800 disabled:bg-gray-400 disabled:text-gray-600`;
 
-    const secondary = tw`border-2 border-blue-800 bg-white text-blue-800 hover:bg-gray-200 focus:bg-gray-200 active:border-white active:bg-white disabled:border-blue-500 disabled:text-blue-500 disabled:hover:bg-white`;
+    const secondary = tw`border-2 border-blue-800 bg-white text-blue-800 hover:bg-gray-200 focus-visible:bg-gray-200 active:border-white active:bg-white disabled:border-blue-500 disabled:text-blue-500 disabled:hover:bg-white`;
 
-    const danger = tw`border-2 border-red-800 bg-white text-red-800 hover:bg-gray-200 focus:bg-gray-200 focus:outline-red-800 active:border-white active:bg-white disabled:border-red-500 disabled:text-red-500 disabled:hover:bg-white`;
+    const danger = tw`border-2 border-red-800 bg-white text-red-800 hover:bg-gray-200 focus-visible:bg-gray-200 focus-visible:outline-red-800 active:border-white active:bg-white disabled:border-red-500 disabled:text-red-500 disabled:hover:bg-white`;
 
-    const info = tw`border border-blue-500 bg-white font-normal text-blue-800 hover:bg-gray-200 focus:bg-gray-200 active:border-white active:bg-white disabled:border-blue-500 disabled:text-blue-500 disabled:hover:bg-white`;
+    const info = tw`border border-blue-500 bg-white font-normal text-blue-800 hover:bg-gray-200 focus-visible:bg-gray-200 active:border-white active:bg-white disabled:border-blue-500 disabled:text-blue-500 disabled:hover:bg-white`;
 
     // Text
     // This is the "Ghost" variant of the button
-    const primaryText = tw`border-2 border-transparent bg-transparent text-blue-800 underline hover:border-gray-500 hover:bg-white focus:border-gray-500 active:border-white active:bg-white disabled:bg-transparent disabled:text-gray-500`;
+    const primaryText = tw`border-2 border-transparent bg-transparent text-blue-800 underline hover:border-gray-500 hover:bg-white focus-visible:border-gray-500 active:border-white active:bg-white disabled:bg-transparent disabled:text-gray-500`;
 
     // Sizes
     const size = props.size ?? "normal";
