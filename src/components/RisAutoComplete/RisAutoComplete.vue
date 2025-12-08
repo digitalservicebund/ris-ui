@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import IconChevron from "~icons/mdi/chevron-down";
-import IcOutlineClear from "~icons/ic/outline-clear?height=16";
+import MaterialSymbolsCloseSmall from "~icons/material-symbols/close-small";
 import AutoComplete, { type AutoCompleteProps } from "primevue/autocomplete";
 import RisGhostButton from "@/components/RisGhostButton/RisGhostButton.vue";
 import ProgressSpinner from "primevue/progressspinner";
@@ -123,7 +123,7 @@ const dropdownButtonFocus = ref(false);
     </template>
     <template #dropdown="slotProps">
       <RisGhostButton v-if="innerValue" aria-label="Entfernen" @click="onClear">
-        <IcOutlineClear />
+        <MaterialSymbolsCloseSmall />
       </RisGhostButton>
 
       <RisGhostButton
