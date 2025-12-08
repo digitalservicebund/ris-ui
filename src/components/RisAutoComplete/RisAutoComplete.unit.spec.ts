@@ -2,7 +2,7 @@ import { describe, it, expect } from "vitest";
 import { mount, shallowMount } from "@vue/test-utils";
 
 import { nextTick } from "vue";
-import AutoComplete, { type Props } from "./RisAutoComplete.vue";
+import AutoComplete, { type RisAutoCompleteProps } from "./RisAutoComplete.vue";
 import PrimeVue from "primevue/config";
 import ProgressSpinner from "primevue/progressspinner";
 import _ from "lodash";
@@ -59,7 +59,7 @@ describe("AutoComplete", () => {
   });
 
   it("passes props correctly", async () => {
-    const props: Required<Props> = {
+    const props: Required<RisAutoCompleteProps> = {
       suggestions: [{ id: "1", label: "Option 1" }],
       typeahead: false,
       dropdownMode: "current",

@@ -1,6 +1,6 @@
 import { html } from "@/lib/tags";
 import { Meta, StoryObj } from "@storybook/vue3-vite";
-import RisExpandableText from ".";
+import RisExpandableText from "./RisExpandableText.vue";
 
 const meta: Meta<typeof RisExpandableText> = {
   component: RisExpandableText,

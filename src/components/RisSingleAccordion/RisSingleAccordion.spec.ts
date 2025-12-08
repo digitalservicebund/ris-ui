@@ -1,13 +1,13 @@
 import { mount } from "@vue/test-utils";
 import { expect, describe, it } from "vitest";
-import SingleAccordion from ".";
+import RisSingleAccordion from "./RisSingleAccordion.vue";
 import MaterialSymbolsExpandCircleDownOutlineRounded from "~icons/material-symbols/expand-circle-down-outline-rounded";
 import MaterialSymbolsExpandCircleUpOutlineRounded from "~icons/material-symbols/expand-circle-up-outline-rounded";
 import { nextTick, ref } from "vue";
 
 describe("Accordion.vue", () => {
   it("changes icon and header when collapsed", async () => {
-    const wrapper = mount(SingleAccordion, {
+    const wrapper = mount(RisSingleAccordion, {
       props: {
         headerCollapsed: "Show More",
         headerExpanded: "Show Less",
@@ -29,7 +29,7 @@ describe("Accordion.vue", () => {
   });
 
   it("changes icon and header when expanded", async () => {
-    const wrapper = mount(SingleAccordion, {
+    const wrapper = mount(RisSingleAccordion, {
       props: {
         headerCollapsed: "Show More",
         headerExpanded: "Show Less",
@@ -52,7 +52,7 @@ describe("Accordion.vue", () => {
 
   it("updates v-model when accordion is opened or closed", async () => {
     const modelValue = ref(false);
-    const wrapper = mount(SingleAccordion, {
+    const wrapper = mount(RisSingleAccordion, {
       props: {
         modelValue: modelValue.value,
         "onUpdate:modelValue": (e: boolean) => (modelValue.value = e),
@@ -88,7 +88,7 @@ describe("Accordion.vue", () => {
 
   it("responds to external v-model changes", async () => {
     const modelValue = ref(false);
-    const wrapper = mount(SingleAccordion, {
+    const wrapper = mount(RisSingleAccordion, {
       props: {
         modelValue: modelValue.value,
         "onUpdate:modelValue": (e: boolean) => (modelValue.value = e),

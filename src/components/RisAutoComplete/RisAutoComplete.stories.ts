@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from "@storybook/vue3-vite";
 import RisAutoComplete, {
   AutoCompleteSuggestion,
-  Props,
+  RisAutoCompleteProps,
 } from "./RisAutoComplete.vue";
 import { html } from "@/lib/tags.ts";
 import { ref } from "vue";
@@ -76,7 +76,9 @@ const getCompletions = async (query: string) => {
   return await (await fetch(`/suggestions?q=${query}`)).json();
 };
 
-function commonSetup(args: Readonly<Props & { modelValue?: string }>) {
+function commonSetup(
+  args: Readonly<RisAutoCompleteProps & { modelValue?: string }>,
+) {
   const value = ref(args.modelValue);
   const suggestions = ref<AutoCompleteSuggestion[]>([]);
 

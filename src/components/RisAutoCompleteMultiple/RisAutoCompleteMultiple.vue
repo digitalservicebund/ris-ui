@@ -9,7 +9,7 @@ export interface AutoCompleteMultipleSuggestion {
   secondaryLabel?: string;
 }
 
-export type Props = Pick<
+export type RisAutoCompleteMultipleProps = Pick<
   AutoCompleteProps,
   | "ariaLabel"
   | "ariaLabelledby"
@@ -21,7 +21,7 @@ export type Props = Pick<
   suggestions: AutoCompleteMultipleSuggestion[];
 };
 
-const props = defineProps<Props>();
+const props = defineProps<RisAutoCompleteMultipleProps>();
 const model = defineModel<AutoCompleteMultipleSuggestion[]>();
 
 const autoCompleteRef = ref<typeof AutoComplete | null>(null);
