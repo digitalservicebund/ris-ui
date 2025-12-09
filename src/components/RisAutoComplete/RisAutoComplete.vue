@@ -18,7 +18,7 @@ even though they are only passed through.
 Ideally, they would be passed on using v-bind="mergeProps($attrs, props)" instead of being declared one-by-one,
 but using this approach broke the forwarding of emits.
 */
-export type Props = Pick<
+export type RisAutoCompleteProps = Pick<
   AutoCompleteProps,
   | "dropdown"
   | "ariaLabel"
@@ -43,7 +43,7 @@ export type Props = Pick<
   initialLabel?: string;
 };
 
-const props = defineProps<Props>();
+const props = defineProps<RisAutoCompleteProps>();
 const model = defineModel<string>();
 
 const isActiveOption = (option: AutoCompleteSuggestion) => {

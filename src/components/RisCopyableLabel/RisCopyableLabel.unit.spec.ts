@@ -1,7 +1,7 @@
 import { userEvent } from "@testing-library/user-event";
 import { render, screen } from "@testing-library/vue";
 import { describe, expect, test, vi } from "vitest";
-import RisCopyableLabel from ".";
+import RisCopyableLabel from "./RisCopyableLabel.vue";
 
 describe("RisCopyableLabel", () => {
   test("renders", () => {

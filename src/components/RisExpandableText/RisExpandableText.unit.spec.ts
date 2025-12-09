@@ -1,7 +1,7 @@
 import { userEvent } from "@testing-library/user-event";
 import { render, screen } from "@testing-library/vue";
 import { describe, expect, test, vi } from "vitest";
-import RisExpandableText from ".";
+import RisExpandableText from "./RisExpandableText.vue";
 
 describe("RisExpandableText", () => {
   test("renders the text", () => {

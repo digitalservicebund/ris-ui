@@ -6,7 +6,7 @@ import { http, HttpResponse } from "msw";
 import RisAutoCompleteMultiple from "./RisAutoCompleteMultiple.vue";
 import {
   AutoCompleteMultipleSuggestion,
-  Props,
+  RisAutoCompleteMultipleProps,
 } from "./RisAutoCompleteMultiple.vue";
 
 const meta: Meta<typeof RisAutoCompleteMultiple> = {
@@ -57,7 +57,11 @@ const getCompletions = async (query: string) => {
 };
 
 function commonSetup(
-  args: Readonly<Props & { modelValue?: AutoCompleteMultipleSuggestion[] }>,
+  args: Readonly<
+    RisAutoCompleteMultipleProps & {
+      modelValue?: AutoCompleteMultipleSuggestion[];
+    }
+  >,
 ) {
   const selectedItems = ref(args.modelValue);
   const suggestions = ref<AutoCompleteMultipleSuggestion[]>([]);

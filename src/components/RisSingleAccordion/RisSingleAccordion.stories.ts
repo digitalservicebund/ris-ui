@@ -1,7 +1,7 @@
-import { Meta, StoryObj } from "@storybook/vue3-vite";
-import RisSingleAccordion from ".";
 import { html } from "@/lib/tags.ts";
+import { Meta, StoryObj } from "@storybook/vue3-vite";
 import { ref } from "vue";
+import RisSingleAccordion from "./RisSingleAccordion.vue";
 
 const meta: Meta<typeof RisSingleAccordion> = {
   component: RisSingleAccordion,
