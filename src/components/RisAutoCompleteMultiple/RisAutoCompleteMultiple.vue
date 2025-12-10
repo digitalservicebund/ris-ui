@@ -96,7 +96,7 @@ function isSelected(id: string): boolean {
           :model-value="isSelected(slotProps.option.id)"
           :binary="true"
           :tabindex="-1"
-          :form-control="{ novalidate: true }"
+          readonly
         >
         </Checkbox>
         <div class="flex flex-col justify-center">
