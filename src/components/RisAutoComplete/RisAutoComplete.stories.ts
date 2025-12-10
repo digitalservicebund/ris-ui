@@ -96,7 +96,7 @@ export const Default: Story = {
       return commonSetup(args);
     },
     template: html`
-      <div class="min-h-[300px]">
+      <div class="min-h-320">
         <RisAutoComplete
           v-bind="args"
           v-model="value"
@@ -121,7 +121,7 @@ export const PrePopulated: Story = {
       return commonSetup(args);
     },
     template: html`
-      <div class="min-h-[300px]">
+      <div class="min-h-320">
         <RisAutoComplete
           v-model="value"
           v-bind="args"
@@ -146,7 +146,7 @@ export const Invalid: Story = {
       return commonSetup(args);
     },
     template: html`
-      <div class="min-h-[300px]">
+      <div class="min-h-320">
         <RisAutoComplete
           v-model="value"
           v-bind="args"
@@ -171,12 +171,12 @@ export const AppendedToBody: Story = {
     },
     template: html`
       <div
-        style="height: 100px; padding: 20px; background: #f0f0f0; overflow: auto;"
+        style="height: 6.25rem; padding: 1.25rem; background: #f0f0f0; overflow: auto;"
       >
         This box has overflow: auto, which would normally clip the dropdown.
         <br />
         Scroll the box and then open the dropdown below.
-        <div style="height: 100px;"></div>
+        <div style="height: 6.25rem;"></div>
         <RisAutoComplete
           v-bind="args"
           v-model="value"
@@ -185,7 +185,7 @@ export const AppendedToBody: Story = {
         />
       </div>
       <div v-if="value">Selected ID: {{value}}</div>
-      <div style="height: 300px;">Space below the component.</div>
+      <div style="height: 18.75rem;">Space below the component.</div>
     `,
   }),
 };

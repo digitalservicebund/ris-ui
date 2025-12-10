@@ -146,134 +146,134 @@
 
 /* Utilities */
 @utility ris-title-regular {
-  font-size: 64px;
+  font-size: 4rem;
   font-weight: normal;
   line-height: 1.1875;
 }
 
 @utility ris-heading1-regular {
-  font-size: 48px;
+  font-size: 3rem;
   font-weight: normal;
   line-height: 1.2;
 }
 
 @utility ris-heading1-bold {
-  font-size: 48px;
+  font-size: 3rem;
   font-weight: bold;
   line-height: 1.2;
 }
 
 @utility ris-heading2-regular {
-  font-size: 32px;
+  font-size: 2rem;
   font-weight: normal;
   line-height: 1.1875;
 }
 
 @utility ris-heading2-bold {
-  font-size: 32px;
+  font-size: 2rem;
   font-weight: bold;
   line-height: 1.1875;
 }
 
 @utility ris-heading3-regular {
-  font-size: 26px;
+  font-size: 1.625rem;
   font-weight: normal;
   line-height: 1.23;
 }
 
 @utility ris-heading3-bold {
-  font-size: 26px;
+  font-size: 1.625rem;
   font-weight: bold;
   line-height: 1.23;
 }
 
 @utility ris-subhead-regular {
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: normal;
   line-height: 1.5;
 }
 
 @utility ris-subhead-bold {
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: bold;
   line-height: 1.5;
 }
 
 @utility ris-body1-regular {
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: normal;
   line-height: 1.5;
 }
 
 @utility ris-body1-bold {
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: bold;
   line-height: 1.5;
 }
 
 @utility ris-body2-regular {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: normal;
   line-height: 1.5;
 }
 
 @utility ris-body2-bold {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: bold;
   line-height: 1.5;
 }
 
 @utility ris-body3-regular {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: normal;
   line-height: 1.5;
 }
 
 @utility ris-body3-bold {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: bold;
   line-height: 1.5;
 }
 
 @utility ris-label1-regular {
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: normal;
   line-height: 1.25;
 }
 
 @utility ris-label1-bold {
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: bold;
   line-height: 1.25;
 }
 
 @utility ris-label2-regular {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: normal;
   line-height: 1.25;
 }
 
 @utility ris-label2-bold {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: bold;
   line-height: 1.25;
 }
 
 @utility ris-label3-regular {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: normal;
   line-height: 1.25;
 }
 
 @utility ris-label3-bold {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: bold;
   line-height: 1.25;
 }
 
 @utility ris-link1-regular {
   color: var(--color-blue-800);
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: normal;
   line-height: 1.5;
   text-decoration: underline;
@@ -282,7 +282,7 @@
 
 @utility ris-link1-bold {
   color: var(--color-blue-800);
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: bold;
   line-height: 1.5;
   text-decoration: underline;
@@ -291,7 +291,7 @@
 
 @utility ris-link2-regular {
   color: var(--color-blue-800);
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: normal;
   line-height: 1.5;
   text-decoration: underline;
@@ -300,7 +300,7 @@
 
 @utility ris-link2-bold {
   color: var(--color-blue-800);
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: bold;
   line-height: 1.5;
   text-decoration: underline;
@@ -309,7 +309,7 @@
 
 @utility ris-link3-regular {
   color: var(--color-blue-800);
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: normal;
   line-height: 1.5;
   text-decoration: underline;
@@ -318,7 +318,7 @@
 
 @utility ris-link3-bold {
   color: var(--color-blue-800);
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: bold;
   line-height: 1.5;
   text-decoration: underline;

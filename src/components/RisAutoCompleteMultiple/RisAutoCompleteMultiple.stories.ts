@@ -78,7 +78,7 @@ export const Default: Story = {
       return commonSetup(args);
     },
     template: html`
-      <div class="min-h-[300px]">
+      <div class="min-h-320">
         <RisAutoCompleteMultiple
           v-bind="args"
           v-model="selectedItems"
