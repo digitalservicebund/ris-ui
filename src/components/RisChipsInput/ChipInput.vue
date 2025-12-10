@@ -93,7 +93,7 @@ defineExpose({
       @keydown.enter.stop.prevent="$emit('complete')"
     />
     <span v-if="isInputFocused" class="ml-6 text-gray-900">
-      <IconSubdirectoryArrowLeft height="16px" width="16px" />
+      <IconSubdirectoryArrowLeft height="1rem" width="1rem" />
     </span>
   </span>
 </template>

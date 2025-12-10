@@ -56,7 +56,7 @@ export const Vertical: StoryObj<typeof meta> = {
       return { args };
     },
     template: html`
-      <Splitter class="h-screen min-h-[500px] w-full" v-bind="args">
+      <Splitter class="h-screen min-h-[32rem] w-full" v-bind="args">
         <SplitterPanel
           class="flex items-center justify-center"
           :size="50"
@@ -85,7 +85,7 @@ export const Nested: StoryObj<typeof meta> = {
       return { args };
     },
     template: html`
-      <Splitter class="h-screen min-h-[500px] w-full" v-bind="args">
+      <Splitter class="h-screen min-h-[32rem] w-full" v-bind="args">
         <!-- First panel (Single) -->
         <SplitterPanel
           class="flex items-center justify-center"

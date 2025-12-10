@@ -13,7 +13,7 @@ const inputText: InputTextPassThroughOptions = {
     // Integration for primevue/password
     // This is styled here rather than in the password component because it
     // makes accessing the placeholder easier
-    const password = tw`[[type=password]]:w-full [&[type=password]:not(:placeholder-shown)]:text-[28px] [&[type=password]:not(:placeholder-shown)]:tracking-[4px]`;
+    const password = tw`[[type=password]]:w-full [&[type=password]:not(:placeholder-shown)]:text-[1.75rem] [&[type=password]:not(:placeholder-shown)]:tracking-[0.25rem]`;
 
     // Integration for primevue/fluid
     const fluid = tw`w-full`;

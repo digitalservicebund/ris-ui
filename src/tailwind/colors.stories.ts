@@ -87,7 +87,7 @@ const tableRows = colors
         <td class="border border-gray-300 px-16 py-8">${color}</td>
         <td class="border border-gray-300 px-16 py-8">
           <div
-            style="background-color: var(--color-${color}); width: 32px; height: 32px; border-radius: 50%;"
+            style="background-color: var(--color-${color}); width: 2rem; height: 2rem; border-radius: 50%;"
           ></div>
         </td>
       </tr>
