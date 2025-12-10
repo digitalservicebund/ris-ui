@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { computed, ref, useId } from "vue";
-import IconCancel from "~icons/ic/baseline-cancel";
+import IconCancel from "~icons/material-symbols/cancel-outline";
 import ChipInput from "./ChipInput.vue";
 
 const props = defineProps<{
