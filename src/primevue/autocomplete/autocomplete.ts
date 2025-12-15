@@ -5,13 +5,13 @@ const fluid = tw`w-full`;
 
 const autocomplete: AutoCompletePassThroughOptions = {
   root: ({ props, state }) => {
-    const base = tw`ris-body2-regular flex min-h-48 border-2 bg-white py-4 pr-4 pl-16 placeholder:text-gray-800`;
+    const base = tw`ris-body2-regular flex min-h-48 border-2 bg-white py-4 pr-4 pl-16 -outline-offset-4 outline-blue-800 placeholder:text-gray-800 has-focus-visible:outline-4`;
 
     const normal = tw`cursor-pointer border-blue-800`;
 
-    const focused = tw`outline-4 -outline-offset-4 outline-blue-800`;
+    const focused = tw`outline-4`;
 
-    const hover = tw`hover:outline-4 hover:-outline-offset-4 hover:outline-blue-800`;
+    const hover = tw`hover:outline-4`;
 
     const invalid = tw`aria-[invalid]:border-red-800 aria-[invalid]:bg-red-200 aria-[invalid]:outline-red-800 aria-[invalid]:disabled:outline-hidden`;
 
