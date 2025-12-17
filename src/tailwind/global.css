@@ -277,7 +277,16 @@
   font-weight: normal;
   line-height: 1.5;
   text-decoration: underline;
-  text-underline-offset: 3px;
+  text-underline-offset: 0.1875rem;
+
+  &:hover {
+    text-decoration-thickness: 0.1875rem;
+  }
+
+  &:focus-visible {
+    outline: var(--color-blue-800) solid 4px;
+    outline-offset: 4px;
+  }
 }
 
 @utility ris-link1-bold {
@@ -286,7 +295,16 @@
   font-weight: bold;
   line-height: 1.5;
   text-decoration: underline;
-  text-underline-offset: 3px;
+  text-underline-offset: 0.1875rem;
+
+  &:hover {
+    text-decoration-thickness: 0.1875rem;
+  }
+
+  &:focus-visible {
+    outline: var(--color-blue-800) solid 4px;
+    outline-offset: 4px;
+  }
 }
 
 @utility ris-link2-regular {
@@ -295,7 +313,16 @@
   font-weight: normal;
   line-height: 1.5;
   text-decoration: underline;
-  text-underline-offset: 2px;
+  text-underline-offset: 0.125rem;
+
+  &:hover {
+    text-decoration-thickness: 0.125rem;
+  }
+
+  &:focus-visible {
+    outline: var(--color-blue-800) solid 4px;
+    outline-offset: 4px;
+  }
 }
 
 @utility ris-link2-bold {
@@ -304,7 +331,16 @@
   font-weight: bold;
   line-height: 1.5;
   text-decoration: underline;
-  text-underline-offset: 2px;
+  text-underline-offset: 0.125rem;
+
+  &:hover {
+    text-decoration-thickness: 0.125rem;
+  }
+
+  &:focus-visible {
+    outline: var(--color-blue-800) solid 4px;
+    outline-offset: 4px;
+  }
 }
 
 @utility ris-link3-regular {
@@ -313,7 +349,16 @@
   font-weight: normal;
   line-height: 1.5;
   text-decoration: underline;
-  text-underline-offset: 2px;
+  text-underline-offset: 0.125rem;
+
+  &:hover {
+    text-decoration-thickness: 0.125rem;
+  }
+
+  &:focus-visible {
+    outline: var(--color-blue-800) solid 4px;
+    outline-offset: 4px;
+  }
 }
 
 @utility ris-link3-bold {
@@ -322,34 +367,14 @@
   font-weight: bold;
   line-height: 1.5;
   text-decoration: underline;
-  text-underline-offset: 2px;
-}
+  text-underline-offset: 0.125rem;
 
-/* Utility pseudo-classes */
+  &:hover {
+    text-decoration-thickness: 0.125rem;
+  }
 
-/*
-  These styles might be written more concisely using @apply directives.
-  However, using @apply inside @utility statements silently breaks class name generation
-  as of Tailwind v4.0.17.
- */
-.ris-link1-regular:hover,
-.ris-link1-bold:hover {
-  text-decoration-thickness: 3px;
-}
-
-.ris-link2-regular:hover,
-.ris-link2-bold:hover,
-.ris-link3-regular:hover,
-.ris-link3-bold:hover {
-  text-decoration-thickness: 2px;
-}
-
-.ris-link1-regular:focus-visible,
-.ris-link1-bold:focus-visible,
-.ris-link2-regular:focus-visible,
-.ris-link2-bold:focus-visible,
-.ris-link3-regular:focus-visible,
-.ris-link3-bold:focus-visible {
-  outline: var(--color-blue-800) solid 4px;
-  outline-offset: 4px;
+  &:focus-visible {
+    outline: var(--color-blue-800) solid 4px;
+    outline-offset: 4px;
+  }
 }
