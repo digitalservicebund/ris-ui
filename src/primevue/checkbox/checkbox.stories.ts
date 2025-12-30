@@ -13,18 +13,21 @@ const meta: Meta<typeof Checkbox> = {
     disabled: false,
     invalid: false,
     indeterminate: false,
-    size: undefined,
+    size: "small",
   },
 
   argTypes: {
-    size: { control: "select", options: [undefined, "large"] },
+    size: {
+      control: "select",
+      options: ["small", "large"],
+    },
   },
 };
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
+export const Small: Story = {
   render: (args) => ({
     components: { Checkbox },
     setup() {
@@ -36,18 +39,16 @@ export const Default: Story = {
 };
 
 export const Large: Story = {
+  args: {
+    size: "large",
+  },
   render: (args) => ({
     components: { Checkbox },
     setup() {
       const checked = ref(true);
       return { args, checked };
     },
-    template: html`<Checkbox
-      binary
-      v-bind="args"
-      size="large"
-      v-model="checked"
-    />`,
+    template: html`<Checkbox binary v-bind="args" v-model="checked" />`,
   }),
 };
 
@@ -59,14 +60,20 @@ export const WithLabel: Story = {
       return { args, checked };
     },
     template: html`
-      <div class="flex items-center">
-        <Checkbox
-          input-id="checkbox-with-label"
-          binary
-          v-bind="args"
-          v-model="checked"
-        />
-        <label for="checkbox-with-label">Checkbox with label</label>
+      <div class="flex flex-col gap-24">
+        <div class="flex items-center">
+          <Checkbox input-id="checkbox-with-label" binary v-model="checked" />
+          <label for="checkbox-with-label">Checkbox with label</label>
+        </div>
+        <div class="flex items-center">
+          <Checkbox
+            input-id="checkbox-with-label-large"
+            binary
+            size="large"
+            v-model="checked"
+          />
+          <label for="checkbox-with-label-large">Checkbox with label</label>
+        </div>
       </div>
     `,
   }),
@@ -76,7 +83,6 @@ export const WithErrorMessage: Story = {
   args: {
     invalid: true,
   },
-
   render: (args) => ({
     components: { Checkbox },
     setup() {
@@ -84,16 +90,18 @@ export const WithErrorMessage: Story = {
       return { args, checked };
     },
     template: html`
-      <div class="mb-4 flex items-center">
-        <Checkbox
-          input-id="checkbox-with-error"
-          binary
-          v-bind="args"
-          v-model="checked"
-        />
-        <label for="checkbox-with-error">Checkbox with label</label>
+      <div>
+        <div class="mb-4 flex items-center">
+          <Checkbox
+            input-id="checkbox-with-error"
+            binary
+            v-bind="args"
+            v-model="checked"
+          />
+          <label for="checkbox-with-error">Checkbox with label</label>
+        </div>
+        <span class="ris-body2-regular text-red-800">Error description</span>
       </div>
-      <span class="ris-body2-regular text-red-800">Error description</span>
     `,
   }),
 };
