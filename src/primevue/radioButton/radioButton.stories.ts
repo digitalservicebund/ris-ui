@@ -12,6 +12,11 @@ const meta: Meta<typeof RadioButton> = {
   args: {
     disabled: false,
     invalid: false,
+    size: "normal",
+  },
+
+  argTypes: {
+    size: { control: "select", options: ["small", "normal"] },
   },
 };
 
@@ -34,6 +39,23 @@ export const Default: Story = {
   }),
 };
 
+export const Small: Story = {
+  render: (args) => ({
+    components: { RadioButton },
+    setup() {
+      const checked = ref("");
+      args.size = "small";
+      return { args, checked };
+    },
+    template: html`<RadioButton
+      v-bind="args"
+      v-model="checked"
+      name="radio"
+      value="radio"
+    />`,
+  }),
+};
+
 export const WithLabel: Story = {
   render: (args) => ({
     components: { RadioButton },
@@ -42,6 +64,17 @@ export const WithLabel: Story = {
       return { args, checked };
     },
     template: html`
+      <div class="flex items-center pb-24">
+        <RadioButton
+          input-id="small-with-label"
+          v-bind="args"
+          v-model="checked"
+          name="small"
+          value="small"
+          size="small"
+        />
+        <label for="small-with-label">Small radio with label</label>
+      </div>
       <div class="flex items-center">
         <RadioButton
           input-id="radio-with-label"

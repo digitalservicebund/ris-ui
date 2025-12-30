@@ -2,8 +2,17 @@ import { tw } from "@/lib/tags";
 import { RadioButtonPassThroughOptions } from "primevue/radiobutton";
 
 const radioButton: RadioButtonPassThroughOptions = {
-  root: {
-    class: tw`[&+label]:ris-label1-regular relative inline-block h-32 w-32 [&+label]:ml-8`,
+  root: ({ props }) => {
+    const isSmall = props.size === "small";
+
+    return {
+      class: [
+        tw`relative inline-block [&+label]:ml-8`,
+        isSmall
+          ? tw`[&+label]:ris-label2-regular h-24 w-24`
+          : tw`[&+label]:ris-label1-regular h-32 w-32`,
+      ],
+    };
   },
 
   input: {
@@ -14,8 +23,15 @@ const radioButton: RadioButtonPassThroughOptions = {
     class: tw`pointer-events-none absolute inset-0 flex items-center justify-center text-transparent peer-checked:text-blue-800 peer-disabled:text-gray-600 peer-aria-[invalid]:text-red-800`,
   },
 
-  icon: {
-    class: tw`h-16 w-16 rounded-full bg-current`,
+  icon: ({ props }) => {
+    const isSmall = props.size === "small";
+
+    return {
+      class: [
+        tw`rounded-full bg-current`,
+        isSmall ? tw`h-12 w-12` : tw`h-16 w-16`,
+      ],
+    };
   },
 };
 
