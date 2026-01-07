@@ -16,7 +16,7 @@ const button: ButtonPassThroughOptions = {
 
     const secondary = tw`border-2 border-blue-800 bg-white text-blue-800 hover:bg-blue-200 focus-visible:bg-blue-200 active:bg-blue-400 disabled:border-blue-500 disabled:text-blue-500 disabled:hover:bg-white`;
 
-    const danger = tw`border-2 border-red-800 bg-white text-red-800 hover:bg-red-100 focus-visible:bg-red-100 focus-visible:outline-red-800 active:border-red-800 active:bg-red-400 disabled:border-red-500 disabled:text-red-500 disabled:hover:bg-white`;
+    const danger = tw`border-2 border-red-800 bg-white text-red-800 hover:bg-red-100 focus-visible:bg-red-100 active:border-red-800 active:bg-red-300 disabled:border-red-500 disabled:text-red-500 disabled:hover:bg-white`;
 
     const info = tw`border border-blue-500 bg-white font-normal text-blue-800 hover:bg-gray-200 focus-visible:bg-gray-200 active:border-white active:bg-white disabled:border-blue-500 disabled:text-blue-500 disabled:hover:bg-white`;
 
