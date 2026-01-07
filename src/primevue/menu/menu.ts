@@ -11,7 +11,7 @@ const menu: MenuPassThroughOptions = {
   },
 
   item: ({ context }) => {
-    const base = tw`relative h-48 border-l-4 border-l-transparent pr-12 pl-16 after:absolute after:right-16 after:-bottom-1 after:left-12 after:border-b after:border-gray-300 after:content-[''] last:after:border-b-0 hover:border-l-blue-400 hover:bg-blue-100`;
+    const base = tw`relative h-48 border-l-4 border-l-transparent pr-12 pl-16 after:absolute after:right-16 after:-bottom-1 after:left-12 after:border-b after:border-gray-300 after:content-[''] last:after:border-b-0 hover:border-l-blue-400 hover:bg-blue-100 active:border-l-blue-800 active:bg-blue-300`;
 
     const focused = tw`bg-blue-200 -outline-offset-4 outline-blue-800 not-hover:outline-4 hover:bg-blue-200`;
 
