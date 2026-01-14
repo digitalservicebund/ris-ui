@@ -32,7 +32,7 @@ export type RisAutoCompleteMultipleProps = Pick<
 const props = defineProps<RisAutoCompleteMultipleProps>();
 const model = defineModel<AutoCompleteMultipleSuggestion[]>({ default: [] });
 
-const autoCompleteRef = ref<typeof AutoComplete | null>(null);
+const autoCompleteRef = ref(null);
 defineExpose({ autoCompleteRef });
 
 function onSelect(event: AutoCompleteOptionSelectEvent): void {
