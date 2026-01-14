@@ -9,6 +9,7 @@
     "type": "git",
     "url": "git+https://github.com/digitalservicebund/ris-ui.git"
   },
+  "packageManager": "pnpm@10.24.0",
   "devEngines": {
     "runtime": {
       "name": "node",
