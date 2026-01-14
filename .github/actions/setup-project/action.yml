@@ -17,7 +17,4 @@ runs:
 
     - name: Install dependencies
       shell: bash
-      run: pnpm install --frozen-lockfile --ignore-scripts
-      env:
-        # Forces the store to a hidden system folder inside the container
-        PNPM_HOME: /tmp/pnpm-home
+      run: pnpm install --frozen-lockfile
