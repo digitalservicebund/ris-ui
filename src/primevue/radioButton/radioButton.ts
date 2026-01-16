@@ -7,10 +7,8 @@ const radioButton: RadioButtonPassThroughOptions = {
 
     return {
       class: [
-        tw`relative inline-block [&+label]:ml-8`,
-        isSmall
-          ? tw`[&+label]:ris-label2-regular h-24 w-24`
-          : tw`[&+label]:ris-label1-regular h-32 w-32`,
+        tw`[&+label]:ris-label1-regular relative inline-block [&+label]:ml-8`,
+        isSmall ? tw`h-24 w-24` : tw`h-32 w-32`,
       ],
     };
   },
