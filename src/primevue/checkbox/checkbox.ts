@@ -6,14 +6,9 @@ const checkbox: CheckboxPassThroughOptions = {
     const isLarge = props.size === "large";
     const base = tw`[&+label]:ris-label1-regular relative inline-block h-24 min-h-24 w-24 min-w-24 [&+label]:ml-8`;
 
-    const labelTypography = isLarge
-      ? tw`[&+label]:ris-label1-regular`
-      : tw`[&+label]:ris-label2-regular`;
-
     return {
       class: [
         base,
-        labelTypography,
         {
           [tw`h-32 min-h-32 w-32 min-w-32`]: isLarge,
         },
