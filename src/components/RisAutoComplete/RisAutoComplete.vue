@@ -119,11 +119,11 @@ const dropdownButtonFocus = ref(false);
     @hide="dropdownButtonFocus = false"
   >
     <template #loader>
-      <ProgressSpinner class="absolute inset-y-0 right-8 my-auto mr-1" />
+      <ProgressSpinner class="absolute inset-y-0 right-8 my-auto" />
     </template>
     <template #dropdown="slotProps">
       <RisGhostButton v-if="innerValue" aria-label="Entfernen" @click="onClear">
-        <MaterialSymbolsCloseSmall />
+        <MaterialSymbolsCloseSmall class="h-[1.25em] w-[1.25em]" />
       </RisGhostButton>
 
       <RisGhostButton
@@ -132,7 +132,7 @@ const dropdownButtonFocus = ref(false);
         :force-focus="dropdownButtonFocus"
         @click="slotProps.toggleCallback"
       >
-        <IconChevron />
+        <IconChevron class="h-[1.25em] w-[1.25em]" />
       </RisGhostButton>
     </template>
     <template #option="slotProps: { option: AutoCompleteSuggestion }">
