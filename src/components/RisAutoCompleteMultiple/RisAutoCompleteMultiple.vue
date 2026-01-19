@@ -76,7 +76,7 @@ function isSelected(id: string): boolean {
     @option-unselect="onUnselect"
   >
     <template #loader>
-      <ProgressSpinner class="absolute inset-y-0 right-8 my-auto mr-1" />
+      <ProgressSpinner class="absolute inset-y-0 right-8 my-auto" />
     </template>
     <template #dropdown="slotProps">
       <RisGhostButton
@@ -85,7 +85,7 @@ function isSelected(id: string): boolean {
         :tabindex="props.disableDropdownTabNavigation ? -1 : 0"
         @click="slotProps.toggleCallback"
       >
-        <IconChevron />
+        <IconChevron class="h-[1.25em] w-[1.25em]" />
       </RisGhostButton>
     </template>
     <template #option="slotProps: { option: AutoCompleteMultipleSuggestion }">
