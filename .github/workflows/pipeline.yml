@@ -102,7 +102,7 @@ jobs:
       - name: Setup
         uses: ./.github/actions/setup-project
       - name: Build Storybook
-        run: npm run build:storybook
+        run: pnpm run build:storybook
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload Storybook artifact
