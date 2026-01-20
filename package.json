@@ -15,11 +15,6 @@
       "name": "node",
       "version": "~24.11.0",
       "onFail": "warn"
-    },
-    "packageManager": {
-      "name": "npm",
-      "version": "~11.7.0",
-      "onFail": "warn"
     }
   },
   "files": [
