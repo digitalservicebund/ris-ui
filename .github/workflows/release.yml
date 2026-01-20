@@ -17,6 +17,6 @@ jobs:
         uses: ./.github/actions/setup-project
       - name: Build
         run: pnpm run build
-      - run: pnpx --package semantic-release@beta semantic-release
+      - run: pnpm dlx --package semantic-release@beta semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
