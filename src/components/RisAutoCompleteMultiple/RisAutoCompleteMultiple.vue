@@ -5,7 +5,7 @@ import AutoComplete, {
   type AutoCompleteProps,
 } from "primevue/autocomplete";
 import ProgressSpinner from "primevue/progressspinner";
-import { ref } from "vue";
+import { ComponentPublicInstance, ref } from "vue";
 import RisGhostButton from "@/components/RisGhostButton/RisGhostButton.vue";
 import IconChevron from "~icons/mdi/chevron-down";
 import { Checkbox } from "primevue";
@@ -32,7 +32,7 @@ export type RisAutoCompleteMultipleProps = Pick<
 const props = defineProps<RisAutoCompleteMultipleProps>();
 const model = defineModel<AutoCompleteMultipleSuggestion[]>({ default: [] });
 
-const autoCompleteRef = ref(null);
+const autoCompleteRef = ref<ComponentPublicInstance | null>(null);
 defineExpose({ autoCompleteRef });
 
 function onSelect(event: AutoCompleteOptionSelectEvent): void {
