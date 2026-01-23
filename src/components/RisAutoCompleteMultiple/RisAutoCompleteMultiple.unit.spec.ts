@@ -19,6 +19,9 @@ const TestWrapper = {
   setup(props: { suggestions: AutoCompleteMultipleSuggestion[] }) {
     const modelValue = ref([]);
     const filteredList = ref(props.suggestions); // Start by showing all
+    const autoCompleteMultipleRef = ref<InstanceType<
+      typeof RisAutoCompleteMultiple
+    > | null>(null);
 
     function handleSearch(event: AutoCompleteCompleteEvent) {
       const query = event.query.toLowerCase();
@@ -35,20 +38,31 @@ const TestWrapper = {
       }
     }
 
+    function showOverlay() {
+      if (autoCompleteMultipleRef.value) {
+        autoCompleteMultipleRef.value.show();
+      }
+    }
+
     return {
       modelValue,
       filteredList,
       handleSearch,
+      showOverlay,
+      autoCompleteMultipleRef,
     };
   },
   template: `
     <RisAutoCompleteMultiple
+      ref="autoCompleteMultipleRef"
       v-model="modelValue"
       :suggestions="filteredList"
       :loading="false"
       placeholder="Search planets"
       @complete="handleSearch"
-    />`,
+    />
+    <button aria-label="showOverlay" @click="showOverlay"></button>
+    `,
   props: ["suggestions"],
 };
 
@@ -153,5 +167,24 @@ describe("RisAutoCompleteMultiple", () => {
 
     // then selected item is removed
     expect(selectedChips).not.toBeInTheDocument();
+  });
+
+  it("shows the overlay programmatically", async () => {
+    const user = userEvent.setup();
+    render(TestWrapper, {
+      props: {
+        suggestions: mockSuggestions,
+      },
+      global: { plugins: [PrimeVue] },
+    });
+
+    await user.click(screen.getByRole("button", { name: "showOverlay" }));
+    await waitFor(async () => {
+      const optionsList = screen.getByRole("listbox", { name: "Option List" });
+      const marsOption = within(optionsList).getByRole("option", {
+        name: "Mars",
+      });
+      expect(marsOption).toBeInTheDocument();
+    });
   });
 });

@@ -4,7 +4,7 @@ import MaterialSymbolsCloseSmall from "~icons/material-symbols/close-small";
 import AutoComplete, { type AutoCompleteProps } from "primevue/autocomplete";
 import RisGhostButton from "@/components/RisGhostButton/RisGhostButton.vue";
 import ProgressSpinner from "primevue/progressspinner";
-import { ComponentPublicInstance, ref } from "vue";
+import { ref } from "vue";
 
 export interface AutoCompleteSuggestion {
   id: string;
@@ -79,9 +79,6 @@ const onUpdateInnerValue = (
 };
 
 const onClear = () => onUpdateInnerValue("");
-
-const autoCompleteRef = ref<ComponentPublicInstance | null>(null);
-defineExpose({ autoCompleteRef });
 
 const dropdownButtonFocus = ref(false);
 </script>
