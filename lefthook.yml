@@ -1,7 +1,7 @@
 commit-msg:
   commands:
     lint-commit-msg:
-      run: npx --yes commitlint --edit
+      run: pnpm dlx commitlint --edit
 
 pre-commit:
   parallel: true
@@ -12,15 +12,15 @@ pre-commit:
         (echo "Verify the content and fix it with: talisman --githook pre-commit --interactive"; exit 1)
 
     check-format-frontend:
-      run: npm run --silent prettier:fix {staged_files} && git add {staged_files}
+      run: pnpm run --silent prettier:fix {staged_files} && git add {staged_files}
 
     lint-frontend:
       glob: "*.{ts,js,vue}"
-      run: npm run --silent eslint:fix {staged_files} && git add {staged_files}
+      run: pnpm run --silent eslint:fix {staged_files} && git add {staged_files}
 
     typecheck-frontend:
       glob: "*.{ts,vue}"
-      run: npm run --silent typecheck && git add {staged_files}
+      run: pnpm run --silent typecheck && git add {staged_files}
 
 post-commit:
   commands:
@@ -52,7 +52,7 @@ pre-push:
   commands:
     licenses-audit-frontend:
       root: frontend/
-      run: npm run audit:licenses > /dev/null;
+      run: pnpm run audit:licenses > /dev/null;
 
     secrets-audit:
       run: |

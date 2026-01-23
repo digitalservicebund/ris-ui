@@ -58,51 +58,27 @@ jobs:
   check-style:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v6
-      - name: Setup Node
-        uses: actions/setup-node@v6
-        with:
-          node-version-file: ./.node-version
-          cache: npm
-          cache-dependency-path: ./package-lock.json
-      - name: Cache
-        uses: actions/cache@v5
-        id: cache-npm
-        with:
-          path: /home/runner/.npm
-          key: npm-cache-${{ hashFiles('./package-lock.json') }}
-      - name: Install dependencies
-        run: npm ci
+      - name: Setup
+        uses: ./.github/actions/setup-project
       - name: Check formatting
-        run: npm run prettier:check
+        run: pnpm run prettier:check
       - name: Check code style
-        run: npm run eslint:check
+        run: pnpm run eslint:check
       - name: Check types
-        run: npm run typecheck
+        run: pnpm run typecheck
 
   # Automated tests
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v6
-      - name: Setup Node
-        uses: actions/setup-node@v6
-        with:
-          node-version-file: ./.node-version
-          cache: npm
-          cache-dependency-path: ./package-lock.json
-      - name: Cache
-        uses: actions/cache@v5
-        id: cache-npm
-        with:
-          path: /home/runner/.npm
-          key: npm-cache-${{ hashFiles('./package-lock.json') }}
-      - name: Install dependencies
-        run: npm ci
+      - name: Setup
+        uses: ./.github/actions/setup-project
       - name: Run tests
-        run: npm run test
+        run: pnpm run test
 
   # Deploy Storybook to GitHub Pages
   build-and-deploy-storybook:
@@ -121,24 +97,12 @@ jobs:
       cancel-in-progress: true
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v6
-      - name: Setup Node
-        uses: actions/setup-node@v6
-        with:
-          node-version-file: ./.node-version
-          cache: npm
-          cache-dependency-path: ./package-lock.json
-      - name: Cache
-        uses: actions/cache@v5
-        id: cache-npm
-        with:
-          path: /home/runner/.npm
-          key: npm-cache-${{ hashFiles('./package-lock.json') }}
-      - name: Install dependencies
-        run: npm ci
+      - name: Setup
+        uses: ./.github/actions/setup-project
       - name: Build Storybook
-        run: npm run build:storybook
+        run: pnpm run build:storybook
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload Storybook artifact

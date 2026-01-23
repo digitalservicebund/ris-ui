@@ -11,14 +11,12 @@ jobs:
       id-token: write
       contents: write
     steps:
-      - uses: actions/checkout@v6
-      - uses: actions/setup-node@v6
-        with:
-          node-version: 24
-          registry-url: https://registry.npmjs.org
-          scope: "@digitalservicebund"
-      - run: npm ci
-      - run: npm run build
-      - run: npx --package semantic-release@beta semantic-release
+      - name: Checkout code
+        uses: actions/checkout@v6
+      - name: Setup
+        uses: ./.github/actions/setup-project
+      - name: Build
+        run: pnpm run build
+      - run: pnpm dlx --package semantic-release@beta semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

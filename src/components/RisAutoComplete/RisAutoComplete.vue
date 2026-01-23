@@ -80,9 +80,6 @@ const onUpdateInnerValue = (
 
 const onClear = () => onUpdateInnerValue("");
 
-const autoCompleteRef = ref<typeof AutoComplete | null>(null);
-defineExpose({ autoCompleteRef });
-
 const dropdownButtonFocus = ref(false);
 </script>
 

@@ -32,8 +32,7 @@ export type RisAutoCompleteMultipleProps = Pick<
 const props = defineProps<RisAutoCompleteMultipleProps>();
 const model = defineModel<AutoCompleteMultipleSuggestion[]>({ default: [] });
 
-const autoCompleteRef = ref<typeof AutoComplete | null>(null);
-defineExpose({ autoCompleteRef });
+const autoCompleteRef = ref<InstanceType<typeof AutoComplete> | null>(null);
 
 function onSelect(event: AutoCompleteOptionSelectEvent): void {
   const selectedItem = event.value;
@@ -56,6 +55,18 @@ function onUnselect(event: AutoCompleteOptionUnselectEvent): void {
 function isSelected(id: string): boolean {
   return model.value.some((v) => v.id === id);
 }
+
+function show(): void {
+  if (autoCompleteRef.value) {
+    // casting to `any` because the underlying component instance
+    // does not expose `show()` in its public TypeScript typings,
+    // even though the method exists at runtime.
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (autoCompleteRef.value as any).show();
+  }
+}
+
+defineExpose<{ show: () => void }>({ show });
 </script>
 
 <template>

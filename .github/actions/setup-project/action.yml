@@ -1,0 +1,22 @@
+name: "Setup Project"
+description: "Install pnpm, node and dependencies"
+runs:
+  using: "composite"
+  steps:
+    - name: Install pnpm
+      uses: pnpm/action-setup@v4
+      with:
+        package_json_file: ./package.json
+
+    - name: Setup Node
+      uses: actions/setup-node@v6
+      with:
+        node-version-file: ./.node-version
+        cache: "pnpm"
+        cache-dependency-path: ./pnpm-lock.yaml
+        registry-url: https://registry.npmjs.org
+        scope: "@digitalservicebund"
+
+    - name: Install dependencies
+      shell: bash
+      run: pnpm install --frozen-lockfile

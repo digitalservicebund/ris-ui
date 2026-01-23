@@ -14,10 +14,10 @@ Vue, PrimeVue and Tailwind are required for RIS UI to work (you'll see a warning
 
 ```sh
 # Vue, PrimeVue, and Tailwind if you haven't installed them already
-npm install vue primevue tailwindcss
+pnpm install vue primevue tailwindcss
 
 # RIS UI
-npm install @digitalservicebund/ris-ui
+pnpm install @digitalservicebund/ris-ui
 ```
 
 ### Vue (SPA with Vite, Vue CLI or similar)
@@ -62,7 +62,7 @@ If using Nuxt, skip the Vue setup above.
 Install the Nuxt PrimeVue module:
 
 ```sh
-npm install @primevue/nuxt-module
+pnpm install @primevue/nuxt-module
 ```
 
 Add the PrimeVue module and configure it in `nuxt.config.ts`:
@@ -136,7 +136,7 @@ In addition to the installation steps, the icon is being provided by [unplugin-i
 
 ## Development
 
-To make changes to RIS UI, you'll need the current [Node.js LTS](https://nodejs.org/en/download/package-manager) along with npm installed on your machine.
+To make changes to RIS UI, you'll need the current [Node.js LTS](https://nodejs.org/en/download/package-manager) along with pnpm installed on your machine.
 
 To get started, first clone this repository:
 
@@ -147,17 +147,17 @@ git clone https://github.com/digitalservicebund/ris-ui.git
 Then install dependencies:
 
 ```sh
-npm install
+pnpm install
 
 # This will populate the public/fonts folder. See public/fonts/.gitkeep
 # for more information.
-npm run sync-fonts
+pnpm run sync-fonts
 ```
 
 You can now run a local preview to see any changes you make to the code:
 
 ```sh
-npm run storybook
+pnpm run storybook
 ```
 
 Check out [package.json](./package.json) for additional scripts.
