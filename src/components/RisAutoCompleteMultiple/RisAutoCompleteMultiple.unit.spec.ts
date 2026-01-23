@@ -53,15 +53,15 @@ const TestWrapper = {
     };
   },
   template: `
+    <button aria-label="showOverlay" @click="showOverlay"></button>
     <RisAutoCompleteMultiple
       ref="autoCompleteMultipleRef"
+      v-bind="$attrs"
       v-model="modelValue"
       :suggestions="filteredList"
-      :loading="false"
       placeholder="Search planets"
       @complete="handleSearch"
     />
-    <button aria-label="showOverlay" @click="showOverlay"></button>
     `,
   props: ["suggestions"],
 };
