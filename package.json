@@ -68,7 +68,7 @@
     "@iconify/vue": "~5.0.0",
     "@storybook/addon-docs": "~10.0.6",
     "@storybook/vue3-vite": "~10.0.6",
-    "@tailwindcss/postcss": "4.1.13",
+    "@tailwindcss/postcss": "4.1.18",
     "@testing-library/jest-dom": "~6.9.1",
     "@testing-library/user-event": "~14.6.1",
     "@testing-library/vue": "~8.1.0",
