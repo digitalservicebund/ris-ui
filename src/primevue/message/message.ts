@@ -29,7 +29,7 @@ const message: MessagePassThroughOptions = {
 
     const iconName = iconNames[severity];
 
-    const iconBg = tw`bg-size-[1.25rem] bg-position-[1rem_1.125rem] bg-no-repeat pl-44`;
+    const iconBg = tw`bg-size-[1.5rem] bg-position-[1rem_1rem] bg-no-repeat pl-48`;
 
     return {
       class: {
