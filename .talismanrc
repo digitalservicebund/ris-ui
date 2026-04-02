@@ -12,3 +12,7 @@ fileignoreconfig:
       - INTEGRITY_CHECKSUM\ =\ \'[a-z0-9]{32}\'
   - filename: src/config/locale.ts
     checksum: bce8adac9f7e05e5ed3d339f9b9a9d8bd2234a4663ddb1eafd110127cbbe4d9b
+  - filename: .github/workflows/deploy-branch-storybook.yml
+    checksum: 9d358341de3cf3b07bbf0e738e7788cb5bf64e0ee3b7b8fc99adb91e8f16b3d7
+  - filename: .github/workflows/pipeline.yml
+    checksum: 0caa6b1ad88ead3ec6867fe8e0a9b52443d93ae72db8c5783608572ccbf6a212
