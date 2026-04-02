@@ -9,7 +9,7 @@ runs:
         package_json_file: ./package.json
 
     - name: Setup Node
-      uses: actions/setup-node@v6
+      uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f
       with:
         node-version-file: ./.node-version
         cache: "pnpm"
