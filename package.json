@@ -78,7 +78,7 @@
     "eslint": "~9.39.4",
     "eslint-config-prettier": "~10.1.8",
     "eslint-plugin-storybook": "~10.2.19",
-    "eslint-plugin-vue": "~10.5.1",
+    "eslint-plugin-vue": "~10.8.0",
     "globals": "~17.4.0",
     "jsdom": "~27.1.0",
     "license-checker": "~25.0.1",
