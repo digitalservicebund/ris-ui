@@ -171,7 +171,7 @@ RIS UI uses the following tools:
 - [Vite](https://vitejs.dev/) as our dev server and bundler
 - [Unplugin Icons](https://github.com/unplugin/unplugin-icons) for providing SVG icons as components
 - [TypeScript](https://www.typescriptlang.org/)
-- [ESLint](https://eslint.org/) and [Prettier](https://prettier.io/) for code consistency
+- [Oxlint](https://oxc.rs/docs/guide/usage/linter.html) and [Prettier](https://prettier.io/) for code consistency
 - [Vitest](https://vitest.dev) as our test runner
 
 You can find more in [package.json](./package.json), but the above are the ones you'll work with the most.
@@ -228,8 +228,8 @@ lefthook install
 
 When you make a commit now, Lefthook will ensure your changes and commit message adhere to our coding guidelines:
 
-- Code is formatted with Prettier
-- ESLint passes without warnings
+- Code is formatted
+- Linter passes without warnings
 - The commit message follows the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification. If you're making changes to a component, please use the component name as the scope (multiple scopes are allowed).
 
 Keep in mind that your commit messages will be used for generating changelogs and inferring version numbers when making a release. If you made multiple changes, please consider squashing them to keep the history, as well as the changelogs, tidy and readable.

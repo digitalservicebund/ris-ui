@@ -16,7 +16,7 @@ export const html = tag;
  * Tagged template string for Tailwind classes. The tag itself doesn't do
  * anything, but using it will allow your editor to provide Tailwind
  * Intellisense for template strings in scripts, as well as automatic class
- * sorting via Prettier.
+ * sorting.
  *
  * ```ts
  * const classes = tw`px-16 bg-blue-200`

@@ -62,10 +62,8 @@ jobs:
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
       - name: Setup
         uses: ./.github/actions/setup-project
-      - name: Check formatting
-        run: pnpm run prettier:check
       - name: Check code style
-        run: pnpm run eslint:check
+        run: pnpm run stylecheck
       - name: Check types
         run: pnpm run typecheck
 

@@ -13,6 +13,6 @@ fileignoreconfig:
   - filename: src/config/locale.ts
     checksum: bce8adac9f7e05e5ed3d339f9b9a9d8bd2234a4663ddb1eafd110127cbbe4d9b
   - filename: .github/workflows/deploy-branch-storybook.yml
-    checksum: 9d358341de3cf3b07bbf0e738e7788cb5bf64e0ee3b7b8fc99adb91e8f16b3d7
+    checksum: c3bbbf1317d2314f32d3ca01642588f70062a5d8bfd6e18f42ea625c83557444
   - filename: .github/workflows/pipeline.yml
     checksum: 9f48892448df94ea7f921cb12ab2aa4dc12bbc90d834ee15cbdf014f77202e7e
