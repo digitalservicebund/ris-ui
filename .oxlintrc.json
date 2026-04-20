@@ -3,10 +3,10 @@
   "env": {
     "browser": true,
     "builtin": true,
-    "es2024": true,
+    "es2026": true,
     "node": true
   },
-  "plugins": ["eslint", "import", "oxc", "promise", "typescript", "unicorn", "vue"],
+  "plugins": ["eslint", "import", "oxc", "promise", "typescript", "unicorn"],
   "categories": {
     "correctness": "error",
     "suspicious": "error"
