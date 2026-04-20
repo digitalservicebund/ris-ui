@@ -1,6 +1,7 @@
 /// <reference types="vitest/config" />
-import vue from "@vitejs/plugin-vue";
 import { fileURLToPath, URL } from "node:url";
+import tailwindcss from "@tailwindcss/vite";
+import vue from "@vitejs/plugin-vue";
 import icons from "unplugin-icons/vite";
 import { defineConfig } from "vite";
 
@@ -8,6 +9,7 @@ import { defineConfig } from "vite";
 export default defineConfig({
   plugins: [
     vue(),
+    tailwindcss(),
     icons({
       autoInstall: true,
       scale: 1.3333, // ~24px at the current default font size of 18px

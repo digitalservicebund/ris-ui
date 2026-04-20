@@ -53,6 +53,7 @@
     "@storybook/addon-docs": "~10.3.4",
     "@storybook/vue3-vite": "~10.3.4",
     "@tailwindcss/postcss": "4.1.13",
+    "@tailwindcss/vite": "~4.2.2",
     "@testing-library/jest-dom": "~6.9.1",
     "@testing-library/user-event": "~14.6.1",
     "@testing-library/vue": "~8.1.0",
