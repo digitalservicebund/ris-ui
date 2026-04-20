@@ -1,5 +1,5 @@
 name: "Setup Project"
-description: "Install pnpm, node and dependencies"
+description: "Install pnpm, Node, and dependencies"
 runs:
   using: "composite"
   steps:
