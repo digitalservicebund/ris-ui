@@ -1,5 +1,5 @@
-import { tw } from "@/lib/tags.ts";
 import type { FileUploadPassThroughOptions } from "primevue/fileupload";
+import { tw } from "@/lib/tags.ts";
 
 const fileUpload: FileUploadPassThroughOptions = {
   basicContent: {

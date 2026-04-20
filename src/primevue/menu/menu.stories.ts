@@ -1,12 +1,12 @@
-import { html } from "@/lib/tags";
 import type { Meta, StoryObj } from "@storybook/vue3-vite";
-import PrimevueMenu from "primevue/menu";
 import PrimevueButton from "primevue/button";
+import PrimevueMenu from "primevue/menu";
 import type { MenuItem } from "primevue/menuitem";
+import { useTemplateRef } from "vue";
 import MdiDotsVertical from "~icons/mdi/dots-vertical";
 import EyeOutline from "~icons/mdi/eye-outline";
 import MdiTrayDownload from "~icons/mdi/tray-download";
-import { useTemplateRef } from "vue";
+import { html } from "@/lib/tags";
 
 const meta: Meta<typeof PrimevueMenu> = {
   // @ts-expect-error Component type broken

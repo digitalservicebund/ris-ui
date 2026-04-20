@@ -1,5 +1,5 @@
-import { html } from "@/lib/tags";
 import type { Meta, StoryObj } from "@storybook/vue3-vite";
+import { html } from "@/lib/tags";
 import RisCopyableLabel from "./RisCopyableLabel.vue";
 
 const meta: Meta<typeof RisCopyableLabel> = {

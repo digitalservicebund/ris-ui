@@ -1,6 +1,6 @@
-import { html } from "@/lib/tags";
 import type { Meta, StoryObj } from "@storybook/vue3-vite";
 import Password from "primevue/password";
+import { html } from "@/lib/tags";
 
 const meta: Meta<typeof Password> = {
   // @ts-expect-error Component type broken
@@ -30,12 +30,7 @@ export const Default: StoryObj<typeof meta> = {
     },
     template: html`<div class="flex w-320 flex-col gap-2">
       <label for="password" class="ris-label2-regular">Passwort</label>
-      <Password
-        id="password"
-        :feedback="false"
-        v-bind="args"
-        v-model="args.value"
-      />
+      <Password id="password" :feedback="false" v-bind="args" v-model="args.value" />
     </div>`,
   }),
 };

@@ -1,5 +1,5 @@
-import { tw } from "@/lib/tags";
 import type { InputGroupPassThroughOptions } from "primevue/inputgroup";
+import { tw } from "@/lib/tags";
 
 const inputGroup: InputGroupPassThroughOptions = {
   root: {

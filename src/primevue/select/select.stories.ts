@@ -1,8 +1,8 @@
-import { html } from "@/lib/tags";
 import type { Meta, StoryObj } from "@storybook/vue3-vite";
 import PrimevueSelect from "primevue/select";
 import { ref } from "vue";
 import ErrorOutline from "~icons/material-symbols/error-outline";
+import { html } from "@/lib/tags";
 
 const meta: Meta<typeof PrimevueSelect> = {
   // @ts-expect-error Component type broken

@@ -7,17 +7,15 @@ import PrimeVue from "primevue/config";
 import ConfirmationService from "primevue/confirmationservice";
 import ToastService from "primevue/toastservice";
 import "../public/fonts.css";
-import { deDE } from "../src/config/locale";
-import { RisUiTheme } from "../src/primevue";
-import "./preview.css";
 import Tooltip from "primevue/tooltip";
+import { deDE } from "../src/config/locale";
+import "./preview.css";
+import { RisUiTheme } from "../src/primevue";
 
 initialize({
   serviceWorker: {
     // When deployed to GitHub pages, this will run in a subfolder
-    url: import.meta.env.DEV
-      ? "/mockServiceWorker.js"
-      : "/ris-ui/mockServiceWorker.js",
+    url: import.meta.env.DEV ? "/mockServiceWorker.js" : "/ris-ui/mockServiceWorker.js",
   },
 });
 

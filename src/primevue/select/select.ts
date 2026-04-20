@@ -1,5 +1,5 @@
-import { tw } from "@/lib/tags.ts";
 import type { SelectPassThroughOptions } from "primevue/select";
+import { tw } from "@/lib/tags.ts";
 
 const select: SelectPassThroughOptions = {
   root: ({ props, state }) => {

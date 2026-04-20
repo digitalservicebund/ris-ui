@@ -1,13 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/vue3-vite";
-import type {
-  AutoCompleteSuggestion,
-  RisAutoCompleteProps,
-} from "./RisAutoComplete.vue";
-import RisAutoComplete from "./RisAutoComplete.vue";
-import { html } from "@/lib/tags.ts";
-import { ref } from "vue";
-import type { AutoCompleteCompleteEvent } from "primevue/autocomplete";
 import { http, HttpResponse } from "msw";
+import type { AutoCompleteCompleteEvent } from "primevue/autocomplete";
+import { ref } from "vue";
+import { html } from "@/lib/tags.ts";
+import type { AutoCompleteSuggestion, RisAutoCompleteProps } from "./RisAutoComplete.vue";
+import RisAutoComplete from "./RisAutoComplete.vue";
 
 const meta: Meta<typeof RisAutoComplete> = {
   component: RisAutoComplete,
@@ -77,9 +74,7 @@ const getCompletions = async (query: string) => {
   return await (await fetch(`/suggestions?q=${query}`)).json();
 };
 
-function commonSetup(
-  args: Readonly<RisAutoCompleteProps & { modelValue?: string }>,
-) {
+function commonSetup(args: Readonly<RisAutoCompleteProps & { modelValue?: string }>) {
   const value = ref(args.modelValue);
   const suggestions = ref<AutoCompleteSuggestion[]>([]);
 
@@ -173,9 +168,7 @@ export const AppendedToBody: Story = {
       return commonSetup(args);
     },
     template: html`
-      <div
-        style="height: 6.25rem; padding: 1.25rem; background: #f0f0f0; overflow: auto;"
-      >
+      <div style="height: 6.25rem; padding: 1.25rem; background: #f0f0f0; overflow: auto;">
         This box has overflow: auto, which would normally clip the dropdown.
         <br />
         Scroll the box and then open the dropdown below.

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/vue3-vite";
-import RisPaginator from "./RisPaginator.vue";
 import { html } from "@/lib/tags.ts";
+import RisPaginator from "./RisPaginator.vue";
 
 const meta: Meta<typeof RisPaginator> = {
   component: RisPaginator,

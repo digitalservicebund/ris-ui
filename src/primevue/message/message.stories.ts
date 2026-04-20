@@ -1,6 +1,6 @@
-import { html } from "@/lib/tags";
 import type { Meta, StoryObj } from "@storybook/vue3-vite";
 import Message from "primevue/message";
+import { html } from "@/lib/tags";
 
 const meta: Meta<typeof Message> = {
   // @ts-expect-error Component type broken

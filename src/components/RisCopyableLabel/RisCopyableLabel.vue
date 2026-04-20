@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import MdiContentCopy from "~icons/mdi/content-copy";
-import MdiCheck from "~icons/mdi/check";
 import { ref } from "vue";
+import MdiCheck from "~icons/mdi/check";
+import MdiContentCopy from "~icons/mdi/content-copy";
 
 const props = withDefaults(
   defineProps<{

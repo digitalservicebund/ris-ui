@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/vue3-vite";
 import Breadcrumb from "primevue/breadcrumb";
-import { html } from "@/lib/tags.ts";
-import { ref } from "vue";
 import { vueRouter } from "storybook-vue3-router";
-import HomeOutlineIcon from "~icons/material-symbols/home-outline";
-import HomeFilledIcon from "~icons/material-symbols/home";
+import { ref } from "vue";
 import ChevronRightIcon from "~icons/material-symbols/chevron-right";
+import HomeFilledIcon from "~icons/material-symbols/home";
+import HomeOutlineIcon from "~icons/material-symbols/home-outline";
+import { html } from "@/lib/tags.ts";
 
 const meta: Meta<typeof Breadcrumb> = {
   // @ts-expect-error Component type broken
@@ -44,18 +44,10 @@ export const Default: Story = {
       <div class="card flex justify-center">
         <Breadcrumb :model="items">
           <template #item="{ item, props }">
-            <router-link
-              v-if="item.route"
-              v-slot="{ href, navigate }"
-              :to="item.route"
-              custom
-            >
+            <router-link v-if="item.route" v-slot="{ href, navigate }" :to="item.route" custom>
               <a :href="href" v-bind="props.action" @click="navigate">
                 <template v-if="item.type === 'home'">
-                  <span
-                    @mouseenter="isHovered = true"
-                    @mouseleave="isHovered = false"
-                  >
+                  <span @mouseenter="isHovered = true" @mouseleave="isHovered = false">
                     <template v-if="isHovered">
                       <HomeFilledIcon class="-ml-2" />
                     </template>

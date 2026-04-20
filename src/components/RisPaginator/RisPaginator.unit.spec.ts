@@ -1,9 +1,9 @@
-import { describe, it, expect } from "vitest";
-import RisPaginator from "./RisPaginator.vue";
-import { render, screen } from "@testing-library/vue";
 import userEvent from "@testing-library/user-event";
+import { render, screen } from "@testing-library/vue";
 import type { PageState } from "primevue";
+import { describe, it, expect } from "vitest";
 import { defineComponent, h } from "vue";
+import RisPaginator from "./RisPaginator.vue";
 
 const ButtonStub = defineComponent({
   name: "ButtonStub",
@@ -40,9 +40,7 @@ describe("RisPaginator", () => {
       totalRecords: 100,
     });
 
-    expect(
-      screen.queryByRole("button", { name: "Zurück" }),
-    ).not.toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: "Zurück" })).not.toBeInTheDocument();
     expect(screen.getByText("Seite 1")).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Weiter" })).toBeInTheDocument();
   });
@@ -56,9 +54,7 @@ describe("RisPaginator", () => {
 
     expect(screen.getByRole("button", { name: "Zurück" })).toBeInTheDocument();
     expect(screen.getByText("Seite 10")).toBeInTheDocument();
-    expect(
-      screen.queryByRole("button", { name: "Weiter" }),
-    ).not.toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: "Weiter" })).not.toBeInTheDocument();
   });
 
   it("renders customized button labels and pagination", async () => {
@@ -70,9 +66,7 @@ describe("RisPaginator", () => {
       totalRecords: 100,
     });
 
-    expect(
-      screen.getByRole("button", { name: "Previous" }),
-    ).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Previous" })).toBeInTheDocument();
     expect(screen.getByText("Seite 2")).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Next" })).toBeInTheDocument();
   });

@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { Checkbox } from "primevue";
 import type {
   AutoCompleteOptionSelectEvent,
   AutoCompleteOptionUnselectEvent,
@@ -7,9 +8,8 @@ import type AutoComplete from "primevue/autocomplete";
 import { type AutoCompleteProps } from "primevue/autocomplete";
 import ProgressSpinner from "primevue/progressspinner";
 import { ref } from "vue";
-import RisGhostButton from "@/components/RisGhostButton/RisGhostButton.vue";
 import IconChevron from "~icons/mdi/chevron-down";
-import { Checkbox } from "primevue";
+import RisGhostButton from "@/components/RisGhostButton/RisGhostButton.vue";
 
 export interface AutoCompleteMultipleSuggestion {
   id: string;
@@ -19,12 +19,7 @@ export interface AutoCompleteMultipleSuggestion {
 
 export type RisAutoCompleteMultipleProps = Pick<
   AutoCompleteProps,
-  | "ariaLabel"
-  | "ariaLabelledby"
-  | "placeholder"
-  | "loading"
-  | "invalid"
-  | "disabled"
+  "ariaLabel" | "ariaLabelledby" | "placeholder" | "loading" | "invalid" | "disabled"
 > & {
   suggestions: AutoCompleteMultipleSuggestion[];
   disableDropdownTabNavigation?: boolean;
@@ -114,10 +109,7 @@ defineExpose<{ show: () => void }>({ show });
           <div class="ris-label1-regular">
             {{ slotProps.option.label }}
           </div>
-          <div
-            v-if="slotProps.option.secondaryLabel"
-            class="ris-label2-regular text-gray-900"
-          >
+          <div v-if="slotProps.option.secondaryLabel" class="ris-label2-regular text-gray-900">
             {{ slotProps.option.secondaryLabel }}
           </div>
         </div>

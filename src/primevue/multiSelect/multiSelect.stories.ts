@@ -1,7 +1,7 @@
-import { html } from "@/lib/tags";
 import type { Meta, StoryObj } from "@storybook/vue3-vite";
 import PrimeVueMultiSelect from "primevue/multiselect";
 import { ref } from "vue";
+import { html } from "@/lib/tags";
 
 const meta: Meta<typeof PrimeVueMultiSelect> = {
   // @ts-expect-error Component type broken

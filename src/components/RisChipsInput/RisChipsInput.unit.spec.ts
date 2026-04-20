@@ -1,8 +1,8 @@
-import { render, screen } from "@testing-library/vue";
-import { describe, it, expect } from "vitest";
-import PrimeVue from "primevue/config";
-import RisChipsInput from "./RisChipsInput.vue";
 import userEvent from "@testing-library/user-event";
+import { render, screen } from "@testing-library/vue";
+import PrimeVue from "primevue/config";
+import { describe, it, expect } from "vitest";
+import RisChipsInput from "./RisChipsInput.vue";
 
 describe("RisChipsInput", () => {
   it("renders the chips", () => {
@@ -14,9 +14,7 @@ describe("RisChipsInput", () => {
       global: { plugins: [PrimeVue] },
     });
 
-    expect(
-      screen.getByRole("listitem", { name: "banane" }),
-    ).toBeInTheDocument();
+    expect(screen.getByRole("listitem", { name: "banane" })).toBeInTheDocument();
     expect(screen.getByRole("listitem", { name: "apple" })).toBeInTheDocument();
     const input = screen.getByRole("textbox", { name: "Eintrag hinzufügen" });
     expect(input).toBeInTheDocument();
@@ -33,15 +31,10 @@ describe("RisChipsInput", () => {
       global: { plugins: [PrimeVue] },
     });
 
-    await user.type(
-      screen.getByRole("textbox", { name: "Eintrag hinzufügen" }),
-      "New Chip{enter}",
-    );
+    await user.type(screen.getByRole("textbox", { name: "Eintrag hinzufügen" }), "New Chip{enter}");
 
     expect(emitted()["update:modelValue"][0]).toEqual([["New Chip"]]);
-    expect(
-      screen.getByRole("textbox", { name: "Eintrag hinzufügen" }),
-    ).toHaveValue("");
+    expect(screen.getByRole("textbox", { name: "Eintrag hinzufügen" })).toHaveValue("");
   });
 
   it("deletes a chip", async () => {
@@ -113,18 +106,14 @@ describe("RisChipsInput", () => {
       global: { plugins: [PrimeVue] },
     });
 
-    expect(
-      screen.getByRole("textbox", { name: "Eintrag hinzufügen" }),
-    ).toBeInTheDocument();
+    expect(screen.getByRole("textbox", { name: "Eintrag hinzufügen" })).toBeInTheDocument();
 
     const editButton = screen.getByRole("button", {
       name: "Eintrag bearbeiten",
     });
     await user.dblClick(editButton);
 
-    expect(
-      screen.queryByRole("textbox", { name: "Eintrag hinzufügen" }),
-    ).not.toBeInTheDocument();
+    expect(screen.queryByRole("textbox", { name: "Eintrag hinzufügen" })).not.toBeInTheDocument();
   });
 
   it("focus the rerendered new chip input after a chip has been added", async () => {
@@ -187,9 +176,7 @@ describe("RisChipsInput", () => {
       global: { plugins: [PrimeVue] },
     });
 
-    await user.dblClick(
-      screen.getByRole("button", { name: "Eintrag bearbeiten" }),
-    );
+    await user.dblClick(screen.getByRole("button", { name: "Eintrag bearbeiten" }));
 
     const editInput = screen.getByDisplayValue("apple");
     const id = editInput.getAttribute("id");

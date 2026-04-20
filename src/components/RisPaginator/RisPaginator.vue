@@ -41,9 +41,7 @@ function handlePageChange(event: PageState) {
     :total-records="props.totalRecords"
     @page="handlePageChange"
   >
-    <template
-      #container="{ page, pageCount, prevPageCallback, nextPageCallback }"
-    >
+    <template #container="{ page, pageCount, prevPageCallback, nextPageCallback }">
       <div class="flex w-full items-center justify-between px-2 py-1">
         <Button
           :class="{ 'pointer-events-none opacity-0': page === 0 }"

@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/vue3-vite";
-import InputMask from "primevue/inputmask";
-import { html } from "@/lib/tags";
 import Fluid from "primevue/fluid";
+import InputMask from "primevue/inputmask";
 import { ref } from "vue";
 import ErrorOutline from "~icons/material-symbols/error-outline";
+import { html } from "@/lib/tags";
 
 const meta: Meta<typeof InputMask> = {
   // @ts-expect-error Component type broken
@@ -158,29 +158,14 @@ export const ThreeFields: StoryObj<typeof meta> = {
         <label for="date-input-group" class="mb-1 block">Datum</label>
         <div id="date-input-group" class="flex items-center gap-2">
           <div class="flex w-64 flex-col">
-            <InputMask
-              id="day-input"
-              v-model="day"
-              mask="99"
-              placeholder="TT"
-            />
+            <InputMask id="day-input" v-model="day" mask="99" placeholder="TT" />
           </div>
           <div class="flex w-64 flex-col">
-            <InputMask
-              id="month-input"
-              v-model="month"
-              mask="99"
-              placeholder="MM"
-            />
+            <InputMask id="month-input" v-model="month" mask="99" placeholder="MM" />
           </div>
 
           <div class="flex w-128 flex-col">
-            <InputMask
-              id="year-input"
-              v-model="year"
-              mask="9999"
-              placeholder="JJJJ"
-            />
+            <InputMask id="year-input" v-model="year" mask="9999" placeholder="JJJJ" />
           </div>
         </div>
       </div>

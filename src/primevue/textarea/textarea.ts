@@ -1,5 +1,5 @@
-import { tw } from "@/lib/tags";
 import type { TextareaPassThroughOptions } from "primevue/textarea";
+import { tw } from "@/lib/tags";
 
 const textarea: TextareaPassThroughOptions = {
   root: ({ props }) => {

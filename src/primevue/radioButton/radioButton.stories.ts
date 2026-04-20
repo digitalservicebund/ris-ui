@@ -1,7 +1,7 @@
-import { html } from "@/lib/tags.ts";
 import type { Meta, StoryObj } from "@storybook/vue3-vite";
 import RadioButton from "primevue/radiobutton";
 import { ref } from "vue";
+import { html } from "@/lib/tags.ts";
 
 const meta: Meta<typeof RadioButton> = {
   // @ts-expect-error Component type broken
@@ -30,12 +30,7 @@ export const Default: Story = {
       const checked = ref("");
       return { args, checked };
     },
-    template: html`<RadioButton
-      v-bind="args"
-      v-model="checked"
-      name="radio"
-      value="radio"
-    />`,
+    template: html`<RadioButton v-bind="args" v-model="checked" name="radio" value="radio" />`,
   }),
 };
 
@@ -47,12 +42,7 @@ export const Small: Story = {
       args.size = "small";
       return { args, checked };
     },
-    template: html`<RadioButton
-      v-bind="args"
-      v-model="checked"
-      name="radio"
-      value="radio"
-    />`,
+    template: html`<RadioButton v-bind="args" v-model="checked" name="radio" value="radio" />`,
   }),
 };
 
@@ -99,39 +89,19 @@ export const Group: Story = {
     template: html`
       <div class="flex gap-32">
         <div class="flex items-center">
-          <RadioButton
-            input-id="radio-1"
-            v-model="checked"
-            name="radios"
-            value="radio-1"
-          />
+          <RadioButton input-id="radio-1" v-model="checked" name="radios" value="radio-1" />
           <label for="radio-1">One</label>
         </div>
         <div class="flex items-center">
-          <RadioButton
-            input-id="radio-2"
-            v-model="checked"
-            name="radios"
-            value="radio-2"
-          />
+          <RadioButton input-id="radio-2" v-model="checked" name="radios" value="radio-2" />
           <label for="radio-2">Two</label>
         </div>
         <div class="flex items-center">
-          <RadioButton
-            input-id="radio-3"
-            v-model="checked"
-            name="radios"
-            value="radio-3"
-          />
+          <RadioButton input-id="radio-3" v-model="checked" name="radios" value="radio-3" />
           <label for="radio-3">Three</label>
         </div>
         <div class="flex items-center">
-          <RadioButton
-            input-id="radio-4"
-            v-model="checked"
-            name="radios"
-            value="radio-4"
-          />
+          <RadioButton input-id="radio-4" v-model="checked" name="radios" value="radio-4" />
           <label for="radio-4">Four</label>
         </div>
       </div>

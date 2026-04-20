@@ -1,11 +1,10 @@
-import { describe, it, expect } from "vitest";
 import { mount, shallowMount } from "@vue/test-utils";
-
-import { nextTick } from "vue";
-import AutoComplete, { type RisAutoCompleteProps } from "./RisAutoComplete.vue";
+import _ from "lodash";
 import PrimeVue from "primevue/config";
 import ProgressSpinner from "primevue/progressspinner";
-import _ from "lodash";
+import { describe, it, expect } from "vitest";
+import { nextTick } from "vue";
+import AutoComplete, { type RisAutoCompleteProps } from "./RisAutoComplete.vue";
 
 describe("AutoComplete", () => {
   it("renders correctly with default props", async () => {

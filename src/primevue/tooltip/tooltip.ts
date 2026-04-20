@@ -11,8 +11,7 @@ const tooltip: TooltipDirectivePassThroughOptions = {
     const bottom = tw`-ml-[7px] border-t-0 border-r-transparent border-b-gray-900 border-l-transparent`;
     const left = tw`-mt-[7px] border-r-0 border-t-transparent border-b-transparent border-l-gray-900`;
 
-    const noPlacementDefined =
-      !context.top && !context.right && !context.bottom && !context.left;
+    const noPlacementDefined = !context.top && !context.right && !context.bottom && !context.left;
 
     return {
       class: {

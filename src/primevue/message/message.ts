@@ -1,5 +1,5 @@
-import { tw } from "@/lib/tags";
 import type { MessagePassThroughOptions } from "primevue/message";
+import { tw } from "@/lib/tags";
 
 const message: MessagePassThroughOptions = {
   root: ({ props, instance }) => {

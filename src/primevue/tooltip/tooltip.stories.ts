@@ -1,7 +1,7 @@
-import { html } from "@/lib/tags.ts";
 import type { Meta, StoryObj } from "@storybook/vue3-vite";
-import Tooltip from "primevue/tooltip";
 import InputText from "primevue/inputtext";
+import Tooltip from "primevue/tooltip";
+import { html } from "@/lib/tags.ts";
 
 const meta: Meta<typeof Tooltip> = {
   // @ts-expect-error Component type broken
@@ -18,26 +18,10 @@ export const Basic: Story = {
     setup() {},
     template: html`
       <div class="card flex flex-wrap justify-items-start gap-16">
-        <InputText
-          v-tooltip="'Look at these fields'"
-          type="text"
-          placeholder="Default"
-        />
-        <InputText
-          v-tooltip.right="'and input some data'"
-          type="text"
-          placeholder="Right"
-        />
-        <InputText
-          v-tooltip.top="'whatever you feel like,'"
-          type="text"
-          placeholder="Top"
-        />
-        <InputText
-          v-tooltip.bottom="'validate if you wish,'"
-          type="text"
-          placeholder="Bottom"
-        />
+        <InputText v-tooltip="'Look at these fields'" type="text" placeholder="Default" />
+        <InputText v-tooltip.right="'and input some data'" type="text" placeholder="Right" />
+        <InputText v-tooltip.top="'whatever you feel like,'" type="text" placeholder="Top" />
+        <InputText v-tooltip.bottom="'validate if you wish,'" type="text" placeholder="Bottom" />
         <InputText
           v-tooltip.left="'and donʼt forget aria-labels.'"
           type="text"

@@ -1,11 +1,11 @@
+import userEvent from "@testing-library/user-event";
 import { render, screen, waitFor, within } from "@testing-library/vue";
-import { describe, it, expect } from "vitest";
 import type { AutoCompleteCompleteEvent } from "primevue/autocomplete";
+import PrimeVue from "primevue/config";
+import { describe, it, expect } from "vitest";
+import { ref } from "vue";
 import type { AutoCompleteMultipleSuggestion } from "./RisAutoCompleteMultiple.vue";
 import RisAutoCompleteMultiple from "./RisAutoCompleteMultiple.vue";
-import PrimeVue from "primevue/config";
-import userEvent from "@testing-library/user-event";
-import { ref } from "vue";
 
 const mockSuggestions = [
   { id: "1", label: "Mars", secondaryLabel: "The red planet" },
@@ -18,9 +18,7 @@ const TestWrapper = {
   setup(props: { suggestions: AutoCompleteMultipleSuggestion[] }) {
     const modelValue = ref([]);
     const filteredList = ref(props.suggestions); // Start by showing all
-    const autoCompleteMultipleRef = ref<InstanceType<
-      typeof RisAutoCompleteMultiple
-    > | null>(null);
+    const autoCompleteMultipleRef = ref<InstanceType<typeof RisAutoCompleteMultiple> | null>(null);
 
     function handleSearch(event: AutoCompleteCompleteEvent) {
       const query = event.query.toLowerCase();
@@ -31,8 +29,7 @@ const TestWrapper = {
         filteredList.value = props.suggestions.filter(
           (suggestion) =>
             suggestion.label.toLowerCase().includes(query) ||
-            (suggestion.secondaryLabel &&
-              suggestion.secondaryLabel.toLowerCase().includes(query)),
+            (suggestion.secondaryLabel && suggestion.secondaryLabel.toLowerCase().includes(query)),
         );
       }
     }

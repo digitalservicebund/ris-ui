@@ -1,7 +1,4 @@
-import type {
-  DataTablePassThroughOptions,
-  DataTableContext,
-} from "primevue/datatable";
+import type { DataTablePassThroughOptions, DataTableContext } from "primevue/datatable";
 import { tw } from "@/lib/tags";
 import checkbox from "../checkbox/checkbox";
 

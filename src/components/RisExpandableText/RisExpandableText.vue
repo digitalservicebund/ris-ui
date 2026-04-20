@@ -32,19 +32,14 @@ const textId = useId();
 watchEffect(() => {
   if (textContentRef.value instanceof HTMLDivElement) {
     canExpand.value =
-      textContentRef.value.scrollHeight - tolerance >
-      textContentRef.value.clientHeight;
+      textContentRef.value.scrollHeight - tolerance > textContentRef.value.clientHeight;
   }
 });
 </script>
 
 <template>
   <div>
-    <div
-      :id="textId"
-      ref="textContent"
-      :class="{ [$style.truncate]: !expanded }"
-    >
+    <div :id="textId" ref="textContent" :class="{ [$style.truncate]: !expanded }">
       <slot />
     </div>
 

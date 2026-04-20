@@ -16,9 +16,7 @@ describe("RisExpandableText", () => {
     render(RisExpandableText, { slots: { default: "Test" } });
 
     await vi.waitFor(() => {
-      expect(
-        screen.getByRole("button", { name: "Mehr anzeigen" }),
-      ).toBeInTheDocument();
+      expect(screen.getByRole("button", { name: "Mehr anzeigen" })).toBeInTheDocument();
     });
   });
 
@@ -53,10 +51,7 @@ describe("RisExpandableText", () => {
 
     await user.click(screen.getByRole("button"));
 
-    expect(screen.getByRole("button")).toHaveAttribute(
-      "aria-expanded",
-      "false",
-    );
+    expect(screen.getByRole("button")).toHaveAttribute("aria-expanded", "false");
   });
 
   test("renders a collapse button", async () => {
@@ -69,9 +64,7 @@ describe("RisExpandableText", () => {
     });
 
     await vi.waitFor(() => {
-      expect(
-        screen.getByRole("button", { name: "Weniger anzeigen" }),
-      ).toBeInTheDocument();
+      expect(screen.getByRole("button", { name: "Weniger anzeigen" })).toBeInTheDocument();
     });
   });
 

@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { tw } from "@/lib/tags";
 import Accordion from "primevue/accordion";
 import AccordionContent from "primevue/accordioncontent";
 import AccordionHeader from "primevue/accordionheader";
@@ -7,6 +6,7 @@ import AccordionPanel from "primevue/accordionpanel";
 import { computed } from "vue";
 import MaterialSymbolsExpandCircleDownOutlineRounded from "~icons/material-symbols/expand-circle-down-outline-rounded";
 import MaterialSymbolsExpandCircleUpOutlineRounded from "~icons/material-symbols/expand-circle-up-outline-rounded";
+import { tw } from "@/lib/tags";
 
 const props = defineProps<{
   headerCollapsed: string;
@@ -26,11 +26,7 @@ const activePanel = computed({
 </script>
 
 <template>
-  <Accordion
-    v-model:value="activePanel"
-    expand-icon="hidden"
-    collapse-icon="hidden"
-  >
+  <Accordion v-model:value="activePanel" expand-icon="hidden" collapse-icon="hidden">
     <AccordionPanel value="0">
       <AccordionHeader
         :pt="{

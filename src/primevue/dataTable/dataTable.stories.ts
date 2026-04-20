@@ -1,8 +1,8 @@
-import { html } from "@/lib/tags.ts";
 import type { Meta, StoryObj } from "@storybook/vue3-vite";
 import Column from "primevue/column";
 import DataTable from "primevue/datatable";
 import { ref } from "vue";
+import { html } from "@/lib/tags.ts";
 
 const meta: Meta<typeof DataTable> = {
   // @ts-expect-error Component type broken

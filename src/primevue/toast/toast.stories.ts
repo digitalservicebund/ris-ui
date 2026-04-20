@@ -1,8 +1,8 @@
-import { html } from "@/lib/tags.ts";
 import type { Meta, StoryObj } from "@storybook/vue3-vite";
 import PrimevueButton from "primevue/button";
 import Toast from "primevue/toast";
 import { useToast } from "primevue/usetoast";
+import { html } from "@/lib/tags.ts";
 
 const meta: Meta<typeof Toast> = {
   // @ts-expect-error Component type broken

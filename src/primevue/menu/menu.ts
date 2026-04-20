@@ -1,5 +1,5 @@
-import { tw } from "@/lib/tags";
 import type { MenuPassThroughOptions } from "primevue/menu";
+import { tw } from "@/lib/tags";
 
 const menu: MenuPassThroughOptions = {
   root: {

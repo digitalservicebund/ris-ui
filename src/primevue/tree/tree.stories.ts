@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/vue3-vite";
+import PrimevueButton from "primevue/button";
 import Tree from "primevue/tree";
-import { html } from "@/lib/tags.ts";
+import { vueRouter } from "storybook-vue3-router";
 import { ref, onMounted } from "vue";
 import ChevronDownIcon from "~icons/mdi/chevron-down";
 import ChevronUpIcon from "~icons/mdi/chevron-up";
-import PrimevueButton from "primevue/button";
-import { vueRouter } from "storybook-vue3-router";
+import { html } from "@/lib/tags.ts";
 
 interface TreeNode {
   key: string;
@@ -287,20 +287,11 @@ export const TableOfContents: Story = {
           selectionMode="single"
         >
           <template #default="{ node, selected, expanded }">
-            <router-link
-              v-if="node.route"
-              :to="node.route"
-              @click="toggleNode(node)"
-            >
+            <router-link v-if="node.route" :to="node.route" @click="toggleNode(node)">
               {{ node.label }}
             </router-link>
-            <span v-else class="w-full" @click="toggleNode(node)"
-              >{{ node.label }}</span
-            >
-            <span
-              v-if="node.secondaryLabel"
-              class="ris-label2-regular"
-              @click="toggleNode(node)"
+            <span v-else class="w-full" @click="toggleNode(node)">{{ node.label }}</span>
+            <span v-if="node.secondaryLabel" class="ris-label2-regular" @click="toggleNode(node)"
               >{{ node.secondaryLabel }}</span
             >
           </template>

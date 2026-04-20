@@ -1,7 +1,7 @@
-import { tw } from "@/lib/tags";
 import type { TabPassThroughOptions } from "primevue/tab";
-import type { TabPanelPassThroughOptions } from "primevue/tabpanel";
 import type { TabListPassThroughOptions } from "primevue/tablist";
+import type { TabPanelPassThroughOptions } from "primevue/tabpanel";
+import { tw } from "@/lib/tags";
 
 export const tab: TabPassThroughOptions = {
   root: ({ context }) => {

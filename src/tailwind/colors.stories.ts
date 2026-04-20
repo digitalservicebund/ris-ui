@@ -1,5 +1,5 @@
-import { html } from "@/lib/tags";
 import type { Meta, StoryObj } from "@storybook/vue3-vite";
+import { html } from "@/lib/tags";
 
 const meta: Meta<never> = {
   tags: ["autodocs"],
@@ -101,9 +101,7 @@ export const Colors: StoryObj<typeof meta> = {
       <table>
         <thead>
           <tr>
-            <th class="border border-gray-300 px-16 py-8 text-left">
-              Color Name
-            </th>
+            <th class="border border-gray-300 px-16 py-8 text-left">Color Name</th>
             <th class="border border-gray-300 px-16 py-8 text-left">Color</th>
           </tr>
         </thead>

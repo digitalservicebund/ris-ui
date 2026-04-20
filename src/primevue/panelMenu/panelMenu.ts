@@ -1,5 +1,5 @@
-import { tw } from "@/lib/tags";
 import type { PanelMenuPassThroughOptions } from "primevue/panelmenu";
+import { tw } from "@/lib/tags";
 
 const pointer = tw`cursor-pointer`;
 

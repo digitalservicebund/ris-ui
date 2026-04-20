@@ -1,5 +1,5 @@
-import { tw } from "@/lib/tags";
 import type { RadioButtonPassThroughOptions } from "primevue/radiobutton";
+import { tw } from "@/lib/tags";
 
 const radioButton: RadioButtonPassThroughOptions = {
   root: ({ props }) => {
@@ -25,10 +25,7 @@ const radioButton: RadioButtonPassThroughOptions = {
     const isSmall = props.size === "small";
 
     return {
-      class: [
-        tw`rounded-full bg-current`,
-        isSmall ? tw`h-12 w-12` : tw`h-16 w-16`,
-      ],
+      class: [tw`rounded-full bg-current`, isSmall ? tw`h-12 w-12` : tw`h-16 w-16`],
     };
   },
 };

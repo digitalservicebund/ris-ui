@@ -1,7 +1,7 @@
-import { html } from "@/lib/tags";
 import type { Meta, StoryObj } from "@storybook/vue3-vite";
 import PrimevueTextarea from "primevue/textarea";
 import ErrorOutline from "~icons/material-symbols/error-outline";
+import { html } from "@/lib/tags";
 
 // Imported as Btn because somehow formatting sometimes changes
 // "PrimevueTextarea" to "PrimevueTextarea", breaking the stories
@@ -43,11 +43,7 @@ export const WithLabelAndHint: StoryObj<typeof meta> = {
     template: html`
       <div class="flex flex-col gap-2">
         <label class="ris-label2-regular" for="with-label">Label</label>
-        <PrimevueTextarea
-          id="with-label"
-          aria-describedby="with-label-hint"
-          v-bind="args"
-        />
+        <PrimevueTextarea id="with-label" aria-describedby="with-label-hint" v-bind="args" />
         <small id="with-label-hint">Additional hint text</small>
       </div>
     `,

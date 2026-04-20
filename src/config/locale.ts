@@ -30,15 +30,7 @@ export const deDE: PrimeVueLocaleOptions = {
   completed: "Abgeschlossen",
   pending: "Ausstehend",
   fileSizeTypes: ["B", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"],
-  dayNames: [
-    "Sonntag",
-    "Montag",
-    "Dienstag",
-    "Mittwoch",
-    "Donnerstag",
-    "Freitag",
-    "Samstag",
-  ],
+  dayNames: ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"],
   dayNamesShort: ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"],
   dayNamesMin: ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"],
   monthNames: [

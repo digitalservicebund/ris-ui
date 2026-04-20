@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/vue3-vite";
+import { ref } from "vue";
 import { html } from "@/lib/tags.ts";
 import RisChipsInput from "./RisChipsInput.vue";
-import { ref } from "vue";
 
 const meta: Meta<typeof RisChipsInput> = {
   component: RisChipsInput,

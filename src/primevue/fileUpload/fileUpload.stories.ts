@@ -1,9 +1,9 @@
-import { html } from "@/lib/tags.ts";
 import type { Meta, StoryObj } from "@storybook/vue3-vite";
 import { http, HttpResponse } from "msw";
 import Btn from "primevue/button";
 import FileUpload from "primevue/fileupload";
 import { ref } from "vue";
+import { html } from "@/lib/tags.ts";
 
 const meta: Meta<typeof FileUpload> = {
   // @ts-expect-error Component type broken
@@ -53,12 +53,7 @@ export const Basic: Story = {
           @error="isLoading = false"
           @before-upload="isLoading = true"
         />
-        <Btn
-          :loading="isLoading"
-          label="Hochladen"
-          severity="secondary"
-          @click="upload"
-        />
+        <Btn :loading="isLoading" label="Hochladen" severity="secondary" @click="upload" />
       </div>
     `,
   }),
@@ -103,12 +98,7 @@ export const WithError: Story = {
           @error="hasError = true; isLoading = false"
           @before-upload="isLoading = true"
         />
-        <Btn
-          :loading="isLoading"
-          label="Hochladen"
-          severity="secondary"
-          @click="upload"
-        />
+        <Btn :loading="isLoading" label="Hochladen" severity="secondary" @click="upload" />
 
         <span v-if="hasError" class="ris-body2-regular text-red-800">
           Hochladen fehlgeschlagen

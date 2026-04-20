@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { onMounted, ref } from "vue";
 import { InputMask, InputText } from "primevue";
+import { onMounted, ref } from "vue";
 import IconSubdirectoryArrowLeft from "~icons/ic/baseline-subdirectory-arrow-left";
 
 const props = defineProps<{
@@ -65,8 +65,7 @@ defineExpose({
       :pt="{
         pcInputText: {
           root: {
-            class:
-              'bg-transparent inline-block w-auto outline-none field-sizing-content',
+            class: 'bg-transparent inline-block w-auto outline-none field-sizing-content',
           },
         },
       }"
@@ -83,8 +82,7 @@ defineExpose({
       :aria-label="ariaLabel"
       :pt="{
         root: {
-          class:
-            'bg-transparent inline-block w-auto outline-none field-sizing-content',
+          class: 'bg-transparent inline-block w-auto outline-none field-sizing-content',
         },
       }"
       :placeholder="placeholder"

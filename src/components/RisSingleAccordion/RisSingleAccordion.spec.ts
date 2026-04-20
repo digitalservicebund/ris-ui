@@ -1,9 +1,9 @@
 import { mount } from "@vue/test-utils";
 import { expect, describe, it } from "vitest";
-import RisSingleAccordion from "./RisSingleAccordion.vue";
+import { nextTick, ref } from "vue";
 import MaterialSymbolsExpandCircleDownOutlineRounded from "~icons/material-symbols/expand-circle-down-outline-rounded";
 import MaterialSymbolsExpandCircleUpOutlineRounded from "~icons/material-symbols/expand-circle-up-outline-rounded";
-import { nextTick, ref } from "vue";
+import RisSingleAccordion from "./RisSingleAccordion.vue";
 
 describe("Accordion.vue", () => {
   it("changes icon and header when collapsed", async () => {
@@ -19,11 +19,9 @@ describe("Accordion.vue", () => {
 
     const header = wrapper.find(".p-accordionheader");
 
-    expect(
-      wrapper
-        .findComponent(MaterialSymbolsExpandCircleDownOutlineRounded)
-        .exists(),
-    ).toBe(true);
+    expect(wrapper.findComponent(MaterialSymbolsExpandCircleDownOutlineRounded).exists()).toBe(
+      true,
+    );
     expect(header.text()).toContain("Show More");
     expect(wrapper.find(".slot-content").text()).toContain("Slot Content");
   });
@@ -42,11 +40,7 @@ describe("Accordion.vue", () => {
 
     const header = wrapper.find(".p-accordionheader");
 
-    expect(
-      wrapper
-        .findComponent(MaterialSymbolsExpandCircleUpOutlineRounded)
-        .exists(),
-    ).toBe(true);
+    expect(wrapper.findComponent(MaterialSymbolsExpandCircleUpOutlineRounded).exists()).toBe(true);
     expect(header.text()).toContain("Show Less");
   });
 

@@ -1,9 +1,9 @@
-import { html } from "@/lib/tags.ts";
 import type { Meta, StoryObj } from "@storybook/vue3-vite";
 import PrimevueButton from "primevue/button";
 import ConfirmDialog from "primevue/confirmdialog";
 import { useConfirm } from "primevue/useconfirm";
 import ErrorOutline from "~icons/material-symbols/error-outline";
+import { html } from "@/lib/tags.ts";
 
 const meta: Meta<typeof ConfirmDialog> = {
   // @ts-expect-error Component type broken

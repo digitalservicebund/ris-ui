@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import IconChevron from "~icons/mdi/chevron-down";
-import MaterialSymbolsCloseSmall from "~icons/material-symbols/close-small";
 import AutoComplete, { type AutoCompleteProps } from "primevue/autocomplete";
-import RisGhostButton from "@/components/RisGhostButton/RisGhostButton.vue";
 import ProgressSpinner from "primevue/progressspinner";
 import { ref } from "vue";
+import MaterialSymbolsCloseSmall from "~icons/material-symbols/close-small";
+import IconChevron from "~icons/mdi/chevron-down";
+import RisGhostButton from "@/components/RisGhostButton/RisGhostButton.vue";
 
 export interface AutoCompleteSuggestion {
   id: string;
@@ -64,9 +64,7 @@ The outer model is changed
  */
 
 const innerValue = ref(props.initialLabel ?? model.value);
-const onUpdateInnerValue = (
-  newValue: string | AutoCompleteSuggestion | undefined,
-) => {
+const onUpdateInnerValue = (newValue: string | AutoCompleteSuggestion | undefined) => {
   if (typeof newValue === "string") {
     innerValue.value = newValue;
   } else if (newValue && newValue.label) {
@@ -140,10 +138,7 @@ const dropdownButtonFocus = ref(false);
         <div class="ris-label1-regular">
           {{ slotProps.option.label }}
         </div>
-        <div
-          v-if="slotProps.option.secondaryLabel"
-          class="ris-label2-regular text-gray-900"
-        >
+        <div v-if="slotProps.option.secondaryLabel" class="ris-label2-regular text-gray-900">
           {{ slotProps.option.secondaryLabel }}
         </div>
       </div>

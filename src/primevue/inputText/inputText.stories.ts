@@ -1,8 +1,8 @@
-import { html } from "@/lib/tags";
 import type { Meta, StoryObj } from "@storybook/vue3-vite";
 import Fluid from "primevue/fluid";
 import InputText from "primevue/inputtext";
 import ErrorOutline from "~icons/material-symbols/error-outline";
+import { html } from "@/lib/tags";
 
 const meta: Meta<typeof InputText> = {
   // @ts-expect-error Component type broken
@@ -48,11 +48,7 @@ export const WithLabelAndHint: StoryObj<typeof meta> = {
     },
     template: html`<div class="flex flex-col gap-2">
       <label class="ris-label2-regular" for="with-top-label">Label</label>
-      <InputText
-        id="with-top-label"
-        aria-describedby="with-top-label-hint"
-        v-bind="args"
-      />
+      <InputText id="with-top-label" aria-describedby="with-top-label-hint" v-bind="args" />
       <small id="with-top-label-hint">Additional hint text</small>
     </div>`,
   }),
@@ -66,11 +62,7 @@ export const WithHorizontalLabel: StoryObj<typeof meta> = {
     },
     template: html`<div class="flex items-center gap-16">
       <label class="ris-label2-regular" for="with-left-label">Label</label>
-      <InputText
-        id="with-left-label"
-        aria-describedby="with-left-label-hint"
-        v-bind="args"
-      />
+      <InputText id="with-left-label" aria-describedby="with-left-label-hint" v-bind="args" />
     </div>`,
   }),
 };
@@ -116,9 +108,7 @@ export const Invalid: StoryObj<typeof meta> = {
     template: html`<div class="flex flex-col gap-2">
       <label class="ris-label2-regular" for="invalid">Label</label>
       <InputText id="invalid" aria-describedby="invalid-hint" v-bind="args" />
-      <small id="invalid-hint">
-        <ErrorOutline /> Error message with helper text goes here
-      </small>
+      <small id="invalid-hint"> <ErrorOutline /> Error message with helper text goes here </small>
     </div>`,
   }),
 };

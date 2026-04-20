@@ -6,15 +6,7 @@
     "es2024": true,
     "node": true
   },
-  "plugins": [
-    "eslint",
-    "import",
-    "oxc",
-    "promise",
-    "typescript",
-    "unicorn",
-    "vue"
-  ],
+  "plugins": ["eslint", "import", "oxc", "promise", "typescript", "unicorn", "vue"],
   "categories": {
     "correctness": "error",
     "suspicious": "error"

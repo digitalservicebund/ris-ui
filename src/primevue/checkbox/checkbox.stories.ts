@@ -1,7 +1,7 @@
-import { html } from "@/lib/tags.ts";
 import type { Meta, StoryObj } from "@storybook/vue3-vite";
 import Checkbox from "primevue/checkbox";
 import { ref } from "vue";
+import { html } from "@/lib/tags.ts";
 
 const meta: Meta<typeof Checkbox> = {
   // @ts-expect-error Component type broken
@@ -66,12 +66,7 @@ export const WithLabel: Story = {
           <label for="checkbox-with-label">Checkbox with label</label>
         </div>
         <div class="flex items-center">
-          <Checkbox
-            input-id="checkbox-with-label-large"
-            binary
-            size="large"
-            v-model="checked"
-          />
+          <Checkbox input-id="checkbox-with-label-large" binary size="large" v-model="checked" />
           <label for="checkbox-with-label-large">Checkbox with label</label>
         </div>
       </div>
@@ -92,12 +87,7 @@ export const WithErrorMessage: Story = {
     template: html`
       <div>
         <div class="mb-4 flex items-center">
-          <Checkbox
-            input-id="checkbox-with-error"
-            binary
-            v-bind="args"
-            v-model="checked"
-          />
+          <Checkbox input-id="checkbox-with-error" binary v-bind="args" v-model="checked" />
           <label for="checkbox-with-error">Checkbox with label</label>
         </div>
         <span class="ris-body2-regular text-red-800">Error description</span>

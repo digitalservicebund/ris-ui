@@ -1,12 +1,7 @@
-import { html } from "@/lib/tags";
 import type { Meta, StoryObj } from "@storybook/vue3-vite";
-import {
-  InputGroup,
-  InputGroupAddon,
-  InputText,
-  Button as PrimevueButton,
-} from "primevue";
+import { InputGroup, InputGroupAddon, InputText, Button as PrimevueButton } from "primevue";
 import IcBaselineSearch from "~icons/ic/baseline-search";
+import { html } from "@/lib/tags";
 
 const meta: Meta<typeof InputText> = {
   // @ts-expect-error Component type broken

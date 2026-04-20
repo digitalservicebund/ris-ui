@@ -1,9 +1,9 @@
-import { render, screen } from "@testing-library/vue";
-import { describe, it, expect } from "vitest";
-import PrimeVue from "primevue/config";
-import ChipInput from "./ChipInput.vue";
-import { mount } from "@vue/test-utils";
 import userEvent from "@testing-library/user-event";
+import { render, screen } from "@testing-library/vue";
+import { mount } from "@vue/test-utils";
+import PrimeVue from "primevue/config";
+import { describe, it, expect } from "vitest";
+import ChipInput from "./ChipInput.vue";
 
 describe("ChipInput", () => {
   it("renders correctly with InputMask when mask prop is provided", () => {

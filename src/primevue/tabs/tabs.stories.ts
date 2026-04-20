@@ -1,11 +1,10 @@
-import { html } from "@/lib/tags";
 import type { Meta, StoryObj } from "@storybook/vue3-vite";
-import Tabs from "primevue/tabs";
-import TabList from "primevue/tablist";
 import Tab from "primevue/tab";
-import TabPanels from "primevue/tabpanels";
+import TabList from "primevue/tablist";
 import TabPanel from "primevue/tabpanel";
-
+import TabPanels from "primevue/tabpanels";
+import Tabs from "primevue/tabs";
+import { html } from "@/lib/tags";
 import "./tabs.stories.style.css";
 
 const meta: Meta<typeof Tabs> = {
@@ -34,31 +33,27 @@ export const Default: StoryObj<typeof meta> = {
       <TabPanels>
         <TabPanel value="0">
           <p class="m-0">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
           </p>
         </TabPanel>
         <TabPanel value="1">
           <p class="m-0">
-            Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-            cupidatat non proident, sunt in culpa qui officia deserunt mollit
-            anim id est laborum Et harumd und lookum like Greek to me, dereud
-            facilis est er expedit distinct.
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+            officia deserunt mollit anim id est laborum Et harumd und lookum like Greek to me,
+            dereud facilis est er expedit distinct.
           </p>
         </TabPanel>
         <TabPanel value="2">
           <p class="m-0">
-            Nam liber te conscient to factor tum poen legum odioque civiuda. Et
-            tam neque pecun modut est neque nonor et imper ned libidig met,
-            consectetur adipiscing elit, sed ut labore et dolore magna aliquam
-            makes one wonder who would ever read this stuff? Bis nostrud
-            exercitation ullam mmodo consequet. Duis aute in voluptate velit
-            esse cillum dolore eu fugiat nulla pariatur.
+            Nam liber te conscient to factor tum poen legum odioque civiuda. Et tam neque pecun
+            modut est neque nonor et imper ned libidig met, consectetur adipiscing elit, sed ut
+            labore et dolore magna aliquam makes one wonder who would ever read this stuff? Bis
+            nostrud exercitation ullam mmodo consequet. Duis aute in voluptate velit esse cillum
+            dolore eu fugiat nulla pariatur.
           </p>
         </TabPanel>
       </TabPanels>

@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/vue3-vite";
-import { html } from "@/lib/tags.ts";
-import { ref } from "vue";
-import type { AutoCompleteCompleteEvent } from "primevue/autocomplete";
 import { http, HttpResponse } from "msw";
+import type { AutoCompleteCompleteEvent } from "primevue/autocomplete";
+import { ref } from "vue";
+import { html } from "@/lib/tags.ts";
 import RisAutoCompleteMultiple from "./RisAutoCompleteMultiple.vue";
 import type {
   AutoCompleteMultipleSuggestion,
@@ -91,9 +91,7 @@ export const Default: Story = {
           appendTo="self"
           @complete="onComplete"
         />
-        <div v-if="selectedItems">
-          Selected items: {{selectedItems.map(i => i.label)}}
-        </div>
+        <div v-if="selectedItems">Selected items: {{selectedItems.map(i => i.label)}}</div>
       </div>
     `,
   }),

@@ -1,5 +1,5 @@
-import { html } from "@/lib/tags";
 import type { Meta, StoryObj } from "@storybook/vue3-vite";
+import { html } from "@/lib/tags";
 import RisExpandableText from "./RisExpandableText.vue";
 
 const meta: Meta<typeof RisExpandableText> = {
@@ -23,13 +23,11 @@ export const Default: StoryObj<typeof meta> = {
     },
     template: html`<div class="max-w-320">
       <RisExpandableText v-bind="args">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       </RisExpandableText>
     </div>`,
   }),
@@ -44,9 +42,7 @@ export const WithMixedContent: StoryObj<typeof meta> = {
     template: html`<div class="max-w-320">
       <RisExpandableText v-bind="args">
         <div>
-          <h1 class="text-4xl">
-            This heading should neatly fit into three lines <sup>*</sup>
-          </h1>
+          <h1 class="text-4xl">This heading should neatly fit into three lines <sup>*</sup></h1>
         </div>
       </RisExpandableText>
     </div>`,
