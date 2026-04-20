@@ -24,46 +24,29 @@
     "./fonts.css": {
       "import": "./dist/fonts.css",
       "require": "./dist/style.css"
-    },
-    "./components": {
-      "types": "./dist/components/index.d.ts",
-      "import": "./dist/components/index.js"
     }
   },
   "scripts": {
     "storybook": "storybook dev -p 6006",
-    "build": "pnpm run sync-fonts && vite build && vue-tsc --build tsconfig.lib.json --force",
+    "build": "pnpm run sync-fonts && vite build && tsc --build tsconfig.lib.json --force",
     "build:storybook": "pnpm run sync-fonts && storybook build",
     "fmt": "oxfmt",
     "lint": "oxlint --fix",
     "stylecheck": "oxfmt --check && oxlint --max-warnings=0",
+    "typecheck": "tsc",
     "audit:licenses": "license-checker --production --excludePrivatePackages --excludePackages @digitalservicebund/ris-ui@$(cat package.json | jq -r '.version') --onlyAllow \"$(. ./parse-allowed-licenses.sh)\" --csv --out ./frontend-license-report.csv",
-    "typecheck": "vue-tsc",
-    "sync-fonts": "rm ./public/fonts/*.woff ./public/fonts/*.woff2; cp ./node_modules/@digitalservice4germany/angie/fonts/* ./public/fonts/; cp ./node_modules/@digitalservice4germany/angie/fonts.css ./public/",
-    "test": "vitest run",
-    "test:watch": "vitest watch"
+    "sync-fonts": "rm ./public/fonts/*.woff ./public/fonts/*.woff2; cp ./node_modules/@digitalservice4germany/angie/fonts/* ./public/fonts/; cp ./node_modules/@digitalservice4germany/angie/fonts.css ./public/"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "20.5.0",
     "@digitalservice4germany/angie": "2.4.0",
     "@iconify-json/ic": "1.2.4",
-    "@iconify-json/material-symbols": "1.2.67",
-    "@iconify-json/mdi": "1.2.3",
     "@iconify/vue": "5.0.0",
     "@storybook/addon-docs": "10.3.5",
     "@storybook/vue3-vite": "10.3.5",
-    "@tailwindcss/postcss": "4.2.2",
     "@tailwindcss/vite": "4.2.2",
-    "@testing-library/jest-dom": "6.9.1",
-    "@testing-library/user-event": "14.6.1",
-    "@testing-library/vue": "8.1.0",
-    "@types/lodash": "4.17.24",
     "@vitejs/plugin-vue": "6.0.6",
-    "@vue/test-utils": "2.4.6",
-    "globals": "17.5.0",
-    "jsdom": "29.0.2",
     "license-checker": "25.0.1",
-    "lodash": "4.18.1",
     "msw": "2.13.4",
     "msw-storybook-addon": "2.0.7",
     "oxfmt": "0.45.0",
@@ -73,17 +56,12 @@
     "typescript": "6.0.3",
     "unplugin-icons": "23.0.1",
     "vite": "8.0.8",
-    "vitest": "4.1.4",
-    "vue-router": "5.0.4",
-    "vue-tsc": "3.2.6"
+    "vue-router": "5.0.4"
   },
   "peerDependencies": {
     "primevue": "^4.0.0",
     "tailwindcss": "^4.0.0",
     "vue": "^3.0.0"
-  },
-  "overrides": {
-    "storybook": "$storybook"
   },
   "devEngines": {
     "runtime": {

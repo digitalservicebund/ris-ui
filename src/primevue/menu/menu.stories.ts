@@ -3,9 +3,9 @@ import PrimevueButton from "primevue/button";
 import PrimevueMenu from "primevue/menu";
 import type { MenuItem } from "primevue/menuitem";
 import { useTemplateRef } from "vue";
-import MdiDotsVertical from "~icons/mdi/dots-vertical";
-import EyeOutline from "~icons/mdi/eye-outline";
-import MdiTrayDownload from "~icons/mdi/tray-download";
+import IcBaselineDownload from "~icons/ic/baseline-download";
+import IcBaselineMoreHoriz from "~icons/ic/baseline-more-horiz";
+import IcBaselineRemoveRedEye from "~icons/ic/baseline-remove-red-eye";
 import { html } from "@/lib/tags";
 
 const meta: Meta<typeof PrimevueMenu> = {
@@ -32,9 +32,9 @@ const meta: Meta<typeof PrimevueMenu> = {
 const getIcon = (name: string) => {
   switch (name) {
     case "view":
-      return EyeOutline;
+      return IcBaselineRemoveRedEye;
     case "download":
-      return MdiTrayDownload;
+      return IcBaselineDownload;
   }
 };
 
@@ -56,7 +56,7 @@ export const Default: StoryObj<typeof meta> = {
 
 export const Popup: StoryObj<typeof meta> = {
   render: (args) => ({
-    components: { PrimevueMenu, PrimevueButton, MdiDotsVertical },
+    components: { PrimevueMenu, PrimevueButton, IcBaselineMoreHoriz },
     setup() {
       const menuRef = useTemplateRef<typeof PrimevueMenu>("menu");
 
@@ -68,7 +68,7 @@ export const Popup: StoryObj<typeof meta> = {
     },
     template: html`<div>
       <PrimevueButton label="Aktionen" @click="toggle" severity="secondary">
-        <template #icon> <MdiDotsVertical /> </template></PrimevueButton
+        <template #icon> <IcBaselineMoreHoriz /> </template></PrimevueButton
       ><PrimevueMenu :popup="true" v-bind="args" ref="menu"
         ><template #itemicon="{item}"
           ><component :is="getIcon(item.icon)" v-if="item.icon" /></template

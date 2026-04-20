@@ -2,9 +2,9 @@ import type { Meta, StoryObj } from "@storybook/vue3-vite";
 import Breadcrumb from "primevue/breadcrumb";
 import { vueRouter } from "storybook-vue3-router";
 import { ref } from "vue";
-import ChevronRightIcon from "~icons/material-symbols/chevron-right";
-import HomeFilledIcon from "~icons/material-symbols/home";
-import HomeOutlineIcon from "~icons/material-symbols/home-outline";
+import IcBaselineChevronRight from "~icons/ic/baseline-chevron-right";
+import IcBaselineHouse from "~icons/ic/baseline-house";
+import IcOutlineHouse from "~icons/ic/outline-house";
 import { html } from "@/lib/tags.ts";
 
 const meta: Meta<typeof Breadcrumb> = {
@@ -20,9 +20,9 @@ export const Default: Story = {
   render: () => ({
     components: {
       Breadcrumb,
-      HomeOutlineIcon,
-      ChevronRightIcon,
-      HomeFilledIcon,
+      IcOutlineHouse,
+      IcBaselineChevronRight,
+      IcBaselineHouse,
     },
     setup() {
       const items = ref([
@@ -49,10 +49,10 @@ export const Default: Story = {
                 <template v-if="item.type === 'home'">
                   <span @mouseenter="isHovered = true" @mouseleave="isHovered = false">
                     <template v-if="isHovered">
-                      <HomeFilledIcon class="-ml-2" />
+                      <IcBaselineHouse class="-ml-2" />
                     </template>
                     <template v-else>
-                      <HomeOutlineIcon class="-ml-2" />
+                      <IcOutlineHouse class="-ml-2" />
                     </template>
                   </span>
                 </template>
@@ -62,7 +62,7 @@ export const Default: Story = {
             <span v-else class="line-clamp-1">{{ item.label }}</span>
           </template>
           <template #separator>
-            <ChevronRightIcon />
+            <IcBaselineChevronRight />
           </template>
         </Breadcrumb>
       </div>

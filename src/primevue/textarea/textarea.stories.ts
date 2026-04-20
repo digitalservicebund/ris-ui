@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/vue3-vite";
 import PrimevueTextarea from "primevue/textarea";
-import ErrorOutline from "~icons/material-symbols/error-outline";
+import IcBaselineErrorOutline from "~icons/ic/baseline-error-outline";
 import { html } from "@/lib/tags";
 
 // Imported as Btn because somehow formatting sometimes changes
@@ -81,7 +81,7 @@ export const Invalid: StoryObj<typeof meta> = {
     invalid: true,
   },
   render: (args) => ({
-    components: { PrimevueTextarea, ErrorOutline },
+    components: { PrimevueTextarea, IcBaselineErrorOutline },
     setup() {
       return { args };
     },
@@ -94,7 +94,7 @@ export const Invalid: StoryObj<typeof meta> = {
           v-bind="args"
         />
         <small id="invalid-with-label-hint">
-          <ErrorOutline /> Error message with helper text goes here
+          <IcBaselineErrorOutline /> Error message with helper text goes here
         </small>
       </div>
     `,

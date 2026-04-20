@@ -16,7 +16,7 @@ const config: StorybookConfig = {
 
   async viteFinal(baseConfig) {
     return mergeConfig(baseConfig, {
-      plugins: [Icons({ autoInstall: true })],
+      plugins: [Icons()],
 
       resolve: {
         alias: {

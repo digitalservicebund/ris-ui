@@ -24,11 +24,10 @@
     "strict": true,
 
     /* Aliases */
-    "baseUrl": ".",
-    "paths": { "@/*": ["src/*"] }
+    "paths": { "@/*": ["./src/*"] }
   },
 
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.vue"],
+  "include": ["src/**/*.ts", "src/**/*.d.ts"],
 
   "references": [{ "path": "./tsconfig.node.json" }]
 }

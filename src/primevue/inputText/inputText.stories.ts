@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/vue3-vite";
 import Fluid from "primevue/fluid";
 import InputText from "primevue/inputtext";
-import ErrorOutline from "~icons/material-symbols/error-outline";
+import IcBaselineErrorOutline from "~icons/ic/baseline-error-outline";
 import { html } from "@/lib/tags";
 
 const meta: Meta<typeof InputText> = {
@@ -101,14 +101,16 @@ export const Invalid: StoryObj<typeof meta> = {
   },
 
   render: (args) => ({
-    components: { InputText, ErrorOutline },
+    components: { InputText, IcBaselineErrorOutline },
     setup() {
       return { args };
     },
     template: html`<div class="flex flex-col gap-2">
       <label class="ris-label2-regular" for="invalid">Label</label>
       <InputText id="invalid" aria-describedby="invalid-hint" v-bind="args" />
-      <small id="invalid-hint"> <ErrorOutline /> Error message with helper text goes here </small>
+      <small id="invalid-hint">
+        <IcBaselineErrorOutline /> Error message with helper text goes here
+      </small>
     </div>`,
   }),
 };

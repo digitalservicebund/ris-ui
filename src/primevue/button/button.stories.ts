@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/vue3-vite";
 import PrimevueButton from "primevue/button";
-import IconCheck from "~icons/material-symbols/check";
+import IcBaselineCheck from "~icons/ic/baseline-check";
 import { html } from "@/lib/tags.ts";
 
 // Imported as PrimevueButton because somehow formatting sometimes changes
@@ -103,14 +103,14 @@ export const WithIcon: Story = {
     iconPos: { options: ["left", "right"] },
   },
   render: (args) => ({
-    components: { PrimevueButton, IconCheck },
+    components: { PrimevueButton, IcBaselineCheck },
     setup() {
       return { args };
     },
     template: html`
       <PrimevueButton v-bind="args">
         <template #icon="slotProps">
-          <IconCheck :class="slotProps.class" />
+          <IcBaselineCheck :class="slotProps.class" />
         </template>
       </PrimevueButton>
     `,
@@ -123,13 +123,13 @@ export const IconOnly: Story = {
     label: undefined,
   },
   render: (args) => ({
-    components: { PrimevueButton, IconCheck },
+    components: { PrimevueButton, IcBaselineCheck },
     setup() {
       return { args };
     },
     template: html` <PrimevueButton v-bind="args">
       <template #icon>
-        <IconCheck />
+        <IcBaselineCheck />
       </template>
     </PrimevueButton>`,
   }),
@@ -156,13 +156,13 @@ export const Pill: Story = {
     severity: "info",
   },
   render: (args) => ({
-    components: { PrimevueButton, IconCheck },
+    components: { PrimevueButton, IcBaselineCheck },
     setup() {
       return { args };
     },
     template: html` <PrimevueButton v-bind="args">
       <template #icon>
-        <IconCheck />
+        <IcBaselineCheck />
       </template>
     </PrimevueButton>`,
   }),

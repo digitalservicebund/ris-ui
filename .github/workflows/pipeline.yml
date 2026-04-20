@@ -67,17 +67,6 @@ jobs:
       - name: Check types
         run: pnpm run typecheck
 
-  # Automated tests
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
-      - name: Setup
-        uses: ./.github/actions/setup-project
-      - name: Run tests
-        run: pnpm run test
-
   # Deploy Storybook to GitHub Pages
   build-and-deploy-storybook:
     if: ${{ github.ref == 'refs/heads/main' }}
@@ -85,7 +74,6 @@ jobs:
       - talisman-check
       - trivy-scan
       - check-style
-      - test
     permissions:
       contents: read
       pages: write

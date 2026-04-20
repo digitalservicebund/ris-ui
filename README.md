@@ -4,10 +4,9 @@
 
 ## Installation
 
-RIS UI contains three things:
+RIS UI contains two things:
 
 - a [theme](./src/primevue/) for [Vue 3](https://vuejs.org) components from [PrimeVue 4](https://primevue.org);
-- [custom components](./src/components/);
 - a [configuration](./src/tailwind/global.css) file for [Tailwind](https://tailwindcss.com) that includes design tokens, typography, and global component styles, ensuring consistency across custom UI and PrimeVue components.
 
 Vue, PrimeVue and Tailwind are required for RIS UI to work (you'll see a warning about missing peer dependencies if you're trying to use RIS UI without them). To get started, install:
@@ -172,21 +171,19 @@ RIS UI uses the following tools:
 - [Unplugin Icons](https://github.com/unplugin/unplugin-icons) for providing SVG icons as components
 - [TypeScript](https://www.typescriptlang.org/)
 - [Oxlint](https://oxc.rs/docs/guide/usage/linter.html) and [Oxfmt](https://oxc.rs/docs/guide/usage/formatter.html) for code consistency
-- [Vitest](https://vitest.dev) as our test runner
 
 You can find more in [package.json](./package.json), but the above are the ones you'll work with the most.
 
 In terms of files and folders, you'll find:
 
-| Folder           | Contents                                  |
-| ---------------- | ----------------------------------------- |
-| (root)           | General docs and configuration            |
-| `.github/`       | GitHub Actions configuration              |
-| `.storybook/`    | Storybook setup                           |
-| `src/components` | Custom Vue components                     |
-| `src/primevue`   | The RIS UI preset for PrimeVue            |
-| `src/tailwind`   | The RIS UI preset and plugin for Tailwind |
-| `src/lib`        | Internal tools and helpers                |
+| Folder         | Contents                                  |
+| -------------- | ----------------------------------------- |
+| (root)         | General docs and configuration            |
+| `.github/`     | GitHub Actions configuration              |
+| `.storybook/`  | Storybook setup                           |
+| `src/primevue` | The RIS UI preset for PrimeVue            |
+| `src/tailwind` | The RIS UI preset and plugin for Tailwind |
+| `src/lib`      | Internal tools and helpers                |
 
 ### Tailwind IntelliSense
 

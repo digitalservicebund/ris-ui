@@ -1,14 +1,10 @@
-/// <reference types="vitest/config" />
 import { fileURLToPath, URL } from "node:url";
 import tailwindcss from "@tailwindcss/vite";
-import vue from "@vitejs/plugin-vue";
 import icons from "unplugin-icons/vite";
 import { defineConfig } from "vite";
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    vue(),
     tailwindcss(),
     icons({
       autoInstall: true,
@@ -28,7 +24,6 @@ export default defineConfig({
       entry: {
         "primevue/index": "src/primevue/index.ts",
         "tailwind/index": "src/tailwind/index.ts",
-        "components/index": "src/components/index.ts",
       },
       cssFileName: "style",
       formats: ["es"],
@@ -42,11 +37,5 @@ export default defineConfig({
       },
     },
     sourcemap: true,
-  },
-
-  test: {
-    setupFiles: ["src/vitest-setup.ts"],
-    globals: true,
-    environment: "jsdom",
   },
 });

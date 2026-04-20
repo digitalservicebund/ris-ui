@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/vue3-vite";
 import Fluid from "primevue/fluid";
 import InputMask from "primevue/inputmask";
 import { ref } from "vue";
-import ErrorOutline from "~icons/material-symbols/error-outline";
+import IcBaselineErrorOutline from "~icons/ic/baseline-error-outline";
 import { html } from "@/lib/tags";
 
 const meta: Meta<typeof InputMask> = {
@@ -98,13 +98,13 @@ export const Invalid: StoryObj<typeof meta> = {
   },
 
   render: (args) => ({
-    components: { InputMask, ErrorOutline },
+    components: { InputMask, IcBaselineErrorOutline },
     setup() {
       return { args };
     },
     template: html`<div class="flex w-1/4 flex-col gap-2">
       <InputMask id="invalid" aria-describedby="invalid-hint" v-bind="args" />
-      <small id="invalid-hint"> <ErrorOutline /> Invalid date </small>
+      <small id="invalid-hint"> <IcBaselineErrorOutline /> Invalid date </small>
     </div>`,
   }),
 };

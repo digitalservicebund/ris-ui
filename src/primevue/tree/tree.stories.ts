@@ -3,8 +3,8 @@ import PrimevueButton from "primevue/button";
 import Tree from "primevue/tree";
 import { vueRouter } from "storybook-vue3-router";
 import { ref, onMounted } from "vue";
-import ChevronDownIcon from "~icons/mdi/chevron-down";
-import ChevronUpIcon from "~icons/mdi/chevron-up";
+import IcBaselineKeyboardArrowDown from "~icons/ic/baseline-keyboard-arrow-down";
+import IcBaselineKeyboardArrowUp from "~icons/ic/baseline-keyboard-arrow-up";
 import { html } from "@/lib/tags.ts";
 
 interface TreeNode {
@@ -27,7 +27,7 @@ type Story = StoryObj<typeof meta>;
 
 export const TableOfContents: Story = {
   render: (args) => ({
-    components: { Tree, ChevronDownIcon, ChevronUpIcon, PrimevueButton },
+    components: { Tree, IcBaselineKeyboardArrowDown, IcBaselineKeyboardArrowUp, PrimevueButton },
     setup() {
       const nodes = ref<TreeNode[]>([]);
       const expandedKeys = ref<Record<string, boolean>>({});
@@ -270,13 +270,13 @@ export const TableOfContents: Story = {
           <span>Inhaltsverzeichnis</span>
           <PrimevueButton text label="Alle Ebenen öffnen" v-if="!isExpanded">
             <template #icon>
-              <ChevronDownIcon />
+              <IcBaselineKeyboardArrowDown />
             </template>
           </PrimevueButton>
 
           <PrimevueButton text label="Alle Ebenen schließen" v-else>
             <template #icon>
-              <ChevronUpIcon />
+              <IcBaselineKeyboardArrowUp />
             </template>
           </PrimevueButton>
         </div>
@@ -296,8 +296,8 @@ export const TableOfContents: Story = {
             >
           </template>
           <template #nodetoggleicon="{ expanded }">
-            <ChevronDownIcon v-if="!expanded" />
-            <ChevronUpIcon v-else />
+            <IcBaselineKeyboardArrowDown v-if="!expanded" />
+            <IcBaselineKeyboardArrowUp v-else />
           </template>
         </Tree>
       </div>

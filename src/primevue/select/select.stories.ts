@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/vue3-vite";
 import PrimevueSelect from "primevue/select";
 import { ref } from "vue";
-import ErrorOutline from "~icons/material-symbols/error-outline";
+import IcBaselineErrorOutline from "~icons/ic/baseline-error-outline";
 import { html } from "@/lib/tags";
 
 const meta: Meta<typeof PrimevueSelect> = {
@@ -147,7 +147,7 @@ export const Invalid: StoryObj<typeof meta> = {
     invalid: true,
   },
   render: (args) => ({
-    components: { PrimevueSelect, ErrorOutline },
+    components: { PrimevueSelect, IcBaselineErrorOutline },
     setup() {
       const selectedOption = ref();
       const options = ref([
@@ -170,7 +170,7 @@ export const Invalid: StoryObj<typeof meta> = {
         optionValue="code"
         :options="options"
       />
-      <small id="invalid-hint"><ErrorOutline />Invalid date</small>
+      <small id="invalid-hint"><IcBaselineErrorOutline />Invalid date</small>
     </div>`,
   }),
 };
