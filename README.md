@@ -19,13 +19,7 @@ pnpm install vue primevue tailwindcss
 pnpm install @digitalservicebund/ris-ui
 ```
 
-### Vue (SPA with Vite, Vue CLI or similar)
-
-> [!NOTE]
->
-> If you're using Nuxt, follow the instructions for [Nuxt](#nuxt-setup) below instead.
-
-Import and apply the RIS UI theme and fonts where you set up your application (typically `main.ts`):
+Import and apply the RIS UI theme and fonts where you set up your application (typically `main.ts` or a [Nuxt plugin](https://nuxt.com/docs/4.x/directory-structure/app/plugins)):
 
 ```diff
   // main.ts
@@ -53,85 +47,6 @@ Then, extend your Tailwind configuration for RIS UI:
 
   /* other config and styles */
 ```
-
-### Nuxt setup
-
-If using Nuxt, skip the Vue setup above.
-
-Install the Nuxt PrimeVue module:
-
-```sh
-pnpm install @primevue/nuxt-module
-```
-
-Add the PrimeVue module and configure it in `nuxt.config.ts`:
-
-```diff
-  // nuxt.config.ts
-+ import tailwindcss from "@tailwindcss/vite";
-  export default defineNuxtConfig({
-    // your other configuration
-    modules: [
-+     "@primevue/nuxt-module",
-    ],
-+   primevue: {
-+      usePrimeVue: false, // configured in plugins/ris-ui.ts
-+   },
-    vite: {
-      plugins: [
-+       tailwindcss(),
-      ],
-    }
-  })
-```
-
-Add a new Nuxt plugin to configure PrimeVue:
-
-```typescript
-// plugins/ris-ui.ts
-import { RisUiTheme, RisUiLocale } from "@digitalservicebund/ris-ui/primevue";
-import PrimeVue from "primevue/config";
-
-export default defineNuxtPlugin((nuxtApp) => {
-  nuxtApp.vueApp.use(PrimeVue, {
-    pt: RisUiTheme,
-    unstyled: true,
-    locale: RisUiLocale.deDE,
-  });
-});
-```
-
-Continue with the next step, _Tailwind CSS Configuration_.
-
-## Getting started
-
-To get you started, here's an example how to use a RIS UI button in your ui component. The Storybook code snippet is hiding some essential parts from you. Here is an an example `StartPage.vue`:
-
-```vue
-<script lang="ts" setup>
-import { useRouter } from "vue-router";
-import Button from "primevue/button";
-import IconAdd from "~icons/material-symbols/add";
-
-const router = useRouter();
-</script>
-
-<template>
-  <Button
-    :disabled="false"
-    :loading="false"
-    :text="false"
-    label="Neue Dokumentationseinheit"
-    @click="router.push({ path: '/documentUnit/new' })"
-  >
-    <template #icon>
-      <IconAdd />
-    </template>
-  </Button>
-</template>
-```
-
-In addition to the installation steps, the icon is being provided by [unplugin-icons](https://www.npmjs.com/package/unplugin-icons) in conjunction with [@iconify-json/material-symbols](https://www.npmjs.com/package/@iconify-json/material-symbols).
 
 ## Development
 
