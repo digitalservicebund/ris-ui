@@ -20,6 +20,7 @@ export default defineConfig({
   },
 
   build: {
+    cssMinify: "esbuild",
     lib: {
       entry: {
         "primevue/index": "src/primevue/index.ts",
