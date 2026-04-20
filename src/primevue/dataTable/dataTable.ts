@@ -1,4 +1,4 @@
-import {
+import type {
   DataTablePassThroughOptions,
   DataTableContext,
 } from "primevue/datatable";

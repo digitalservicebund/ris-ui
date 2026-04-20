@@ -65,7 +65,7 @@ describe("AutoComplete", () => {
       dropdownMode: "current",
       ariaLabel: "ARIA label",
       ariaLabelledby: "labelled by",
-      delay: 3.141,
+      delay: 1.234,
       completeOnFocus: true,
       loading: true,
       invalid: true,

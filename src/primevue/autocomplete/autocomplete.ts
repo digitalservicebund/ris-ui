@@ -1,4 +1,4 @@
-import { AutoCompletePassThroughOptions } from "primevue/autocomplete";
+import type { AutoCompletePassThroughOptions } from "primevue/autocomplete";
 import { tw } from "@/lib/tags.ts";
 
 const fluid = tw`w-full`;

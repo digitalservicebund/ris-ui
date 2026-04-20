@@ -1,4 +1,4 @@
-import { ToastPassThroughOptions } from "primevue/toast";
+import type { ToastPassThroughOptions } from "primevue/toast";
 import { tw } from "@/lib/tags.ts";
 
 const toast: ToastPassThroughOptions = {

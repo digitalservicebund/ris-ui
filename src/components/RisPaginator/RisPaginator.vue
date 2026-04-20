@@ -1,5 +1,6 @@
 <script lang="ts" setup>
-import { Button, PageState, Paginator, PaginatorProps } from "primevue";
+import type { PageState, PaginatorProps } from "primevue";
+import { Button, Paginator } from "primevue";
 import ChevronLeft from "~icons/mdi/chevron-left";
 import ChevronRight from "~icons/mdi/chevron-right";
 

@@ -1,4 +1,4 @@
-import { ProgressSpinnerPassThroughOptions } from "primevue/progressspinner";
+import type { ProgressSpinnerPassThroughOptions } from "primevue/progressspinner";
 import { tw } from "@/lib/tags.ts";
 
 const progressSpinner: ProgressSpinnerPassThroughOptions = {

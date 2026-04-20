@@ -1,9 +1,10 @@
 <script lang="ts" setup>
-import AutoComplete, {
+import type {
   AutoCompleteOptionSelectEvent,
   AutoCompleteOptionUnselectEvent,
-  type AutoCompleteProps,
 } from "primevue/autocomplete";
+import type AutoComplete from "primevue/autocomplete";
+import { type AutoCompleteProps } from "primevue/autocomplete";
 import ProgressSpinner from "primevue/progressspinner";
 import { ref } from "vue";
 import RisGhostButton from "@/components/RisGhostButton/RisGhostButton.vue";
@@ -61,7 +62,6 @@ function show(): void {
     // casting to `any` because the underlying component instance
     // does not expose `show()` in its public TypeScript typings,
     // even though the method exists at runtime.
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (autoCompleteRef.value as any).show();
   }
 }

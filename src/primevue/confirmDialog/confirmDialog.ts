@@ -1,4 +1,4 @@
-import { ConfirmDialogPassThroughOptions } from "primevue/confirmdialog";
+import type { ConfirmDialogPassThroughOptions } from "primevue/confirmdialog";
 
 const confirmDialog: ConfirmDialogPassThroughOptions = {
   // All styling implemented in primevue/dialog

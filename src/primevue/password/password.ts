@@ -1,4 +1,4 @@
-import { PasswordPassThroughOptions } from "primevue/password";
+import type { PasswordPassThroughOptions } from "primevue/password";
 
 const password: PasswordPassThroughOptions = {
   // All styling moved to inputText.ts

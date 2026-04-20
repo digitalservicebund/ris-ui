@@ -1,4 +1,4 @@
-import { ButtonPassThroughOptions } from "primevue/button";
+import type { ButtonPassThroughOptions } from "primevue/button";
 import { tw } from "@/lib/tags.ts";
 
 const button: ButtonPassThroughOptions = {

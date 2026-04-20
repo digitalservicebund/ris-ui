@@ -2,7 +2,7 @@ import { describe, it, expect } from "vitest";
 import RisPaginator from "./RisPaginator.vue";
 import { render, screen } from "@testing-library/vue";
 import userEvent from "@testing-library/user-event";
-import { PageState } from "primevue";
+import type { PageState } from "primevue";
 import { defineComponent, h } from "vue";
 
 const ButtonStub = defineComponent({

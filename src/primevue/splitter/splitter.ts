@@ -1,4 +1,4 @@
-import { SplitterPassThroughOptions } from "primevue/splitter";
+import type { SplitterPassThroughOptions } from "primevue/splitter";
 import { tw } from "@/lib/tags.ts";
 
 const splitter: SplitterPassThroughOptions = {

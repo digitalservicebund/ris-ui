@@ -1,4 +1,4 @@
-import { InputMaskPassThroughOptions } from "primevue/inputmask";
+import type { InputMaskPassThroughOptions } from "primevue/inputmask";
 import { base, small } from "../inputText/inputText";
 
 const inputMask: InputMaskPassThroughOptions = {

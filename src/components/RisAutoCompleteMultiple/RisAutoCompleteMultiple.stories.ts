@@ -1,10 +1,10 @@
-import { Meta, StoryObj } from "@storybook/vue3-vite";
+import type { Meta, StoryObj } from "@storybook/vue3-vite";
 import { html } from "@/lib/tags.ts";
 import { ref } from "vue";
-import { AutoCompleteCompleteEvent } from "primevue/autocomplete";
+import type { AutoCompleteCompleteEvent } from "primevue/autocomplete";
 import { http, HttpResponse } from "msw";
 import RisAutoCompleteMultiple from "./RisAutoCompleteMultiple.vue";
-import {
+import type {
   AutoCompleteMultipleSuggestion,
   RisAutoCompleteMultipleProps,
 } from "./RisAutoCompleteMultiple.vue";

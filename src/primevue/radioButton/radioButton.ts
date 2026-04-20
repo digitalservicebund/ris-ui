@@ -1,5 +1,5 @@
 import { tw } from "@/lib/tags";
-import { RadioButtonPassThroughOptions } from "primevue/radiobutton";
+import type { RadioButtonPassThroughOptions } from "primevue/radiobutton";
 
 const radioButton: RadioButtonPassThroughOptions = {
   root: ({ props }) => {

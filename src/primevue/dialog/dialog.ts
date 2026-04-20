@@ -1,5 +1,5 @@
 import { tw } from "@/lib/tags";
-import { DialogPassThroughOptions } from "primevue/dialog";
+import type { DialogPassThroughOptions } from "primevue/dialog";
 
 const dialog: DialogPassThroughOptions = {
   root: () => {

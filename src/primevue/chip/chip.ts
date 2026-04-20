@@ -1,5 +1,5 @@
 import { tw } from "@/lib/tags";
-import { ChipPassThroughOptions } from "primevue";
+import type { ChipPassThroughOptions } from "primevue";
 
 const chip: ChipPassThroughOptions = {
   root: {

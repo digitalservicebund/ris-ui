@@ -1,5 +1,5 @@
 import { tw } from "@/lib/tags.ts";
-import { MultiSelectPassThroughOptions } from "primevue/multiselect";
+import type { MultiSelectPassThroughOptions } from "primevue/multiselect";
 
 const multiSelect: MultiSelectPassThroughOptions = {
   root: ({ props, state }) => {

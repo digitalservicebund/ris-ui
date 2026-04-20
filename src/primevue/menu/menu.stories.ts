@@ -1,8 +1,8 @@
 import { html } from "@/lib/tags";
-import { Meta, StoryObj } from "@storybook/vue3-vite";
+import type { Meta, StoryObj } from "@storybook/vue3-vite";
 import PrimevueMenu from "primevue/menu";
 import PrimevueButton from "primevue/button";
-import { MenuItem } from "primevue/menuitem";
+import type { MenuItem } from "primevue/menuitem";
 import MdiDotsVertical from "~icons/mdi/dots-vertical";
 import EyeOutline from "~icons/mdi/eye-outline";
 import MdiTrayDownload from "~icons/mdi/tray-download";

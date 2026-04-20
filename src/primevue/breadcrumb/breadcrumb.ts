@@ -1,4 +1,4 @@
-import { BreadcrumbPassThroughOptions } from "primevue/breadcrumb";
+import type { BreadcrumbPassThroughOptions } from "primevue/breadcrumb";
 import { tw } from "@/lib/tags.ts";
 
 const breadcrumb: BreadcrumbPassThroughOptions = {

@@ -1,9 +1,8 @@
 import { render, screen, waitFor, within } from "@testing-library/vue";
 import { describe, it, expect } from "vitest";
 import type { AutoCompleteCompleteEvent } from "primevue/autocomplete";
-import RisAutoCompleteMultiple, {
-  AutoCompleteMultipleSuggestion,
-} from "./RisAutoCompleteMultiple.vue";
+import type { AutoCompleteMultipleSuggestion } from "./RisAutoCompleteMultiple.vue";
+import RisAutoCompleteMultiple from "./RisAutoCompleteMultiple.vue";
 import PrimeVue from "primevue/config";
 import userEvent from "@testing-library/user-event";
 import { ref } from "vue";

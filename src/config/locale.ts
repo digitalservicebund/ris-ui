@@ -1,4 +1,4 @@
-import { PrimeVueLocaleOptions } from "primevue/config";
+import type { PrimeVueLocaleOptions } from "primevue/config";
 
 export const deDE: PrimeVueLocaleOptions = {
   startsWith: "Beginnt mit",

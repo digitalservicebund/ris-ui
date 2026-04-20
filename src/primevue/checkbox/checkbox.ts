@@ -1,5 +1,5 @@
 import { tw } from "@/lib/tags";
-import { CheckboxPassThroughOptions } from "primevue/checkbox";
+import type { CheckboxPassThroughOptions } from "primevue/checkbox";
 
 const checkbox: CheckboxPassThroughOptions = {
   root: ({ props }) => {

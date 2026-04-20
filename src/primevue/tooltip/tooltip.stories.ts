@@ -1,5 +1,5 @@
 import { html } from "@/lib/tags.ts";
-import { Meta, StoryObj } from "@storybook/vue3-vite";
+import type { Meta, StoryObj } from "@storybook/vue3-vite";
 import Tooltip from "primevue/tooltip";
 import InputText from "primevue/inputtext";
 

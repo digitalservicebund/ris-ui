@@ -1,4 +1,4 @@
-import { TooltipDirectivePassThroughOptions } from "primevue/tooltip";
+import type { TooltipDirectivePassThroughOptions } from "primevue/tooltip";
 import { tw } from "@/lib/tags.ts";
 
 const tooltip: TooltipDirectivePassThroughOptions = {

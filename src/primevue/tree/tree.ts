@@ -1,4 +1,4 @@
-import { TreePassThroughOptions } from "primevue/tree";
+import type { TreePassThroughOptions } from "primevue/tree";
 import { tw } from "@/lib/tags.ts";
 import "./tree.css";
 

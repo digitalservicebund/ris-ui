@@ -14,8 +14,8 @@ const config: StorybookConfig = {
 
   staticDirs: ["../public"],
 
-  async viteFinal(config) {
-    return mergeConfig(config, {
+  async viteFinal(baseConfig) {
+    return mergeConfig(baseConfig, {
       plugins: [Icons({ autoInstall: true })],
 
       resolve: {

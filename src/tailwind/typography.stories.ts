@@ -1,5 +1,5 @@
 import { html } from "@/lib/tags";
-import { Meta, StoryObj } from "@storybook/vue3-vite";
+import type { Meta, StoryObj } from "@storybook/vue3-vite";
 
 const meta: Meta<never> = {
   tags: ["autodocs"],
