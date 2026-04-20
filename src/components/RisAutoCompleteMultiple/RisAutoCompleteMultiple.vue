@@ -1,10 +1,9 @@
 <script lang="ts" setup>
-import { Checkbox } from "primevue";
+import { AutoComplete, Checkbox } from "primevue";
 import type {
   AutoCompleteOptionSelectEvent,
   AutoCompleteOptionUnselectEvent,
 } from "primevue/autocomplete";
-import type AutoComplete from "primevue/autocomplete";
 import { type AutoCompleteProps } from "primevue/autocomplete";
 import ProgressSpinner from "primevue/progressspinner";
 import { ref } from "vue";
