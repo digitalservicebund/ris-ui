@@ -2,24 +2,16 @@
   "name": "@digitalservicebund/ris-ui",
   "version": "0.0.1",
   "description": "Component library for NeuRIS",
-  "author": "digitalservicebund",
   "license": "GPL-3.0-only",
-  "type": "module",
+  "author": "digitalservicebund",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/digitalservicebund/ris-ui.git"
   },
-  "packageManager": "pnpm@10.24.0",
-  "devEngines": {
-    "runtime": {
-      "name": "node",
-      "version": "~24.11.0",
-      "onFail": "warn"
-    }
-  },
   "files": [
     "dist"
   ],
+  "type": "module",
   "exports": {
     "./primevue": {
       "types": "./dist/primevue/index.d.ts",
@@ -42,19 +34,14 @@
     "storybook": "storybook dev -p 6006",
     "build": "pnpm run sync-fonts && vite build && vue-tsc --build tsconfig.lib.json --force",
     "build:storybook": "pnpm run sync-fonts && storybook build",
-    "fmt": "prettier . --write --ignore-unknown",
+    "fmt": "oxfmt",
     "lint": "oxlint --fix",
-    "stylecheck": "prettier --check . && oxlint --max-warnings=0",
+    "stylecheck": "oxfmt --check && oxlint --max-warnings=0",
     "audit:licenses": "license-checker --production --excludePrivatePackages --excludePackages @digitalservicebund/ris-ui@$(cat package.json | jq -r '.version') --onlyAllow \"$(. ./parse-allowed-licenses.sh)\" --csv --out ./frontend-license-report.csv",
     "typecheck": "vue-tsc",
     "sync-fonts": "rm ./public/fonts/*.woff ./public/fonts/*.woff2; cp ./node_modules/@digitalservice4germany/angie/fonts/* ./public/fonts/; cp ./node_modules/@digitalservice4germany/angie/fonts.css ./public/",
     "test": "vitest run",
     "test:watch": "vitest watch"
-  },
-  "peerDependencies": {
-    "primevue": "^4.0.0",
-    "tailwindcss": "^4.0.0",
-    "vue": "^3.0.0"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "~20.5.0",
@@ -78,9 +65,8 @@
     "lodash": "~4.18.0",
     "msw": "~2.12.14",
     "msw-storybook-addon": "^2.0.6",
+    "oxfmt": "~0.45.0",
     "oxlint": "~1.60.0",
-    "prettier": "~3.8.1",
-    "prettier-plugin-tailwindcss": "~0.7.2",
     "storybook": "~10.3.4",
     "storybook-vue3-router": "~7.0.0",
     "typescript": "~5.9.3",
@@ -90,12 +76,25 @@
     "vue-router": "~4.6.4",
     "vue-tsc": "~3.2.6"
   },
+  "peerDependencies": {
+    "primevue": "^4.0.0",
+    "tailwindcss": "^4.0.0",
+    "vue": "^3.0.0"
+  },
+  "overrides": {
+    "storybook": "$storybook"
+  },
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": "~24.11.0",
+      "onFail": "warn"
+    }
+  },
+  "packageManager": "pnpm@10.24.0",
   "msw": {
     "workerDirectory": [
       "public"
     ]
-  },
-  "overrides": {
-    "storybook": "$storybook"
   }
 }

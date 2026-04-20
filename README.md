@@ -171,7 +171,7 @@ RIS UI uses the following tools:
 - [Vite](https://vitejs.dev/) as our dev server and bundler
 - [Unplugin Icons](https://github.com/unplugin/unplugin-icons) for providing SVG icons as components
 - [TypeScript](https://www.typescriptlang.org/)
-- [Oxlint](https://oxc.rs/docs/guide/usage/linter.html) and [Prettier](https://prettier.io/) for code consistency
+- [Oxlint](https://oxc.rs/docs/guide/usage/linter.html) and [Oxfmt](https://oxc.rs/docs/guide/usage/formatter.html) for code consistency
 - [Vitest](https://vitest.dev) as our test runner
 
 You can find more in [package.json](./package.json), but the above are the ones you'll work with the most.
