@@ -7,11 +7,13 @@ import PrimeVue from "primevue/config";
 import ConfirmationService from "primevue/confirmationservice";
 import ToastService from "primevue/toastservice";
 import Tooltip from "primevue/tooltip";
-import "../public/fonts.css";
 import { deDE } from "../src/config/locale";
 import { RisUiTheme } from "../src/primevue";
-import "../src/tailwind/components-extra/drawer.css";
+// Note that the order of the CSS is important for the Storybook preview to
+// render everything properly
+import "../public/fonts.css";
 import "./preview.css";
+import "../src/tailwind/components-extra/drawer.css";
 
 initialize({
   serviceWorker: {
