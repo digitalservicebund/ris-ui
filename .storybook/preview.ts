@@ -6,11 +6,12 @@ import { initialize, mswLoader } from "msw-storybook-addon";
 import PrimeVue from "primevue/config";
 import ConfirmationService from "primevue/confirmationservice";
 import ToastService from "primevue/toastservice";
-import "../public/fonts.css";
 import Tooltip from "primevue/tooltip";
+import "../public/fonts.css";
 import { deDE } from "../src/config/locale";
-import "./preview.css";
 import { RisUiTheme } from "../src/primevue";
+import "../src/tailwind/components-extra/drawer.css";
+import "./preview.css";
 
 initialize({
   serviceWorker: {

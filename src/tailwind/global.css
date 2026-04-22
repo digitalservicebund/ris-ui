@@ -1,5 +1,3 @@
-@import "./components-extra/drawer.css" layer(components);
-
 @theme static {
   /* Resets */
   --color-*: initial;
