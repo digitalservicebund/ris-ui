@@ -6,7 +6,7 @@ import { tw } from "@/lib/tags";
 
 const drawer: DrawerPassThroughOptions = {
   root: {
-    class: tw`drawer-root relative max-h-[85dvh] w-full overflow-auto bg-white`,
+    class: tw`drawer-root shadow-gray-1000/15 relative max-h-[85dvh] w-full overflow-auto bg-white shadow-[0_0_0.5rem]`,
   },
 
   header: {
