@@ -2,11 +2,13 @@ import type { DrawerPassThroughOptions } from "primevue";
 import { tw } from "@/lib/tags";
 
 // Classes prefixed with `drawer-` are required by `components-extra/drawer.css`
-// for features not supported by Tailwind.
+// for features not supported by Tailwind. `root` and `mask` are hidden on print
+// so overlays don't hide the page content when printed, and set to important to
+// override PrimeVue's manual positioning logic
 
 const drawer: DrawerPassThroughOptions = {
   root: {
-    class: tw`drawer-root shadow-gray-1000/15 relative max-h-[85dvh] w-full overflow-auto bg-white shadow-[0_0_0.5rem]`,
+    class: tw`drawer-root shadow-gray-1000/15 relative max-h-[85dvh] w-full overflow-auto bg-white shadow-[0_0_0.5rem] print:hidden!`,
   },
 
   header: {
@@ -37,7 +39,7 @@ const drawer: DrawerPassThroughOptions = {
   },
 
   mask: {
-    class: tw`bg-gray-900/30 transition duration-300 has-[.enter-from]:bg-gray-900/0 has-[.leave-to]:bg-gray-900/0`,
+    class: tw`bg-gray-900/30 transition duration-300 has-[.enter-from]:bg-gray-900/0 has-[.leave-to]:bg-gray-900/0 print:hidden!`,
   },
 
   transition: {
