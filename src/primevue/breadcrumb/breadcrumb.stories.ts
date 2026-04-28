@@ -56,13 +56,13 @@ export const Default: Story = {
                     </template>
                   </span>
                 </template>
-                <span v-else class="line-clamp-1"> {{ item.label }} </span>
+                <span v-else class="line-clamp-1">{{ item.label }}</span>
               </a>
             </router-link>
             <span v-else class="line-clamp-1">{{ item.label }}</span>
           </template>
           <template #separator>
-            <IcBaselineChevronRight />
+            <IcBaselineChevronRight width="16px" height="16px" />
           </template>
         </Breadcrumb>
       </div>
