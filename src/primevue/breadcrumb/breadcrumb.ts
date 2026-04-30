@@ -3,15 +3,11 @@ import { tw } from "@/lib/tags.ts";
 
 const breadcrumb: BreadcrumbPassThroughOptions = {
   list: {
-    class: tw`m-0 flex list-none flex-wrap items-center gap-x-2 gap-y-4 p-0 leading-none`,
+    class: tw`m-0 flex flex-wrap items-center gap-x-2 gap-y-4 p-0 md:flex-nowrap`,
   },
 
   item: {
-    class: tw`flex-no-wrap ris-label2-regular flex items-center break-all text-gray-900`,
-  },
-
-  itemLink: {
-    class: tw`inline-flex cursor-pointer items-center text-blue-800 decoration-[0.1875rem] underline-offset-[0.1875rem] hover:underline focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-blue-800`,
+    class: tw`ris-label2-regular [&>a]:ris-link2-regular flex flex-nowrap items-center text-gray-900 *:line-clamp-1 md:flex-none md:last:flex-auto [&>a]:not-hover:no-underline`,
   },
 
   separator: {
