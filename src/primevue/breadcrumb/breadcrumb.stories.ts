@@ -3,8 +3,6 @@ import Breadcrumb from "primevue/breadcrumb";
 import { vueRouter } from "storybook-vue3-router";
 import { ref } from "vue";
 import IcBaselineChevronRight from "~icons/ic/baseline-chevron-right";
-import IcBaselineHouse from "~icons/ic/baseline-house";
-import IcOutlineHouse from "~icons/ic/outline-house";
 import { html } from "@/lib/tags.ts";
 
 const meta: Meta<typeof Breadcrumb> = {
@@ -20,13 +18,11 @@ export const Default: Story = {
   render: () => ({
     components: {
       Breadcrumb,
-      IcOutlineHouse,
       IcBaselineChevronRight,
-      IcBaselineHouse,
     },
     setup() {
       const items = ref([
-        { label: "", type: "home", route: "/" },
+        { label: "Startseite", type: "home", route: "/" },
         { label: "Gesetze & Verordnungen", route: "/laws" },
         { label: "BGB Bürgerliches Gesetzbuch", route: "/bgb" },
         { label: "Buch 2", route: "/book-2" },
@@ -36,36 +32,14 @@ export const Default: Story = {
         { label: "§ 312e Verletzung von Informationspflichten über Kosten" },
       ]);
 
-      const isHovered = ref(false);
-
-      return { items, isHovered };
+      return { items };
     },
     template: html`
-      <div class="card flex justify-center">
-        <Breadcrumb :model="items">
-          <template #item="{ item, props }">
-            <router-link v-if="item.route" v-slot="{ href, navigate }" :to="item.route" custom>
-              <a :href="href" v-bind="props.action" @click="navigate">
-                <template v-if="item.type === 'home'">
-                  <span @mouseenter="isHovered = true" @mouseleave="isHovered = false">
-                    <template v-if="isHovered">
-                      <IcBaselineHouse class="-ml-2" />
-                    </template>
-                    <template v-else>
-                      <IcOutlineHouse class="-ml-2" />
-                    </template>
-                  </span>
-                </template>
-                <span v-else class="line-clamp-1">{{ item.label }}</span>
-              </a>
-            </router-link>
-            <span v-else class="line-clamp-1">{{ item.label }}</span>
-          </template>
-          <template #separator>
-            <IcBaselineChevronRight width="16px" height="16px" />
-          </template>
-        </Breadcrumb>
-      </div>
+      <Breadcrumb :model="items">
+        <template #separator>
+          <IcBaselineChevronRight width="16px" height="16px" />
+        </template>
+      </Breadcrumb>
     `,
   }),
   decorators: [
