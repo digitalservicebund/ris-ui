@@ -56,7 +56,7 @@
     "typescript": "6.0.3",
     "unplugin-icons": "23.0.1",
     "vite": "8.0.8",
-    "vue-router": "5.0.4"
+    "vue-router": "5.0.6"
   },
   "peerDependencies": {
     "primevue": "^4.0.0",
