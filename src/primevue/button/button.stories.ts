@@ -25,7 +25,7 @@ const meta: Meta<typeof PrimevueButton> = {
     size: { control: "select", options: ["small", "normal", "large"] },
     severity: {
       control: "select",
-      options: ["primary", "secondary", "danger", "info"],
+      options: ["primary", "secondary", "danger", "warn", "info"],
     },
   },
 };
@@ -79,6 +79,19 @@ export const Danger: Story = {
       return { args };
     },
     template: html` <PrimevueButton v-bind="args" />`,
+  }),
+};
+
+export const SkipLink: Story = {
+  args: {
+    severity: "warn",
+  },
+  render: (args) => ({
+    components: { PrimevueButton },
+    setup() {
+      return { args };
+    },
+    template: html` <PrimevueButton v-bind="args" as="a" />`,
   }),
 };
 
