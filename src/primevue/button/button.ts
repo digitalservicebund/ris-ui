@@ -18,6 +18,9 @@ const button: ButtonPassThroughOptions = {
 
     const danger = tw`border-2 border-red-800 bg-white text-red-800 hover:bg-red-100 focus-visible:bg-red-100 active:border-red-800 active:bg-red-300 disabled:border-red-500 disabled:text-red-500 disabled:hover:bg-white`;
 
+    // Used for skip links
+    const warn = tw`border-gray-1000 color-gray-1000 border-4 bg-yellow-500 underline decoration-2 underline-offset-2`;
+
     const info = tw`border border-blue-500 bg-white font-normal text-blue-800 hover:bg-gray-200 focus-visible:bg-gray-200 active:border-white active:bg-white disabled:border-blue-500 disabled:text-blue-500 disabled:hover:bg-white`;
 
     // Text
@@ -27,7 +30,7 @@ const button: ButtonPassThroughOptions = {
     // Sizes
     const size = props.size ?? "normal";
     let small = tw`ris-body2-bold h-40 py-4`;
-    let normal = tw`ris-body2-bold h-48 py-4`;
+    let normal = tw`${severity === "warn" ? "ris-body1-bold" : "ris-body2-bold"} h-48 py-4`;
     let large = tw`ris-body1-bold h-64 py-4`;
 
     // Icon only
@@ -54,6 +57,7 @@ const button: ButtonPassThroughOptions = {
         [primary]: !props.text && severity === "primary",
         [secondary]: !props.text && severity === "secondary",
         [danger]: !props.text && severity === "danger",
+        [warn]: !props.text && severity === "warn",
         [info]: !props.text && severity === "info",
         [primaryText]: props.text && severity === "primary",
       },
