@@ -50,7 +50,7 @@
     "msw": "2.13.4",
     "msw-storybook-addon": "2.0.7",
     "oxfmt": "0.45.0",
-    "oxlint": "1.60.0",
+    "oxlint": "1.61.0",
     "storybook": "10.3.5",
     "storybook-vue3-router": "7.0.0",
     "typescript": "6.0.3",
