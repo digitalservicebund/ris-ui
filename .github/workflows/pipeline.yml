@@ -6,10 +6,18 @@ on:
   # Allow manual trigger of the workflow
   workflow_dispatch:
 
+permissions:
+  contents: read
+  pages: write # deploy
+  id-token: write # deploy
+  security-events: write # upload-sarif
+
 jobs:
   # Talisman Secrets Check
   talisman-check:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     if: ${{ github.ref == 'refs/heads/main' }}
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
@@ -57,6 +65,8 @@ jobs:
   # Formatting, code quality and types check
   check-style:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - name: Checkout code
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
