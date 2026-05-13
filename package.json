@@ -41,7 +41,7 @@
     "@commitlint/config-conventional": "20.5.0",
     "@digitalservice4germany/angie": "2.4.0",
     "@iconify-json/ic": "1.2.4",
-    "@iconify/vue": "5.0.0",
+    "@iconify/vue": "5.0.1",
     "@storybook/addon-docs": "10.3.6",
     "@storybook/vue3-vite": "10.3.5",
     "@tailwindcss/vite": "4.2.4",
