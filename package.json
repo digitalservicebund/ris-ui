@@ -38,7 +38,7 @@
     "sync-fonts": "rm ./public/fonts/*.woff ./public/fonts/*.woff2; cp ./node_modules/@digitalservice4germany/angie/fonts/* ./public/fonts/; cp ./node_modules/@digitalservice4germany/angie/fonts.css ./public/"
   },
   "devDependencies": {
-    "@commitlint/config-conventional": "20.5.0",
+    "@commitlint/config-conventional": "21.0.1",
     "@digitalservice4germany/angie": "2.4.0",
     "@iconify-json/ic": "1.2.4",
     "@iconify/vue": "5.0.1",
