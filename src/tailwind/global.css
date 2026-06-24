@@ -190,13 +190,13 @@
 @utility ris-subhead-regular {
   font-size: 1.25rem;
   font-weight: normal;
-  line-height: 1.5;
+  line-height: 1.25;
 }
 
 @utility ris-subhead-bold {
   font-size: 1.25rem;
   font-weight: bold;
-  line-height: 1.5;
+  line-height: 1.25;
 }
 
 @utility ris-body1-regular {
