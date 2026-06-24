@@ -43,7 +43,7 @@
     "@iconify-json/ic": "1.2.4",
     "@iconify/vue": "5.0.1",
     "@storybook/addon-docs": "10.4.4",
-    "@storybook/vue3-vite": "10.4.2",
+    "@storybook/vue3-vite": "10.4.4",
     "@tailwindcss/vite": "4.3.0",
     "@vitejs/plugin-vue": "6.0.7",
     "license-checker": "25.0.1",
