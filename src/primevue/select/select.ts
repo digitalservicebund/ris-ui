@@ -4,7 +4,7 @@ import { tw } from "@/lib/tags.ts";
 const select: SelectPassThroughOptions = {
   root: ({ props, state }) => {
     // Base
-    const base = tw`group ris-body2-regular [&+small]:ris-label3-regular relative inline-flex h-48 items-center justify-between border-2 bg-white py-4 pr-6 pl-16 [&+small]:mt-2 [&+small]:flex [&+small]:items-center [&+small]:gap-4 [&+small]:text-gray-900 [&[aria-invalid="true"]+small]:text-red-900`;
+    const base = tw`group ris-body2-regular [&+small]:ris-label2-regular relative inline-flex h-48 items-center justify-between border-2 bg-white py-4 pr-6 pl-16 [&+small]:mt-2 [&+small]:flex [&+small]:items-center [&+small]:gap-4 [&+small]:text-gray-900 [&[aria-invalid="true"]+small]:text-red-900`;
 
     // States
     const normal = tw`cursor-pointer border-blue-800`;
