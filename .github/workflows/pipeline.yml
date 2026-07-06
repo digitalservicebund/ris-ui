@@ -24,7 +24,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Detect secrets in incoming commits with Talisman
-        uses: digitalservicebund/talisman-secrets-scan-action@dd7513defb21028835988b40e89f7d10b3f66ed5
+        uses: digitalservicebund/talisman-secrets-scan-action@550e4a1e0aee7921b5df1fc0f02bc6adfa784bd2
 
   # Trivy Vulnerability Scan
   trivy-scan:
