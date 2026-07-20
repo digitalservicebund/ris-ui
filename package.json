@@ -55,7 +55,7 @@
     "storybook-vue3-router": "7.0.0",
     "typescript": "7.0.2",
     "unplugin-icons": "23.0.1",
-    "vite": "8.1.4",
+    "vite": "8.1.5",
     "vue-router": "5.1.0"
   },
   "peerDependencies": {
