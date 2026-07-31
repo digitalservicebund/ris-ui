@@ -2,7 +2,8 @@
 
 import type { Preview } from "@storybook/vue3-vite";
 import { setup } from "@storybook/vue3-vite";
-import { initialize, mswLoader } from "msw-storybook-addon";
+import { mswLoader } from "msw-storybook-addon/csf3";
+import { setupWorker } from "msw/browser";
 import PrimeVue from "primevue/config";
 import ConfirmationService from "primevue/confirmationservice";
 import ToastService from "primevue/toastservice";
@@ -14,13 +15,6 @@ import { RisUiTheme } from "../src/primevue";
 import "../public/fonts.css";
 import "./preview.css";
 import "../src/tailwind/components-extra/drawer.css";
-
-initialize({
-  serviceWorker: {
-    // When deployed to GitHub pages, this will run in a subfolder
-    url: import.meta.env.DEV ? "/mockServiceWorker.js" : "/ris-ui/mockServiceWorker.js",
-  },
-});
 
 setup((app) => {
   app.use(PrimeVue, {
@@ -37,7 +31,18 @@ setup((app) => {
 });
 
 const preview: Preview = {
-  loaders: [mswLoader],
+  loaders: [
+    mswLoader(async () => {
+      const worker = setupWorker();
+      await worker.start({
+        serviceWorker: {
+          // When deployed to GitHub pages, this will run in a subfolder
+          url: import.meta.env.DEV ? "/mockServiceWorker.js" : "/ris-ui/mockServiceWorker.js",
+        },
+      });
+      return worker;
+    }),
+  ],
   parameters: {
     options: {
       storySort: {
