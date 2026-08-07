@@ -148,134 +148,134 @@
 @utility ris-title-regular {
   font-size: 4rem;
   font-weight: normal;
-  line-height: 1.1875;
+  line-height: round(calc(1.1875 * 1em), 2px);
 }
 
 @utility ris-heading1-regular {
   font-size: 3rem;
   font-weight: normal;
-  line-height: 1.2;
+  line-height: round(calc(1.2 * 1em), 2px);
 }
 
 @utility ris-heading1-bold {
   font-size: 3rem;
   font-weight: bold;
-  line-height: 1.2;
+  line-height: round(calc(1.2 * 1em), 2px);
 }
 
 @utility ris-heading2-regular {
   font-size: 2rem;
   font-weight: normal;
-  line-height: 1.1875;
+  line-height: round(calc(1.1875 * 1em), 2px);
 }
 
 @utility ris-heading2-bold {
   font-size: 2rem;
   font-weight: bold;
-  line-height: 1.1875;
+  line-height: round(calc(1.1875 * 1em), 2px);
 }
 
 @utility ris-heading3-regular {
   font-size: 1.625rem;
   font-weight: normal;
-  line-height: 1.23;
+  line-height: round(calc(1.23 * 1em), 2px);
 }
 
 @utility ris-heading3-bold {
   font-size: 1.625rem;
   font-weight: bold;
-  line-height: 1.23;
+  line-height: round(calc(1.23 * 1em), 2px);
 }
 
 @utility ris-subhead-regular {
   font-size: 1.25rem;
   font-weight: normal;
-  line-height: 1.25;
+  line-height: round(calc(1.25 * 1em), 2px);
 }
 
 @utility ris-subhead-bold {
   font-size: 1.25rem;
   font-weight: bold;
-  line-height: 1.25;
+  line-height: round(calc(1.25 * 1em), 2px);
 }
 
 @utility ris-body1-regular {
   font-size: 1.125rem;
   font-weight: normal;
-  line-height: 1.5;
+  line-height: round(calc(1.5 * 1em), 2px);
 }
 
 @utility ris-body1-bold {
   font-size: 1.125rem;
   font-weight: bold;
-  line-height: 1.5;
+  line-height: round(calc(1.5 * 1em), 2px);
 }
 
 @utility ris-body2-regular {
   font-size: 1rem;
   font-weight: normal;
-  line-height: 1.5;
+  line-height: round(calc(1.5 * 1em), 2px);
 }
 
 @utility ris-body2-bold {
   font-size: 1rem;
   font-weight: bold;
-  line-height: 1.5;
+  line-height: round(calc(1.5 * 1em), 2px);
 }
 
 @utility ris-body3-regular {
   font-size: 0.875rem;
   font-weight: normal;
-  line-height: 1.5;
+  line-height: round(calc(1.5 * 1em), 2px);
 }
 
 @utility ris-body3-bold {
   font-size: 0.875rem;
   font-weight: bold;
-  line-height: 1.5;
+  line-height: round(calc(1.5 * 1em), 2px);
 }
 
 @utility ris-label1-regular {
   font-size: 1.125rem;
   font-weight: normal;
-  line-height: 1.25;
+  line-height: round(calc(1.25 * 1em), 2px);
 }
 
 @utility ris-label1-bold {
   font-size: 1.125rem;
   font-weight: bold;
-  line-height: 1.25;
+  line-height: round(calc(1.25 * 1em), 2px);
 }
 
 @utility ris-label2-regular {
   font-size: 1rem;
   font-weight: normal;
-  line-height: 1.25;
+  line-height: round(calc(1.25 * 1em), 2px);
 }
 
 @utility ris-label2-bold {
   font-size: 1rem;
   font-weight: bold;
-  line-height: 1.25;
+  line-height: round(calc(1.25 * 1em), 2px);
 }
 
 @utility ris-label3-regular {
   font-size: 0.875rem;
   font-weight: normal;
-  line-height: 1.25;
+  line-height: round(calc(1.25 * 1em), 2px);
 }
 
 @utility ris-label3-bold {
   font-size: 0.875rem;
   font-weight: bold;
-  line-height: 1.25;
+  line-height: round(calc(1.25 * 1em), 2px);
 }
 
 @utility ris-link1-regular {
   color: var(--color-blue-800);
   font-size: 1.125rem;
   font-weight: normal;
-  line-height: 1.5;
+  line-height: round(calc(1.5 * 1em), 2px);
   text-decoration: underline;
   text-underline-offset: 0.1875rem;
 
@@ -293,7 +293,7 @@
   color: var(--color-blue-800);
   font-size: 1.125rem;
   font-weight: bold;
-  line-height: 1.5;
+  line-height: round(calc(1.5 * 1em), 2px);
   text-decoration: underline;
   text-underline-offset: 0.1875rem;
 
@@ -311,7 +311,7 @@
   color: var(--color-blue-800);
   font-size: 1rem;
   font-weight: normal;
-  line-height: 1.5;
+  line-height: round(calc(1.5 * 1em), 2px);
   text-decoration: underline;
   text-underline-offset: 0.125rem;
 
@@ -329,7 +329,7 @@
   color: var(--color-blue-800);
   font-size: 1rem;
   font-weight: bold;
-  line-height: 1.5;
+  line-height: round(calc(1.5 * 1em), 2px);
   text-decoration: underline;
   text-underline-offset: 0.125rem;
 
@@ -347,7 +347,7 @@
   color: var(--color-blue-800);
   font-size: 0.875rem;
   font-weight: normal;
-  line-height: 1.5;
+  line-height: round(calc(1.5 * 1em), 2px);
   text-decoration: underline;
   text-underline-offset: 0.125rem;
 
@@ -365,7 +365,7 @@
   color: var(--color-blue-800);
   font-size: 0.875rem;
   font-weight: bold;
-  line-height: 1.5;
+  line-height: round(calc(1.5 * 1em), 2px);
   text-decoration: underline;
   text-underline-offset: 0.125rem;
 
