@@ -42,7 +42,7 @@
     "@digitalservice4germany/angie": "2.4.0",
     "@iconify-json/ic": "1.2.4",
     "@iconify/vue": "5.0.1",
-    "@storybook/addon-docs": "10.5.5",
+    "@storybook/addon-docs": "10.5.10",
     "@storybook/vue3-vite": "10.5.7",
     "@tailwindcss/vite": "4.3.3",
     "@vitejs/plugin-vue": "6.0.8",
