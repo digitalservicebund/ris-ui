@@ -35,10 +35,10 @@ importers:
         version: 5.0.1(vue@3.5.41(typescript@7.0.2))
       '@storybook/addon-docs':
         specifier: 10.5.10
-        version: 10.5.10(@types/react@19.2.8)(esbuild@0.28.2)(storybook@10.5.10(@types/react@19.2.8)(react@19.2.8))(vite@8.2.2(@types/node@26.1.2)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
+        version: 10.5.10(@types/react@19.2.8)(esbuild@0.28.2)(storybook@10.6.0(@types/react@19.2.8)(react@19.2.8))(vite@8.2.2(@types/node@26.1.2)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
       '@storybook/vue3-vite':
         specifier: 10.5.7
-        version: 10.5.7(esbuild@0.28.2)(storybook@10.5.10(@types/react@19.2.8)(react@19.2.8))(vite@8.2.2(@types/node@26.1.2)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vue@3.5.41(typescript@7.0.2))
+        version: 10.5.7(esbuild@0.28.2)(storybook@10.6.0(@types/react@19.2.8)(react@19.2.8))(vite@8.2.2(@types/node@26.1.2)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vue@3.5.41(typescript@7.0.2))
       '@tailwindcss/vite':
         specifier: 4.3.3
         version: 4.3.3(vite@8.2.2(@types/node@26.1.2)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
@@ -53,7 +53,7 @@ importers:
         version: 2.15.0(@types/node@26.1.2)(typescript@7.0.2)
       msw-storybook-addon:
         specifier: 3.0.0
-        version: 3.0.0(msw@2.15.0(@types/node@26.1.2)(typescript@7.0.2))(storybook@10.5.10(@types/react@19.2.8)(react@19.2.8))
+        version: 3.0.0(msw@2.15.0(@types/node@26.1.2)(typescript@7.0.2))(storybook@10.6.0(@types/react@19.2.8)(react@19.2.8))
       oxfmt:
         specifier: 0.65.0
         version: 0.65.0
@@ -61,11 +61,11 @@ importers:
         specifier: 1.80.0
         version: 1.80.0
       storybook:
-        specifier: 10.5.10
-        version: 10.5.10(@types/react@19.2.8)(react@19.2.8)
+        specifier: 10.6.0
+        version: 10.6.0(@types/react@19.2.8)(react@19.2.8)
       storybook-vue3-router:
         specifier: 7.0.0
-        version: 7.0.0(@storybook/vue3@10.5.7(storybook@10.5.10(@types/react@19.2.8)(react@19.2.8))(vue@3.5.41(typescript@7.0.2)))(vue-router@5.3.0(@vue/compiler-sfc@3.5.42)(esbuild@0.28.2)(rolldown@1.2.6)(vite@8.2.2(@types/node@26.1.2)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vue@3.5.41(typescript@7.0.2)))(vue@3.5.41(typescript@7.0.2))
+        version: 7.0.0(@storybook/vue3@10.5.7(storybook@10.6.0(@types/react@19.2.8)(react@19.2.8))(vue@3.5.41(typescript@7.0.2)))(vue-router@5.3.0(@vue/compiler-sfc@3.5.42)(esbuild@0.28.2)(rolldown@1.2.6)(vite@8.2.2(@types/node@26.1.2)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vue@3.5.41(typescript@7.0.2)))(vue@3.5.41(typescript@7.0.2))
       typescript:
         specifier: 7.0.2
         version: 7.0.2
@@ -1187,8 +1187,8 @@ packages:
     resolution: {integrity: sha512-zIcONa+hVtVSSep9UT3jZ5rizo2BsxgyDYU7WFD5eICBE7no3881HGeb/QkGfsJs6JTkY1aQhT7rIPC7e+0nnA==}
     engines: {node: '>=14', npm: '>=6', yarn: '>=1'}
 
-  '@testing-library/user-event@14.6.5':
-    resolution: {integrity: sha512-FhqjldLTpteueBaKflhNFlMT3+PM0O5fiBUivht6b9CZ1eesJyy7+g3Jr7XwJzt/Hip3ZG5hWwK1MX1FuDiE4w==}
+  '@testing-library/user-event@14.6.7':
+    resolution: {integrity: sha512-MPCpX8bxe8zS+JmmTwLp8jd0dy1rAm60Te/SL8JrQM3qvQJcBOs1d7IefJMyZzqM3EWBrDn/LWDt1BCGu4ASfg==}
     engines: {node: '>=12', npm: '>=6'}
     peerDependencies:
       '@testing-library/dom': '>=7.21.4'
@@ -1502,6 +1502,10 @@ packages:
 
   ast-types@0.16.1:
     resolution: {integrity: sha512-6t10qk83GOG8p0vKmaCr8eiilZwO171AvbROMtvvNiwrTly62t+7XkA8RdIIVbpMhCASAsxgAzdRSwh6nw/5Dg==}
+    engines: {node: '>=4'}
+
+  ast-types@0.16.3:
+    resolution: {integrity: sha512-FvWoWYfSCM6kRxCSH+MGLHIKKGRL6A6AW7Zek2O32REPQRdg131428uRTKMBYAeRd3XXAaHDS60Wpri7CdKDrA==}
     engines: {node: '>=4'}
 
   ast-walker-scope@0.9.0:
@@ -2381,8 +2385,8 @@ packages:
       vue-router:
         optional: true
 
-  storybook@10.5.10:
-    resolution: {integrity: sha512-Rz8k9ejFHsi7lbtJTaxZlhCUz4GkbJIKEoKDjXeLfr/ZhXip73E6keKxW0KH8iGeKiCqHAbJCV4YIQrxTOLiig==}
+  storybook@10.6.0:
+    resolution: {integrity: sha512-H48X6AURAFTpfN2zEux6vNesee5Oq8Gxj1IanYmblPZ218sfKSeyyerF1NC7GD7BrruoC8L4/cU0zII4y+d6zw==}
     hasBin: true
     peerDependencies:
       '@types/react': ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
@@ -3289,15 +3293,15 @@ snapshots:
 
   '@simple-libs/stream-utils@2.0.0': {}
 
-  '@storybook/addon-docs@10.5.10(@types/react@19.2.8)(esbuild@0.28.2)(storybook@10.5.10(@types/react@19.2.8)(react@19.2.8))(vite@8.2.2(@types/node@26.1.2)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))':
+  '@storybook/addon-docs@10.5.10(@types/react@19.2.8)(esbuild@0.28.2)(storybook@10.6.0(@types/react@19.2.8)(react@19.2.8))(vite@8.2.2(@types/node@26.1.2)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))':
     dependencies:
       '@mdx-js/react': 3.1.1(@types/react@19.2.8)(react@19.2.8)
-      '@storybook/csf-plugin': 10.5.10(esbuild@0.28.2)(storybook@10.5.10(@types/react@19.2.8)(react@19.2.8))(vite@8.2.2(@types/node@26.1.2)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
+      '@storybook/csf-plugin': 10.5.10(esbuild@0.28.2)(storybook@10.6.0(@types/react@19.2.8)(react@19.2.8))(vite@8.2.2(@types/node@26.1.2)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
       '@storybook/icons': 2.1.0(react@19.2.8)
-      '@storybook/react-dom-shim': 10.5.10(@types/react@19.2.8)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(storybook@10.5.10(@types/react@19.2.8)(react@19.2.8))
+      '@storybook/react-dom-shim': 10.5.10(@types/react@19.2.8)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(storybook@10.6.0(@types/react@19.2.8)(react@19.2.8))
       react: 19.2.8
       react-dom: 19.2.8(react@19.2.8)
-      storybook: 10.5.10(@types/react@19.2.8)(react@19.2.8)
+      storybook: 10.6.0(@types/react@19.2.8)(react@19.2.8)
       ts-dedent: 2.3.0
     optionalDependencies:
       '@types/react': 19.2.8
@@ -3308,10 +3312,10 @@ snapshots:
       - vite
       - webpack
 
-  '@storybook/builder-vite@10.5.7(esbuild@0.28.2)(storybook@10.5.10(@types/react@19.2.8)(react@19.2.8))(vite@8.2.2(@types/node@26.1.2)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))':
+  '@storybook/builder-vite@10.5.7(esbuild@0.28.2)(storybook@10.6.0(@types/react@19.2.8)(react@19.2.8))(vite@8.2.2(@types/node@26.1.2)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))':
     dependencies:
-      '@storybook/csf-plugin': 10.5.7(esbuild@0.28.2)(storybook@10.5.10(@types/react@19.2.8)(react@19.2.8))(vite@8.2.2(@types/node@26.1.2)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
-      storybook: 10.5.10(@types/react@19.2.8)(react@19.2.8)
+      '@storybook/csf-plugin': 10.5.7(esbuild@0.28.2)(storybook@10.6.0(@types/react@19.2.8)(react@19.2.8))(vite@8.2.2(@types/node@26.1.2)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
+      storybook: 10.6.0(@types/react@19.2.8)(react@19.2.8)
       ts-dedent: 2.3.0
       vite: 8.2.2(@types/node@26.1.2)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0)
     transitivePeerDependencies:
@@ -3319,17 +3323,17 @@ snapshots:
       - rollup
       - webpack
 
-  '@storybook/csf-plugin@10.5.10(esbuild@0.28.2)(storybook@10.5.10(@types/react@19.2.8)(react@19.2.8))(vite@8.2.2(@types/node@26.1.2)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))':
+  '@storybook/csf-plugin@10.5.10(esbuild@0.28.2)(storybook@10.6.0(@types/react@19.2.8)(react@19.2.8))(vite@8.2.2(@types/node@26.1.2)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))':
     dependencies:
-      storybook: 10.5.10(@types/react@19.2.8)(react@19.2.8)
+      storybook: 10.6.0(@types/react@19.2.8)(react@19.2.8)
       unplugin: 2.3.11
     optionalDependencies:
       esbuild: 0.28.2
       vite: 8.2.2(@types/node@26.1.2)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0)
 
-  '@storybook/csf-plugin@10.5.7(esbuild@0.28.2)(storybook@10.5.10(@types/react@19.2.8)(react@19.2.8))(vite@8.2.2(@types/node@26.1.2)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))':
+  '@storybook/csf-plugin@10.5.7(esbuild@0.28.2)(storybook@10.6.0(@types/react@19.2.8)(react@19.2.8))(vite@8.2.2(@types/node@26.1.2)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))':
     dependencies:
-      storybook: 10.5.10(@types/react@19.2.8)(react@19.2.8)
+      storybook: 10.6.0(@types/react@19.2.8)(react@19.2.8)
       unplugin: 2.3.11
     optionalDependencies:
       esbuild: 0.28.2
@@ -3341,20 +3345,20 @@ snapshots:
     dependencies:
       react: 19.2.8
 
-  '@storybook/react-dom-shim@10.5.10(@types/react@19.2.8)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(storybook@10.5.10(@types/react@19.2.8)(react@19.2.8))':
+  '@storybook/react-dom-shim@10.5.10(@types/react@19.2.8)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(storybook@10.6.0(@types/react@19.2.8)(react@19.2.8))':
     dependencies:
       react: 19.2.8
       react-dom: 19.2.8(react@19.2.8)
-      storybook: 10.5.10(@types/react@19.2.8)(react@19.2.8)
+      storybook: 10.6.0(@types/react@19.2.8)(react@19.2.8)
     optionalDependencies:
       '@types/react': 19.2.8
 
-  '@storybook/vue3-vite@10.5.7(esbuild@0.28.2)(storybook@10.5.10(@types/react@19.2.8)(react@19.2.8))(vite@8.2.2(@types/node@26.1.2)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vue@3.5.41(typescript@7.0.2))':
+  '@storybook/vue3-vite@10.5.7(esbuild@0.28.2)(storybook@10.6.0(@types/react@19.2.8)(react@19.2.8))(vite@8.2.2(@types/node@26.1.2)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vue@3.5.41(typescript@7.0.2))':
     dependencies:
-      '@storybook/builder-vite': 10.5.7(esbuild@0.28.2)(storybook@10.5.10(@types/react@19.2.8)(react@19.2.8))(vite@8.2.2(@types/node@26.1.2)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
-      '@storybook/vue3': 10.5.7(storybook@10.5.10(@types/react@19.2.8)(react@19.2.8))(vue@3.5.41(typescript@7.0.2))
+      '@storybook/builder-vite': 10.5.7(esbuild@0.28.2)(storybook@10.6.0(@types/react@19.2.8)(react@19.2.8))(vite@8.2.2(@types/node@26.1.2)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))
+      '@storybook/vue3': 10.5.7(storybook@10.6.0(@types/react@19.2.8)(react@19.2.8))(vue@3.5.41(typescript@7.0.2))
       magic-string: 0.30.21
-      storybook: 10.5.10(@types/react@19.2.8)(react@19.2.8)
+      storybook: 10.6.0(@types/react@19.2.8)(react@19.2.8)
       typescript: 5.9.3
       vite: 8.2.2(@types/node@26.1.2)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0)
       vue-component-meta: 3.3.11(typescript@5.9.3)
@@ -3365,10 +3369,10 @@ snapshots:
       - vue
       - webpack
 
-  '@storybook/vue3@10.5.7(storybook@10.5.10(@types/react@19.2.8)(react@19.2.8))(vue@3.5.41(typescript@7.0.2))':
+  '@storybook/vue3@10.5.7(storybook@10.6.0(@types/react@19.2.8)(react@19.2.8))(vue@3.5.41(typescript@7.0.2))':
     dependencies:
       '@storybook/global': 5.0.0
-      storybook: 10.5.10(@types/react@19.2.8)(react@19.2.8)
+      storybook: 10.6.0(@types/react@19.2.8)(react@19.2.8)
       type-fest: 5.8.0
       vue: 3.5.41(typescript@7.0.2)
       vue-component-type-helpers: 3.3.8
@@ -3461,7 +3465,7 @@ snapshots:
       picocolors: 1.1.1
       redent: 3.0.0
 
-  '@testing-library/user-event@14.6.5(@testing-library/dom@10.4.1)':
+  '@testing-library/user-event@14.6.7(@testing-library/dom@10.4.1)':
     dependencies:
       '@testing-library/dom': 10.4.1
 
@@ -3760,6 +3764,10 @@ snapshots:
       pathe: 2.0.3
 
   ast-types@0.16.1:
+    dependencies:
+      tslib: 2.8.1
+
+  ast-types@0.16.3:
     dependencies:
       tslib: 2.8.1
 
@@ -4257,10 +4265,10 @@ snapshots:
 
   ms@2.1.3: {}
 
-  msw-storybook-addon@3.0.0(msw@2.15.0(@types/node@26.1.2)(typescript@7.0.2))(storybook@10.5.10(@types/react@19.2.8)(react@19.2.8)):
+  msw-storybook-addon@3.0.0(msw@2.15.0(@types/node@26.1.2)(typescript@7.0.2))(storybook@10.6.0(@types/react@19.2.8)(react@19.2.8)):
     dependencies:
       msw: 2.15.0(@types/node@26.1.2)(typescript@7.0.2)
-      storybook: 10.5.10(@types/react@19.2.8)(react@19.2.8)
+      storybook: 10.6.0(@types/react@19.2.8)(react@19.2.8)
 
   msw@2.15.0(@types/node@26.1.2)(typescript@7.0.2):
     dependencies:
@@ -4593,7 +4601,7 @@ snapshots:
 
   recast@0.23.21:
     dependencies:
-      ast-types: 0.16.1
+      ast-types: 0.16.3
       esprima: 4.0.1
       source-map: 0.6.1
       tiny-invariant: 1.3.3
@@ -4686,20 +4694,20 @@ snapshots:
 
   statuses@2.0.2: {}
 
-  storybook-vue3-router@7.0.0(@storybook/vue3@10.5.7(storybook@10.5.10(@types/react@19.2.8)(react@19.2.8))(vue@3.5.41(typescript@7.0.2)))(vue-router@5.3.0(@vue/compiler-sfc@3.5.42)(esbuild@0.28.2)(rolldown@1.2.6)(vite@8.2.2(@types/node@26.1.2)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vue@3.5.41(typescript@7.0.2)))(vue@3.5.41(typescript@7.0.2)):
+  storybook-vue3-router@7.0.0(@storybook/vue3@10.5.7(storybook@10.6.0(@types/react@19.2.8)(react@19.2.8))(vue@3.5.41(typescript@7.0.2)))(vue-router@5.3.0(@vue/compiler-sfc@3.5.42)(esbuild@0.28.2)(rolldown@1.2.6)(vite@8.2.2(@types/node@26.1.2)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vue@3.5.41(typescript@7.0.2)))(vue@3.5.41(typescript@7.0.2)):
     dependencies:
-      '@storybook/vue3': 10.5.7(storybook@10.5.10(@types/react@19.2.8)(react@19.2.8))(vue@3.5.41(typescript@7.0.2))
+      '@storybook/vue3': 10.5.7(storybook@10.6.0(@types/react@19.2.8)(react@19.2.8))(vue@3.5.41(typescript@7.0.2))
     optionalDependencies:
       vue: 3.5.41(typescript@7.0.2)
       vue-router: 5.3.0(@vue/compiler-sfc@3.5.42)(esbuild@0.28.2)(rolldown@1.2.6)(vite@8.2.2(@types/node@26.1.2)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.0))(vue@3.5.41(typescript@7.0.2))
 
-  storybook@10.5.10(@types/react@19.2.8)(react@19.2.8):
+  storybook@10.6.0(@types/react@19.2.8)(react@19.2.8):
     dependencies:
       '@storybook/global': 5.0.0
       '@storybook/icons': 2.1.0(react@19.2.8)
       '@testing-library/dom': 10.4.1
       '@testing-library/jest-dom': 6.9.1
-      '@testing-library/user-event': 14.6.5(@testing-library/dom@10.4.1)
+      '@testing-library/user-event': 14.6.7(@testing-library/dom@10.4.1)
       '@vitest/expect': 3.2.4
       '@vitest/spy': 3.2.4
       '@webcontainer/env': 1.1.1
