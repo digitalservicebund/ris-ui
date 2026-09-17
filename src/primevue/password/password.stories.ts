@@ -3,6 +3,8 @@ import Password from "primevue/password";
 import { html } from "@/lib/tags";
 
 const meta: Meta<typeof Password> = {
+  title: "Password",
+
   // @ts-expect-error Component type broken
   component: Password,
 

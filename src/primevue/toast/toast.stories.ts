@@ -5,6 +5,8 @@ import { useToast } from "primevue/usetoast";
 import { html } from "@/lib/tags.ts";
 
 const meta: Meta<typeof Toast> = {
+  title: "Toast",
+
   // @ts-expect-error Component type broken
   component: Toast,
 

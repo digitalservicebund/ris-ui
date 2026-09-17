@@ -3,6 +3,8 @@ import Message from "primevue/message";
 import { html } from "@/lib/tags";
 
 const meta: Meta<typeof Message> = {
+  title: "Message",
+
   // @ts-expect-error Component type broken
   component: Message,
 

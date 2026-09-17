@@ -46,7 +46,7 @@ const preview: Preview = {
   parameters: {
     options: {
       storySort: {
-        order: ["primevue", "components", "tailwind"],
+        order: ["Startseite", "Styleguide", "Komponenten"],
       },
     },
   },

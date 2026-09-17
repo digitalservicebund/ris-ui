@@ -5,6 +5,8 @@ import { ref } from "vue";
 import { html } from "@/lib/tags";
 
 const meta: Meta<typeof PanelMenu> = {
+  title: "PanelMenu",
+
   // @ts-expect-error Component type broken
   component: PanelMenu,
   tags: ["autodocs"],

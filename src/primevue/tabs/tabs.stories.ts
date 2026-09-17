@@ -8,6 +8,8 @@ import { html } from "@/lib/tags";
 import "./tabs.stories.style.css";
 
 const meta: Meta<typeof Tabs> = {
+  title: "Tabs",
+
   // @ts-expect-error Component type broken
   component: Tabs,
 

@@ -3,7 +3,19 @@ import Icons from "unplugin-icons/vite";
 import { mergeConfig } from "vite";
 
 const config: StorybookConfig = {
-  stories: ["../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
+  stories: [
+    "../src/**/*.mdx",
+    {
+      directory: "../src/primevue",
+      titlePrefix: "Komponenten",
+      files: "**/*.stories.@(js|jsx|mjs|ts|tsx)",
+    },
+    {
+      directory: "../src/tailwind",
+      titlePrefix: "Styleguide",
+      files: "**/*.stories.@(js|jsx|mjs|ts|tsx)",
+    },
+  ],
 
   addons: ["@storybook/addon-docs"],
 

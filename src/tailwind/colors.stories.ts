@@ -1,8 +1,26 @@
 import type { Meta, StoryObj } from "@storybook/vue3-vite";
 import { html } from "@/lib/tags";
 
+const docs = `
+
+Farben schaffen Orientierung, vermitteln Hierarchien und prägen den visuellen Charakter unseres Interfaces. Unsere Farbpalette definiert die Grundlage für eine konsistente und zugängliche Gestaltung über alle digitalen Anwendungen hinweg.
+
+Bei der Verwendung der Farben sind insbesondere Kontrast, Barrierefreiheit und der konsistente Einsatz innerhalb der definierten UI-Komponenten zu berücksichtigen.
+Die Farben orientieren sich am Styleguide der Bundesregierung.  
+`;
+
 const meta: Meta<never> = {
+  title: "Farben",
+
   tags: ["autodocs"],
+
+  parameters: {
+    docs: {
+      description: {
+        component: docs,
+      },
+    },
+  },
 };
 
 export default meta;
