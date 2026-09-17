@@ -4,6 +4,8 @@ import { ref } from "vue";
 import { html } from "@/lib/tags";
 
 const meta: Meta<typeof PrimeVueMultiSelect> = {
+  title: "MultiSelect",
+
   // @ts-expect-error Component type broken
   component: PrimeVueMultiSelect,
 

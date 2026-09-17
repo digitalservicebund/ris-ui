@@ -4,6 +4,8 @@ import IcBaselineSearch from "~icons/ic/baseline-search";
 import { html } from "@/lib/tags";
 
 const meta: Meta<typeof InputText> = {
+  title: "InputGroup",
+
   // @ts-expect-error Component type broken
   component: InputGroup,
 

@@ -6,6 +6,8 @@ import { ref } from "vue";
 import { html } from "@/lib/tags.ts";
 
 const meta: Meta<typeof FileUpload> = {
+  title: "FileUpload",
+
   // @ts-expect-error Component type broken
   component: FileUpload,
 

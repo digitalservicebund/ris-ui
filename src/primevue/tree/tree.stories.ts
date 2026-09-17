@@ -16,6 +16,8 @@ interface TreeNode {
 }
 
 const meta: Meta<typeof Tree> = {
+  title: "Tree",
+
   // @ts-expect-error Component type broken
   component: Tree,
   tags: ["autodocs"],

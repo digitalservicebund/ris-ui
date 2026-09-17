@@ -4,6 +4,8 @@ import Tooltip from "primevue/tooltip";
 import { html } from "@/lib/tags.ts";
 
 const meta: Meta<typeof Tooltip> = {
+  title: "Tooltip",
+
   // @ts-expect-error Component type broken
   component: Tooltip,
   tags: ["autodocs"],

@@ -9,6 +9,8 @@ import IcBaselineRemoveRedEye from "~icons/ic/baseline-remove-red-eye";
 import { html } from "@/lib/tags";
 
 const meta: Meta<typeof PrimevueMenu> = {
+  title: "Menu",
+
   // @ts-expect-error Component type broken
   component: PrimevueMenu,
   tags: ["autodocs"],

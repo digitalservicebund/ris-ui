@@ -6,6 +6,8 @@ import IcBaselineErrorOutline from "~icons/ic/baseline-error-outline";
 import { html } from "@/lib/tags";
 
 const meta: Meta<typeof InputMask> = {
+  title: "InputMask",
+
   // @ts-expect-error Component type broken
   component: InputMask,
 

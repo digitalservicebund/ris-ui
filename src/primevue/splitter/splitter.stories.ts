@@ -4,6 +4,8 @@ import SplitterPanel from "primevue/splitterpanel";
 import { html } from "@/lib/tags";
 
 const meta: Meta<typeof Splitter> = {
+  title: "Splitter",
+
   // @ts-expect-error Component type broken
   component: Splitter,
 

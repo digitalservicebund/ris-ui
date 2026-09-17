@@ -6,6 +6,8 @@ import { html } from "@/lib/tags";
 // Imported as Btn because somehow formatting sometimes changes
 // "PrimevueTextarea" to "PrimevueTextarea", breaking the stories
 const meta: Meta<typeof PrimevueTextarea> = {
+  title: "Textarea",
+
   // @ts-expect-error Component type broken
   component: PrimevueTextarea,
 

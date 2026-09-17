@@ -6,6 +6,8 @@ import IcBaselineChevronRight from "~icons/ic/baseline-chevron-right";
 import { html } from "@/lib/tags.ts";
 
 const meta: Meta<typeof Breadcrumb> = {
+  title: "Breadcrumb",
+
   // @ts-expect-error Component type broken
   component: Breadcrumb,
   tags: ["autodocs"],

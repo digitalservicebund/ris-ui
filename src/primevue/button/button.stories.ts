@@ -6,6 +6,8 @@ import { html } from "@/lib/tags.ts";
 // Imported as PrimevueButton because somehow formatting sometimes changes
 // "Button" to "button", breaking the stories
 const meta: Meta<typeof PrimevueButton> = {
+  title: "Button",
+
   // @ts-expect-error Component type broken
   component: PrimevueButton,
 

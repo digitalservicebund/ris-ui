@@ -6,6 +6,8 @@ import IcBaselineErrorOutline from "~icons/ic/baseline-error-outline";
 import { html } from "@/lib/tags.ts";
 
 const meta: Meta<typeof ConfirmDialog> = {
+  title: "ConfirmDialog",
+
   // @ts-expect-error Component type broken
   component: ConfirmDialog,
 
