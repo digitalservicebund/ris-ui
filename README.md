@@ -1,3 +1,7 @@
+> [!WARNING]
+>
+> RIS UI is no longer actively maintained. Components now live in the [NeuRIS portal frontend](https://github.com/digitalservicebund/ris-search/tree/main/frontend/src/components/ui).
+
 # RIS UI
 
 **Component library for NeuRIS** | 👀 [Demo](https://digitalservicebund.github.io/ris-ui) | 📦 [npm](https://www.npmjs.com/package/@digitalservicebund/ris-ui) | 🤖 [PrimeVue Docs](https://primevue.org)
