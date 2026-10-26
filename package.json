@@ -49,7 +49,7 @@
     "license-checker": "25.0.1",
     "msw": "2.15.0",
     "msw-storybook-addon": "3.0.0",
-    "oxfmt": "0.73.0",
+    "oxfmt": "0.74.0",
     "oxlint": "1.85.0",
     "storybook": "10.6.2",
     "storybook-vue3-router": "7.0.0",
