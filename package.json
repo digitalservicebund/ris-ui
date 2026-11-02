@@ -45,7 +45,7 @@
     "@storybook/addon-docs": "10.5.10",
     "@storybook/vue3-vite": "10.6.0",
     "@tailwindcss/vite": "4.3.3",
-    "@vitejs/plugin-vue": "6.0.8",
+    "@vitejs/plugin-vue": "6.0.10",
     "license-checker": "25.0.1",
     "msw": "2.15.0",
     "msw-storybook-addon": "3.0.0",
